@@ -10,12 +10,7 @@
 # might seem somewhat awkward, but it will make more
 # sense as we add more routes to our application.
 @restauranteur.config(['$routeProvider', ($routeProvider) ->
-  $routeProvider.when('/restaurants',
-    {templateUrl: '../templates/index.html',
-      controller: 'HomeCtrl'
-  }).otherwise({
-    templateUrl: '../templates/home.html',
-    controller: 'HomeCtrl'
-  })
+  $routeProvider.when('/restaurants', { templateUrl: '../templates/restaurants/index.html', controller: 'RestaurantIndexCtrl' })
+                .otherwise({ templateUrl: '../templates/home.html', controller: 'HomeCtrl' })
 ])
 
