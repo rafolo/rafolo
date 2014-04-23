@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3341402442">
+    <data-source source="LOCAL" name="Rails Restauranteur: development" uuid="185600ca-540f-48c6-85e5-7c77c434e11d">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Rafal\RubymineProjects\Restauranteur\db\development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Restauranteur: test" uuid="91e8e6f9-b6ff-41b7-9496-eda8190fbf05">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Rafal\RubymineProjects\Restauranteur\db\test.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails Restauranteur: production" uuid="65607113-00c3-4bb2-963a-ae8d89e7d772">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:Restauranteur_production</jdbc-url>
+      <user-name>Restauranteur</user-name>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
