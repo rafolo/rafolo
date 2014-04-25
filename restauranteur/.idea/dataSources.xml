@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails Restauranteur: development" uuid="185600ca-540f-48c6-85e5-7c77c434e11d">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Rafal\RubymineProjects\Restauranteur\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\github\rafolo\restauranteur\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails Restauranteur: test" uuid="91e8e6f9-b6ff-41b7-9496-eda8190fbf05">
