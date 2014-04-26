@@ -18,7 +18,7 @@ public class Main {
 		ManagedObjectRepresentation mo = new ManagedObjectRepresentation();
 		mo.setName("Hello, world!");
 		mo = inventory.create(mo);
-		System.out.println("URL: " + mo.getSelf());
+		System.out.println("URL1: " + mo.getSelf());
 
 	}
 
