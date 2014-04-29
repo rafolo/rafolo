@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="todo">
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    "application", media: "all" %>
@@ -9,7 +9,7 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="container">
+    <div class="container" ng-view>
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>

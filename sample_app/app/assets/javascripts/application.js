@@ -11,7 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-migrate
 //= require jquery_ujs
 //= require bootstrap
 //= require angular
+//= require angular-route
+//= require modernizr
+//= require main
 //= require_tree .
