@@ -2,7 +2,7 @@
 
 // 'todo' is the one Angular (Ng) module in this app
 // 'todo' module is in global namespace
-window.todo = angular.module('todo', []);
+window.todo = angular.module('todo', ['ngRoute']);
 
 // Add global "services" (like breeze and Q) to the Ng injector
 // Learn about Angular dependency injection in this video
@@ -13,8 +13,9 @@ todo.value('breeze', window.breeze)
 // Configure routes
 todo.config(['$routeProvider', function ($routeProvider) {
       $routeProvider.
-          when('/', { templateUrl: 'app/todo.view.html', controller: 'TodoCtrl' }).
-          when('/about', { templateUrl: 'app/about.view.html', controller: 'AboutCtrl' }).
+          when('/', { templateUrl: 'assets/home.view.html', controller: 'HomeCtrl' })
+          .when('/todo', { templateUrl: 'assets/todo.view.html', controller: 'TodoCtrl' })
+          .when('/about', { templateUrl: 'assets/about.view.html', controller: 'AboutCtrl' }).
           otherwise({ redirectTo: '/' });
   }]);
 

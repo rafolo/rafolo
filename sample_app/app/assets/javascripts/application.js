@@ -17,5 +17,8 @@
 //= require angular
 //= require angular-route
 //= require modernizr
-//= require main
+//= require lib/q
+//= require lib/breeze
+//= require lib/breeze.savequeuing
+//= require todo.main
 //= require_tree .
