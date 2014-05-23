@@ -14,4 +14,8 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
+  def dashboard
+    render :layout => "coreadmin"
+  end
 end
