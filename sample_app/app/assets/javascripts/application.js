@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery-migrate
 //= require jquery_ujs
-//= require bootstrap
 //= require angular
 //= require angular-route
 //= require modernizr
