@@ -46,16 +46,16 @@
           <%= form_for(:session, url: sessions_path, :html => { :class => "separate-sections"}) do |f| %>
             <div class="input-group addon-left">
             <span class="input-group-addon" href="#">
-              <i class="icon-user"></i>
+              <i class="icon-envelope"></i>
             </span>
-              <%= f.text_field :email %>
+              <%= f.text_field :email, placeholder: 'Email' %>
             </div>
 
             <div class="input-group addon-left">
             <span class="input-group-addon" href="#">
               <i class="icon-key"></i>
             </span>
-              <%= f.password_field :password %>
+              <%= f.password_field :password, placeholder: 'Password' %>
             </div>
 
             <div>

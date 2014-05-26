@@ -63,11 +63,11 @@
         order: 3
       }
     });
-    $.plot($("#placeholder1_hS"), ds_h, {
+    /*$.plot($("#placeholder1_hS"), ds_h, {
       grid: {
         hoverable: true
       }
-    });
+    });*/
     return $("#placeholder1_hS").bind("plothover", function(event, pos, item) {
       var x, y;
       if (item) {
