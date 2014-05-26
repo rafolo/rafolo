@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  layout false
+  layout 'coreadminblank'
   def new
   end
 
