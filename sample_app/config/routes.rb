@@ -19,6 +19,10 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/dashboard', to: 'static_pages#dashboard'
 
+  get '*stylesheets/application_core_admin.css', to: redirect('/assets/application_core_admin.css')
+  get '*javascripts/application_core_admin.js', to: redirect('/assets/application_core_admin.js')
+  get '*images/avatars/:file.:ext', to: redirect('/assets/avatars/%{file}.%{ext}')
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -69,6 +73,7 @@ SampleApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  root :to => 'static_pages#home'
 
   # See how all your routes lay out with "rake routes"
 

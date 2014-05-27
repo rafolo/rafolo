@@ -5,6 +5,8 @@ class StaticPagesController < ApplicationController
       @micropost = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
+
+    redirect_to "/dashboard#"
   end
 
   def help
@@ -19,4 +21,5 @@ class StaticPagesController < ApplicationController
   def dashboard
     render :layout => "application"
   end
+
 end
