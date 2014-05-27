@@ -17,6 +17,6 @@ class StaticPagesController < ApplicationController
   end
 
   def dashboard
-    render :layout => "coreadmin"
+    render :layout => "application"
   end
 end
