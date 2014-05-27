@@ -2,11 +2,287 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61f2b187-f83d-4dc4-aaac-9ce30d818ac4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/app/js/controllers6.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../restauranteur/app/assets/stylesheets/menu.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/app/partials/partial6.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/app/Data/products.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-leaflet-directive/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-leaflet-directive/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-loader/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-loader/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-loader/angular-loader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-loader/angular-loader.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-loader/angular-loader.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-loader/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-mocks/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-mocks/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-mocks/angular-mocks.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-mocks/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-route/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-route/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-route/angular-route.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-route/angular-route.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-route/angular-route.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular-route/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular/angular-csp.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular/angular.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular/angular.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular/angular.min.js.gzip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular/angular.min.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/angular/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/.gitattributes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/LICENSE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/apple-touch-icon-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/crossdomain.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/css/normalize.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/doc/TOC.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/doc/crossdomain.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/doc/css.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/doc/extend.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/doc/faq.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/doc/html.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/doc/js.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/doc/misc.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/doc/usage.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/humans.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/img/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/js/plugins.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/js/vendor/jquery-1.10.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/html5-boilerplate/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/images/layers-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/images/layers.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/images/marker-icon-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/images/marker-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/images/marker-shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/leaflet-src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/leaflet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet-dist/leaflet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/.npmignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/CHANGELOG.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/CONTRIBUTING.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/FAQ.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/Jakefile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/PLUGIN-GUIDE.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/build/build.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/build/build.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/build/deps.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/build/hintrc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/css/mobile.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/css/screen.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/hacks/jitter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/leaflet-include.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/canvas.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/controls.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/geolocation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/iframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/image-overlay.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/map-mobile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/map.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/max-bounds.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/opacity.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/scroll.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/simple-proj.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/wms-marble.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/wms.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/map/zoomlevels.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/add_remove_layers.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/bringtoback.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/canvasloop.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/click_on_canvas.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/click_on_canvas_broken.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/dragging_and_copyworldjump.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/opacity.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/popupcontextmenuclicks.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/remove_while_dragging.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/removetilewhilepan.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/reuse_popups.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/rtl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/rtl2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/set_icon_reuse_dom.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/tests/svg_clicks.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/bounds-extend.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/feature-group-bounds.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/geojson-sample.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/geojson.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/rectangle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/route.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/touchzoomemu.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/us-states.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/vector-bounds.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/vector-canvas.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/vector-mobile.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/vector-simple.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/debug/vector/vector.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/dist/images/layers-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/dist/images/layers.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/dist/images/marker-icon-2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/dist/images/marker-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/dist/images/marker-shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/dist/leaflet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/after.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/before.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/expect.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/karma.conf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/sinon.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/spec.hintrc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/LeafletSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/SpecHelper.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/control/Control.AttributionSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/control/Control.LayersSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/control/Control.ScaleSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/core/ClassSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/core/EventsSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/core/UtilSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/dom/DomEventSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/dom/DomUtilSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/dom/PosAnimationSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/geo/CRSSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/geo/LatLngBoundsSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/geo/LatLngSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/geo/ProjectionSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/geometry/BoundsSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/geometry/LineUtilSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/geometry/PointSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/geometry/PolyUtilSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/geometry/TransformationSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/FeatureGroupSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/GeoJSONSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/LayerGroupSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/PopupSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/TileLayerSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/marker/MarkerSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/vector/CircleMarkerSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/vector/CircleSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/vector/PolygonSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/vector/PolylineGeometrySpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/layer/vector/PolylineSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/map/MapSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/spec/suites/map/handler/Map.DragSpec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/Leaflet.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/control/Control.Attribution.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/control/Control.Layers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/control/Control.Scale.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/control/Control.Zoom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/control/Control.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/copyright.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/core/Browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/core/Class.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/core/Events.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/core/Handler.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/core/Util.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/dom/DomEvent.DoubleTap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/dom/DomEvent.Pointer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/dom/DomEvent.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/dom/DomUtil.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/dom/Draggable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/dom/PosAnimation.Timer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/dom/PosAnimation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/LatLng.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/LatLngBounds.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/crs/CRS.EPSG3395.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/crs/CRS.EPSG3857.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/crs/CRS.EPSG4326.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/crs/CRS.Simple.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/crs/CRS.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/projection/Projection.LonLat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/projection/Projection.Mercator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/projection/Projection.SphericalMercator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geo/projection/Projection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geometry/Bounds.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geometry/LineUtil.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geometry/Point.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geometry/PolyUtil.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/geometry/Transformation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/images/layers.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/images/marker.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/FeatureGroup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/GeoJSON.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/ImageOverlay.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/LayerGroup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/Popup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/marker/DivIcon.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/marker/Icon.Default.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/marker/Icon.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/marker/Marker.Drag.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/marker/Marker.Popup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/marker/Marker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/tile/TileLayer.Anim.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/tile/TileLayer.Canvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/tile/TileLayer.WMS.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/tile/TileLayer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/Circle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/CircleMarker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/MultiPoly.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/Path.Popup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/Path.SVG.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/Path.VML.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/Path.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/Polygon.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/Polyline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/Rectangle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/canvas/Circle.Canvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/canvas/CircleMarker.Canvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/canvas/Path.Canvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/canvas/Polygon.Canvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/layer/vector/canvas/Polyline.Canvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/Map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/anim/Map.PanAnimation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/anim/Map.ZoomAnimation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/ext/Map.Geolocation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/handler/Map.BoxZoom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/handler/Map.DoubleClickZoom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/handler/Map.Drag.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/handler/Map.Keyboard.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/handler/Map.ScrollWheelZoom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/handler/Map.Tap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/bower_components/leaflet/src/map/handler/Map.TouchZoom.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../restauranteur/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/../restauranteur/.idea/.rakeTasks" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../restauranteur/.idea/Restauranteur.iml" afterPath="$PROJECT_DIR$/../restauranteur/.idea/Restauranteur.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/app/js/app.js" afterPath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/app/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../restauranteur/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/../restauranteur/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/app/index.html" afterPath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/config/karma.conf.js" afterPath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/config/karma.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cc/modules/trunk/web2/angularjs-seed/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cc/modules/trunk/web/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cc/modules/trunk/web/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../restauranteur/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../restauranteur/.idea/workspace.xml" />
+    </list>
+    <list id="4fa68b98-e9b9-47c9-960b-2aa504185882" name="Failed commit: Default" comment="Module Home added">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/modules/home/home.view.html" />
+      <change type="DELETED" beforePath="C:\Dev\GitHub\rafolo\sample_app\app\assets\javascripts\home.view.html" afterPath="" />
+      <change type="MOVED" beforePath="C:\Dev\GitHub\rafolo\sample_app\app\assets\javascripts\home.controller.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/modules/home/home.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/Production__sample_app.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Production__sample_app.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/README_FOR_APP" afterPath="$PROJECT_DIR$/doc/README_FOR_APP" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/dashboard.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/dashboard.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sample_app.iml" afterPath="$PROJECT_DIR$/.idea/sample_app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/todo.main.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/todo.main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sample_app.iws" />
@@ -17,18 +293,21 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/sample_app@cucumber__sample_app.coverage" NAME="cucumber: sample_app Coverage Results" MODIFIED="1398704945075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
-    <SUITE FILE_PATH="coverage/sample_app@db_migrate__sample_app.coverage" NAME="db:migrate: sample_app Coverage Results" MODIFIED="1399534383983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
+    <SUITE FILE_PATH="coverage/sample_app@db_migrate__sample_app.coverage" NAME="db:migrate: sample_app Coverage Results" MODIFIED="1401174842469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
     <SUITE FILE_PATH="coverage/sample_app@cucumber_ok__sample_app.coverage" NAME="cucumber:ok: sample_app Coverage Results" MODIFIED="1398705351531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
+    <SUITE FILE_PATH="coverage/sample_app@Production__sample_app.coverage" NAME="Production: sample_app Coverage Results" MODIFIED="1401173944781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
+    <SUITE FILE_PATH="coverage/sample_app@db_reset__sample_app.coverage" NAME="db:reset: sample_app Coverage Results" MODIFIED="1398101991706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
+    <SUITE FILE_PATH="coverage/sample_app@Development__sample_app.coverage" NAME="Development: sample_app Coverage Results" MODIFIED="1401174894804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
     <SUITE FILE_PATH="coverage/sample_app@cucumber_all__sample_app.coverage" NAME="cucumber:all: sample_app Coverage Results" MODIFIED="1398101779902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
-    <SUITE FILE_PATH="coverage/sample_app@db_seed__sample_app.coverage" NAME="db:seed: sample_app Coverage Results" MODIFIED="1398705453874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
     <SUITE FILE_PATH="coverage/sample_app@db_test_prepare__sample_app.coverage" NAME="db:test:prepare: sample_app Coverage Results" MODIFIED="1398101668369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
+    <SUITE FILE_PATH="coverage/sample_app@db_seed__sample_app.coverage" NAME="db:seed: sample_app Coverage Results" MODIFIED="1398705453874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
+    <SUITE FILE_PATH="coverage/sample_app@db_drop__sample_app.coverage" NAME="db:drop: sample_app Coverage Results" MODIFIED="1401174797465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
     <SUITE FILE_PATH="coverage/sample_app@db_populate__sample_app.coverage" NAME="db:populate: sample_app Coverage Results" MODIFIED="1398102008234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
     <SUITE FILE_PATH="coverage/sample_app@spec__sample_app.coverage" NAME="spec: sample_app Coverage Results" MODIFIED="1398101518307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
-    <SUITE FILE_PATH="coverage/sample_app@db_reset__sample_app.coverage" NAME="db:reset: sample_app Coverage Results" MODIFIED="1398101991706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
-    <SUITE FILE_PATH="coverage/sample_app@Development__sample_app.coverage" NAME="Development: sample_app Coverage Results" MODIFIED="1399535511358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
+    <SUITE FILE_PATH="coverage/sample_app@routes__sample_app.coverage" NAME="routes: sample_app Coverage Results" MODIFIED="1401174190240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
     <SUITE FILE_PATH="coverage/sample_app@test_prepare__sample_app.coverage" NAME="test:prepare: sample_app Coverage Results" MODIFIED="1398102050685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="sample_app" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -46,8 +325,18 @@
       <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="493">
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/modules/home/home.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="170">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,29 +345,111 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="459">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="459">
+              <caret line="5" column="43" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+      <file leaf-file-name="dashboard.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/static_pages/dashboard.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="136">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coreadminblank.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/coreadminblank.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
+      <file leaf-file-name="coreadmin.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/coreadmin.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2592592" vertical-offset="0" max-vertical-offset="4233">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5440">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1401173820016" expanded="true" signature="35:8154" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="42:730" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="740:8146" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="827:3748" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="923:1425" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="1088:1195" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="1303:1415" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="1562:3713" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="1593:3700" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="1640:2158" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="1789:2146" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="1930:2132" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="2218:2399" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="2251:2385" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="2446:3689" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="2476:3677" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="2562:2814" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="2583:2799" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="2851:3663" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="2989:3159" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="3024:3103" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="3781:3837" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="3868:8087" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="3957:6991" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="3984:4148" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4049:4138" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4181:5443" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4306:4500" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4377:4488" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4546:5432" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4569:4691" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4613:4677" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4714:4844" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4758:4830" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4867:4987" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="4909:4973" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5010:5127" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5051:5113" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5150:5268" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5193:5254" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5291:5419" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5335:5405" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5467:5627" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5537:5617" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5651:5819" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5723:5809" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5852:6979" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="5977:6169" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6046:6157" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6215:6968" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6238:6355" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6280:6341" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6378:6497" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6419:6483" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6520:6643" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6563:6629" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6666:6800" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6715:6786" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6823:6955" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="6867:6941" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="7028:8078" placeholder="..." />
+                <marker date="1401173820016" expanded="false" signature="7066:7082" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="7083:7267" placeholder="..." />
+                <marker date="1401173820016" expanded="false" signature="7134:7155" placeholder="..." />
+                <marker date="1401173820016" expanded="false" signature="7216:7233" placeholder="..." />
+                <marker date="1401173820016" expanded="false" signature="7301:7317" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="7356:8069" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="7391:7557" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="7619:7800" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="7862:8030" placeholder="..." />
+                <marker date="1401173820016" expanded="true" signature="8114:8138" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,48 +457,40 @@
       <file leaf-file-name="todo.main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/todo.main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1921">
-              <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0429448" vertical-offset="51" max-vertical-offset="629">
-              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="14" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1921">
+              <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="home.view.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/home.view.html">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/modules/home/home.view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="8568">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
+      <file leaf-file-name="application_core_admin.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application_core_admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-              <folding />
+            <state vertical-scroll-proportion="-0.46703297" vertical-offset="408" max-vertical-offset="982124">
+              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.controller.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/todo.controller.js">
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1462">
-              <caret line="7" column="25" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1428">
+              <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -158,10 +521,13 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/main.js.coffee" />
         <option value="$PROJECT_DIR$/Gemfile.lock" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/todo.main.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+        <option value="$PROJECT_DIR$/doc/README_FOR_APP" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/dashboard.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/home.view.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/todo.main.js" />
       </list>
     </option>
   </component>
@@ -173,10 +539,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="11" />
-    <option name="y" value="5" />
-    <option name="width" value="1346" />
-    <option name="height" value="729" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -260,7 +626,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="static_pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -295,8 +661,26 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
+              <option name="myItemId" value="sample_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -315,6 +699,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,8 +753,24 @@
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../restauranteur" />
     <property name="dynamic.classpath" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="142" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="142" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="142" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="817" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="144" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="820" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -343,6 +781,7 @@
       <recent name="C:\github\rafolo\sample_app\app\controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\GitHub\rafolo\sample_app\app\assets\javascripts\modules\home" />
       <recent name="C:\github\rafolo\sample_app\app\assets\javascripts" />
       <recent name="C:\github\rafolo\sample_app\app\assets" />
       <recent name="C:\github\rafolo\sample_app\app\assets\about" />
@@ -364,6 +803,52 @@
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:migrate" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="routes: sample_app" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="sample_app" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="routes" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="db:drop: sample_app" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="sample_app" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="development" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:drop" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
@@ -443,6 +928,22 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method />
     </configuration>
+    <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -507,16 +1008,20 @@
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Rake.test: sample_app" />
       <item index="1" class="java.lang.String" itemvalue="Rake.spec: sample_app" />
       <item index="2" class="java.lang.String" itemvalue="Rails.Production: sample_app" />
       <item index="3" class="java.lang.String" itemvalue="Rails.Development: sample_app" />
       <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate: sample_app" />
+      <item index="5" class="java.lang.String" itemvalue="Rake.routes: sample_app" />
+      <item index="6" class="java.lang.String" itemvalue="Rake.db:drop: sample_app" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate: sample_app" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Rake.db:drop: sample_app" />
+        <item index="1" class="java.lang.String" itemvalue="Rake.routes: sample_app" />
+        <item index="2" class="java.lang.String" itemvalue="Rake.db:migrate: sample_app" />
       </list>
     </recent_temporary>
   </component>
@@ -542,7 +1047,11 @@
       <created>1398814975921</created>
       <updated>1398814975921</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="git test">
+      <created>1400765166608</created>
+      <updated>1400765166608</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -566,25 +1075,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="5" width="1346" height="729" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33578792" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842416" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15396579" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39903846" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3376" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15128593" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22706065" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24281392" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3976436" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32051283" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240059" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7083333" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -608,7 +1117,9 @@
     </option>
     <MESSAGE value="Fix VCS settings." />
     <MESSAGE value="Integrate angularjs - work in progress." />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate angularjs - work in progress." />
+    <MESSAGE value="git test" />
+    <MESSAGE value="Module Home added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Module Home added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -623,41 +1134,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="459">
-          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/signing_in.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/helpers/application_helper_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="408">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script/rails">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
@@ -669,7 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="748">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -765,14 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08695652" vertical-offset="0" max-vertical-offset="391">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1411">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -898,13 +1365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/home.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/lib/q.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614">
@@ -923,39 +1383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
           <caret line="7" column="25" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/home.view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/todo.main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
-          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="459">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -963,7 +1390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="333">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -971,31 +1397,195 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19101124" vertical-offset="0" max-vertical-offset="356">
           <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2592592" vertical-offset="0" max-vertical-offset="4233">
+        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="4233">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0429448" vertical-offset="51" max-vertical-offset="629">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="14" selection-end-column="18" />
+        <state vertical-scroll-proportion="-5.1538463" vertical-offset="36" max-vertical-offset="629">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="431" max-vertical-offset="799">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/README_FOR_APP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/pages/ui_lab/buttons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="17935">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/coreadminblank.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/coreadmin.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5440">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1401173820016" expanded="true" signature="35:8154" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="42:730" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="740:8146" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="827:3748" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="923:1425" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="1088:1195" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="1303:1415" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="1562:3713" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="1593:3700" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="1640:2158" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="1789:2146" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="1930:2132" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="2218:2399" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="2251:2385" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="2446:3689" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="2476:3677" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="2562:2814" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="2583:2799" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="2851:3663" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="2989:3159" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="3024:3103" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="3781:3837" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="3868:8087" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="3957:6991" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="3984:4148" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4049:4138" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4181:5443" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4306:4500" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4377:4488" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4546:5432" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4569:4691" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4613:4677" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4714:4844" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4758:4830" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4867:4987" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="4909:4973" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5010:5127" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5051:5113" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5150:5268" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5193:5254" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5291:5419" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5335:5405" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5467:5627" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5537:5617" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5651:5819" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5723:5809" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5852:6979" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="5977:6169" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6046:6157" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6215:6968" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6238:6355" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6280:6341" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6378:6497" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6419:6483" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6520:6643" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6563:6629" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6666:6800" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6715:6786" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6823:6955" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="6867:6941" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="7028:8078" placeholder="..." />
+            <marker date="1401173820016" expanded="false" signature="7066:7082" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="7083:7267" placeholder="..." />
+            <marker date="1401173820016" expanded="false" signature="7134:7155" placeholder="..." />
+            <marker date="1401173820016" expanded="false" signature="7216:7233" placeholder="..." />
+            <marker date="1401173820016" expanded="false" signature="7301:7317" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="7356:8069" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="7391:7557" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="7619:7800" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="7862:8030" placeholder="..." />
+            <marker date="1401173820016" expanded="true" signature="8114:8138" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="459">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/dashboard.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="136">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="493">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/todo.main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/modules/home/home.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/modules/home/home.view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="8568">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application_core_admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.46703297" vertical-offset="408" max-vertical-offset="982124">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
