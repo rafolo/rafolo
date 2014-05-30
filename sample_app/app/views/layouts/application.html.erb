@@ -12,13 +12,12 @@
   <!-- Use title if it's in the page YAML frontmatter -->
   <title><%= full_title(yield(:title)) %></title>
 
-  <link href="/assets/application_core_admin.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/assets/application_core_admin.css" media="screen" rel="stylesheet" type="text/css"/>
 
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
-
 
 
 <body>
@@ -41,13 +40,15 @@
   </div>
 
 
-
-
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-collapse-top">
     <div class="navbar-right">
 
       <ul class="nav navbar-nav navbar-left">
+        <li class="cdrop active"><%= link_to "Todo", "#/todo" %></li>
+
+        <li class="cdrop active"><%= link_to "About", "#/about" %></li>
+
         <li class="cdrop active"><a href="#">Link</a></li>
 
         <li class="cdrop"><a href="#">Link</a></li>
@@ -74,7 +75,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle dropdown-avatar" data-toggle="dropdown">
               <span>
-                <img class="menu-avatar" src="/assets/avatars/avatar1.jpg" /> <span>John Smith <i class="icon-caret-down"></i></span>
+                <img class="menu-avatar" src="/assets/avatars/avatar1.jpg"/> <span>John Smith <i class="icon-caret-down"></i></span>
                 <span class="badge badge-dark-red">5</span>
               </span>
           </a>
@@ -84,7 +85,7 @@
 
             <li class="with-image">
               <div class="avatar">
-                <img src="/assets/avatars/avatar1.jpg" />
+                <img src="/assets/avatars/avatar1.jpg"/>
               </div>
               <span>John Smith</span>
             </li>
@@ -93,17 +94,18 @@
 
             <li><a href="#"><i class="icon-user"></i> <span>Profile</span></a></li>
             <li><a href="#"><i class="icon-cog"></i> <span>Settings</span></a></li>
-            <li><a href="#"><i class="icon-envelope"></i> <span>Messages</span> <span class="label label-dark-red pull-right">5</span></a></li>
-            <li><a href="<%= signout_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i> <span>Logout</span></a></li>
+            <li><a href="#"><i class="icon-envelope"></i> <span>Messages</span>
+              <span class="label label-dark-red pull-right">5</span></a></li>
+            <li><a href="<%= signout_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i>
+              <span>Logout</span></a></li>
           </ul>
         </li>
       </ul>
     </div>
 
 
-
-
-  </div><!-- /.navbar-collapse -->
+  </div>
+  <!-- /.navbar-collapse -->
 
 
 </nav>
@@ -117,7 +119,6 @@
   <ul class="nav navbar-collapse collapse navbar-collapse-primary">
 
 
-
     <li class="active">
       <span class="glow"></span>
       <a href="dashboard.html">
@@ -127,14 +128,9 @@
     </li>
 
 
-
-
-
-
     <li class="dark-nav ">
 
       <span class="glow"></span>
-
 
 
       <a class="accordion-toggle collapsed " data-toggle="collapse" href="#yJ6h3Npe7C">
@@ -189,10 +185,6 @@
     </li>
 
 
-
-
-
-
     <li class="">
       <span class="glow"></span>
       <a href="../forms/forms.html">
@@ -200,10 +192,6 @@
         <span>Forms</span>
       </a>
     </li>
-
-
-
-
 
 
     <li class="">
@@ -215,14 +203,9 @@
     </li>
 
 
-
-
-
-
     <li class="dark-nav ">
 
       <span class="glow"></span>
-
 
 
       <a class="accordion-toggle collapsed " data-toggle="collapse" href="#WLGsdJPav9">
@@ -271,8 +254,6 @@
     </li>
 
 
-
-
   </ul>
 
   <div class="hidden-sm hidden-xs">
@@ -287,18 +268,21 @@
 
       <div class="sparkline-row">
         <h4 class="gray"><span>Orders</span> 847</h4>
+
         <div class="sparkline big" data-color="gray"><!--16,7,23,13,12,11,15,4,19,18,4,24--></div>
       </div>
 
       <hr class="divider">
       <div class="sparkline-row">
         <h4 class="dark-green"><span>Income</span> $43.330</h4>
+
         <div class="sparkline big" data-color="darkGreen"><!--6,3,24,25,27,29,14,26,20,8,12,20--></div>
       </div>
 
       <hr class="divider">
       <div class="sparkline-row">
         <h4 class="blue"><span>Reviews</span> 223</h4>
+
         <div class="sparkline big" data-color="blue"><!--11,19,20,20,5,18,11,6,16,20,26,11--></div>
       </div>
 
@@ -309,7 +293,7 @@
 
 </div>
 <div class="main-content">
-    <%= yield %>
+  <%= yield %>
 </div>
 </body>
 </html>

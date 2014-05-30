@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
 
-    redirect_to "/dashboard#"
+    #redirect_to "/dashboard#"
   end
 
   def help
@@ -22,4 +22,13 @@ class StaticPagesController < ApplicationController
     render :layout => "application"
   end
 
+  def metadata
+    render json: METADATA
+  end
+
+  def lookups
+    @rooms      = Room.all
+    @tracks     = Track.all
+    @time_slots = TimeSlot.all
+  end
 end

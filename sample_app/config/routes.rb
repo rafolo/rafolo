@@ -23,6 +23,8 @@ SampleApp::Application.routes.draw do
   get '*javascripts/application_core_admin.js', to: redirect('/assets/application_core_admin.js')
   get '*images/avatars/:file.:ext', to: redirect('/assets/avatars/%{file}.%{ext}')
 
+  get '/api/Todo/Metadata', to: 'static_pages#metadata'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

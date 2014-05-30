@@ -14,8 +14,11 @@
   <!-- Use title if it's in the page YAML frontmatter -->
   <title><%= full_title(yield(:title)) %></title>
 
+
+  <!--<%= stylesheet_link_tag "application"%>-->
   <link href="/assets/application_core_admin.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="/assets/custom_core_admin.css" media="screen" rel="stylesheet" type="text/css" />
+  <!--<link href="/assets/custom.css.scss" media="screen" rel="stylesheet" type="text/css" />-->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -40,6 +43,7 @@
         <% if signed_in? %>
             <li class="cdrop active"><%= link_to "Users", users_path %></li>
             <li class="cdrop active"><%= link_to "Todo", "#/todo" %></li>
+            <li class="cdrop active"><%= link_to "About", "#/about" %></li>
             <li id="fat-menu" class="dropdown cdrop active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>

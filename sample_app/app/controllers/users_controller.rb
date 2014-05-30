@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
-      render 'new'
+      render 'new', :layout => 'coreadminblank'
     end
   end
 

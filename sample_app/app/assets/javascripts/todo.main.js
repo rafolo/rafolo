@@ -14,8 +14,8 @@ todo.value('breeze', window.breeze)
 todo.config(['$routeProvider', function ($routeProvider) {
       $routeProvider.
           when('/', { templateUrl: 'assets/modules/home/home.view.html', controller: 'HomeCtrl' })
-          .when('/todo', { templateUrl: 'assets/todo.view.html', controller: 'TodoCtrl' })
-          .when('/about', { templateUrl: 'assets/about.view.html', controller: 'AboutCtrl' }).
+          .when('/todo', { templateUrl: 'assets/modules/todo/todo.view.html', controller: 'TodoCtrl' })
+          .when('/about', { templateUrl: 'assets/modules/about/about.view.html', controller: 'AboutCtrl' }).
           otherwise({ redirectTo: '/' });
   }]);
 

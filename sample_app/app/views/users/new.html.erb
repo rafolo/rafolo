@@ -12,6 +12,7 @@
 
         <div class="box-content padded">
           <%= form_for(@user, :html => { :class => "separate-sections"}) do |f| %>
+              <%= render 'shared/error_messages', object: @user %>
               <div class="input-group addon-left">
           <span class="input-group-addon" href="#">
             <i class="icon-envelope"></i>
@@ -46,7 +47,7 @@
           <% end %>
 
           <div>
-            <a href="login.html">
+            <a href="<%=signin_path%>">
               Already have an account? <strong>Sign In</strong>
             </a>
           </div>
