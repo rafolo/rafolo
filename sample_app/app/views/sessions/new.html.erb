@@ -12,6 +12,7 @@
 
         <div class="box-content padded">
           <%= form_for(:session, url: sessions_path, :html => { :class => "separate-sections"}) do |f| %>
+              <%= render 'shared/error_flash_messages', msg: flash[:error] %>
               <div class="input-group addon-left">
             <span class="input-group-addon" href="#">
               <i class="icon-envelope"></i>
