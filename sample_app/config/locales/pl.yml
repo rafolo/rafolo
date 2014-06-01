@@ -2,6 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 pl:
+  Login: Autoryzacja
+  Email: E-mail
+  Password: Hasło
+  "Sign in": Logowanie
+  "New user?" : Nowy użytkownik?
+  "Sign up now!" : "Rejestracja"
 
   activerecord:
     attributes:

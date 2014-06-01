@@ -1,14 +1,15 @@
 class StaticPagesController < ApplicationController
   layout 'coreadminblank'
 
+
   def home
 
     if signed_in?
       @micropost = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
+      redirect_to :dashboard
     end
 
-    #redirect_to "/dashboard#"
   end
 
   def help
@@ -40,7 +41,7 @@ class StaticPagesController < ApplicationController
   end
 
   def self.name
-    "Dashboard"
+    "Maps"
   end
 
   def self.enabled

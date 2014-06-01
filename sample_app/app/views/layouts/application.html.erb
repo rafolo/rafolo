@@ -45,9 +45,8 @@
     <div class="navbar-right">
 
       <ul class="nav navbar-nav navbar-left">
-        <li class="cdrop active"><%= link_to "Todo", "#/todo" %></li>
 
-        <li class="cdrop active"><%= link_to "About", "#/about" %></li>
+        <%=yield :navigation%>
 
         <li class="cdrop active"><a href="#">Link</a></li>
 

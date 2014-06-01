@@ -2,10 +2,12 @@ module LocalizationHelper
   def translate2(key, options = {})
 
     if key[0]==='.'
-      key = key[1..-1]
+      v = key[1..-1]
     end
 
-    return I18n.translate(key, :default => key)
+    translation = I18n.translate(key, :default => nil)
+
+    return translation
 
   end
 
