@@ -1,10 +1,35 @@
-<%left_menu.each do |name, link|%>
-    <li class="active">
-      <span class="glow"></span>
-      <a href="dashboard.html">
-        <i class="icon-dashboard icon-2x"></i>
-        <span><%=name%></span>
-      </a>
-    </li>
-<%end%>
+<% left_menu.each do |i| %>
+    <% if i.child.empty? %>
+        <li class="active">
+          <span class="glow"></span>
+          <a href="dashboard.html">
+            <i class="icon-dashboard icon-2x"></i>
+            <span><%= i.name %></span>
+          </a>
+        </li>
+    <% else %>
+        <li class="dark-nav ">
 
+          <span class="glow"></span>
+          <a class="accordion-toggle collapsed " data-toggle="collapse" href="#menu_<%= i.name %>">
+            <i class="icon-beaker icon-2x"></i>
+                    <span>
+                      <%= i.name %>
+                      <i class="icon-caret-down"></i>
+                    </span>
+          </a>
+
+          <% if !i.child.empty? %>
+              <ul id="menu_<%= i.name %>" class="collapse ">
+                <% i.child.each do |sub| %>
+                    <li class="">
+                      <a href="<%= sub.link %>">
+                        <i class="icon-hand-up"></i> <%= sub.name %>
+                      </a>
+                    </li>
+                <% end %>
+              </ul>
+          <% end %>
+        </li>
+    <% end %>
+<% end %>

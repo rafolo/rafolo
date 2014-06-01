@@ -33,4 +33,24 @@ class StaticPagesController < ApplicationController
     @tracks     = Track.all
     @time_slots = TimeSlot.all
   end
+
+  ##RK CAB##
+  def self.menuable
+    true
+  end
+
+  def self.name
+    "Dashboard"
+  end
+
+  def self.enabled
+    TRUE
+  end
+
+  def self.child
+    result = []
+    #result << MenuItem.new("Test", "Link")
+  end
+  ##CAB
+
 end
