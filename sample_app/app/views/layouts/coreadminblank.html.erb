@@ -15,9 +15,9 @@
   <title><%= full_title(yield(:title)) %></title>
 
 
-  <!--<%= stylesheet_link_tag "application"%>-->
-  <link href="/assets/application_core_admin.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="/assets/custom_core_admin.css" media="screen" rel="stylesheet" type="text/css" />
+  <!--<%= stylesheet_link_tag "application" %>-->
+  <link href="/assets/application_core_admin.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="/assets/custom_core_admin.css" media="screen" rel="stylesheet" type="text/css"/>
   <!--<link href="/assets/custom.css.scss" media="screen" rel="stylesheet" type="text/css" />-->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -60,6 +60,7 @@
         <% else %>
             <li class="cdrop active"><%= link_to "Sign in", signin_path %></li>
         <% end %>
+        <%=render "shared/localizator"%>
       </ul>
 
     </div>

@@ -62,6 +62,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
+
       </ul>
 
       <form class="navbar-form navbar-left" role="search">
@@ -100,6 +101,7 @@
               <span>Logout</span></a></li>
           </ul>
         </li>
+        <%=render "shared/localizator"%>
       </ul>
     </div>
 
@@ -118,7 +120,10 @@
   <!-- Main nav -->
   <ul class="nav navbar-collapse collapse navbar-collapse-primary">
 
+    <!-- RK Dynamic Left Menu -->
+    <%=render 'layouts/shared/leftmenu'%>
 
+    <!-- RK Standard Left Menu -->
     <li class="active">
       <span class="glow"></span>
       <a href="dashboard.html">
@@ -289,7 +294,6 @@
       <hr class="divider">
     </div>
   </div>
-
 
 </div>
 <div class="main-content">

@@ -1,7 +1,8 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+pl:
+
   activerecord:
     attributes:
       user:
@@ -9,5 +10,9 @@ en:
 
   sessions:
         new:
-          Login: "Login"
-          description: "..."
+          Login: "Logowanie"
+          Email: "E-mail"
+          Password: "Haslo"
+          "Sign in": "Zaloguj"
+          "Sign up now!": "Zaloguj!"
+          "New user?": "Nowy użytkownik?"

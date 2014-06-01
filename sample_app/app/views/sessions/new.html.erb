@@ -7,7 +7,8 @@
       <div class="login box" style="margin-top: 80px;">
 
         <div class="box-header">
-          <span class="title">Login</span>
+         <!-- <span class="title">Login</span>-->
+          <span class="title"><%=t2 ".Login"%></span>
         </div>
 
         <div class="box-content padded">
@@ -17,23 +18,23 @@
             <span class="input-group-addon" href="#">
               <i class="icon-envelope"></i>
             </span>
-                <%= f.text_field :email, placeholder: 'Email' %>
+                <%= f.text_field :email, placeholder: t(".Email") %>
               </div>
 
               <div class="input-group addon-left">
             <span class="input-group-addon" href="#">
               <i class="icon-key"></i>
             </span>
-                <%= f.password_field :password, placeholder: 'Password' %>
+                <%= f.password_field :password, placeholder: t2('.Password') %>
               </div>
 
               <div>
-                <%= f.submit "Sign in", class: "btn btn-blue btn-block" %>
+                <%= f.submit t2(".Sign in"), class: "btn btn-blue btn-block" %>
               </div>
           <% end %>
 
           <div>
-            <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+            <p><%=t2(".New user?")%> <%= link_to t2(".Sign up now!"), signup_path %></p>
           </div>
         </div>
 
