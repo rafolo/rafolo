@@ -19,5 +19,5 @@
 //= require lib/q
 //= require lib/breeze
 //= require lib/breeze.savequeuing
-//= require todo.main
+//= require app.main.js
 //= require_tree .

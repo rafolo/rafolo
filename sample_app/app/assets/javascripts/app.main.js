@@ -1,27 +1,50 @@
 ﻿/* main: startup script creates the 'todo' module and adds custom Ng directives */
 
-// 'todo' is the one Angular (Ng) module in this app
-// 'todo' module is in global namespace
-window.todo = angular.module('todo', ['ngRoute']);
+// 'app' is the one Angular (Ng) module in this app
+// 'app' module is in global namespace
+window.app = angular.module('app', [
+                            'ngRoute',
+                            'app.home',
+                            'app.about',
+                            'app.todo'
+]);
 
 // Add global "services" (like breeze and Q) to the Ng injector
 // Learn about Angular dependency injection in this video
 // http://www.youtube.com/watch?feature=player_embedded&v=1CpiB3Wk25U#t=2253s
-todo.value('breeze', window.breeze)
+app.value('breeze', window.breeze)
     .value('Q', window.Q);
 
+
+app.factory('logger', function () {
+
+    var logEntries = [];
+    var counter = 1;
+    var logger = {
+        log: log,
+        logEntries: logEntries
+    };
+
+    return logger;
+
+    function log(message, type) {
+        var logEntry = {
+            id: counter++,
+            message: message,
+            type: type || "info"
+        };
+        logEntries.push(logEntry);
+    }
+});
+
 // Configure routes
-todo.config(['$routeProvider', function ($routeProvider) {
-      $routeProvider.
-          when('/', { templateUrl: 'assets/modules/home/home.view.html', controller: 'HomeCtrl' })
-          .when('/todo', { templateUrl: 'assets/modules/todo/todo.view.html', controller: 'TodoCtrl' })
-          .when('/about', { templateUrl: 'assets/modules/about/about.view.html', controller: 'AboutCtrl' }).
-          otherwise({ redirectTo: '/' });
+app.config(['$routeProvider', function ($routeProvider) {
+
   }]);
 
 //#region Ng directives
 /*  We extend Angular with custom data bindings written as Ng directives */
-todo.directive('onFocus', function () {
+app.directive('onFocus', function () {
         return {
             restrict: 'A',
             link: function (scope, elm, attrs) {
@@ -66,7 +89,7 @@ todo.directive('onFocus', function () {
 if (!Modernizr.input.placeholder) {
     // this browser does not support HTML5 placeholders
     // see http://stackoverflow.com/questions/14777841/angularjs-inputplaceholder-directive-breaking-with-ng-model
-    todo.directive('placeholder', function () {
+    app.directive('placeholder', function () {
         return {
             restrict: 'A',
             require: 'ngModel',
