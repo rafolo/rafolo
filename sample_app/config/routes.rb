@@ -1,4 +1,8 @@
 SampleApp::Application.routes.draw do
+  get "map_point/index"
+
+  get "map_point/history"
+
   get "credit_card/index"
 
   get "credit_card/transactions"

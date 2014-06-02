@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  #menu
+  Payments: Payments
+  Default: Default
+  Maps: Maps
+  Points: Points
 
   #ogin: Logowanie
   Email: E-mail

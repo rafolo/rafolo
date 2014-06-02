@@ -1,7 +1,7 @@
 var homeModule = angular.module('app.home', [])
     .config(function ($routeProvider) {
         $routeProvider.when('/', {
-            templateUrl: 'assets/modules/home/home.html',
+            templateUrl: '/assets/modules/home/home.html',
             controller: 'HomeController'
             })
             .otherwise({ redirectTo: '/' });

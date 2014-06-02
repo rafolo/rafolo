@@ -14,6 +14,7 @@
 # has_menu "Title1", :enabled => true, "SubTitle1" => "Link1", "SubTitle2" => "Link2"
 # no  self.enabled method required
 class Class
+
   def has_menu(name, link, options = {})
     #menuable
     self.class_eval("def self.menuable; true; end")
@@ -26,7 +27,7 @@ class Class
 
     #enabled
     if (options.has_key?(:enabled))
-      #raise ('Method: enabled already definied in ' + self.class.to_s) if self.respond_to? :enabled?
+      #raise ('Method: enabled already defined in ' + self.class.to_s) if self.respond_to? :enabled?
       self.class_eval("def self.enabled?; #{options[:enabled]}; end")
     end
 

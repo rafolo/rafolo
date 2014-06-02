@@ -226,6 +226,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activeresource (v3.2.3, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v3.2.3, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.2.8, ruby-1.9.3-p429) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="angular-leaflet-rails (v0.1.0.6, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="angularjs-rails (v1.2.16, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v3.0.3, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v3.0.1, ruby-1.9.3-p429) [gem]" level="application" />
@@ -244,7 +245,7 @@
     <orderEntry type="library" scope="PROVIDED" name="database_cleaner (v0.7.0, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.1.3, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, ruby-1.9.3-p429) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="execjs (v2.0.2, ruby-1.9.3-p429) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="execjs (v2.1.0, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_girl (v2.3.2, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_girl_rails (v1.4.0, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faker (v1.0.1, ruby-1.9.3-p429) [gem]" level="application" />
@@ -262,8 +263,9 @@
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v3.1.0, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.1, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="launchy (v2.1.0, ruby-1.9.3-p429) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="leaflet-rails (v0.7.3, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v1.3.1, ruby-1.9.3-p429) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.0.5, ruby-1.9.3-p429) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="lumberjack (v1.0.6, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.4.4, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="method_source (v0.8.2, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.25.1, ruby-1.9.3-p429) [gem]" level="application" />
@@ -273,7 +275,7 @@
     <orderEntry type="library" scope="PROVIDED" name="multi_test (v0.1.1, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.2.1, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.12.2, ruby-1.9.3-p429) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.4, ruby-1.9.3-p429) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.5, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.9.12.6, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.4.5, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-cache (v1.2, ruby-1.9.3-p429) [gem]" level="application" />
@@ -291,8 +293,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v2.9.1, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v2.9.0, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v2.9.0, ruby-1.9.3-p429) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.1.3, ruby-1.9.3-p429) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sass (v3.3.7, ruby-1.9.3-p429) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.1.4, ruby-1.9.3-p429) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sass (v3.3.8, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v3.2.4, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v2.42.0, ruby-1.9.3-p429) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="slop (v3.5.0, ruby-1.9.3-p429) [gem]" level="application" />

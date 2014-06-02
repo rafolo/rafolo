@@ -6,7 +6,8 @@ window.app = angular.module('app', [
                             'ngRoute',
                             'app.home',
                             'app.about',
-                            'app.todo'
+                            'app.todo',
+                            'app.mappoint'
 ]);
 
 // Add global "services" (like breeze and Q) to the Ng injector
