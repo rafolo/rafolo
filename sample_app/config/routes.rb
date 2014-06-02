@@ -1,4 +1,8 @@
 SampleApp::Application.routes.draw do
+  get "credit_card/index"
+
+  get "credit_card/transactions"
+
   resources :users do
     member do
       get :following, :followers

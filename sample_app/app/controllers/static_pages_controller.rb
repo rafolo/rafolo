@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   layout 'coreadminblank'
 
+  #menuable :enabled => true, {"Test1" => "../Link1"}
 
   def home
 
