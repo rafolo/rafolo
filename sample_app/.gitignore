@@ -16,3 +16,6 @@
 .DS_Store
 bundler_stubs/
 .idea/
+
+#ignore bower
+public/bower_components/
