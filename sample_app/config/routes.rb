@@ -23,8 +23,8 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/dashboard', to: 'static_pages#dashboard'
 
-  get '*stylesheets/application_core_admin.css', to: redirect('/assets/application_core_admin.css')
-  get '*javascripts/application_core_admin.js', to: redirect('/assets/application_core_admin.js')
+  get '*stylesheets/application.css', to: redirect('/assets/application_core_admin.css')
+  get '*javascripts/application.js', to: redirect('/assets/core_admin/application.js')
   get '*images/avatars/:file.:ext', to: redirect('/assets/avatars/%{file}.%{ext}')
 
   get '/api/Todo/Metadata', to: 'static_pages#metadata'

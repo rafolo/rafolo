@@ -3,7 +3,7 @@
 // create and add datacontext to the Ng injector
 // constructor function relies on Ng injector
 // to provide service dependencies
-todo.factory('datacontext',
+app.factory('datacontext',
     ['breeze', 'Q', 'model', 'logger', '$timeout',
     function (breeze, Q, model, logger, $timeout) {
 

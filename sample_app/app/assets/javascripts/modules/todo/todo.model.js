@@ -1,5 +1,5 @@
 ﻿/* model: extend server-supplied metadata with client-side entity model members */
-todo.factory('model', function () {
+app.factory('model', function () {
 
     var datacontext;
     
