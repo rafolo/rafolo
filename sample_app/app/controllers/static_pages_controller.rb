@@ -36,23 +36,23 @@ class StaticPagesController < ApplicationController
     @time_slots = TimeSlot.all
   end
 
-  ##RK CAB##
-  def self.menuable
-    true
-  end
-
-  def self.name
-    "Maps"
-  end
-
-  def self.enabled
-    TRUE
-  end
-
-  def self.child
-    result = []
-    #result << MenuItem.new("Test", "Link")
-  end
-  ##CAB
+  # ##RK CAB##
+  # def self.menuable
+  #   true
+  # end
+  #
+  # def self.name
+  #   "Maps"
+  # end
+  #
+  # def self.enabled
+  #   TRUE
+  # end
+  #
+  # def self.child
+  #   result = []
+  #   #result << MenuItem.new("Test", "Link")
+  # end
+  # ##CAB
 
 end
