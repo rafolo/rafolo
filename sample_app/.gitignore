@@ -15,7 +15,7 @@
 /tmp
 .DS_Store
 bundler_stubs/
-.idea/
+#.idea/
 
 #ignore bower
 public/bower_components/
