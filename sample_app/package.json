@@ -1,0 +1,27 @@
+{
+"name": "sample-app",
+"version": "0.0.1",
+"description": "A starter project for geolocalisation",
+"devDependencies": {
+    "phantomjs": "*",
+    "karma": "*",
+    "karma-cli": "*",
+    "karma-chrome-launcher": "*",
+    "karma-firefox-launcher": "*",
+    "karma-junit-reporter": "*",
+    "karma-jasmine": "*",
+    "karma-ng-scenario": "*",
+    "protractor": "*"
+
+},
+"license": "MIT",
+"repository": {
+"type": "git",
+"url": "ttps://github.com/rafolo/rafolo"
+},
+"bugs": {
+"url": "ttps://github.com/rafolo/rafolo/issues"
+},
+"readmeFilename": "README.md",
+"homepage": "ttps://github.com/rafolo/rafolo"
+}

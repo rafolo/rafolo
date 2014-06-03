@@ -14,7 +14,7 @@
 //= require jquery-migrate/jquery-migrate
 //= require angular/angular
 //= require angular-route/angular-route
-//= require modernizr
+//= require modernizr/modernizr
 //= require lib/q
 //= require lib/breeze
 //= require lib/breeze.savequeuing
