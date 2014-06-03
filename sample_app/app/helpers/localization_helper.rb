@@ -15,6 +15,19 @@ module LocalizationHelper
 
   end
 
+  def translate2_link(link)
+    if (link.include?('locale'))
+      return link
+    end
+
+    if (!link.include?('?'))
+      link+='?'
+    end
+
+    return link += "locale=" + I18n.locale.to_s
+  end
+
   alias :t2 :translate2
+  alias :t2l :translate2_link
 
 end
