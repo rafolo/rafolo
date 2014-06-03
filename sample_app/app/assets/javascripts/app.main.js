@@ -17,7 +17,6 @@ window.app = angular.module('app', [
 app.value('breeze', window.breeze)
     .value('Q', window.Q);
 
-
 app.factory('logger', function () {
 
     var logEntries = [];
