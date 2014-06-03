@@ -1,4 +1,8 @@
 SampleApp::Application.routes.draw do
+  get "alarm/index"
+
+  get "alarm_controller/index"
+
   get "map_point/index"
 
   get "map_point/history"
