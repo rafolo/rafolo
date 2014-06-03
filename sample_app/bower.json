@@ -6,6 +6,8 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
+        "jquery": "1.11.0",
+        "jquery-migrate": "1.2.1",
         "angular": "1.2.x",
         "angular-route": "1.2.x",
         "angular-loader": "1.2.x",

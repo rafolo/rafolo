@@ -10,11 +10,10 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery-migrate
-//= require jquery_ujs
-//= require angular
-//= require angular-route
+//= require jquery/dist/jquery
+//= require jquery-migrate/jquery-migrate
+//= require angular/angular
+//= require angular-route/angular-route
 //= require modernizr
 //= require lib/q
 //= require lib/breeze
