@@ -20,5 +20,7 @@
 //= require lib/breeze
 //= require lib/breeze.savequeuing
 //= require app.main.js
+//= require leaflet-dist/leaflet
+//= require angular-leaflet-directive/dist/angular-leaflet-directive
 //= require_tree .
 
