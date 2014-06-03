@@ -10,7 +10,9 @@
     "karma-firefox-launcher": "*",
     "karma-junit-reporter": "*",
     "karma-jasmine": "*",
-    "karma-ng-scenario": "*"
+    "karma-ng-scenario": "*",
+    "protractor": "*"
+
 },
 "license": "MIT",
 "repository": {
