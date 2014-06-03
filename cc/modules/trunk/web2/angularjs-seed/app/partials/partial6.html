@@ -1,0 +1,8 @@
+<div> <!-- everything inside this tag is managed by MyCtrl -->
+    <div>Products</div>
+    <!-- iterate over the products array -->
+    <ul data-ng-repeat="product in products">
+        <!-- show product information -->
+        <li>Name: {{product.name}}, Brand: {{product.brand}}</li>
+    </ul>
+</div>

@@ -10,7 +10,8 @@ angular.module('myApp', [
     'myApp.directives',
     'myApp.controllers',
     'myApp.controllers4',
-    'myApp.controllers5'
+    'myApp.controllers5',
+    'myApp.controllers6'
 ]).
     config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
@@ -18,5 +19,6 @@ angular.module('myApp', [
         $routeProvider.when('/view3', {templateUrl: 'partials/partial3.html', controller: 'MyCtrl3'});
         $routeProvider.when('/view4', {templateUrl: 'partials/partial4.html', controller: 'MyCtrl4'});
         $routeProvider.when('/view5', {templateUrl: 'partials/partial5.html'});
+        $routeProvider.when('/view6', {templateUrl: 'partials/partial6.html', controller: 'MyCtrl6'});
         $routeProvider.otherwise({redirectTo: '/view1'});
     }]);

@@ -2,7 +2,7 @@
     <% if i.child.empty? %>
         <li class="active">
           <span class="glow"></span>
-          <a href="<%=i.link%>">
+          <a href="<%=t2l(i.link)%>">
             <i class="icon-dashboard icon-2x"></i>
             <span><%= t2(i.name) %></span>
           </a>
@@ -23,7 +23,7 @@
               <ul id="menu_<%= i.name %>" class="collapse ">
                 <% i.child.each do |sub| %>
                     <li class="">
-                      <a href="<%= sub.link %>">
+                      <a href="<%= t2l(sub.link) %>">
                         <i class="icon-hand-up"></i> <%= t2(sub.name) %>
                       </a>
                     </li>
