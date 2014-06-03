@@ -1,8 +1,8 @@
 {
-    "name": "angular-seed",
-    "description": "A starter project for AngularJS",
+    "name": "Sample App",
+    "description": "A starter project for geolocalisation",
     "version": "0.0.0",
-    "homepage": "https://github.com/angular/angular-seed",
+    "homepage": "https://github.com/rafolo/rafolo",
     "license": "MIT",
     "private": true,
     "dependencies": {

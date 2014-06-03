@@ -6,13 +6,13 @@ module MenuHelper
     result = []
     ApplicationController.descendants.each do |c|
       #name = c.to_s.gsub(/Controller/, '')
-      if (c.respond_to? :menuable)
-        if (c.enabled?)
-          mi = MenuItem.new(c.title, c.link)
-          c.child.each { |i| mi.child << i }
-          result << mi
-        end
-      end
+      # if (c.respond_to? :menuable)
+      #   if (c.enabled?)
+      #     mi = MenuItem.new(c.title, c.link)
+      #     c.child.each { |i| mi.child << i }
+      #     result << mi
+      #   end
+      # end
     end
 
     return result

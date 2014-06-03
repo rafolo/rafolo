@@ -18,4 +18,4 @@ bundler_stubs/
 #.idea/
 
 #ignore bower
-public/bower_components/
+vendor/assets/components/
