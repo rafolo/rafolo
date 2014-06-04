@@ -12,6 +12,8 @@ module MenuExtension
 
   end
 
+  public
+
   def get_menuable classes=[]
     result = []
     classes.each do |c|
@@ -25,6 +27,7 @@ module MenuExtension
       end
     end
 
+  end
+
     return result
   end
-end

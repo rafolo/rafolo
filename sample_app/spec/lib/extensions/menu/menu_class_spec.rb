@@ -1,6 +1,6 @@
 require 'rspec'
 
-require 'extensions/menu_extension.rb'
+require 'extensions/menu/menu_class.rb'
 
 class Test1
   has_menu 'name', 'link', :enabled => false, :order => 2
@@ -30,10 +30,8 @@ describe 'Menu extension should define methods' do
     (Test2.respond_to?  :name).should == true
     (Test2.respond_to?  :link).should == true
 
-    (Test2.respond_to?  :enabled?).should == true
     (Test2.enabled?).should == false
 
-    (Test2.respond_to?  :order).should == true
     (Test2.order).should == 0
   end
 

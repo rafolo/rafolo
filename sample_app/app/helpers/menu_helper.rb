@@ -1,4 +1,4 @@
-require 'extensions/menu/menu_item.rb'
+require 'extensions/menu/menu_extension.rb'
 
 module MenuHelper
  include MenuExtension
