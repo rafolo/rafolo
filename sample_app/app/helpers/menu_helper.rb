@@ -1,20 +1,11 @@
+require 'extensions/menu/menu_item.rb'
+
 module MenuHelper
+ include MenuExtension
 
   def left_menu
-
     Rails.application.eager_load!
-    result = []
-    ApplicationController.descendants.each do |c|
-      name = c.to_s.gsub(/Controller/, '')
-      if (c.respond_to? :menuable)
-        if (c.enabled?)
-          mi = MenuItem.new(c.title, c.link)
-          c.child.each { |i| mi.child << i }
-          result << mi
-        end
-      end
-    end
-
-    return result
+    return get_menuable ApplicationController.descendants
   end
+
 end

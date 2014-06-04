@@ -62,25 +62,6 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
-  ##RK CAB##
-  # def self.menuable
-  #   true
-  # end
-  #
-  # def self.name
-  #   "Users"
-  # end
-  #
-  # def self.enabled
-  #   TRUE
-  # end
-  #
-  # def self.child
-  #   result = []
-  #   result << MenuItem.new("Test", "Link")
-  # end
-  ##CAB
-
   private
 
     def correct_user
