@@ -7,7 +7,6 @@ RSpec.configure do |c|
   c.include MenuExtension
 end
 
-
 class Test1
   has_menu 'name1', 'link1', :enabled => false, :order => 2
 end

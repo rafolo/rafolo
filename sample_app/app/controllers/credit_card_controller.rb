@@ -1,4 +1,4 @@
-require 'extensions/menu_extension.rb'
+require 'extensions/menu/menu_class.rb'
 
 class CreditCardController < ApplicationController
   #menu

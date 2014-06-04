@@ -1,4 +1,5 @@
 module MenuExtension
+
   class MenuItem
 
     attr_accessor :name, :child, :link
@@ -27,7 +28,8 @@ module MenuExtension
       end
     end
 
-  end
-
     return result
   end
+
+
+end
