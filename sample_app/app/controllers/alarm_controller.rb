@@ -1,7 +1,7 @@
-require 'extensions/menu/menu_class.rb'
+require 'extensions/menu/menu_module.rb'
 
 class AlarmController < ApplicationController
-  has_menu "Alarms", "test", :enabled => true
+  has_menu2 "Alarms", "test", :enabled => true
 
   def index
   end

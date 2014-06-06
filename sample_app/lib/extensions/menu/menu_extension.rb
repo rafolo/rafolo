@@ -1,30 +1,30 @@
+
+require File.expand_path '../menu_module.rb', __FILE__
+
 module MenuExtension
-
-  class MenuItem
-
-    attr_accessor :name, :child, :link
-
-    def initialize n, l
-      @name = n
-      @link = l
-
-      @child = []
-    end
-
-  end
+  # class MenuItem
+  #
+  #   attr_accessor :name, :children, :link, :enabled
+  #
+  #   def initialize n, l, e
+  #     @name = n
+  #     @link = l
+  #     @enabled = e
+  #     @children = []
+  #   end
+  #
+  # end
 
   public
 
   def get_menuable classes=[]
     result = []
     classes.each do |c|
-      name = c.to_s.gsub(/Controller/, '')
       if (c.respond_to? :menuable)
-        if (c.enabled?)
-          mi = MenuItem.new(c.title, c.link)
-          c.child.each { |i| mi.child << i }
-          result << mi
-        end
+        mi = Menu::MenuItem.new(c.title, c.link, c.enabled?)
+        c.children.each { |i| mi.children << i }
+        result << mi
+
       end
     end
 
