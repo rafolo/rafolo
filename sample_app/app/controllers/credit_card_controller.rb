@@ -1,8 +1,8 @@
-require 'extensions/menu/menu_class.rb'
+require 'extensions/menu/menu_module.rb'
 
 class CreditCardController < ApplicationController
   #menu
-  has_menu "Payments", "/credit_card/index", :enabled => true, "Default" => "/credit_card/index", "Transactions" => "/credit_card/transactions"
+  has_menu2 "Payments", "/credit_card/index", :enabled => true, "Default" => "/credit_card/index", "Transactions" => "/credit_card/transactions"
   def self.enabled?
     true
   end

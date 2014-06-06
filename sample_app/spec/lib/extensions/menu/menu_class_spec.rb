@@ -1,6 +1,6 @@
 require 'rspec'
 
-require 'extensions/menu/menu_class.rb'
+require 'extensions/menu/menu_class_example.rb'
 
 class Test1
   has_menu 'name', 'link', :enabled => false, :order => 2, "Default" => "/credit_card/index"

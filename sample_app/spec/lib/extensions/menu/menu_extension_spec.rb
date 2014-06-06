@@ -1,6 +1,6 @@
 require 'rspec'
 
-require 'extensions/menu/menu_class.rb'
+require 'extensions/menu/menu_class_example.rb'
 require 'extensions/menu/menu_extension.rb'
 
 RSpec.configure do |c|

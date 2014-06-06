@@ -2,22 +2,10 @@ require 'active_support/concern'
 require 'action_controller'
 require 'active_model/mass_assignment_security'
 
+require File.expand_path '../menu_item.rb', __FILE__
+
 module Menu
   extend ActiveSupport::Concern
-
-  class MenuItem
-
-    attr_accessor :name, :child, :link
-
-    def initialize n, l
-      @name = n
-      @link = l
-
-      @child = []
-    end
-
-  end
-
 
   module ClassMethods
 
@@ -39,7 +27,7 @@ module Menu
       #children
       self.children = []
       items = options.reject { |key, value| key == :enabled || key == :cssclass }
-      items.each { |key, value| self.children << MenuItem.new(key, value) }
+      items.each { |key, value| self.children << MenuItem.new(key, value, true) }
 
     end
 
