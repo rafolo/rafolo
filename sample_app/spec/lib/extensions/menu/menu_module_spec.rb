@@ -1,8 +1,8 @@
 require 'spec_helper.rb'
 
-describe 'Menu extension2 full' do
+describe 'Menu module full' do
 
-  it 'Mappoint should contain methods2' do
+  it 'should contain  in Mappoint' do
 
    MapPointController.menuable.should == true
    MapPointController.enabled.should == true

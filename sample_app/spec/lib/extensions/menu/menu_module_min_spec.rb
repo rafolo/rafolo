@@ -26,33 +26,33 @@ class Test4 < ActionController::Base
   end
 end
 
-describe 'Menu extension2' do
+describe 'Menu module minimal' do
 
-  it 'Test1 should contain methods2' do
+  it 'should contain methods2 in Test1' do
 
     Test1.menuable.should == true
     Test1.enabled.should == true
-    Test1.title.should = "Maps"
+    Test1.title.should == "Maps"
 
   end
 
-  it 'Test2 should contain methods2' do
+  it 'should contain methods2 in Test2' do
 
     Test2.menuable.should == true
     Test2.enabled.should == false
-    Test2.title.should = "Maps"
+    Test2.title.should == "Maps"
 
   end
 
-  it 'Test3 should contain methods2' do
+  it 'should contain methods2 in Test3' do
 
     Test3.menuable.should == true
-    Test3.enabled.should == false
+    Test3.enabled.should == true
     Test3.title.should = "Maps"
 
   end
 
-  it 'Test4 should contain methods2' do
+  it 'should contain methods2 in Test4' do
 
     Test4.menuable.should == true
     Test4.enabled.should == false
