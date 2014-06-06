@@ -4,30 +4,32 @@ module.exports = function (config) {
     config.set({
         basePath: '.',
 
+        autoWatch: true,
+
+        frameworks: ['jasmine'],
+
+        plugins: [
+            'karma-jasmine',
+            'jasmine-jquery',
+            'karma-chrome-launcher',
+            'karma-firefox-launcher'
+        ],
+
         files: [
+            'vendor/assets/components/jquery/dist/jquery.js',
+            'vendor/assets/components/jasmine-jquery/lib/jasmine-jquery.js',
             'vendor/assets/components/angular/angular.js',
             'vendor/assets/components/angular-route/angular-route.js',
             'vendor/assets/components/angular-mocks/angular-mocks.js',
             'vendor/assets/components/modernizr/modernizr.js',
-            {pattern: 'fixture/*.json', watched: true, included: false, served: true},
+            {pattern: 'test/client/fixture/*.json', watched: true, included: false, served: true},
             'app/assets/javascripts/app.main.js',
             'app/assets/javascripts/modules/**/*.js',
             {pattern: 'test/client/unit/**/*.js'}
         ],
 
-        autoWatch: true,
-
-        frameworks: ['jasmine'],
-
         browsers: ['Chrome'],
         //browsers: ['Firefox'],
-
-        plugins: [
-            'karma-jasmine',
-            'karma-chrome-launcher',
-            'karma-firefox-launcher'
-        ],
-
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
