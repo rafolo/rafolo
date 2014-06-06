@@ -1,5 +1,5 @@
-homeModule.service('helloWorld', function() {
+homeModule.service('helloWorldService', function() {
     this.sayHello = function() {
-        return "Hello, World!"
+        return "Hello World!"
     };
 });

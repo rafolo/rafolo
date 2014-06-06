@@ -12,7 +12,7 @@ module.exports = function (config) {
             {pattern: 'fixture/*.json', watched: true, included: false, served: true},
             'app/assets/javascripts/app.main.js',
             'app/assets/javascripts/modules/**/*.js',
-            {pattern: 'test/unit/**/*.js'}
+            {pattern: 'test/client/unit/**/*.js'}
         ],
 
         autoWatch: true,

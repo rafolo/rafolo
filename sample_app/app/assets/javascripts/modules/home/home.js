@@ -7,7 +7,9 @@ var homeModule = angular.module('app.home', [])
             .otherwise({ redirectTo: '/' });
         })
 
-    .controller('HomeController', function ($scope, logger, helloWorld) {
+    .controller('HomeController', function ($scope, logger, helloWorldService) {
         logger.log("creating HomeController");
-        $scope.message = helloWorld.sayHello();
+        $scope.message = helloWorldService.sayHello();
+
+
     });

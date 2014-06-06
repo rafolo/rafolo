@@ -4,7 +4,7 @@ Sample geolocalisation application
 
 ## Bower install
 Run
-    ~$ npm install
+    ~$ npm install    
     ~$ bower install
 
 ## Karma install
