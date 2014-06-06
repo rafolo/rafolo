@@ -3,12 +3,14 @@ require 'rspec'
 require 'extensions/menu/menu_class.rb'
 
 class Test1
-  has_menu 'name', 'link', :enabled => false, :order => 2
+  has_menu 'name', 'link', :enabled => false, :order => 2, "Default" => "/credit_card/index"
 end
 
-describe 'Menu extension should define methods' do
+describe 'Menu extension' do
 
   it 'Test1 should contain methods' do
+
+    (Test1.respond_to? :child).should == true;
 
     (Test1.respond_to?  :name).should == true
     (Test1.respond_to?  :link).should == true
@@ -40,7 +42,6 @@ describe 'Menu extension should define methods' do
   end
 
   it 'Test3 should have no enabled' do
-
 
     (Test3.respond_to?  :name).should == true
     (Test3.respond_to?  :link).should == true

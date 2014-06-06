@@ -58,3 +58,4 @@ class Class
 
   end
 end
+
