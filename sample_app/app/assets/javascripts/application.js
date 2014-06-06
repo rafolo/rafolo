@@ -11,7 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery/dist/jquery
-//= require jquery-migrate/jquery-migrate
 //= require angular/angular
 //= require angular-route/angular-route
 //= require modernizr/modernizr

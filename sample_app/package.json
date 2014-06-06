@@ -12,16 +12,15 @@
     "karma-jasmine": "*",
     "karma-ng-scenario": "*",
     "protractor": "*"
-
 },
 "license": "MIT",
 "repository": {
 "type": "git",
-"url": "ttps://github.com/rafolo/rafolo"
+"url": "https://github.com/rafolo/rafolo"
 },
 "bugs": {
-"url": "ttps://github.com/rafolo/rafolo/issues"
+"url": "https://github.com/rafolo/rafolo/issues"
 },
 "readmeFilename": "README.md",
-"homepage": "ttps://github.com/rafolo/rafolo"
+"homepage": "https://github.com/rafolo/rafolo"
 }
