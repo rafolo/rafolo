@@ -15,18 +15,18 @@
   <title><%= full_title(yield(:title)) %></title>
 
   <!-- Modules' StyleSheets -->
-  <%=yield :ss%>
+  <%= yield :ss %>
 
   <%= javascript_include_tag "application" %>
 
   <!-- Modules' Java Scripts -->
-  <%=yield :js%>
+  <%= yield :js %>
 
   <%#TODO! rename sample_app!%>
-  <% if Rails.env.development?%>
-  <!--Autorefresh-->
-  <%= raw AutoRefresh.channel('sample_app')%>
-  <%end%>
+  <% if Rails.env.development? %>
+      <!--Autorefresh-->
+      <%= raw AutoRefresh.channel('sample_app') %>
+  <% end %>
 
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
@@ -59,7 +59,7 @@
 
       <ul class="nav navbar-nav navbar-left">
 
-        <%=yield :navigation%>
+        <%= yield :navigation %>
 
         <li class="cdrop active"><a href="#">Link</a></li>
 
@@ -113,7 +113,7 @@
               <span>Logout</span></a></li>
           </ul>
         </li>
-        <%=render "shared/localizator"%>
+        <%= render "shared/localizator" %>
       </ul>
     </div>
 
@@ -133,7 +133,7 @@
   <ul class="nav navbar-collapse collapse navbar-collapse-primary">
 
     <!-- RK Dynamic Left Menu -->
-    <%=render 'layouts/shared/leftmenu'%>
+    <%= render 'layouts/shared/leftmenu' %>
 
     <!-- RK Standard Left Menu -->
     <li class="active">
@@ -308,8 +308,75 @@
   </div>
 
 </div>
+
+<-- RK Main Content -->
 <div class="main-content">
-  <%= yield %>
+
+  <div class="container">
+    <div class="row">
+      <div class="area-top clearfix">
+        <div class="pull-left header">
+          <h3 class="title">
+            <i class="icon-dashboard"></i>
+            <%=yield :title%>
+          </h3>
+          <h5>
+                <span>
+                  <%=yield :subtitle%>
+                </span>
+          </h5>
+        </div>
+
+        <ul class="list-inline pull-right sparkline-box">
+
+          <li class="sparkline-row">
+            <h4 class="blue"><span>Orders</span> 847</h4>
+
+            <div class="sparkline big" data-color="blue"><!--25,11,5,28,25,19,27,6,4,23,20,6--></div>
+          </li>
+
+          <li class="sparkline-row">
+            <h4 class="green"><span>Reviews</span> 223</h4>
+
+            <div class="sparkline big" data-color="green"><!--28,26,13,18,8,6,24,19,3,6,19,6--></div>
+          </li>
+
+          <li class="sparkline-row">
+            <h4 class="red"><span>New visits</span> 7930</h4>
+
+            <div class="sparkline big"><!--16,23,28,8,12,9,25,11,16,16,17,13--></div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container padded">
+    <div class="row">
+
+      <!-- Breadcrumb line -->
+
+      <div id="breadcrumbs">
+        <div class="breadcrumb-button">
+          <span class="breadcrumb-label"><i class="icon-home"></i> Home</span>
+          <span class="breadcrumb-arrow"><span></span></span>
+        </div>
+
+        <div class="breadcrumb-button blue">
+          <span class="breadcrumb-label">
+            <i class="icon-dashboard"></i> <%=yield :title%>
+          </span>
+          <span class="breadcrumb-arrow"><span></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RK Main View -->
+  <div class="container">
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>
