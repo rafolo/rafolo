@@ -48,7 +48,7 @@ describe 'Menu module minimal' do
 
     Test3.menuable.should == true
     Test3.enabled.should == true
-    Test3.title.should = "Maps"
+    Test3.title.should == "Maps"
 
   end
 

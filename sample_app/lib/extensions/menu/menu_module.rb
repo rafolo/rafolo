@@ -10,6 +10,7 @@ module Menu
   module ClassMethods
 
     def has_menu2 title, link, *args
+
       options = args.extract_options!
 
       cattr_accessor :title, :link, :menuable, :enabled, :children, :instance_writer => false, :instance_reader => false

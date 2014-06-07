@@ -66,6 +66,6 @@ module SampleApp
     config.assets.paths << "#{Rails.root}/vendor/assets/components"
 
     #rk
-    config.autoload_paths += Dir["#{Rails.root}/lib/**"]
+    #config.autoload_paths += Dir["#{Rails.root}/lib/**"]
   end
 end
