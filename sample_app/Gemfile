@@ -11,6 +11,8 @@ group :development, :test do
   gem 'guard-rspec', '0.5.5'
   gem 'test-unit', '~> 2.5.5'
   gem 'annotate', '~> 2.6.3'
+  gem 'autorefresh', '~>1.0.0'
+  gem 'watchr', '~> 0.7'
 end
 
 # Gems used only for assets and not required

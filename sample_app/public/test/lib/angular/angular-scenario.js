@@ -20045,9 +20045,9 @@ function $RootScopeProvider(){
        * can execute multiple times per {@link ng.$rootScope.Scope#$digest $digest} cycle when a change is
        * detected, be prepared for multiple calls to your listener.)
        *
-       * After a watcher is registered with the scope, the `listener` fn is called asynchronously
+       * After a watchr is registered with the scope, the `listener` fn is called asynchronously
        * (via {@link ng.$rootScope.Scope#$evalAsync $evalAsync}) to initialize the
-       * watcher. In rare cases, this is undesirable because the listener is called when the result
+       * watchr. In rare cases, this is undesirable because the listener is called when the result
        * of `watchExpression` didn't change. To detect this scenario within the `listener` fn, you
        * can compare the `newVal` and `oldVal`. If these two values are identical (`===`) then the
        * listener was called due to initialization.
@@ -20277,7 +20277,7 @@ function $RootScopeProvider(){
        *
        * @description
        * Processes all of the {@link ng.$rootScope.Scope#$watch watchers} of the current scope and its children.
-       * Because a {@link ng.$rootScope.Scope#$watch watcher}'s listener can change the model, the
+       * Because a {@link ng.$rootScope.Scope#$watch watchr}'s listener can change the model, the
        * `$digest()` keeps calling the {@link ng.$rootScope.Scope#$watch watchers} until no more listeners are
        * firing. This means that it is possible to get into an infinite loop. This function will throw
        * `'Maximum iteration limit exceeded.'` if the number of iterations exceeds 10.

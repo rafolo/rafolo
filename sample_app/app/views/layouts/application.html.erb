@@ -22,6 +22,12 @@
   <!-- Modules' Java Scripts -->
   <%=yield :js%>
 
+  <%#TODO! rename sample_app!%>
+  <% if Rails.env.development?%>
+  <!--Autorefresh-->
+  <%= raw AutoRefresh.channel('sample_app')%>
+  <%end%>
+
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
@@ -31,7 +37,7 @@
 <nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">Core Admin</a>
+    <a class="navbar-brand" href="#">Core Admin3</a>
 
 
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-primary">
