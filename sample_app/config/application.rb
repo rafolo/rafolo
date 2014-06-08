@@ -19,6 +19,7 @@ end
 
 module SampleApp
   class Application < Rails::Application
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -69,5 +70,13 @@ module SampleApp
 
     #rk
     #config.autoload_paths += Dir["#{Rails.root}/lib/**"]
+
+    #no ALT+TAB - refresh files on change - see: rake watchr
+    # https://github.com/mynyml/watchr
+    config.refresh_autorefresh = false
+    #http://www.livejs.com/
+    config.refresh_livejs = false
+
+
   end
 end

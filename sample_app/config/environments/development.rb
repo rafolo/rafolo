@@ -34,4 +34,11 @@ SampleApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #custom settings
+
+  #no ALT+TAB - refresh files on change - see: rake watchr
+  config.refresh_autorefresh = true
+  config.refresh_livejs = false
+
 end

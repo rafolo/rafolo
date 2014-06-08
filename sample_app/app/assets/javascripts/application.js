@@ -20,5 +20,6 @@
 //= require app.main.js
 //= require leaflet-dist/leaflet
 //= require angular-leaflet-directive/dist/angular-leaflet-directive
+//= #require debug/live-js/live-js #RK added on will
 //= require_tree .
 
