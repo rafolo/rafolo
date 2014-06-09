@@ -25,17 +25,17 @@
 
   <%#TODO! rename sample_app!%>
   <% if Rails.env.development? %>
-  <!-- Debug START -->
-  <% if SampleApp::Application.config.refresh_autorefresh %>
-      <!--Debug/Autorefresh-->
-      <%= raw AutoRefresh.channel('sample_app') %>
-  <% end %>
-  <% if SampleApp::Application.config.refresh_livejs %>
-      <!--Debug/Live js (optional)-->
+      <!-- Debug START -->
+      <% if SampleApp::Application.config.refresh_autorefresh %>
+          <!--Debug/Autorefresh-->
+          <%= raw AutoRefresh.channel('sample_app') %>
+      <% end %>
+      <% if SampleApp::Application.config.refresh_livejs %>
+          <!--Debug/Live js (optional)-->
 
-      <script src="/assets/debug/live-js/live-js.js?body=1" type="text/javascript"></script>
-  <% end %>
-  <!-- Debug END -->
+          <script src="/assets/debug/live-js/live-js.js?body=1" type="text/javascript"></script>
+      <% end %>
+      <!-- Debug END -->
   <% end %>
 
 
@@ -49,7 +49,7 @@
 <nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
-    <a class="navbar-brand" href="#"><%=full_title(yield(:title))%></a>
+    <a class="navbar-brand" href="#"><%= full_title(yield(:title)) %></a>
 
 
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-primary">
@@ -73,6 +73,8 @@
 
         <%= yield :navigation %>
 
+        <!-- Example Standard Navigation -->
+        <% if SampleApp::Application.config.show_examples %>
         <li class="cdrop active"><a href="#">Link</a></li>
 
         <li class="cdrop"><a href="#">Link</a></li>
@@ -86,6 +88,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
+        <%end%>
 
       </ul>
 
@@ -144,147 +147,150 @@
   <!-- Main nav -->
   <ul class="nav navbar-collapse collapse navbar-collapse-primary">
 
-    <!-- RK Dynamic Left Menu -->
+    <!-- Dynamic Left Menu -->
     <%= render 'layouts/shared/leftmenu' %>
 
-    <!-- RK Standard Left Menu -->
-    <li class="active">
-      <span class="glow"></span>
-      <a href="dashboard.html">
-        <i class="icon-dashboard icon-2x"></i>
-        <span>Dashboard</span>
-      </a>
-    </li>
+    <!-- Example Standard Left Menu -->
+    <% if SampleApp::Application.config.show_examples %>
+        <li class="active">
+          <span class="glow"></span>
+          <a href="dashboard.html">
+            <i class="icon-dashboard icon-2x"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
 
 
-    <li class="dark-nav ">
+        <li class="dark-nav ">
 
-      <span class="glow"></span>
+          <span class="glow"></span>
 
 
-      <a class="accordion-toggle collapsed " data-toggle="collapse" href="#yJ6h3Npe7C">
-        <i class="icon-beaker icon-2x"></i>
+          <a class="accordion-toggle collapsed " data-toggle="collapse" href="#yJ6h3Npe7C">
+            <i class="icon-beaker icon-2x"></i>
                     <span>
                       UI Lab
                       <i class="icon-caret-down"></i>
                     </span>
 
-      </a>
+          </a>
 
-      <ul id="yJ6h3Npe7C" class="collapse ">
+          <ul id="yJ6h3Npe7C" class="collapse ">
+
+            <li class="">
+              <a href="../ui_lab/buttons.html">
+                <i class="icon-hand-up"></i> Buttons
+              </a>
+            </li>
+
+            <li class="">
+              <a href="../ui_lab/general.html">
+                <i class="icon-beaker"></i> General elements
+              </a>
+            </li>
+
+            <li class="">
+              <a href="../ui_lab/icons.html">
+                <i class="icon-info-sign"></i> Icons
+              </a>
+            </li>
+
+            <li class="">
+              <a href="../ui_lab/grid.html">
+                <i class="icon-th-large"></i> Grid
+              </a>
+            </li>
+
+            <li class="">
+              <a href="../ui_lab/tables.html">
+                <i class="icon-table"></i> Tables
+              </a>
+            </li>
+
+            <li class="">
+              <a href="../ui_lab/widgets.html">
+                <i class="icon-plus-sign-alt"></i> Widgets
+              </a>
+            </li>
+
+          </ul>
+
+        </li>
+
 
         <li class="">
-          <a href="../ui_lab/buttons.html">
-            <i class="icon-hand-up"></i> Buttons
+          <span class="glow"></span>
+          <a href="../forms/forms.html">
+            <i class="icon-edit icon-2x"></i>
+            <span>Forms</span>
           </a>
         </li>
 
+
         <li class="">
-          <a href="../ui_lab/general.html">
-            <i class="icon-beaker"></i> General elements
+          <span class="glow"></span>
+          <a href="../charts/charts.html">
+            <i class="icon-bar-chart icon-2x"></i>
+            <span>Charts</span>
           </a>
         </li>
 
-        <li class="">
-          <a href="../ui_lab/icons.html">
-            <i class="icon-info-sign"></i> Icons
-          </a>
-        </li>
 
-        <li class="">
-          <a href="../ui_lab/grid.html">
-            <i class="icon-th-large"></i> Grid
-          </a>
-        </li>
+        <li class="dark-nav ">
 
-        <li class="">
-          <a href="../ui_lab/tables.html">
-            <i class="icon-table"></i> Tables
-          </a>
-        </li>
-
-        <li class="">
-          <a href="../ui_lab/widgets.html">
-            <i class="icon-plus-sign-alt"></i> Widgets
-          </a>
-        </li>
-
-      </ul>
-
-    </li>
+          <span class="glow"></span>
 
 
-    <li class="">
-      <span class="glow"></span>
-      <a href="../forms/forms.html">
-        <i class="icon-edit icon-2x"></i>
-        <span>Forms</span>
-      </a>
-    </li>
-
-
-    <li class="">
-      <span class="glow"></span>
-      <a href="../charts/charts.html">
-        <i class="icon-bar-chart icon-2x"></i>
-        <span>Charts</span>
-      </a>
-    </li>
-
-
-    <li class="dark-nav ">
-
-      <span class="glow"></span>
-
-
-      <a class="accordion-toggle collapsed " data-toggle="collapse" href="#WLGsdJPav9">
-        <i class="icon-link icon-2x"></i>
+          <a class="accordion-toggle collapsed " data-toggle="collapse" href="#WLGsdJPav9">
+            <i class="icon-link icon-2x"></i>
                     <span>
                       Others
                       <i class="icon-caret-down"></i>
                     </span>
 
-      </a>
-
-      <ul id="WLGsdJPav9" class="collapse ">
-
-        <li class="">
-          <a href="../other/wizard.html">
-            <i class="icon-magic"></i> Wizard
           </a>
-        </li>
 
-        <li class="">
-          <a href="../other/login.html">
-            <i class="icon-user"></i> Login Page
-          </a>
-        </li>
+          <ul id="WLGsdJPav9" class="collapse ">
 
-        <li class="">
-          <a href="../other/sign_up.html">
-            <i class="icon-user"></i> Sign Up Page
-          </a>
-        </li>
+            <li class="">
+              <a href="../other/wizard.html">
+                <i class="icon-magic"></i> Wizard
+              </a>
+            </li>
 
-        <li class="">
-          <a href="../other/full_calendar.html">
-            <i class="icon-calendar"></i> Full Calendar
-          </a>
-        </li>
+            <li class="">
+              <a href="../other/login.html">
+                <i class="icon-user"></i> Login Page
+              </a>
+            </li>
 
-        <li class="">
-          <a href="../other/error404.html">
-            <i class="icon-ban-circle"></i> Error 404 page
-          </a>
-        </li>
+            <li class="">
+              <a href="../other/sign_up.html">
+                <i class="icon-user"></i> Sign Up Page
+              </a>
+            </li>
 
-      </ul>
+            <li class="">
+              <a href="../other/full_calendar.html">
+                <i class="icon-calendar"></i> Full Calendar
+              </a>
+            </li>
+
+            <li class="">
+              <a href="../other/error404.html">
+                <i class="icon-ban-circle"></i> Error 404 page
+              </a>
+            </li>
+    <% end %>
+    </ul>
 
     </li>
 
 
   </ul>
 
+  <!-- Example Standard Left Menu Gauges-->
+  <% if SampleApp::Application.config.show_examples %>
   <div class="hidden-sm hidden-xs">
     <div class="text-center" style="margin-top: 60px">
       <div class="easy-pie-chart-percent" style="display: inline-block" data-percent="89"><span>89%</span></div>
@@ -318,7 +324,7 @@
       <hr class="divider">
     </div>
   </div>
-
+  <%end%>
 </div>
 
 <!-- RK Main Content -->

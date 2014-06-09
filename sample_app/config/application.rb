@@ -68,7 +68,7 @@ module SampleApp
     #config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
     config.assets.paths << "#{Rails.root}/vendor/assets/components"
 
-    #rk
+    #config
     #config.autoload_paths += Dir["#{Rails.root}/lib/**"]
 
     #no ALT+TAB anymore - refresh files on change - see: rake rafolo:watchr or type: autorefresh in terminal
@@ -77,9 +77,13 @@ module SampleApp
     #http://www.livejs.com/
     config.refresh_livejs = false
 
-    #config
     #TODO! Why God Why? defined in extension but does not see it till this line!
     config.app_config = YAML.load_file("#{Rails.root}/config/app_config.yml")[Rails.env]
+
+    #show plastique examples
+    config.show_examples = false
+
+
 
   end
 end

@@ -41,4 +41,6 @@ SampleApp::Application.configure do
   config.refresh_autorefresh = true
   config.refresh_livejs = false
 
+  #show plastique examples
+  config.show_examples = true
 end

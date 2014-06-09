@@ -6,7 +6,9 @@ module Config
   extend ActiveSupport::Concern
 
   module ClassMethods
-    cattr_accessor :refresh_autorefresh, :refresh_livejs, :app_config, instance_values: false
+    cattr_accessor :refresh_autorefresh, :refresh_livejs,
+                   :app_config, :show_examples,
+                   instance_values: false
 
   end
 
@@ -15,4 +17,3 @@ module Config
     include Config
 
   end
-end
