@@ -1,6 +1,9 @@
-<li class="cdrop active">
-  <%= link_to_unless_current "  EN  ", locale: "en" %>
-</li>
-<li class="cdrop active">
-  <%= link_to_unless_current "  PL  ", locale: "pl" %>
+<li class="dropdown cdrop">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li><%= link_to_unless_current "EN", locale: "en" %></li>
+    <li><%= link_to_unless_current "PL", locale: "pl" %></li>
+    <li class="divider"></li>
+    <li><%= link_to_unless_current "  Default  ", locale: "en" %></li>
+  </ul>
 </li>
