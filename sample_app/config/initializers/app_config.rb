@@ -1,0 +1,1 @@
+#require 'extensions/config/config_module.rb'

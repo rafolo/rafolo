@@ -1,0 +1,12 @@
+common: &common
+  app_title: Vasabi
+
+development:
+  <<: *common
+  landscape_title: dev
+test:
+  <<: *common
+  landscape_title: test
+production:
+  <<: *common
+  landscape_title: ...

@@ -1,11 +1,13 @@
 require 'active_support/concern'
+require "active_support/all"
 require 'rails/configuration'
 
 module Config
   extend ActiveSupport::Concern
 
   module ClassMethods
-    cattr_accessor :refresh_autorefresh, :refresh_livejs, instance_accessor: false
+    cattr_accessor :refresh_autorefresh, :refresh_livejs, :app_config, instance_values: false
+
   end
 
 

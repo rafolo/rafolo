@@ -37,7 +37,7 @@ SampleApp::Application.configure do
 
   #custom settings
 
-  #no ALT+TAB - refresh files on change - see: rake watchr
+  #no ALT+TAB anymore - refresh files on change - see: rake watchr
   config.refresh_autorefresh = true
   config.refresh_livejs = false
 

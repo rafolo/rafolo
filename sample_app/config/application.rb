@@ -71,12 +71,15 @@ module SampleApp
     #rk
     #config.autoload_paths += Dir["#{Rails.root}/lib/**"]
 
-    #no ALT+TAB - refresh files on change - see: rake watchr
+    #no ALT+TAB anymore - refresh files on change - see: rake rafolo:watchr or type: autorefresh in terminal
     # https://github.com/mynyml/watchr
     config.refresh_autorefresh = false
     #http://www.livejs.com/
     config.refresh_livejs = false
 
+    #config
+    #TODO! Why God Why? defined in extension but does not see it till this line!
+    config.app_config = YAML.load_file("#{Rails.root}/config/app_config.yml")[Rails.env]
 
   end
 end
