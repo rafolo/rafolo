@@ -62,11 +62,29 @@ module SampleApp
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    config.serve_static_assets = true
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # via https://github.com/sstephenson/sprockets/issues/347#issuecomment-25543201
+
+    # We don't want the default of everything that isn't js or css, because it pulls too many things in
+    config.assets.precompile.shift
+
+# Explicitly register the extensions we are interested in compiling
+    config.assets.precompile.push(Proc.new do |path|
+      File.extname(path).in? [
+                                 '.html', '.erb', '.haml',                 # Templates
+                                 '.png',  '.gif', '.jpg', '.jpeg', '.svg', # Images
+                                 '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
+                             ]
+    end)
+
     #config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
     config.assets.paths << "#{Rails.root}/vendor/assets/components"
+
+
 
     #config
     #config.autoload_paths += Dir["#{Rails.root}/lib/**"]
