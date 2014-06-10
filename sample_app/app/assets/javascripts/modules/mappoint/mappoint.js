@@ -9,6 +9,6 @@ var mapPointModule = angular.module('app.mappoint', [])
     })
 
     .controller("LegendController", ['$scope', 'mappointService', function ($scope, mappointService) {
-        angular.extend($scope, mappointService.getData());
-        $scope.$apply();
+        angular.extend($scope, mappointService.getData(59.92));
+        //$scope.$apply();
     }]);
