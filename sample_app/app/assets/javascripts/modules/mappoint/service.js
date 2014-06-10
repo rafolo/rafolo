@@ -1,5 +1,5 @@
 mapPointModule.service('mappointService', function() {
-    this.getData = function(lat) {
+    this.getData = function(x, y) {
         return {
             legend: {
                 position: 'bottomleft',
@@ -7,22 +7,22 @@ mapPointModule.service('mappointService', function() {
                 labels: [ 'National Cycle Route', 'Regional Cycle Route', 'Local Cycle Network', 'Cycleway' ]
             },
             osloCenter: {
-                lat: 59.91,
+                lat: 59.93,
                 lng: 10.75,
                 zoom: 12
             },
             markers: {
                 osloMarker: {
-                    lat: lat,
-                    lng: 10.75,
-                    message: "I want to travel here1!",
+                    lat: x,
+                    lng: y,
+                    message: "I want to travel here " + x.toString().substr(4) + " " + y.toString().substr(4),
                     focus: true,
                     draggable: false
                 },
                 osloMarker2: {
-                    lat: 69.91,
+                    lat: 59.91,
                     lng: 10.75,
-                    message: "I want to travel here2!",
+                    message: "I want to travel here!",
                     focus: true,
                     draggable: false
                 }
