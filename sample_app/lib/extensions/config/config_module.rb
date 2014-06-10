@@ -17,3 +17,5 @@ module Config
     include Config
 
   end
+end
+

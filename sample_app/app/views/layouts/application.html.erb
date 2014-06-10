@@ -19,11 +19,16 @@
 
   <%= javascript_include_tag "application" %>
 
-
   <!-- Modules' Java Scripts -->
   <%= yield :js %>
 
   <%#TODO! rename sample_app!%>
+
+  <!-- Check Deps START-->
+  <%= check_modernizer%>
+  <!-- Deps Check END-->
+
+
   <% if Rails.env.development? %>
       <!-- Debug START -->
       <% if SampleApp::Application.config.refresh_autorefresh %>
