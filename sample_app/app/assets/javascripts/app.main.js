@@ -8,7 +8,8 @@ window.app = angular.module('app', [
                             'app.home',
                             'app.about',
                             'app.todo',
-                            'app.mappoint'
+                            'app.mappoint',
+                            'app.profile'
 ]);
 
 // Add global "services" (like breeze and Q) to the Ng injector

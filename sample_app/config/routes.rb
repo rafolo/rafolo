@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  get "profile/index"
+
   get "alarm/index"
 
   get "alarm_controller/index"
