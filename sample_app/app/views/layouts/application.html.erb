@@ -19,11 +19,16 @@
 
   <%= javascript_include_tag "application" %>
 
-
   <!-- Modules' Java Scripts -->
   <%= yield :js %>
 
   <%#TODO! rename sample_app!%>
+
+  <!-- Check Deps START-->
+  <%= check_modernizer%>
+  <!-- Deps Check END-->
+
+
   <% if Rails.env.development? %>
       <!-- Debug START -->
       <% if SampleApp::Application.config.refresh_autorefresh %>
@@ -103,7 +108,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle dropdown-avatar" data-toggle="dropdown">
               <span>
-                <img class="menu-avatar" src="/assets/avatars/avatar1.jpg"/> <span>John Smith <i class="icon-caret-down"></i></span>
+                <img class="menu-avatar" src="/assets/avatars/avatar1.jpg"/> <span><%=user_friendly_name%> <i class="icon-caret-down"></i></span>
                 <span class="badge badge-dark-red">5</span>
               </span>
           </a>
@@ -120,9 +125,9 @@
 
             <li class="divider"></li>
 
-            <li><a href="#"><i class="icon-user"></i> <span>Profile</span></a></li>
-            <li><a href="#"><i class="icon-cog"></i> <span>Settings</span></a></li>
-            <li><a href="#"><i class="icon-envelope"></i> <span>Messages</span>
+            <li><a href="/profile/index/#profile"><i class="icon-user"></i> <span>Profile</span></a></li>
+            <li><a href="/profile/index/#settings"><i class="icon-cog"></i> <span>Settings</span></a></li>
+            <li><a href="/profile/index/#messages"><i class="icon-envelope"></i> <span>Messages</span>
               <span class="label label-dark-red pull-right">5</span></a></li>
             <li><a href="<%= signout_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i>
               <span>Logout</span></a></li>

@@ -1,0 +1,18 @@
+var profileModule = angular.module('app.profile', [])
+    .config(function ($routeProvider) {
+        $routeProvider.when('/profile', {
+            templateUrl: '/assets/modules/profile/profile.view.html', controller: 'ProfileController'
+        }).when('/messages', {
+            templateUrl: '/assets/modules/profile/messages.view.html', controller: 'MessageController'
+        });
+
+
+    })
+    .controller("ProfileController", ['$scope', '$log', '$interval','profileService', function ($scope, $log, $interval, profileService) {
+        $log.info("OK, I'm in, inn keeper");
+        angular.extend($scope, profileService.getData());
+    }])
+    .controller("MessageController", ['$scope', '$log', '$interval','profileService', function ($scope, $log, $interval, profileService) {
+        $log.info("OK, I'm in, inn keeper");
+        angular.extend($scope, profileService.getData());
+    }]);

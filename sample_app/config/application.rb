@@ -101,7 +101,7 @@ module SampleApp
     #show plastique examples
     config.show_examples = false
 
-
-
+    #check modernizer
+    config.check_modernizer = true
   end
 end

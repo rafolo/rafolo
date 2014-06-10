@@ -6,15 +6,8 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "jquery": "2.1.1",
-        "angular": "1.2.x",
-        "angular-route": "1.2.x",
-        "angular-loader": "1.2.x",
-        "angular-mocks": "~1.2.x",
         "html5-boilerplate": "~4.3.0",
-        "leaflet": "0.7.2",
         "modernizr": "2.8.2",
-        "angular-leaflet-directive": "~0.7.3",
         "jasmine-jquery": "1.6.0"
     }
 }
