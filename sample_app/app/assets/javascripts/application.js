@@ -10,7 +10,7 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery/jquery
+//= require jquery/dist/jquery
 //= require jqueryui/ui/jquery-ui
 //= require bootstrap/dist/js/bootstrap
 //= require bootstrap-datepicker/js/bootstrap-datepicker
