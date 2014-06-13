@@ -7,7 +7,7 @@ SampleApp::Application.routes.draw do
 
   get "map_point/index"
 
-  get "map_point/history"
+  get "map_point/route"
 
   get "credit_card/index"
 

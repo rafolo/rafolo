@@ -4,11 +4,14 @@
 // 'app' module is in global namespace
 window.app = angular.module('app', [
                             'ngRoute',
+                            'ngGrid',
                             'leaflet-directive',
                             'app.home',
                             'app.about',
+                            'app.alarm',
                             'app.todo',
-                            'app.mappoint',
+                            'app.mappoint.points',
+                            'app.mappoint.routes',
                             'app.profile'
 ]);
 

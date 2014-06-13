@@ -2,7 +2,7 @@
 class MapPointController < ApplicationController
 
   #menu2
-  has_menu2 "Maps", "/credit_card/index", :enabled => true, "Points" => "/map_point/index/#mappoint", "History" => "/map_point/history"
+  has_menu2 "Maps", "/credit_card/index", :enabled => true, "Points" => "/map_point/index/#/mappoint", "Routes" => "/map_point/route/#/maproute"
 
   def self.enabled?
     true
@@ -11,6 +11,6 @@ class MapPointController < ApplicationController
   def index
   end
 
-  def history
+  def route
   end
 end

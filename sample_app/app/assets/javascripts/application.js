@@ -57,5 +57,5 @@
 
 //= #require debug/live-js/live-js #RK added on will
 
+//= require ng-grid/ng-grid-2.0.11.debug
 //= require_tree .
-

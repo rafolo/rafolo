@@ -10,17 +10,20 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
   <%= stylesheet_link_tag "leaflet-dist/leaflet.css", media: "all" %>
   <%= stylesheet_link_tag "application_core_admin.css", media: "all" %>
+  <%= stylesheet_link_tag "ng-grid/ng-grid.css", media: "all" %>
 
   <!-- Use title if it's in the page YAML frontmatter -->
   <title><%= full_title(yield(:title)) %></title>
 
-  <!-- Modules' StyleSheets -->
-  <%= yield :ss %>
+  <!-- Controller/Module' StyleSheets BEGIN -->
+  <%= yield :css %>
+  <!-- Controller/Module' StyleSheets END -->
 
   <%= javascript_include_tag "application" %>
 
-  <!-- Modules' Java Scripts -->
+  <!-- Controller/Module' Java Scripts BEGIN -->
   <%= yield :js %>
+  <!-- Controller/Module' Java Scripts END -->
 
   <%#TODO! rename sample_app!%>
 

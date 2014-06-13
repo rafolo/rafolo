@@ -1,2 +1,139 @@
-<h1>Alarm#index</h1>
-<p>Find me in app/views/alarm/index.html.erb</p>
+<!-- RK Titles> -->
+<% provide(:title, t2('Alarm')) %>
+<% provide(:subtitle, t2('Your alarms')) %>
+<!-- <RK Titles -->
+
+<!--RK Navigation> -->
+<% content_for :navigation do %>
+    <!-- SPA Navigations -->
+    <!--<li class="cdrop active"><%= link_to "MP/Todo", "#/js" %></li>-->
+    <!--<li class="cdrop active"><%= link_to "MP/About", "#/about" %></li>-->
+<% end %>
+<!-- <RK Navigation -->
+
+<!--RK CSS> -->
+<% content_for :css do %>
+    <style>
+        /*style.css*/
+        .gridStyle {
+            border: 1px solid rgb(212,212,212);
+            width: 600px;
+            height: 300px
+        }
+
+    </style>
+
+    <style>
+        .fieldValid {
+            border: 1px solid #00ff00;
+        }
+        .fieldInvalid {
+            border: 1px solid #ff0000;
+        }
+    </style>
+<% end %>
+<!-- <RK CSS -->
+
+<!--RK JS> -->
+<% content_for :js do %>
+    <!--<script src="/assets/jquery/dist/jquery.js?body=1" type="text/javascript"></script>-->
+<% end %>
+<!-- <RK JS -->
+
+<!--RK row> -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+
+      <!-- RK Map -->
+      <div class="box-header">
+        <div class="title"><%= t2 "Alarms" %>
+        </div>
+        <ul class="box-toolbar">
+          <li class="toolbar-link">
+            <a href="#" data-toggle="dropdown"><i class="icon-cog"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="icon-plus-sign"></i> Add</a></li>
+              <li><a href="#"><i class="icon-remove-sign"></i> Remove</a></li>
+              <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- RK TODOA - sample sec. box-->
+      <div class="box-content padded">
+        <div class="row">
+          <div ng-view></div>
+        </div>
+      </div>
+
+      <!-- Outsider -->
+      <div class="box-content padded">
+        <div class="row">
+          <div class="col-md-4 separate-sections" style="margin-top: 5px;">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="dashboard-stats">
+                  <ul class="list-inline">
+                    <li class="glyph"><i class="icon-bolt icon-2x"></i></li>
+                    <li class="count">Outsider 973,119</li>
+                  </ul>
+
+                  <div class="progress">
+                    <div class="progress-bar progress-blue tip" title="80%" data-percent="80"></div>
+                  </div>
+
+                  <div class="stats-label">Total Visits</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top:30px;">
+              <div class="col-md-6">
+                <div class="dashboard-stats small">
+                  <ul class="list-inline">
+                    <li class="glyph"><i class="icon-user"></i></li>
+                    <li class="count">8800</li>
+                  </ul>
+                  <div class="progress">
+                    <div class="progress-bar progress-blue tip" title="65%" data-percent="65"></div>
+                  </div>
+
+                  <div class="stats-label">New Visitors</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="dashboard-stats small">
+                  <ul class="list-inline">
+                    <li class="glyph"><i class="icon-eye-open"></i></li>
+                    <li class="count">25668</li>
+                  </ul>
+                  <div class="progress">
+                    <div class="progress-bar progress-blue tip" title="80%" data-percent="80"></div>
+                  </div>
+                  <div class="stats-label">Page Views</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="sine-chart" id="xchart-sine"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!-- <RK row -->
+
+
+
+
+

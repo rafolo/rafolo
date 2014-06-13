@@ -2,13 +2,13 @@ var mapPointModule = angular.module('app.mappoint', [])
     .config(function ($routeProvider) {
         $routeProvider.when('/mappoint', {
             templateUrl: '/assets/modules/mappoint/mappoint.view.html',
-            controller: 'LegendController'
+            controller: 'MapPointController'
         });
 
 
     })
 
-    .controller("LegendController", ['$scope', '$log', '$interval','mappointService', function ($scope, $log, $interval, mappointService) {
+    .controller("MapPointController", ['$scope', '$log', '$interval','mappointService', function ($scope, $log, $interval, mappointService) {
 
         var centerX=59.92;
         var centerY = 10.75;
