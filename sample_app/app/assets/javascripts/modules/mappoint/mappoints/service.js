@@ -1,4 +1,4 @@
-mapPointModule.service('mappointService', function() {
+mapPointPointsModule.service('mappointService', function() {
     this.getData = function(x, y) {
         return {
             legend: {
