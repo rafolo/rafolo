@@ -3,6 +3,7 @@
 "version": "0.0.1",
 "description": "A starter project for geolocalisation",
 "devDependencies": {
+    "bower": "*",
     "phantomjs": "*",
     "karma": "*",
     "karma-cli": "*",
