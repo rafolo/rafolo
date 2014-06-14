@@ -28,8 +28,8 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         };
 
         $scope.myCombo = [
-            {name: "Moroni", age: 50},
-            {name: "Tiancum", age: 43}
+            {name: "Old", age: 50},
+            {name: "Young", age: 10}
         ];
 
         $scope.profileData = { "attributes": [{
