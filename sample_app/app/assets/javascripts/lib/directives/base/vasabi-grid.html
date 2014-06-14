@@ -1,3 +1,4 @@
+
 <div class="gridStyle" ng-grid="gridOptions">
 </div>
 <div ng-repeat="attribute in profileData.attributes">
@@ -21,7 +22,7 @@
         </div>
 
         <!-- Will show error state when textarea is dirty and empty -->
-        <div class="form-control" bs-has-error style="height: 300dppx">
+        <div class="form-control" bs-has-error style="height: 100px">
             <label for="textarea"></label>
             <textarea
                     id="textarea"
@@ -36,8 +37,8 @@
             <select
                     id="select"
                     name="select"
-                    ng-model="mySelections[0]"
-                    ng-options="option.v for option in myCombo"
+                    ng-model="mySelections[0].age"
+                    ng-options="option.age as option.name for option in myCombo"
                     required>
                 <option value="">-- Make a Choice --</option>
             </select>

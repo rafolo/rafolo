@@ -8,6 +8,8 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
     })
     .controller("AlarmController", ['$scope', '$log', '$interval', 'alarmService', function ($scope, $log, $interval, mappointService) {
+
+
         //grid
         $log.error("I am inn");
         $scope.mySelections = [];
@@ -26,8 +28,8 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         };
 
         $scope.myCombo = [
-            {v: "Young", k: 10},
-            {v: "Old", k: 43}
+            {name: "Moroni", age: 50},
+            {name: "Tiancum", age: 43}
         ];
 
         $scope.profileData = { "attributes": [{
