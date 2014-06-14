@@ -1,17 +1,13 @@
 var alarmModule = angular.module('app.alarm', ['lib.directives'])
-    .config(function ($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/alarm', {
             templateUrl: '/assets/modules/alarm/alarm.view.html',
             controller: 'AlarmController'
         });
-
-
-    })
+    }])
     .controller("AlarmController", ['$scope', '$log', '$interval', 'alarmService', function ($scope, $log, $interval, mappointService) {
-
-
         //grid
-        $log.error("I am inn");
+        //$log.error("I am inn");
         $scope.mySelections = [];
         $scope.myData = [
             {name: "Moroni", age: 50},
