@@ -8,10 +8,10 @@ window.app = angular.module('app', [
                             'leaflet-directive',
                             'app.home',
                             'app.about',
-                            //'app.alarm',
+                            'app.alarm',
                             'app.todo',
                             'app.mappoint.points',
-                            //'app.mappoint.routes',
+                            'app.mappoint.routes',
                             'app.profile'
 ]);
 
