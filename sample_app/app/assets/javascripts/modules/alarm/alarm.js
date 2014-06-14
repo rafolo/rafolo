@@ -8,132 +8,176 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
     })
     .controller("AlarmController", ['$scope', '$log', '$interval', 'alarmService', function ($scope, $log, $interval, mappointService) {
-    //grid
+        //grid
         $log.error("I am inn");
         $scope.mySelections = [];
-        $scope.myData = [{name: "Moroni", age: 50},
+        $scope.myData = [
+            {name: "Moroni", age: 50},
             {name: "Tiancum", age: 43},
             {name: "Jacob", age: 27},
             {name: "Nephi", age: 29},
-            {name: "Enos", age: 34}];
+            {name: "Enos", age: 34}
+        ];
+
         $scope.gridOptions = {
             data: 'myData',
             selectedItems: $scope.mySelections,
             multiSelect: false
         };
 
+        $scope.myCombo = [
+            {v: "Young", k: 10},
+            {v: "Old", k: 43}
+        ];
+
+        $scope.profileData = { "attributes": [{
+            "attribute": {
+                "id": 56,
+                "name": "Hárlitur",
+                "typeID": 5,
+                "visibleToUsers": true
+            },
+            "type": {
+                "id": 5,
+                "typeName": "list"
+            },
+            "attributeValues": [{
+                "id": 109,
+                "attributeID": 56,
+                "value": "Ljós",
+                "chosen": true
+            }, {
+                "id": 110,
+                "attributeID": 56,
+                "value": "Dökkur",
+                "chosen": false
+            }],
+            "valueText": null
+        }]};
+
+        $scope.changeValue = function changeValue(attribute, value) {
+            $scope.mySelections[0].age = value.id;
+            //alert(JSON.stringify({"attributeID":attribute.attribute.id, "type": attribute.type.typeName, "value":value.id}));
+        };
+
+
         //form
         $scope.myForm = {};
         $scope.myForm.name = "Jakob Jenkov";
-        $scope.myForm.car  = "nissan";
+        $scope.myForm.car = "nissan";
 
-        $scope.myForm.submitTheForm = function(item, event) {
+        $scope.myForm.submitTheForm = function (item, event) {
             console.log("--> Submitting form");
             var dataObject = {
-                name : $scope.myForm.name
-                ,car  : $scope.myForm.car
+                name: $scope.myForm.name, car: $scope.myForm.car
             };
 
             var responsePromise = $http.post("/angularjs-examples/json-test-data.jsp", dataObject, {});
-            responsePromise.success(function(dataFromServer, status, headers, config) {
+            responsePromise.success(function (dataFromServer, status, headers, config) {
                 console.log(dataFromServer.title);
             });
-            responsePromise.error(function(data, status, headers, config) {
+            responsePromise.error(function (data, status, headers, config) {
                 alert("Submitting form failed!");
             });
         };
 
-    //chart
+        //chart
         var data = [
             {
-                "xScale":"ordinal",
-                "comp":[],
-                "main":[
+                "xScale": "ordinal",
+                "comp": [],
+                "main": [
                     {
-                        "className":".main.l1",
-                        "data":[
-                            { "y":15, "x":"2012-11-19T00:00:00" },
-                            { "y":11, "x":"2012-11-20T00:00:00" },
-                            { "y":8, "x":"2012-11-21T00:00:00" },
-                            { "y":10, "x":"2012-11-22T00:00:00" },
-                            { "y":1, "x":"2012-11-23T00:00:00" },
-                            { "y":6, "x":"2012-11-24T00:00:00" },
-                            { "y":8, "x":"2012-11-25T00:00:00" }
+                        "className": ".main.l1",
+                        "data": [
+                            { "y": 15, "x": "2012-11-19T00:00:00" },
+                            { "y": 11, "x": "2012-11-20T00:00:00" },
+                            { "y": 8, "x": "2012-11-21T00:00:00" },
+                            { "y": 10, "x": "2012-11-22T00:00:00" },
+                            { "y": 1, "x": "2012-11-23T00:00:00" },
+                            { "y": 6, "x": "2012-11-24T00:00:00" },
+                            { "y": 8, "x": "2012-11-25T00:00:00" }
                         ]
-                    },{
-                        "className":".main.l2",
-                        "data":[
-                            {"y":29,"x":"2012-11-19T00:00:00"},
-                            {"y":33,"x":"2012-11-20T00:00:00"},
-                            {"y":13,"x":"2012-11-21T00:00:00"},
-                            {"y":16,"x":"2012-11-22T00:00:00"},
-                            {"y":7,"x":"2012-11-23T00:00:00"},
-                            {"y":18,"x":"2012-11-24T00:00:00"},
-                            {"y":8,"x":"2012-11-25T00:00:00"}
+                    },
+                    {
+                        "className": ".main.l2",
+                        "data": [
+                            {"y": 29, "x": "2012-11-19T00:00:00"},
+                            {"y": 33, "x": "2012-11-20T00:00:00"},
+                            {"y": 13, "x": "2012-11-21T00:00:00"},
+                            {"y": 16, "x": "2012-11-22T00:00:00"},
+                            {"y": 7, "x": "2012-11-23T00:00:00"},
+                            {"y": 18, "x": "2012-11-24T00:00:00"},
+                            {"y": 8, "x": "2012-11-25T00:00:00"}
                         ]
                     }
                 ],
-                "type":"line-dotted",
-                "yScale":"linear"
-            },{
-                "xScale":"ordinal",
-                "comp":[],
-                "main":[
+                "type": "line-dotted",
+                "yScale": "linear"
+            },
+            {
+                "xScale": "ordinal",
+                "comp": [],
+                "main": [
                     {
-                        "className":".main.l1",
-                        "data":[
-                            {"y":12,"x":"2012-11-19T00:00:00"},
-                            {"y":18,"x":"2012-11-20T00:00:00"},
-                            {"y":8,"x":"2012-11-21T00:00:00"},
-                            {"y":7,"x":"2012-11-22T00:00:00"},
-                            {"y":6,"x":"2012-11-23T00:00:00"},
-                            {"y":12,"x":"2012-11-24T00:00:00"},
-                            {"y":8,"x":"2012-11-25T00:00:00"}
+                        "className": ".main.l1",
+                        "data": [
+                            {"y": 12, "x": "2012-11-19T00:00:00"},
+                            {"y": 18, "x": "2012-11-20T00:00:00"},
+                            {"y": 8, "x": "2012-11-21T00:00:00"},
+                            {"y": 7, "x": "2012-11-22T00:00:00"},
+                            {"y": 6, "x": "2012-11-23T00:00:00"},
+                            {"y": 12, "x": "2012-11-24T00:00:00"},
+                            {"y": 8, "x": "2012-11-25T00:00:00"}
                         ]
-                    },{
-                        "className":".main.l2",
-                        "data":[
-                            {"y":29,"x":"2012-11-19T00:00:00"},
-                            {"y":33,"x":"2012-11-20T00:00:00"},
-                            {"y":13,"x":"2012-11-21T00:00:00"},
-                            {"y":16,"x":"2012-11-22T00:00:00"},
-                            {"y":7,"x":"2012-11-23T00:00:00"},
-                            {"y":18,"x":"2012-11-24T00:00:00"},
-                            {"y":8,"x":"2012-11-25T00:00:00"}
+                    },
+                    {
+                        "className": ".main.l2",
+                        "data": [
+                            {"y": 29, "x": "2012-11-19T00:00:00"},
+                            {"y": 33, "x": "2012-11-20T00:00:00"},
+                            {"y": 13, "x": "2012-11-21T00:00:00"},
+                            {"y": 16, "x": "2012-11-22T00:00:00"},
+                            {"y": 7, "x": "2012-11-23T00:00:00"},
+                            {"y": 18, "x": "2012-11-24T00:00:00"},
+                            {"y": 8, "x": "2012-11-25T00:00:00"}
                         ]
                     }
                 ],
-                "type":"cumulative",
-                "yScale":"linear"
-            },{
-                "xScale":"ordinal",
-                "comp":[],
-                "main":[
+                "type": "cumulative",
+                "yScale": "linear"
+            },
+            {
+                "xScale": "ordinal",
+                "comp": [],
+                "main": [
                     {
-                        "className":".main.l1",
-                        "data":[
-                            {"y":12,"x":"2012-11-19T00:00:00"},
-                            {"y":18,"x":"2012-11-20T00:00:00"},
-                            {"y":8,"x":"2012-11-21T00:00:00"},
-                            {"y":7,"x":"2012-11-22T00:00:00"},
-                            {"y":6,"x":"2012-11-23T00:00:00"},
-                            {"y":12,"x":"2012-11-24T00:00:00"},
-                            {"y":8,"x":"2012-11-25T00:00:00"}
+                        "className": ".main.l1",
+                        "data": [
+                            {"y": 12, "x": "2012-11-19T00:00:00"},
+                            {"y": 18, "x": "2012-11-20T00:00:00"},
+                            {"y": 8, "x": "2012-11-21T00:00:00"},
+                            {"y": 7, "x": "2012-11-22T00:00:00"},
+                            {"y": 6, "x": "2012-11-23T00:00:00"},
+                            {"y": 12, "x": "2012-11-24T00:00:00"},
+                            {"y": 8, "x": "2012-11-25T00:00:00"}
                         ]
-                    },{
-                        "className":".main.l2",
-                        "data":[
-                            {"y":29,"x":"2012-11-19T00:00:00"},
-                            {"y":33,"x":"2012-11-20T00:00:00"},
-                            {"y":13,"x":"2012-11-21T00:00:00"},
-                            {"y":16,"x":"2012-11-22T00:00:00"},
-                            {"y":7,"x":"2012-11-23T00:00:00"},
-                            {"y":18,"x":"2012-11-24T00:00:00"},
-                            {"y":8,"x":"2012-11-25T00:00:00"}]
+                    },
+                    {
+                        "className": ".main.l2",
+                        "data": [
+                            {"y": 29, "x": "2012-11-19T00:00:00"},
+                            {"y": 33, "x": "2012-11-20T00:00:00"},
+                            {"y": 13, "x": "2012-11-21T00:00:00"},
+                            {"y": 16, "x": "2012-11-22T00:00:00"},
+                            {"y": 7, "x": "2012-11-23T00:00:00"},
+                            {"y": 18, "x": "2012-11-24T00:00:00"},
+                            {"y": 8, "x": "2012-11-25T00:00:00"}
+                        ]
                     }
                 ],
-                "type":"bar",
-                "yScale":"linear"
+                "type": "bar",
+                "yScale": "linear"
             }
         ];
 
@@ -148,8 +192,12 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             chart = new xChart('bar', data[order[i]], '#xchart-sine2', {
                 axisPaddingTop: 5,
                 paddingLeft: 30,
-                dataFormatX: function (x) { return new Date(x); },
-                tickFormatX: function (x) { return d3.time.format('%a')(x); }
+                dataFormatX: function (x) {
+                    return new Date(x);
+                },
+                tickFormatX: function (x) {
+                    return d3.time.format('%a')(x);
+                }
             });
 
             rotateTimer = setTimeout(rotateChart, t);
@@ -165,7 +213,6 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             updateChart(order[i]);
             rotateTimer = setTimeout(rotateChart, t);
         }
-
 
 
 //        var centerX=59.92;
