@@ -1,0 +1,83 @@
+<!-- RK Titles> -->
+<% provide(:title, t2('Profile')) %>
+<% provide(:subtitle, t2('Setup your profile')) %>
+<!-- <RK Titles -->
+
+<!--RK Navigation> -->
+<% content_for :navigation do %>
+    <!-- SPA Navigations -->
+    <!--<li class="cdrop active"><%= link_to "Profile", "#/profile" %></li>-->
+    <!--<li class="cdrop active"><%= link_to "Alarms", "#/alarms" %></li>-->
+    <!--<li class="cdrop active"><%= link_to "Tasks", "#/tasks" %></li>-->
+    <!--<li class="cdrop active"><%= link_to "Messages", "#/messages" %></li>-->
+    <!--<li class="cdrop active"><%= link_to "Organization", "#/organization" %></li>-->
+    <!--<li class="cdrop active"><%= link_to "Devices", "#/devices" %></li>-->
+<% end %>
+<!-- <RK Navigation -->
+
+<div class="container">
+<!-- find me in partials/action_nav_normal_one_row -->
+
+<!--big normal buttons-->
+<div class="action-nav-normal action-nav-line">
+
+  <div class="row action-nav-row">
+
+    <div class="col-sm-2 action-nav-button">
+      <a href="#/profile" title="New Project">
+        <i class="icon-file-alt"></i>
+        <span>Profile</span>
+      </a>
+      <span class="triangle-button red"><i class="icon-plus"></i></span>
+    </div>
+
+    <div class="col-sm-2 action-nav-button">
+      <a href="#/alarms" title="Followers">
+        <i class="icon-twitter"></i>
+        <span>Alarms</span>
+      </a>
+    </div>
+
+    <div class="col-sm-2 action-nav-button">
+      <a href="#/tasks" title="Friends">
+        <i class="icon-facebook-sign"></i>
+        <span>Tasks</span>
+      </a>
+    </div>
+
+    <div class="col-sm-2 action-nav-button">
+      <a href="#/messages" title="Messages">
+        <i class="icon-comments-alt"></i>
+        <span>Messages</span>
+      </a>
+      <span class="label label-black">14</span>
+    </div>
+
+    <div class="col-sm-2 action-nav-button">
+      <a href="#/devices" title="Files">
+        <i class="icon-folder-open-alt"></i>
+        <span>Devices</span>
+      </a>
+    </div>
+
+    <div class="col-sm-2 action-nav-button">
+      <a href="#/organization" title="Users">
+        <i class="icon-user"></i>
+        <span>Organization</span>
+      </a>
+    </div>
+
+  </div>
+
+</div>
+<div class="divider"><span></span></div>
+
+<div class="row">
+  <div ng-view></div>
+</div>
+
+<!--ANOTHER ROW-->
+<!--<div class="divider"><span></span></div>-->
+<!--<div class="row">-->
+</div>
+</div>
