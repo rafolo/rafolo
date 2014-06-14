@@ -1,6 +1,74 @@
 <!--<div style='background-color:red' ng-transclude></div>-->
+
+
+
+
+<!-- Will show success and error states when form field is dirty -->
+<form name="myForm">
+<div class="form-control" bs-has>
+    <label for="text"></label>
+    <input
+            type="text"
+            id="text"
+            name="text"
+            ng-model="mySelections[0].age"
+            required>
+</div>
+
+<!-- Will show success state when select box is anything but the first (placeholder) option -->
+<div class="form-control" bs-has-success>
+    <label for="select"></label>
+    <select
+            id="select"
+            name="select"
+            ng-model="data.select"
+            ng-options="option.name for option in mySelections"
+            required>
+        <option value="">-- Make a Choice --</option>
+    </select>
+</div>
+
+<!-- Will show error state when textarea is dirty and empty -->
+<div class="form-control" bs-has-error>
+    <label for="textarea"></label>
+    <textarea
+            id="textarea"
+            name="textarea"
+            ng-model="mySelections[0].age"
+            required></textarea>
+</div>
+</form>
+
 <div class="gridStyle" ng-grid="gridOptions">
 </div>
+<div class="selectedItems">{{mySelections[0].name}}djlol</div>
+
+
+<form name="myForm">
+
+    <div class="control-group" ng-class="{error: myForm.name.$invalid}">
+        <label>Name</label>
+        <input type="text" id="name" ng-model="mySelections[0].age" ng-minlength="5" ng-maxlength="12"> Name <br/>
+    <span ng-show="myForm.name.$error.required" class="help-inline">
+        Required</span>
+    </div>
+
+
+    <select ng-model="mySelections[0].age">
+        <option value="10">Kid</option>
+        <option value="11">Teen</option>
+        <option value="19">Adult</option>
+    </select>
+
+    <div>
+        {{myForm.name}}
+    </div>
+    <div>
+        {{myForm.car}}
+    </div>
+
+    <button ng-click="myForm.submitTheForm()">Submit Form</button>
+</form>
 
 <form>
     <input type="text" id="name" ng-model="myForm.name" ng-minlength="5" ng-maxlength="12"> Name <br/>

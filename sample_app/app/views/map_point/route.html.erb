@@ -1,6 +1,6 @@
 <!-- RK Titles> -->
-<% provide(:title, t2('Alarm')) %>
-<% provide(:subtitle, t2('Your alarms')) %>
+<% provide(:title, t2('Maproutes')) %>
+<% provide(:subtitle, t2('Routes of your vechicles')) %>
 <!-- <RK Titles -->
 
 <!--RK Navigation> -->
@@ -8,55 +8,10 @@
     <!-- SPA Navigations -->
     <!--<li class="cdrop active"><%= link_to "MP/Todo", "#/js" %></li>-->
     <!--<li class="cdrop active"><%= link_to "MP/About", "#/about" %></li>-->
+    <!--<li class="cdrop active"><%= link_to t2 ("Points"), "#/mappoint" %></li>-->
+    <li class="cdrop active"><%= link_to t2 ("Routes"), "#/maproute" %></li>
 <% end %>
 <!-- <RK Navigation -->
-
-<!--RK CSS> -->
-<% content_for :css do %>
-    <style>
-        /*style.css*/
-        .gridStyle {
-            border: 1px solid rgb(212, 212, 212);
-            width: 600px;
-            height: 300px
-        }
-
-    </style>
-
-    <style>
-        .fieldValid {
-            border: 1px solid #00ff00;
-        }
-
-        .fieldInvalid {
-            border: 1px solid #ff0000;
-        }
-    </style>
-
-    <style>
-        .ng-dirty {
-            color: black;
-            border: 1px solid orangered;
-        }
-
-        .ng-invalid {
-            color: red;
-            border: 1px solid orangered;
-        }
-
-        .ng-invalid-required {
-            color: red;
-            border: 1px solid red;
-        }
-    </style>
-<% end %>
-<!-- <RK CSS -->
-
-<!--RK JS> -->
-<% content_for :js do %>
-    <!--<script src="/assets/jquery/dist/jquery.js?body=1" type="text/javascript"></script>-->
-<% end %>
-<!-- <RK JS -->
 
 <!--RK row> -->
 <div class="row">
@@ -65,7 +20,7 @@
 
       <!-- RK Map -->
       <div class="box-header">
-        <div class="title"><%= t2 "Alarms" %>
+        <div class="title"><%= t2 "Maproutes" %>
         </div>
         <ul class="box-toolbar">
           <li class="toolbar-link">
@@ -86,7 +41,7 @@
         </div>
       </div>
 
-      <!-- Outsider -->
+      <!-- TODO B -->
       <div class="box-content padded">
         <div class="row">
           <div class="col-md-4 separate-sections" style="margin-top: 5px;">
@@ -96,7 +51,7 @@
                 <div class="dashboard-stats">
                   <ul class="list-inline">
                     <li class="glyph"><i class="icon-bolt icon-2x"></i></li>
-                    <li class="count">Outsider 973,119</li>
+                    <li class="count">Todo2B 973,119</li>
                   </ul>
 
                   <div class="progress">
@@ -138,20 +93,16 @@
             </div>
 
           </div>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <div class="sine-chart" id="xchart-sine"></div>
           </div>
-
         </div>
       </div>
-
     </div>
 
   </div>
 </div>
 <!-- <RK row -->
-
-
 
 
 
