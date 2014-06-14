@@ -1,30 +1,5 @@
 var libDirectives = angular.module("lib.directives", [])
-    .directive("myDiv", function () {
-        return {
-            restrict: "A",
-            transclude: true,
-            templateUrl: '/assets/lib/directives/base/my-div.html'
-        };
-    }).directive("myDivWithModel", function () {
-        return {
-            require: 'ng-model',
-            restrict: "A",
-            transclude: true,
-            templateUrl: '/assets/lib/directives/base/my-div-with-model.html'
-        };
-    }).directive("vasabiGrid", function () {
-        return {
-            restrict: "A",
-            transclude: true,
-            templateUrl: '/assets/lib/directives/base/vasabi-grid.html'
-        };
-    }).directive("vasabiAlarm", function () {
-        return {
-            restrict: "A",
-            transclude: true,
-            templateUrl: '/assets/lib/directives/vasabi-alarm.html'
-        };
-    }).factory('bsProcessValidator', function($timeout) {
+    .factory('bsProcessValidator', function($timeout) {
         return function(scope, element, ngClass, bsClass) {
             $timeout(function() {
                 var input = element.find('input');
