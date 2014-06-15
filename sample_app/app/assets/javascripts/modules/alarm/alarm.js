@@ -6,43 +6,11 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         });
     }])
     .controller("AlarmController", ['$scope', '$log', '$interval', '$http', 'alarmService', 'StatusesConstant', function ($scope, $log, $interval, $http, mappointService, StatusesConstant) {
-        $scope.myData;
-        //grid
+        //Grid
         //$log.error("I am AlarmController");
         //Data
+        $scope.myData;
         $scope.mySelections = [];
-        $scope.myGridData = [
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
-            {name: "Jacob", age: 27, born: new Date(79, 5, 24), status: false},
-            {name: "Nephi", age: 29, born: new Date(79, 5, 24), status: true},
-            {name: "Enos", age: 34, born: new Date(79, 5, 24), status: false}
-        ];
 
         //Columns
         $scope.statuses = StatusesConstant;
@@ -101,7 +69,6 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 }
             }, 100);
         };
-        //$scope.setPagingData($scope.myGridData, page, pageSize);
 
         $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
 
@@ -110,6 +77,27 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
             }
         }, true);
+
+        //Save
+        $scope.updateEntity = function (row) {
+
+            if (!$scope.save) {
+                $scope.save = { promise: null, pending: false, row: null };
+            }
+            $scope.save.row = row.rowIndex;
+            if (!$scope.save.pending) {
+                $scope.save.pending = true;
+                $scope.save.promise = $timeout(function () {
+                    // $scope.list[$scope.save.row].$update();
+                    console.log("Here you'd save your record to the server, we're updating row: "
+                        + $scope.save.row + " to be: "
+                        + $scope.myData[$scope.save.row].name + ","
+                        + $scope.myData[$scope.save.row].age + ","
+                        + $scope.myData[$scope.save.row].status);
+                    $scope.save.pending = false;
+                }, 500);
+            }
+        };
 
         //Self
         $scope.gridOptions = {
@@ -131,26 +119,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             multiSelect: false
         };
 
-
-        $scope.updateEntity = function (row) {
-
-            if (!$scope.save) {
-                $scope.save = { promise: null, pending: false, row: null };
-            }
-            $scope.save.row = row.rowIndex;
-            if (!$scope.save.pending) {
-                $scope.save.pending = true;
-                $scope.save.promise = $timeout(function () {
-                    // $scope.list[$scope.save.row].$update();
-                    console.log("Here you'd save your record to the server, we're updating row: "
-                        + $scope.save.row + " to be: "
-                        + $scope.myData[$scope.save.row].name + ","
-                        + $scope.myData[$scope.save.row].age + ","
-                        + $scope.myData[$scope.save.row].status);
-                    $scope.save.pending = false;
-                }, 500);
-            }
-        };
+        //Grid/
 
         //Combo
         $scope.myComboData = [
@@ -158,33 +127,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             {name: "Young", age: 10}
         ];
 
-//        $scope.profileData = { "attributes": [{
-//            "attribute": {
-//                "id": 56,
-//                "name": "Hárlitur",
-//                "typeID": 5,
-//                "visibleToUsers": true
-//            },
-//            "type": {
-//                "id": 5,
-//                "typeName": "list"
-//            },
-//            "attributeValues": [{
-//                "id": 109,
-//                "attributeID": 56,
-//                "value": "Ljós",
-//                "chosen": true
-//            }, {
-//                "id": 110,
-//                "attributeID": 56,
-//                "value": "Dökkur",
-//                "chosen": false
-//            }],
-//            "valueText": null
-//        }]};
-
         $scope.changeValue = function changeValue(attribute, value) {
-            //$scope.mySelections[0].age = value.id;
             //alert(JSON.stringify({"attributeID":attribute.attribute.id, "type": attribute.type.typeName, "value":value.id}));
             alert(attribute.name);
         };
