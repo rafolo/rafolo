@@ -13,7 +13,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         //grid
         $log.error("I am inn");
         $scope.mySelections = [];
-        $scope.myData = [
+        $scope.myGridData = [
             {name: "Moroni", age: 50},
             {name: "Tiancum", age: 43},
             {name: "Jacob", age: 27},
@@ -22,44 +22,45 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         ];
 
         $scope.gridOptions = {
-            data: 'myData',
+            data: 'myGridData',
             selectedItems: $scope.mySelections,
             multiSelect: false
         };
 
-        $scope.myCombo = [
+        $scope.myComboData = [
             {name: "Old", age: 50},
             {name: "Young", age: 10}
         ];
 
-        $scope.profileData = { "attributes": [{
-            "attribute": {
-                "id": 56,
-                "name": "Hárlitur",
-                "typeID": 5,
-                "visibleToUsers": true
-            },
-            "type": {
-                "id": 5,
-                "typeName": "list"
-            },
-            "attributeValues": [{
-                "id": 109,
-                "attributeID": 56,
-                "value": "Ljós",
-                "chosen": true
-            }, {
-                "id": 110,
-                "attributeID": 56,
-                "value": "Dökkur",
-                "chosen": false
-            }],
-            "valueText": null
-        }]};
+//        $scope.profileData = { "attributes": [{
+//            "attribute": {
+//                "id": 56,
+//                "name": "Hárlitur",
+//                "typeID": 5,
+//                "visibleToUsers": true
+//            },
+//            "type": {
+//                "id": 5,
+//                "typeName": "list"
+//            },
+//            "attributeValues": [{
+//                "id": 109,
+//                "attributeID": 56,
+//                "value": "Ljós",
+//                "chosen": true
+//            }, {
+//                "id": 110,
+//                "attributeID": 56,
+//                "value": "Dökkur",
+//                "chosen": false
+//            }],
+//            "valueText": null
+//        }]};
 
         $scope.changeValue = function changeValue(attribute, value) {
-            $scope.mySelections[0].age = value.id;
+            //$scope.mySelections[0].age = value.id;
             //alert(JSON.stringify({"attributeID":attribute.attribute.id, "type": attribute.type.typeName, "value":value.id}));
+            alert(attribute.name);
         };
 
 
