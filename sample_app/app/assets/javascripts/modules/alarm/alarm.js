@@ -7,24 +7,49 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
 
     })
-    .controller("AlarmController", ['$scope', '$log', '$interval', 'alarmService', 'StatusesConstant', function ($scope, $log, $interval, mappointService, StatusesConstant) {
+    .controller("AlarmController", ['$scope', '$log', '$interval', '$http', 'alarmService', 'StatusesConstant', function ($scope, $log, $interval, $http, mappointService, StatusesConstant) {
+        $scope.myData;
         //grid
         //$log.error("I am AlarmController");
-        $scope.statuses = StatusesConstant;
-        $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
-        $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
-
-
+        //Data
         $scope.mySelections = [];
-        $scope.filterOptions = { filterText: '', filterTextProxy: ''};
         $scope.myGridData = [
             {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
             {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
             {name: "Jacob", age: 27, born: new Date(79, 5, 24), status: false},
             {name: "Nephi", age: 29, born: new Date(79, 5, 24), status: true},
             {name: "Enos", age: 34, born: new Date(79, 5, 24), status: false}
         ];
 
+        //Columns
+        $scope.statuses = StatusesConstant;
+        $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
+        $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
 
         $scope.columnDefs = [
             { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
@@ -36,31 +61,81 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 cellFilter: 'mapStatus'}
         ];
 
-        $scope.gridOptions = {
-            data: 'myGridData',
-            columnDefs: $scope.columnDefs,
-            selectedItems: $scope.mySelections,
-            filterOptions: $scope.filterOptions,
-            enableRowSelection: true,
-            enableCellEditOnFocus: true,
-            //showGroupPanel: true,
-            //enablePinning: true,
-            multiSelect: false
-        };
-
-        $scope.myComboData = [
-            {name: "Old", age: 50},
-            {name: "Young", age: 10}
-        ];
-
+        //Filters
         $scope.$watch('gridOptions.filterOptions.filterTextProxy', function (searchText, oldsearchText) {
             if (searchText !== oldsearchText) {
                 $scope.gridOptions.filterOptions.filterText = "name:" + searchText + "; ";
             }
         });
+        $scope.filterOptions = { filterText: '', filterTextProxy: ''};
+
+        //Pagination
+        $scope.totalServerItems = 0;
+
+        $scope.pagingOptions = {
+            pageSizes: [5, 10, 20],
+            pageSize: 5,
+            currentPage: 1
+        };
+        $scope.setPagingData = function(data, page, pageSize) {
+            var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
+            $scope.myData = pagedData;
+            $scope.totalServerItems = data.length;
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
+        };
+        $scope.getPagedDataAsync = function(pageSize, page, searchText) {
+            setTimeout(function() {
+                var data;
+                if (searchText) {
+                    var ft = searchText.toLowerCase();
+                    $http.get('/largeLoad.json').success(function(largeLoad) {
+                        data = largeLoad.filter(function(item) {
+                            return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
+                        });
+                        $scope.setPagingData(data, page, pageSize);
+                    });
+                } else {
+                    $http.get('/largeLoad.json').success(function(largeLoad) {
+                        $scope.setPagingData(largeLoad, page, pageSize);
+                    });
+                }
+            }, 100);
+        };
+        //$scope.setPagingData($scope.myGridData, page, pageSize);
+
+        $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+
+        $scope.$watch('pagingOptions', function(newVal, oldVal) {
+            if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
+                $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+            }
+        }, true);
+
+        //Self
+        $scope.gridOptions = {
+            data: 'myData',
+            columnDefs: $scope.columnDefs,
+            selectedItems: $scope.mySelections,
+            filterOptions: $scope.filterOptions,
+            enableRowSelection: true,
+            enableCellEditOnFocus: true,
+            enablePaging: true,
+            showFooter: true,
+            totalServerItems: 'totalServerItems', //paging
+            pagingOptions: $scope.pagingOptions,
+            selectWithCheckboxOnly: true,
+            showSelectionCheckbox: true,
+            enableHighlighting: false,
+            //showGroupPanel: true,
+            //enablePinning: true,
+            multiSelect: false
+        };
+
 
         $scope.updateEntity = function (row) {
-            alert("done");
+
             if (!$scope.save) {
                 $scope.save = { promise: null, pending: false, row: null };
             }
@@ -79,6 +154,11 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             }
         };
 
+        //Combo
+        $scope.myComboData = [
+            {name: "Old", age: 50},
+            {name: "Young", age: 10}
+        ];
 
 //        $scope.profileData = { "attributes": [{
 //            "attribute": {
@@ -285,6 +365,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
     }]).directive('ngBlur', function () {
         return function (scope, elem, attrs) {
             elem.bind('blur', function () {
+
                 scope.$apply(attrs.ngBlur);
             });
         };
