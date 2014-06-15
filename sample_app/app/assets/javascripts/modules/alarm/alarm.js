@@ -1,12 +1,10 @@
 var alarmModule = angular.module('app.alarm', ['lib.directives'])
-    .config(function ($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/alarm', {
             templateUrl: '/assets/modules/alarm/alarm.view.html',
             controller: 'AlarmController'
         });
-
-
-    })
+    }])
     .controller("AlarmController", ['$scope', '$log', '$interval', '$http', 'alarmService', 'StatusesConstant', function ($scope, $log, $interval, $http, mappointService, StatusesConstant) {
         $scope.myData;
         //grid
@@ -77,7 +75,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             pageSize: 5,
             currentPage: 1
         };
-        $scope.setPagingData = function(data, page, pageSize) {
+        $scope.setPagingData = function (data, page, pageSize) {
             var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
             $scope.myData = pagedData;
             $scope.totalServerItems = data.length;
@@ -85,19 +83,19 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 $scope.$apply();
             }
         };
-        $scope.getPagedDataAsync = function(pageSize, page, searchText) {
-            setTimeout(function() {
+        $scope.getPagedDataAsync = function (pageSize, page, searchText) {
+            setTimeout(function () {
                 var data;
                 if (searchText) {
                     var ft = searchText.toLowerCase();
-                    $http.get('/largeLoad.json').success(function(largeLoad) {
-                        data = largeLoad.filter(function(item) {
+                    $http.get('/largeLoad.json').success(function (largeLoad) {
+                        data = largeLoad.filter(function (item) {
                             return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
                         });
                         $scope.setPagingData(data, page, pageSize);
                     });
                 } else {
-                    $http.get('/largeLoad.json').success(function(largeLoad) {
+                    $http.get('/largeLoad.json').success(function (largeLoad) {
                         $scope.setPagingData(largeLoad, page, pageSize);
                     });
                 }
@@ -107,7 +105,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
         $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
 
-        $scope.$watch('pagingOptions', function(newVal, oldVal) {
+        $scope.$watch('pagingOptions', function (newVal, oldVal) {
             if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
                 $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
             }
