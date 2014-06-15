@@ -1,9 +1,15 @@
-<div class="gridStyle" ng-grid="gridOptions">
-</div>
+
 <div>
     <!--Grid-->
+    <h3>Filter:</h3><input type="text" ng-model="filterOptions.filterText" placeholder="filter..."/>
+    <div class="gridStyle" ng-grid="gridOptions">
+    </div>
+    <!--Selection-->
     <div class="selectedItems">{{mySelections[0].name}}
-        <!--Form-->
+    </div>
+    <!--Form-->
+    <div>
+
         <!-- Will1 show success and error states when form field is dirty -->
         <form name="myForm">
             <div class="form-control" bs-has>

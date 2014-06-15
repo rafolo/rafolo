@@ -8,23 +8,25 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
     })
     .controller("AlarmController", ['$scope', '$log', '$interval', 'alarmService', function ($scope, $log, $interval, mappointService) {
-
-
         //grid
-        $log.error("I am inn");
+        //$log.error("I am AlarmController");
         $scope.mySelections = [];
+        $scope.filterOptions = { filterText: ''};
         $scope.myGridData = [
-            {name: "Moroni", age: 50},
-            {name: "Tiancum", age: 43},
-            {name: "Jacob", age: 27},
-            {name: "Nephi", age: 29},
-            {name: "Enos", age: 34}
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), admin: false },
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), admin: false},
+            {name: "Jacob", age: 27, born: new Date(79, 5, 24), admin: false},
+            {name: "Nephi", age: 29, born: new Date(79, 5, 24), admin: true},
+            {name: "Enos", age: 34, born: new Date(79, 5, 24), admin: false}
         ];
 
         $scope.gridOptions = {
             data: 'myGridData',
             selectedItems: $scope.mySelections,
-            multiSelect: false
+            filterOptions: $scope.filterOptions,
+            multiSelect: false//,
+            //showGroupPanel: true,
+            //enablePinning: true
         };
 
         $scope.myComboData = [
