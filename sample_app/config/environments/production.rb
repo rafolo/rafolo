@@ -12,12 +12,14 @@ SampleApp::Application.configure do
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
-  config.assets.compress = false
+  config.assets.compress = true
 
   config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  #config.assets.js_compressor = Uglifier.new(mangle: false)
 
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH

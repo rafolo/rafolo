@@ -1,10 +1,10 @@
 var mapPointPointsModule = angular.module('app.mappoint.points', [])
-    .config(function ($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/mappoint', {
             templateUrl: '/assets/modules/mappoint/mappoints/mappoints.view.html',
             controller: 'MapPointsController'
         });
-    })
+    }])
     .controller("MapPointsController", ['$scope', '$log', '$interval','mappointService', function ($scope, $log, $interval, mappointService) {
         var centerX=59.92;
         var centerY = 10.75;

@@ -1,11 +1,11 @@
 ﻿angular.module('app.about', [])
-    .config(function ($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/about', {
             templateUrl: 'assets/modules/about/about.html',
             controller: 'AboutCtrl'
         });
-    })
+    }])
 
-    .controller('AboutCtrl', function ($scope, logger) {
+    .controller('AboutCtrl', ['$scope', 'logger', function ($scope, logger) {
         $scope.logEntries = logger.logEntries;
-    });
+    }]);

@@ -1,10 +1,10 @@
 ﻿angular.module('app.todo', [])
-    .config(function ($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/todo', {
             templateUrl: 'assets/modules/todo/todo.html',
             controller: 'TodoCtrl'
         });
-    })
+    }])
 
     .controller('TodoCtrl',
         ['$scope', 'breeze', 'datacontext', 'logger',

@@ -1,5 +1,5 @@
 var profileModule = angular.module('app.profile', [])
-    .config(function ($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/alarms', {
             templateUrl: '/assets/modules/profile/alarms.view.html', controller: 'ProfileController'
         }).when('/devices', {
@@ -9,9 +9,7 @@ var profileModule = angular.module('app.profile', [])
         }).when('/messages', {
             templateUrl: '/assets/modules/profile/messages.view.html', controller: 'MessageController'
         });
-
-
-    })
+    }])
     .controller("ProfileController", ['$scope', '$log', '$interval', 'profileService', function ($scope, $log, $interval, profileService) {
         $log.info("OK, I'm in, inn keeper");
         angular.extend($scope, profileService.getData());
