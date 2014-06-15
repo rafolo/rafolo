@@ -17,7 +17,7 @@
         /*style.css*/
         .gridStyle {
             border: 1px solid rgb(212, 212, 212);
-            width: 600px;
+            /*width: 600px;*/
             height: 300px
         }
 
@@ -45,7 +45,7 @@
         }
 
         /*.ng-invalid:before {*/
-            /*content: '!!!';*/
+        /*content: '!!!';*/
         /*}*/
 
         .ng-invalid-required {
@@ -86,7 +86,9 @@
       <!-- RK TODOA - sample sec. box-->
       <div class="box-content padded">
         <div class="row">
-          <div ng-view></div>
+          <div class="col-md-12 separate-sections" style="margin-top: 5px;">
+            <div ng-view></div>
+          </div>
         </div>
       </div>
 
@@ -142,7 +144,7 @@
             </div>
 
           </div>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <div class="sine-chart" id="xchart-sine"></div>
           </div>
 
