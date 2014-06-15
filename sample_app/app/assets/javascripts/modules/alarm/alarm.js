@@ -7,32 +7,78 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
 
     })
-    .controller("AlarmController", ['$scope', '$log', '$interval', 'alarmService', function ($scope, $log, $interval, mappointService) {
+    .controller("AlarmController", ['$scope', '$log', '$interval', 'alarmService', 'StatusesConstant', function ($scope, $log, $interval, mappointService, StatusesConstant) {
         //grid
         //$log.error("I am AlarmController");
+        $scope.statuses = StatusesConstant;
+        $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
+        $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
+
+
         $scope.mySelections = [];
-        $scope.filterOptions = { filterText: ''};
+        $scope.filterOptions = { filterText: '', filterTextProxy: ''};
         $scope.myGridData = [
-            {name: "Moroni", age: 50, born: new Date(79, 5, 24), admin: false },
-            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), admin: false},
-            {name: "Jacob", age: 27, born: new Date(79, 5, 24), admin: false},
-            {name: "Nephi", age: 29, born: new Date(79, 5, 24), admin: true},
-            {name: "Enos", age: 34, born: new Date(79, 5, 24), admin: false}
+            {name: "Moroni", age: 50, born: new Date(79, 5, 24), status: false },
+            {name: "Tiancum", age: 43, born: new Date(79, 5, 24), status: false},
+            {name: "Jacob", age: 27, born: new Date(79, 5, 24), status: false},
+            {name: "Nephi", age: 29, born: new Date(79, 5, 24), status: true},
+            {name: "Enos", age: 34, born: new Date(79, 5, 24), status: false}
+        ];
+
+
+        $scope.columnDefs = [
+            { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
+                editableCellTemplate: $scope.cellInputEditableTemplate, colFilterText: '' },
+            { field: 'age', displayName: 'Age', enableCellEdit: false },
+            { field: 'born', displayName: 'Born', enableCellEdit: false },
+            { field: 'status', displayName: 'Status', enableCellEditOnFocus: true,
+                editableCellTemplate: $scope.cellSelectEditableTemplate,
+                cellFilter: 'mapStatus'}
         ];
 
         $scope.gridOptions = {
             data: 'myGridData',
+            columnDefs: $scope.columnDefs,
             selectedItems: $scope.mySelections,
             filterOptions: $scope.filterOptions,
-            multiSelect: false//,
+            enableRowSelection: true,
+            enableCellEditOnFocus: true,
             //showGroupPanel: true,
-            //enablePinning: true
+            //enablePinning: true,
+            multiSelect: false
         };
 
         $scope.myComboData = [
             {name: "Old", age: 50},
             {name: "Young", age: 10}
         ];
+
+        $scope.$watch('gridOptions.filterOptions.filterTextProxy', function (searchText, oldsearchText) {
+            if (searchText !== oldsearchText) {
+                $scope.gridOptions.filterOptions.filterText = "name:" + searchText + "; ";
+            }
+        });
+
+        $scope.updateEntity = function (row) {
+            alert("done");
+            if (!$scope.save) {
+                $scope.save = { promise: null, pending: false, row: null };
+            }
+            $scope.save.row = row.rowIndex;
+            if (!$scope.save.pending) {
+                $scope.save.pending = true;
+                $scope.save.promise = $timeout(function () {
+                    // $scope.list[$scope.save.row].$update();
+                    console.log("Here you'd save your record to the server, we're updating row: "
+                        + $scope.save.row + " to be: "
+                        + $scope.myData[$scope.save.row].name + ","
+                        + $scope.myData[$scope.save.row].age + ","
+                        + $scope.myData[$scope.save.row].status);
+                    $scope.save.pending = false;
+                }, 500);
+            }
+        };
+
 
 //        $scope.profileData = { "attributes": [{
 //            "attribute": {
@@ -236,4 +282,25 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 //        }
 //
 //        $interval(handler, 1000 );
-    }]);
+    }]).directive('ngBlur', function () {
+        return function (scope, elem, attrs) {
+            elem.bind('blur', function () {
+                scope.$apply(attrs.ngBlur);
+            });
+        };
+    })
+    .filter('mapStatus', function (StatusesConstant) {
+        return function (input) {
+            if (StatusesConstant[input]) {
+                return StatusesConstant[input];
+            } else {
+                return 'unknown';
+            }
+        };
+    })
+    .factory('StatusesConstant', function () {
+        return {
+            false: 'active',
+            true: 'inactive'
+        };
+    });
