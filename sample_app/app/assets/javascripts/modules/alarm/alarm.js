@@ -5,7 +5,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             controller: 'AlarmController'
         });
     }])
-    .controller("AlarmController", ['$scope', '$log', '$interval', '$http', 'alarmService', 'StatusesConstant', function ($scope, $log, $interval, $http, mappointService, StatusesConstant) {
+    .controller("AlarmController", ['$scope', '$log', '$interval', '$http', '$timeout','alarmService', 'StatusesConstant', function ($scope, $log, $interval, $http, $timeout, mappointService, StatusesConstant) {
 
         //test
         //1
@@ -77,20 +77,33 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
         //Save
         $scope.updateEntity = function (row) {
-
             if (!$scope.save) {
                 $scope.save = { promise: null, pending: false, row: null };
             }
-            $scope.save.row = row.rowIndex;
+            $scope.save.row = row;
             if (!$scope.save.pending) {
                 $scope.save.pending = true;
                 $scope.save.promise = $timeout(function () {
-                    // $scope.list[$scope.save.row].$update();
-                    console.log("Here you'd save your record to the server, we're updating row: "
-                        + $scope.save.row + " to be: "
-                        + $scope.myData[$scope.save.row].name + ","
-                        + $scope.myData[$scope.save.row].age + ","
-                        + $scope.myData[$scope.save.row].status);
+                    var _row = angular.copy(row);
+                    delete _row.id;
+                    delete _row.created_at;
+                    delete _row.updated_at;
+
+                    console.log(angular.toJson(_row));
+
+                    //create
+                    //var responsePromise = $http.put("/alarms.json", {"active":false,"born":"2014-06-16T15:41:00Z","description":"test2","name":"Michal"});
+
+                    var responsePromise = $http.put("/api/alarms/2.json", angular.toJson(_row));
+
+
+                    responsePromise.success(function(data, status, headers, config) {
+                        console.log(status);
+                    });
+                    responsePromise.error(function(data, status, headers, config) {
+                        alert("AJAX failed!");
+                    });
+
                     $scope.save.pending = false;
                 }, 500);
             }
@@ -160,7 +173,6 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
     }]).directive('ngBlur', function () {
         return function (scope, elem, attrs) {
             elem.bind('blur', function () {
-
                 scope.$apply(attrs.ngBlur);
             });
         };
