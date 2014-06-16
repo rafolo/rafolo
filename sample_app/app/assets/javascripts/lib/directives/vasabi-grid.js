@@ -1,9 +1,9 @@
 var libDirectives = angular.module("lib.directives", [])
-    .directive('customGrid', function ($compile) {
+    .directive('vasabiGrid', function ($compile) {
 
         return {
             restrict: 'E',
-            templateUrl: '/assets/lib/directives/base/grid.html',
+            templateUrl: '/assets/lib/directives/templates/grid.html',
             scope: { items: '=', cols: '=', selectedItems: '=', customOptions: '=', pagingOptions: '='},
             replace: true,
             transclude: false,
@@ -23,7 +23,7 @@ var libDirectives = angular.module("lib.directives", [])
             //defaultOptions
             var pagingOptions = $scope.pagingOptions; //TODO! move to custom options
             var enablePaging = false;
-            if (pagingOptions){
+            if (pagingOptions) {
                 enablePaging = true;
             }
             var defaultOptions = {
@@ -53,8 +53,13 @@ var libDirectives = angular.module("lib.directives", [])
                 $scope.options.filterOptions.filterText = value;
             });
 
+            //TODO! Init
+//            $scope.$on('ngGridEventData', function () {
+//                $scope.gridOptions.selectRow(0, true);
+//            });
 
-        };
+
+        }
     })
 //    .directive("vasabiGrid", function () {
 //        return {

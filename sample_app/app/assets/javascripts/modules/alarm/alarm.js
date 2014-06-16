@@ -31,6 +31,13 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             currentPage: 1
         };
 
+        $scope.$watch('pagingOptions', function (newVal, oldVal) {
+
+            if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
+                $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+            }
+        }, true);
+
         $scope.setPagingData = function (data, page, pageSize) {
             var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
             $scope.persons = pagedData;
@@ -87,21 +94,19 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             }
         };
 
-        //Init
-        $scope.$on('ngGridEventData', function () {
-            $scope.gridOptions.selectRow(0, true);
-        });
-
-
-
         //2
-        $scope.persons2 = [{name: "Person2", age: 50},
+        $scope.persons2 = [
+            {name: "Person2", age: 50},
             {name: "Person2", age: 43},
             {name: "Person2", age: 27},
             {name: "Person2", age: 29},
-            {name: "Person2", age: 34}];
+            {name: "Person2", age: 34}
+        ];
 
-        $scope.columnDefs2= [{field: 'name', displayName: 'Name'}, {field:'age', displayName:'Age'}];
+        $scope.columnDefs2 = [
+            {field: 'name', displayName: 'Name'},
+            {field: 'age', displayName: 'Age'}
+        ];
 
 
 //        $scope.gridOptions = {
