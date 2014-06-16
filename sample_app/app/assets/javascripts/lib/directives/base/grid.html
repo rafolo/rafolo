@@ -1,0 +1,20 @@
+<div>
+    <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
+    <style>
+        .gridStyle {
+            border: 1px solid rgb(212,212,212);
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+
+    <div class="box-header padding">
+        <input type="text" ng-model="search" placeholder="Search..." style="margin-left:25px" />
+    </div>
+
+    <div class="box-content">
+        <div class="gridStyle" ng-grid="options">
+        </div>
+    </div>
+
+</div>
