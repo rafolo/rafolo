@@ -1,4 +1,19 @@
 SampleApp::Application.routes.draw do
+
+  # namespace :api do
+  #   resources :alarms, :defaults => {:format => 'json'} #xml to
+  # end
+
+  scope '/api', constraints: { format: 'json' } do
+    scope '/v1' do
+      resources :alarms
+    end
+  end
+
+  resources :alarms, constraints: { format: 'html' }
+
+
+
   get "profile/index"
 
   get "alarm/index"
@@ -10,7 +25,6 @@ SampleApp::Application.routes.draw do
   get "credit_card/index"
 
   get "credit_card/transactions"
-
 
   resources :users do
     member do
