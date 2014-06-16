@@ -4,6 +4,10 @@ SampleApp::Application.routes.draw do
   #   resources :alarms, :defaults => {:format => 'json'} #xml to
   # end
 
+  scope "/api" do
+    resources :alarms
+  end
+
   scope '/api', constraints: { format: 'json' } do
     scope '/v1' do
       resources :alarms
