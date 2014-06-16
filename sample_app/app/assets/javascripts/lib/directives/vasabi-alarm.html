@@ -35,25 +35,6 @@
                             </div>
 
                             <div class="form-group" bs-has-success>
-                                <label for="select" class="control-label col-lg-2">Age</label>
-
-                                <div class="col-lg-10">
-                                    <select name="age"
-                                            id="select"
-                                            name="select"
-                                            ng-model="selectedItems[0].age"
-                                            ng-options="option.age as option.name for option in myComboData"
-                                            ng-change="changeValue(selectedItems[0])"
-                                            required>
-                                        <option value="">-- Select ... --</option>
-                                    </select>
-<span class="help-block note" ng-show="myForm.age.$error.required"><i
-        class="icon-warning-sign"></i> Please select a value.</span>
-                                </div>
-                            </div>
-
-
-                            <div class="form-group" bs-has-success>
                                 <label class="control-label col-lg-2">Born</label>
 
                                 <div class="col-lg-10">
@@ -64,7 +45,23 @@
                                 </div>
                             </div>
 
+                            <div class="form-group" bs-has-success>
+                                <label for="select" class="control-label col-lg-2">Age</label>
 
+                                <div class="col-lg-10">
+                                    <select name="age"
+                                            id="select"
+                                            name="select"
+                                            ng-model="selectedItems[0].active"
+                                            ng-options="option.active as option.name for option in activeComboData"
+                                            ng-change="changeValue(selectedItems[0])"
+                                            required>
+                                        <option value="">-- Select ... --</option>
+                                    </select>
+<span class="help-block note" ng-show="myForm.age.$error.required"><i
+        class="icon-warning-sign"></i> Please select a value.</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-actions">

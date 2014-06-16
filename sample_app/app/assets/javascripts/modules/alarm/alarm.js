@@ -16,9 +16,9 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         $scope.columnDefs = [
             { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellInputEditableTemplate, colFilterText: '' },
-            { field: 'age', displayName: 'Age', enableCellEdit: false },
+            { field: 'description', displayName: '?', enableCellEdit: false },
             { field: 'born', displayName: 'Born', enableCellEdit: false, cellFilter: 'datetime' },
-            { field: 'status', displayName: 'Status', enableCellEditOnFocus: true,
+            { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellSelectEditableTemplate,
                 cellFilter: 'status'}
         ];
@@ -51,14 +51,16 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 var data;
                 if (searchText) {
                     var ft = searchText.toLowerCase();
-                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
+//                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
+                    $scope.$http.get('/api/alarms.json').success(function (largeLoad) {
                         data = largeLoad.filter(function (item) {
                             return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
                         });
                         $scope.setPagingData(data, page, pageSize);
                     });
                 } else {
-                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
+//                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
+                    $scope.$http.get('/api/alarms.json').success(function (largeLoad) {
                         $scope.setPagingData(largeLoad, page, pageSize);
                     });
                 }
@@ -139,6 +141,10 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 //        //GRID/
 //
 //        //COMBO
+        $scope.activeComboData = [
+            {name: "Active", active: true},
+            {name: "Inactive", active: false}
+        ];
         $scope.myComboData = [
             {name: "Old", age: 50},
             {name: "Young", age: 10}
@@ -183,7 +189,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
     })
     .factory('StatusesConstant', function () {
         return {
-            false: 'active',
-            true: 'inactive'
+            false: 'inactive',
+            true: 'active'
         };
     });

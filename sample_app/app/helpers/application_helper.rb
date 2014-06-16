@@ -47,7 +47,7 @@ module ApplicationHelper
   end
 
   def user_friendly_name
-    current_user.email
+    current_user.email unless !current_user
   end
 
 end

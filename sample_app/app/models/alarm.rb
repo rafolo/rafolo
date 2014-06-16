@@ -12,7 +12,7 @@
 #
 
 class Alarm < ActiveRecord::Base
-  attr_accessible :born, :description, :name #:active cannot be modified
+  attr_accessible :born, :description, :name, :active
 
   validates :name, :born, :presence => true
 
