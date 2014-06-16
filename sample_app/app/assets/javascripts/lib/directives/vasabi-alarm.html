@@ -1,3 +1,86 @@
-<div vasabi-grid="testing2">
-    Some more content ...
+<div class="row">
+
+    <!--Grid-->
+    <div vasabi-grid="testing2">
+        Some more content ...
+    </div>
+
+    <!--Form-->
+    <div class="col-md-3 separate-sections">
+        <div>
+            <div class="box">
+                <div class="box-header">
+                    <span class="title"><i class="icon-warning-sign"></i> Forms with validation</span>
+                </div>
+
+                <div class="box-content">
+
+                    <form name="myForm" class="form-horizontal fill-up validatable">
+
+                        <div class="padded">
+
+                            <div class="form-group" bs-has-success>
+                                <label class="control-label col-lg-2">Name</label>
+
+                                <div class="col-lg-10">
+                                    <input name="name" id="text" type="text" class="validate[required]"
+                                           data-prompt-position="topLeft" ng-model="mySelections[0].name" required>
+                                    <span class="help-block note" ng-show="myForm.name.$error.required"><i
+                                            class="icon-warning-sign"></i> Please type a value.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group" bs-has-success>
+                                <label for="select" class="control-label col-lg-2">Age</label>
+
+                                <div class="col-lg-10">
+                                    <select name="age"
+                                            id="select"
+                                            name="select"
+                                            ng-model="mySelections[0].age"
+                                            ng-options="option.age as option.name for option in myComboData"
+                                            ng-change="changeValue(mySelections[0])"
+                                            required>
+                                        <option value="">-- Select ... --</option>
+                                    </select>
+                                    <span class="help-block note" ng-show="myForm.age.$error.required"><i
+                                            class="icon-warning-sign"></i> Please select a value.</span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group" bs-has-success>
+                                <label class="control-label col-lg-2">Born</label>
+
+                                <div class="col-lg-10">
+                                    <input name="born" id="text" type="text" class="validate[required]"
+                                           data-prompt-position="topLeft" ng-model="mySelections[0].born" required>
+                                    <span class="help-block note" ng-show="myForm.born.$error.required"><i
+                                            class="icon-warning-sign"></i> Please type a value.</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-blue">Save changes</button>
+                            <button type="button" class="btn btn-default">Cancel</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
+
+<div class="row" style="margin-top:5px;">
+    <div class="col-md-12 separate-sections" style="margin-top: 5px;">
+        <!--Selection-->
+        <div class="selectedItems">{{mySelections[0].name}}
+        </div>
+        <!--<div id="xchart-sine555" style="height:100px"></div>-->
+    </div>
+</div></div>
