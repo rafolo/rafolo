@@ -1,4 +1,4 @@
-<!--111111111111111111111111111111111111111111111111111111111-->
+<!-- Form 111111111111111111111111111111111111111111111111111111111-->
 <div class="row" ng-cloak class="ng-cloak">
 
     <div class="col-md-9 separate-sections" ng-cloak class="ng-cloak">
@@ -95,7 +95,46 @@
     </div>
 </div>
 
-<!--22222222222222222222222222222222222222222222222222222222222-->
+<!--Map-->
+<div class="row" ng-cloak class="ng-cloak">
+
+    <div class="col-md-8 separate-sections">
+
+        <leaflet markers="markers" center="osloCenter"  defaults="defaults"
+                 height="480px"></leaflet>
+    </div>
+    <div class="col-md-4 separate-sections">
+        <div>
+            <div class="box">
+                <div class="box-header">
+                    <span class="title"><i class="icon-warning-sign"></i> Forms with validation</span>
+                </div>
+
+                <div class="box-content">
+
+                    <vasabi-grid
+                            items="persons2"
+                            cols="columnDefs2"
+                            selected-items="selectedItems3"
+                            custom-options="gridOptions">
+                    </vasabi-grid>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top:5px;">
+    <div class="col-md-12 separate-sections" style="margin-top: 5px;">
+        <!--Selection-->
+        <div class="selectedItems">{{selectedItems3[0].name}}
+        </div>
+    </div>
+</div>
+
+<!--Form 22222222222222222222222222222222222222222222222222222222222-->
 <div class="row" ng-cloak class="ng-cloak">
 
     <div class="col-md-9 separate-sections">
@@ -183,4 +222,7 @@
         </div>
     </div>
 </div>
+
+
+
 

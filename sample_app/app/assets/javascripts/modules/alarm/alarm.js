@@ -25,11 +25,11 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellSelectEditableTemplate,
                 cellFilter: 'status'},
-            {field: 'R', displayName:'', width: 30, enableCellEdit: false, cellTemplate: crudReadTemplate}
+            {field: 'R', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudReadTemplate}
             ,
-            {field: 'U', displayName:'', width: 30, enableCellEdit: false, cellTemplate: crudUpdateTemplate}
+            {field: 'U', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudUpdateTemplate}
             ,
-            {field: 'D', displayName:'', width: 30, enableCellEdit: false, cellTemplate: crudDeleteTemplate}
+            {field: 'D', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudDeleteTemplate}
 
         ];
 
@@ -40,8 +40,6 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             pageSize: 10,
             currentPage: 1
         };
-
-
 
         $scope.setPagingData = function (data, page, pageSize) {
 
@@ -54,24 +52,24 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         };
 
         //CRUD
-        $scope.create = function(){
-            var row =  {name: "created", born: new Date(), active:true, create:true };
+        $scope.create = function () {
+            var row = {name: "created", born: new Date(), active: true, create: true };
             alarmService.updateEntity(row);
             return row;
         }
 
-        $scope.read = function(row){
+        $scope.read = function (row) {
             debugger;
             row.read = true;
             alarmService.updateEntity(row);
         }
 
-        $scope.update = function(row){
+        $scope.update = function (row) {
             row.update = true;
             alarmService.updateEntity(row);
         }
 
-        $scope.delete = function(row){
+        $scope.delete = function (row) {
             row.delete = true;
             alarmService.updateEntity(row);
 
@@ -91,13 +89,77 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             }
         }, true);
 
-        //2
+        //MaoMapMapMapMap
+        $scope.selectedItems3 = [
+            {name: 'tutu'}
+        ];
+        angular.extend($scope, {osloCenter: {
+            lat: 59.93,
+            lng: 10.75,
+            zoom: 12
+        }});
+
+        $scope.markers ={
+            start: {
+                lat: 59.93, //newVal[0].age,
+                    lng: 12.75,
+                    message: "Start ",// + x.toString().substr(4) + " " + y.toString().substr(4),
+                    focus: true,
+                    draggable: false
+            },
+            end: {
+                lat: 59.91,
+                    lng: 10.75,
+                    message: "End",
+                    focus: true,
+                    draggable: false
+            }
+        };
+
+        $scope.$watch('selectedItems3', function (newVal, oldVal) {
+            if (newVal !== oldVal && newVal[0].age !== oldVal[0].age) {
+//                angular.extend($scope, {osloCenter: {
+//                    lat: newVal[0].age,
+//                    lng: 12.75,
+//                    zoom: 12
+//                }});
+                $scope.markers ={
+                    start: {
+                        lat: newVal[0].age, //newVal[0].age,
+                        lng: 12.75,
+                        message: "End ",// + x.toString().substr(4) + " " + y.toString().substr(4),
+                        focus: true,
+                        draggable: false
+                    },
+                    end: {
+                        lat: 59.91,
+                        lng: 10.75,
+                        message: "Start",
+                        focus: true,
+                        draggable: false
+                    }
+                };
+
+                for(var i=0;i<10;i++)
+                {
+                    $scope.markers.put("mid"+i, {
+                        lat: 59.91 + i/10*newVal[0].age,
+                        lng: 10.75,
+                        message: "End",
+                        focus: true,
+                        draggable: false
+                    });
+                }
+            }
+        }, true);
+
+        //222222222222222222222222222222222222222222222222222
         $scope.persons2 = [
-            {name: "Person2", age: 50},
-            {name: "Person2", age: 43},
-            {name: "Person2", age: 27},
-            {name: "Person2", age: 29},
-            {name: "Person2", age: 34}
+            {name: "Person1", age: 59.93},
+            {name: "Person2", age: 59.83},
+            {name: "Person3", age: 59.73},
+            {name: "Person4", age: 59.63},
+            {name: "Person5", age: 59.53}
         ];
 
         $scope.columnDefs2 = [
@@ -106,35 +168,6 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         ];
 
 
-//        $scope.gridOptions = {
-//            showColumnMenu : true,
-//            showGroupPanel : true
-//        };
-        //
-
-
-//        //GRID
-//        //Columns
-//        $scope.statuses = statusesConstant;
-//        $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
-//        $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
-//
-//        $scope.columnDefs = [
-//            { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
-//                editableCellTemplate: $scope.cellInputEditableTemplate, colFilterText: '' },
-//            { field: 'age', displayName: 'Age', enableCellEdit: false },
-//            { field: 'born', displayName: 'Born', enableCellEdit: false, cellFilter: 'datetime' },
-//            { field: 'status', displayName: 'Status', enableCellEditOnFocus: true,
-//                editableCellTemplate: $scope.cellSelectEditableTemplate,
-//                cellFilter: 'status'}
-//        ];
-//
-//        //Init
-//        $scope.$on('ngGridEventData', function () {
-//            $scope.gridOptions.selectRow(0, true);
-//        });
-//        //GRID/
-//
 //        //COMBO
         $scope.activeComboData = [
             {name: "Active", active: true},
@@ -145,7 +178,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             {name: "Young", age: 10}
         ];
 //        //COMBO/
-//
+
 //        //Internals - do not touch
         $scope.$http = $http; //TODO! remove and injext services in VGBC
         angular.extend(this, new VasabiGridBaseController($scope));
