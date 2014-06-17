@@ -35,8 +35,14 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
             this.save.pending = true;
             this.save.promise = $timeout(function () {
 
+                //delete
+                var _row = roJson.stripForUpdate(row);
+                var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
+                var responsePromise = $http.delete(link);
+                return;
+
                 if (!row.id){
-                //create
+                //creater
                     var _row = roJson.stripForInsert(row);
                     var responsePromise = $http.put("/api/alarms.json", _row);
                 }
@@ -49,7 +55,7 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
                 }
 
                 responsePromise.success(function(data, status, headers, config) {
-                    console.log(status);
+                    console.log("AJAX successed:" + status);
                 });
                 responsePromise.error(function(data, status, headers, config) {
                     alert("AJAX failed!" + status);
@@ -60,6 +66,7 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
         }
         this.save.pending = false;
     };
+
 
     //Map
     this.getData = function (x, y) {

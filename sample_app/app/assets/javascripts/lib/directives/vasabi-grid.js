@@ -1,5 +1,5 @@
 var libDirectives = angular.module("lib.directives", [])
-    .directive('vasabiGrid', function ($compile) {
+    .directive('vasabiGrid', function ($compile, $timeout) {
 
         return {
             restrict: 'E',
@@ -53,10 +53,11 @@ var libDirectives = angular.module("lib.directives", [])
                 $scope.options.filterOptions.filterText = value;
             });
 
-            //TODO! Init
-//            $scope.$on('ngGridEventData', function () {
-//                $scope.gridOptions.selectRow(0, true);
-//            });
+            //Init
+            $scope.$on('ngGridEventData', function () {
+                $scope.options.selectRow(0, true);
+            });
+
 
 
         }

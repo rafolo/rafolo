@@ -65,8 +65,10 @@
                         </div>
 
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-blue" ng-click="updateChanges(selectedItems[0])">Save changes</button>
-                            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                            <button type="submit" class="btn btn-green" ng-click="create(selectedItems[0])">Insert</button>
+                            <button type="submit" class="btn btn-red" ng-click="delete(selectedItems[0])">Delete</button>
+                            <button type="submit" class="btn btn-blue" ng-click="update(selectedItems[0])">Save</button>
+                            <button type="button" class="btn btn-default" ng-click="read(selectedItems[0])">Cancel</button>
                         </div>
                     </form>
 

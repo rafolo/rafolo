@@ -50,7 +50,7 @@ class AlarmsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @alarm.errors, status: :unprocessable_entity }
       end
-    end
+    end 
   end
 
   # PUT /alarms/1

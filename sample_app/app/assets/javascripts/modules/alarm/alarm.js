@@ -31,6 +31,8 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             currentPage: 1
         };
 
+
+
         $scope.setPagingData = function (data, page, pageSize) {
 
             var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
@@ -41,7 +43,20 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             }
         };
 
-        $scope.updateChanges = function(row){
+        //CRUD
+        $scope.create = function(row){
+            alarmService.updateEntity(row);
+        }
+
+        $scope.read = function(row){
+            alarmService.updateEntity(row);
+        }
+
+        $scope.update = function(row){
+            alarmService.updateEntity(row);
+        }
+
+        $scope.delete = function(row){
             alarmService.updateEntity(row);
         }
 
