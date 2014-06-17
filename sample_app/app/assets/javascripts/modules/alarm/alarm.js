@@ -5,12 +5,12 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             controller: 'AlarmController'
         });
     }])
-    .controller("AlarmController", ['$scope', '$log', '$interval', '$http', '$timeout','alarmService', 'StatusesConstant', function ($scope, $log, $interval, $http, $timeout, mappointService, StatusesConstant) {
+    .controller("AlarmController", ['$scope', '$log', '$interval', '$http', '$timeout', 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $http, $timeout, alarmService, statusesConstant) {
 
         //test
         //1
         $scope.persons = [];
-        $scope.statuses = StatusesConstant;
+        $scope.statuses = statusesConstant;
         $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
         $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
         $scope.columnDefs = [
@@ -31,14 +31,8 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             currentPage: 1
         };
 
-        $scope.$watch('pagingOptions', function (newVal, oldVal) {
-
-            if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
-                $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
-            }
-        }, true);
-
         $scope.setPagingData = function (data, page, pageSize) {
+
             var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
             $scope.persons = pagedData;
             $scope.totalServerItems = data.length;
@@ -46,68 +40,20 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 $scope.$apply();
             }
         };
-        $scope.getPagedDataAsync = function (pageSize, page, searchText) {
-            setTimeout(function () {
-                var data;
-                if (searchText) {
-                    var ft = searchText.toLowerCase();
-//                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
-                    $scope.$http.get('/api/alarms.json').success(function (largeLoad) {
-                        data = largeLoad.filter(function (item) {
-                            return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
-                        });
-                        $scope.setPagingData(data, page, pageSize);
-                    });
-                } else {
-//                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
-                    $scope.$http.get('/api/alarms.json').success(function (largeLoad) {
-                        $scope.setPagingData(largeLoad, page, pageSize);
-                    });
-                }
-            }, 100);
-        };
 
-        $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
-
+        alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
         $scope.$watch($scope.pagingOptions, function (newVal, oldVal) {
             if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
-                $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+                alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
             }
         }, true);
+        //TODO! Remove redundand
+        $scope.$watch('pagingOptions', function (newVal, oldVal) {
 
-        //Save
-        $scope.updateEntity = function (row) {
-            if (!$scope.save) {
-                $scope.save = { promise: null, pending: false, row: null };
+            if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
+                alarmService.getPagedDataAsync($http, setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
             }
-            $scope.save.row = row;
-            if (!$scope.save.pending) {
-                $scope.save.pending = true;
-                $scope.save.promise = $timeout(function () {
-                    var _row = angular.copy(row);
-                    delete _row.id;
-                    delete _row.created_at;
-                    delete _row.updated_at;
-
-                    console.log(angular.toJson(_row));
-
-                    //create
-                    //var responsePromise = $http.put("/alarms.json", {"active":false,"born":"2014-06-16T15:41:00Z","description":"test2","name":"Michal"});
-
-                    var responsePromise = $http.put("/api/alarms/2.json", angular.toJson(_row));
-
-
-                    responsePromise.success(function(data, status, headers, config) {
-                        console.log(status);
-                    });
-                    responsePromise.error(function(data, status, headers, config) {
-                        alert("AJAX failed!");
-                    });
-
-                    $scope.save.pending = false;
-                }, 500);
-            }
-        };
+        }, true);
 
         //2
         $scope.persons2 = [
@@ -133,7 +79,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
 //        //GRID
 //        //Columns
-//        $scope.statuses = StatusesConstant;
+//        $scope.statuses = statusesConstant;
 //        $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
 //        $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
 //
@@ -177,10 +123,10 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             });
         };
     })
-    .filter('status', function (StatusesConstant) {
+    .filter('status', function (statusesConstant) {
         return function (input) {
-            if (StatusesConstant[input]) {
-                return StatusesConstant[input];
+            if (statusesConstant[input]) {
+                return statusesConstant[input];
             } else {
                 return 'unknown';
             }
@@ -199,7 +145,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
         };
     })
-    .factory('StatusesConstant', function () {
+    .factory('statusesConstant', function () {
         return {
             false: 'inactive',
             true: 'active'

@@ -10,7 +10,7 @@ User.create!("email" => "1rafal@pkey.pl", "name" => "Rafal", "password" => "pass
 User.create!("email" => "2rafal1@pkey.pl", "name" => "Rafal1", "password" => "password", "password_confirmation" => "password")
 User.create!("email" => "3rafal2@pkey.pl", "name" => "Rafal2", "password" => "password", "password_confirmation" => "password")
 
-(1..100).each do |i|
+(1..3).each do |i|
   Alarm.create!("name" => "test#{i}", "description" => "test#{i}", "active" => false, "born" => Time.now)
 end
 
