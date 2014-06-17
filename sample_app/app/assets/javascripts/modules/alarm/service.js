@@ -35,29 +35,41 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
             this.save.pending = true;
             this.save.promise = $timeout(function () {
 
-                //delete
-                var _row = roJson.stripForUpdate(row);
-                var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
-                var responsePromise = $http.delete(link);
-                return;
+                var responsePromise;
+                if (row.read) {
 
-                if (!row.id){
-                //creater
-                    var _row = roJson.stripForInsert(row);
-                    var responsePromise = $http.put("/api/alarms.json", _row);
+                    var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
+                    responsePromise = $http.get(link);
+                    return;
                 }
-                else
-                {
-                 //update
+
+                //delete
+                if (row.delete) {
+
                     var _row = roJson.stripForUpdate(row);
                     var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
-                    var responsePromise = $http.put(link, angular.toJson(_row));
+                    responsePromise = $http.delete(link);
+                    return;
                 }
 
-                responsePromise.success(function(data, status, headers, config) {
-                    console.log("AJAX successed:" + status);
+                if (row.create) {
+                    //create
+                    var _row = roJson.stripForInsert(row);
+                    responsePromise = $http.post("/api/alarms.json", _row);
+                    return;
+                }
+
+                if (row.update) {
+
+                    var _row = roJson.stripForUpdate(row);
+                    var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
+                    responsePromise = $http.put(link, angular.toJson(_row));
+                }
+
+                responsePromise.success(function (data, status, headers, config) {
+                    console.log("AJAX successed:" + data + " status" + status);
                 });
-                responsePromise.error(function(data, status, headers, config) {
+                responsePromise.error(function (data, status, headers, config) {
                     alert("AJAX failed!" + status);
                 });
 

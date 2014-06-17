@@ -4,7 +4,7 @@ var libDirectives = angular.module("lib.directives", [])
         return {
             restrict: 'E',
             templateUrl: '/assets/lib/directives/templates/vasabi-grid.html',
-            scope: { items: '=', cols: '=', selectedItems: '=', customOptions: '=', pagingOptions: '='},
+            scope: { items: '=', cols: '=', selectedItems: '=', customOptions: '=', pagingOptions: '=', crudCreate: '=', crudRead: '=', crudUpdate: '=', crudDelete: '='},
             replace: true,
             transclude: false,
             controller: controller
@@ -19,6 +19,14 @@ var libDirectives = angular.module("lib.directives", [])
                 columnDefs: 'cols',
                 data: 'items'
             };
+
+            //crud columns TODO! reconsile with contrller
+//            var crudReadTemplate = '<input type="button" value="r" ng-click="crudReadHandler($index)" />';
+//            var crudUpdateTemplate = '<input type="button" value="u" ng-click="crudUpdateHandler($index)" />';
+//            var crudDeleteTemplate = '<input type="button" value="d" ng-click="crudDeleteHandler($index)" />';
+//            angular.extend(fixedOptions.columnDefs, {field: 'R', displayName: '', enableCellEdit: false, cellTemplate: crudReadTemplate});
+//            angular.extend(fixedOptions.columnDefs, {field: 'U', displayName: '', enableCellEdit: false, cellTemplate: crudUpdateTemplate});
+//            angular.extend(fixedOptions.columnDefs, {field: 'D', displayName: '', enableCellEdit: false, cellTemplate: crudDeleteTemplate});
 
             //defaultOptions
             var pagingOptions = $scope.pagingOptions; //TODO! move to custom options
@@ -40,7 +48,6 @@ var libDirectives = angular.module("lib.directives", [])
                 pagingOptions: pagingOptions,
                 showFooter: true,
                 totalServerItems: 'totalServerItems'
-
             };
 
             $scope.options = {};
@@ -59,6 +66,56 @@ var libDirectives = angular.module("lib.directives", [])
             });
 
 
+            //Crud Handlers
+            $scope.crudCreateHandler = function () {
+
+                if (!$scope.crudCreate) {
+                    console.error('crud-create handler not provided');
+                    return;
+                }
+
+                var row = $scope.crudCreate();
+                $scope.items.push(row);
+                $scope.options.selectRow($scope.items.length, true); //TODO! select item
+            };
+
+            $scope.crudReadHandler = function () {
+
+                if (!$scope.crudRead) {
+                    console.error('crud-read handler not provided');
+                    return;
+                }
+
+                debugger;
+                var index = this.row.rowIndex;
+                $scope.options.selectItem(index, true);
+                $scope.items[index] = $scope.crudRead($scope.items[index])
+            };
+
+            $scope.crudUpdateHandler = function () {
+
+                if (!$scope.crudUpdate) {
+                    console.error('crud-update handler not provided');
+                    return;
+                }
+
+                var index = this.row.rowIndex;
+                $scope.options.selectItem(index, false);
+                $scope.crudUpdate($scope.items[index]);
+            };
+
+            $scope.crudDeleteHandler = function () {
+
+                if (!$scope.crudDelete) {
+                    console.error('crud-delete handler not provided');
+                    return;
+                }
+
+                var index = this.row.rowIndex;
+                $scope.options.selectItem(index, false);
+                $scope.crudDelete($scope.items, index);
+                $scope.items.splice(index, 1);
+            };
 
         }
     })

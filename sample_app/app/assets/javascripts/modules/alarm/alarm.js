@@ -13,6 +13,10 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         $scope.statuses = statusesConstant;
         $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
         $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
+
+        var crudReadTemplate = '<input type="button" class="btn btn-default"  value="r" ng-click="crudReadHandler($index)" />';
+        var crudUpdateTemplate = '<input type="button" class="btn btn-blue" value="u" ng-click="crudUpdateHandler($index)" />';
+        var crudDeleteTemplate = '<input type="button" class="btn btn-red" value="d" ng-click="crudDeleteHandler($index)" />';
         $scope.columnDefs = [
             { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellInputEditableTemplate, colFilterText: '' },
@@ -20,7 +24,13 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             { field: 'born', displayName: 'Born', enableCellEdit: false, cellFilter: 'datetime' },
             { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellSelectEditableTemplate,
-                cellFilter: 'status'}
+                cellFilter: 'status'},
+            {field: 'R', displayName:'', width: 30, enableCellEdit: false, cellTemplate: crudReadTemplate}
+            ,
+            {field: 'U', displayName:'', width: 30, enableCellEdit: false, cellTemplate: crudUpdateTemplate}
+            ,
+            {field: 'D', displayName:'', width: 30, enableCellEdit: false, cellTemplate: crudDeleteTemplate}
+
         ];
 
         //Pagination
@@ -44,20 +54,27 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         };
 
         //CRUD
-        $scope.create = function(row){
+        $scope.create = function(){
+            var row =  {name: "created", born: new Date(), active:true, create:true };
             alarmService.updateEntity(row);
+            return row;
         }
 
         $scope.read = function(row){
+            debugger;
+            row.read = true;
             alarmService.updateEntity(row);
         }
 
         $scope.update = function(row){
+            row.update = true;
             alarmService.updateEntity(row);
         }
 
         $scope.delete = function(row){
+            row.delete = true;
             alarmService.updateEntity(row);
+
         }
 
         alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);

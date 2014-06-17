@@ -7,7 +7,11 @@
                 cols="columnDefs"
                 selected-items="selectedItems"
                 custom-options="gridOptions"
-                paging-options="pagingOptions">
+                paging-options="pagingOptions"
+                crud-create="create"
+                crud-read="read"
+                crud-update="update"
+                crud-delete="delete">
         </vasabi-grid>
     </div>
     <div class="col-md-3 separate-sections" ng-cloak class="ng-cloak">
@@ -64,11 +68,15 @@
                             </div>
                         </div>
 
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-green" ng-click="create(selectedItems[0])">Insert</button>
-                            <button type="submit" class="btn btn-red" ng-click="delete(selectedItems[0])">Delete</button>
-                            <button type="submit" class="btn btn-blue" ng-click="update(selectedItems[0])">Save</button>
-                            <button type="button" class="btn btn-default" ng-click="read(selectedItems[0])">Cancel</button>
+                        <div class="form-actions row center">
+                            <div style="text-align:center">
+                                <button type="submit" class="btn btn-blue" ng-click="update(selectedItems[0])">Update
+                                </button>
+                                <button type="submit" class="btn btn-red" ng-click="delete(items, selectedItems[0])">Delete
+                                </button>
+                                <button type="button" class="btn btn-default" ng-click="read(selectedItems[0])">Cancel
+                                </button>
+                            </div>
                         </div>
                     </form>
 
