@@ -6,10 +6,37 @@
             height: 300px;
             width: 100%;
         }
+
+        .left-inner-addon {
+            position: relative;
+        }
+        .left-inner-addon input {
+            padding-left: 30px;
+        }
+        .left-inner-addon i {
+            position: absolute;
+            padding: 10px 12px;
+            pointer-events: none;
+        }
+
+        .right-inner-addon {
+            position: relative;
+        }
+        .right-inner-addon input {
+            padding-right: 30px;
+        }
+        .right-inner-addon i {
+            position: absolute;
+            right: 0px;
+            padding: 10px 12px;
+            pointer-events: none;
+        }
+
+
     </style>
 
     <div class="box-header padding">
-        <input type="button" class="btn btn-green" value="..." ng-click="crudCreateHandler($index)" />'
+        <input type="button" class="btn btn-green" value="..." ng-click="crudCreateHandler($index)" />
         <input type="text" ng-model="search" placeholder="Search..." style="margin-left:25px" />
     </div>
 

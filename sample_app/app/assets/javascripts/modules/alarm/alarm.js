@@ -14,13 +14,14 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
         $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
 
-        var crudReadTemplate = '<input type="button" class="btn btn-default"  value="r" ng-click="crudReadHandler($index)" />';
-        var crudUpdateTemplate = '<input type="button" class="btn btn-blue" value="u" ng-click="crudUpdateHandler($index)" />';
-        var crudDeleteTemplate = '<input type="button" class="btn btn-red" value="d" ng-click="crudDeleteHandler($index)" />';
+        var crudReadTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-refresh\"></i><input type=\"button\" class=\"btn btn-default\"  value=\"r\" ng-click=\"crudReadHandler($index)\" /></div>";
+        var crudUpdateTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-ok\"></i><input type=\"button\" class=\"btn btn-blue\"  value=\"r\" ng-click=\"crudUpdateHandler($index)\" /></div>";
+        var crudDeleteTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-remove\"></i><input type=\"button\" class=\"btn btn-red\"  value=\"r\" ng-click=\"crudDeleteHandler($index)\" /></div>";
+        var chartTemplate = "<div class='easy-pie-chart-percent easyPieChart' style='display: inline-block; width: 150px; height: 150px; line-height: 150px;' data-percent='89'><span>11%</span><canvas width='150' height='150'></canvas></div>";
         $scope.columnDefs = [
             { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellInputEditableTemplate, colFilterText: '' },
-            { field: 'description', displayName: '?', enableCellEdit: false },
+            { field: 'description', displayName: '?', enableCellEdit: false, cellTemplate: chartTemplate },
             { field: 'born', displayName: 'Born', enableCellEdit: false, cellFilter: 'datetime' },
             { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellSelectEditableTemplate,
@@ -140,16 +141,16 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                     }
                 };
 
-                for(var i=0;i<10;i++)
-                {
-                    $scope.markers.put("mid"+i, {
-                        lat: 59.91 + i/10*newVal[0].age,
-                        lng: 10.75,
-                        message: "End",
-                        focus: true,
-                        draggable: false
-                    });
-                }
+//                for(var i=0;i<10;i++)
+//                {
+////                    $scope.markers.put("mid"+i, {
+////                        lat: 59.91 + i/10*newVal[0].age,
+////                        lng: 10.75,
+////                        message: "End",
+////                        focus: true,
+////                        draggable: false
+////                    });
+//                }
             }
         }, true);
 
@@ -207,10 +208,22 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 return "";
             }
 
-            var _date = $filter('date')(new Date(input),
+            var _date = $filter('date')(new Date(input), //use other filter & modify it
                 'MMM dd yyyy - HH:mm:ss');
 
-            return _date.toUpperCase();
+            return '(' + _date + ')';
+
+        };
+    }).filter('chart', function ($filter) {
+        return function (input) {
+            if (input == null) {
+                return "";
+            }
+
+            var _chart = "<div class='easy-pie-chart-percent easyPieChart' style='display: inline-block; width: 150px; height: 150px; line-height: 150px;' data-percent='89'><span>11%</span><canvas width='150' height='150'></canvas></div>";
+
+            _chart = "<p ng-bind-html=\"" + _chart + "\"></p>";
+            return _chart;
 
         };
     })
