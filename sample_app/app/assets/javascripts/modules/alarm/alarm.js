@@ -41,6 +41,10 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             }
         };
 
+        $scope.updateChanges = function(row){
+            alarmService.updateEntity(row);
+        }
+
         alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
         $scope.$watch($scope.pagingOptions, function (newVal, oldVal) {
             if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {

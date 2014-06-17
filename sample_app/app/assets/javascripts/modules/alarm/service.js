@@ -1,4 +1,4 @@
-alarmModule.service('alarmService', ['rafolo.Json', function (rafoloJson) {
+alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($timeout, $http, roJson) {
 
     //Grid
     //Load
@@ -7,6 +7,7 @@ alarmModule.service('alarmService', ['rafolo.Json', function (rafoloJson) {
             var data;
             if (searchText) {
                 var ft = searchText.toLowerCase();
+                //TODO! Remove comments
 //                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
                 http.get('/api/alarms.json').success(function (largeLoad) {
                     data = largeLoad.filter(function (item) {
@@ -25,7 +26,7 @@ alarmModule.service('alarmService', ['rafolo.Json', function (rafoloJson) {
 
     //Save
     this.updateEntity = function (row) {
-        debugger;
+
         if (!this.save) {
             this.save = { promise: null, pending: false, row: null };
         }
@@ -34,16 +35,16 @@ alarmModule.service('alarmService', ['rafolo.Json', function (rafoloJson) {
             this.save.pending = true;
             this.save.promise = $timeout(function () {
 
-                if (row.id){
+                if (!row.id){
                 //create
-                    var _row = rafoloJson.stripForInsert(row);
-                    var responsePromise = $http.put("/alarms.json", _row);
+                    var _row = roJson.stripForInsert(row);
+                    var responsePromise = $http.put("/api/alarms.json", _row);
                 }
                 else
                 {
                  //update
-                    var _row = rafoloJson.stripForUpdate(row);
-                    var link = ["/api/alarms/", row.id, "2.json"].join(); //"/api/alarms/2.json"
+                    var _row = roJson.stripForUpdate(row);
+                    var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
                     var responsePromise = $http.put(link, angular.toJson(_row));
                 }
 
@@ -51,12 +52,13 @@ alarmModule.service('alarmService', ['rafolo.Json', function (rafoloJson) {
                     console.log(status);
                 });
                 responsePromise.error(function(data, status, headers, config) {
-                    alert("AJAX failed!");
+                    alert("AJAX failed!" + status);
                 });
 
-                this.save.pending = false;
+
             }, 500);
         }
+        this.save.pending = false;
     };
 
     //Map

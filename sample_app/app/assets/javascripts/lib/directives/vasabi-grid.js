@@ -3,7 +3,7 @@ var libDirectives = angular.module("lib.directives", [])
 
         return {
             restrict: 'E',
-            templateUrl: '/assets/lib/directives/templates/grid.html',
+            templateUrl: '/assets/lib/directives/templates/vasabi-grid.html',
             scope: { items: '=', cols: '=', selectedItems: '=', customOptions: '=', pagingOptions: '='},
             replace: true,
             transclude: false,

@@ -3,16 +3,16 @@
 // 'app' is the one Angular (Ng) module in this app
 // 'app' module is in global namespace
 window.app = angular.module('app', [
-                            'ngRoute',
-                            'ngGrid',
-                            'leaflet-directive',
-                            'app.home',
-                            'app.about',
-                            'app.alarm',
-                            'app.todo',
-                            'app.mappoint.points',
-                            'app.mappoint.routes',
-                            'app.profile'
+    'ngRoute',
+    'ngGrid',
+    'leaflet-directive',
+    'app.home',
+    'app.about',
+    'app.alarm',
+    'app.todo',
+    'app.mappoint.points',
+    'app.mappoint.routes',
+    'app.profile'
 ]);
 
 // Add global "services" (like breeze and Q) to the Ng injector
@@ -42,23 +42,25 @@ app.factory('logger', function () {
     }
 });
 
+
+
 // Configure routes
 app.config(['$routeProvider', function ($routeProvider) {
 
-  }]);
+}]);
 
 //#region Ng directives
 /*  We extend Angular with custom data bindings written as Ng directives */
 app.directive('onFocus', function () {
-        return {
-            restrict: 'A',
-            link: function (scope, elm, attrs) {
-                elm.bind('focus', function () {
-                    scope.$apply(attrs.onFocus);
-                });
-            }
-        };
-    })
+    return {
+        restrict: 'A',
+        link: function (scope, elm, attrs) {
+            elm.bind('focus', function () {
+                scope.$apply(attrs.onFocus);
+            });
+        }
+    };
+})
     .directive('onBlur', function () {
         return {
             restrict: 'A',
