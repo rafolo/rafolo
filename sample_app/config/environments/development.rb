@@ -43,4 +43,8 @@ SampleApp::Application.configure do
 
   #show plastique examples
   config.show_examples = true
+
+  #heroku
+  config.assets.initialize_on_precompile = false
+
 end
