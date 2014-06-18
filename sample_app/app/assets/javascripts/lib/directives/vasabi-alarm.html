@@ -1,3 +1,12 @@
+<style>
+    .visible {
+
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+
 <!-- Form 111111111111111111111111111111111111111111111111111111111-->
 <div class="row" ng-cloak class="ng-cloak">
 
@@ -16,14 +25,14 @@
     </div>
     <div class="col-md-3 separate-sections" ng-cloak class="ng-cloak">
         <div>
-            <div class="box">
+            <div ng-class="selectedItems[0] ? 'visible' : 'hidden'" class="box">
                 <div class="box-header">
                     <span class="title"><i class="icon-warning-sign"></i> Forms with validation</span>
                 </div>
 
                 <div class="box-content">
 
-                    <form name="myForm" class="form-horizontal fill-up validatable">
+                    <form  name="myForm" class="form-horizontal fill-up validatable">
 
                         <div class="padded">
 

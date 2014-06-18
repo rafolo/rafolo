@@ -21,14 +21,17 @@ var libDirectives = angular.module("lib.directives", [])
             };
 
             //crud columns TODO! reconsile with contrller
-//            var crudReadTemplate = '<input type="button" value="r" ng-click="crudReadHandler($index)" />';
-//            var crudUpdateTemplate = '<input type="button" value="u" ng-click="crudUpdateHandler($index)" />';
-//            var crudDeleteTemplate = '<input type="button" value="d" ng-click="crudDeleteHandler($index)" />';
-//            angular.extend(fixedOptions.columnDefs, {field: 'R', displayName: '', enableCellEdit: false, cellTemplate: crudReadTemplate});
-//            angular.extend(fixedOptions.columnDefs, {field: 'U', displayName: '', enableCellEdit: false, cellTemplate: crudUpdateTemplate});
-//            angular.extend(fixedOptions.columnDefs, {field: 'D', displayName: '', enableCellEdit: false, cellTemplate: crudDeleteTemplate});
+//            debugger;
+//            $scope.crudReadTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-refresh\"></i><input type=\"button\" class=\"btn btn-default\"  value=\"r\" ng-click=\"crudReadHandler($index)\" /></div>";
+//            $scope.crudUpdateTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-ok\"></i><input type=\"button\" class=\"btn btn-blue\"  value=\"r\" ng-click=\"crudUpdateHandler($index)\" /></div>";
+//            $scope.crudDeleteTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-remove\"></i><input type=\"button\" class=\"btn btn-red\"  value=\"r\" ng-click=\"crudDeleteHandler($index)\" /></div>";
+//
+//            fixedOptions.columnDefs.push({field: 'R', displayName: '', enableCellEdit: false, cellTemplate: $scope.crudReadTemplate});
+//            fixedOptions.columnDefs.push({field: 'U', displayName: '', enableCellEdit: false, cellTemplate: $scope.crudUpdateTemplate});
+//            fixedOptions.columnDefs.push({field: 'D', displayName: '', enableCellEdit: false, cellTemplate: $scope.crudDeleteTemplate});
 
             //defaultOptions
+            //debugger;
             var pagingOptions = $scope.pagingOptions; //TODO! move to custom options
             var enablePaging = false;
             if (pagingOptions) {
@@ -119,48 +122,6 @@ var libDirectives = angular.module("lib.directives", [])
 
         }
     })
-//    .directive("vasabiGrid", function () {
-//        return {
-//            restrict: "E",
-//            templateUrl: '/assets/lib/directives/base/vasabi-grid.html',
-//            scope: { items: '=', cols: '=', selectedItems: '=', customOptions: '='},
-//            replace: true,
-//            transclude: true,
-//            controller: controller
-//        };
-//
-//        function controller($scope, $attrs) {
-//            $scope.selectedItems = [];
-//
-//
-//
-//            var customOptions = $scope.customOptions;
-//
-//            var fixedOptions = {
-//                columnDefs: 'cols',
-//                data: 'items'
-//            };
-//
-//            var defaultOptions = {
-//                selectedItems: $scope.selectedItems,
-//                showSelectionCheckbox: true,
-//                showFooter: true,
-//                filterOptions: {
-//                    filterText: '',
-//                    useExternalFilter: false
-//                }
-//            };
-//
-//            $scope.options = {};
-//            angular.extend($scope.options, defaultOptions);
-//            angular.extend($scope.options, customOptions);
-//            angular.extend($scope.options, fixedOptions);
-//
-//            $scope.$watch('search', function (value) {
-//                $scope.options.filterOptions.filterText = value;
-//            });
-//        }
-//    })
     .directive("vasabiAlarm", function () {
         return {
             restrict: "A",

@@ -258,7 +258,12 @@ function coreAdmGeneric() {
       return $(".easy-pie-chart, .easy-pie-chart-percent").each(function() {
         var val;
         val = getRandomInt(0, 80);
-        $(this).data("easyPieChart").update(val);
+        var easyPieChart = $(this).data("easyPieChart");
+        if (easyPieChart) {
+
+            easyPieChart.update(val);
+        }
+
         return $(this).find("span").text("" + val + "%");
       });
     }, 2500);
