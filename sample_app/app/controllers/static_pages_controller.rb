@@ -24,9 +24,6 @@ class StaticPagesController < ApplicationController
     render :layout => "application"
   end
 
-  def metadata
-    render json: METADATA
-  end
 
   def lookups
     @rooms      = Room.all

@@ -51,8 +51,14 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/dashboard', to: 'static_pages#dashboard'
 
+  #core admin compatible
   get '*stylesheets/application.css', to: redirect('/assets/application_core_admin.css')
-  get '*javascripts/application.js', to: redirect('/assets/core_admin/application.js')
+
+  get '*javascripts/application.js', to: redirect('/assets/application.js')
+  get '*javascripts/calendar.js', to: redirect('/assets/core_admin/calendar.js')
+  get '*javascripts/gritter.js', to: redirect('/assets/core_admin/gritter.js')
+  get '*javascripts/generic.js', to: redirect('/assets/core_admin/generic.js')
+  get '*javascripts/debug/live.js', to: redirect('/assets/debug/live.js') #TODO! generate non hard coded link in template
   get '*images/avatars/:file.:ext', to: redirect('/assets/avatars/%{file}.%{ext}')
 
   get '/api/Todo/Metadata', to: 'static_pages#metadata'
