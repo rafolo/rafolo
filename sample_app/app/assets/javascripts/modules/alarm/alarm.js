@@ -7,6 +7,17 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
     }])
     .controller("AlarmController", ['$scope', '$log', '$interval', '$http', '$timeout', 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $http, $timeout, alarmService, statusesConstant) {
 
+        $scope.$on('$viewContentLoaded', function () {
+            setInterval(function () {
+                $(".easy-pie-chart-percent").easyPieChart({
+//                //your configuration goes here
+                    size: 50
+                })
+            }, 3000);
+
+        });
+
+
         //test
         //1
         $scope.persons = [];
@@ -100,20 +111,20 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             zoom: 12
         }});
 
-        $scope.markers ={
+        $scope.markers = {
             start: {
                 lat: 59.93, //newVal[0].age,
-                    lng: 12.75,
-                    message: "Start ",// + x.toString().substr(4) + " " + y.toString().substr(4),
-                    focus: true,
-                    draggable: false
+                lng: 12.75,
+                message: "Start ",// + x.toString().substr(4) + " " + y.toString().substr(4),
+                focus: true,
+                draggable: false
             },
             end: {
                 lat: 59.91,
-                    lng: 10.75,
-                    message: "End",
-                    focus: true,
-                    draggable: false
+                lng: 10.75,
+                message: "End",
+                focus: true,
+                draggable: false
             }
         };
 
@@ -124,7 +135,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 //                    lng: 12.75,
 //                    zoom: 12
 //                }});
-                $scope.markers ={
+                $scope.markers = {
                     start: {
                         lat: newVal[0].age, //newVal[0].age,
                         lng: 12.75,
@@ -186,7 +197,9 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 //        //angular.extend(this, new VasabiChartBaseController($scope));
 //        //angular.extend(this, new VasabiMapBaseController($scope));
 
-    }]).directive('ngBlur', function () {
+    }
+    ]).
+    directive('ngBlur', function () {
         return function (scope, elem, attrs) {
             elem.bind('blur', function () {
                 scope.$apply(attrs.ngBlur);
