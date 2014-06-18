@@ -83,8 +83,17 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         }
 
         $scope.delete = function (row) {
-            row.delete = true;
-            alarmService.updateEntity(row);
+
+            //TODO? Wiser method???
+            for(var i=0; i<$scope.persons.length; i++){
+                var person = $scope.persons[i];
+                if (row.id = person.id)
+                {
+                    row.delete = true;
+                    alarmService.updateEntity(row);
+                    $scope.persons.splice(i, 1);
+                }
+            }
 
         }
 

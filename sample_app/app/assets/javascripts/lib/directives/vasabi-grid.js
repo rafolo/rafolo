@@ -116,7 +116,7 @@ var libDirectives = angular.module("lib.directives", [])
 
                 var index = this.row.rowIndex;
                 $scope.options.selectItem(index, false);
-                $scope.crudDelete($scope.items, index);
+                $scope.crudDelete($scope.items[index]);
                 $scope.items.splice(index, 1);
             };
 
