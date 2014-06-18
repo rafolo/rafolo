@@ -7,16 +7,17 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
     }])
     .controller("AlarmController", ['$scope', '$log', '$interval', '$http', '$timeout', 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $http, $timeout, alarmService, statusesConstant) {
 
-        $scope.$on('$viewContentLoaded', function () {
-            setInterval(function () {
-                $(".easy-pie-chart-percent").easyPieChart({
-//                //your configuration goes here
-                    size: 50
-                })
-            }, 3000);
+//        debugger;
+//        coreAdminInit.call(this);
 
-        });
 
+//        $scope.$watchCollection( 'conferences', function( old, nuew ) {
+//            if( old === nuew ) return;
+//            $( '#dataTablex' ).dataTable().fnDestroy();
+//            $timeout(function () {
+//                $( '#dataTablex' ).dataTable();
+//            });
+//        });
 
         //test
         //1

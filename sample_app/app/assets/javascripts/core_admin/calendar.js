@@ -1,4 +1,4 @@
-(function() {
+function coreAdmCalendar() {
 
   $(function() {
     var d, date, m, y;
@@ -68,4 +68,6 @@
     });
   });
 
-}).call(this);
+}
+
+coreAdmCalendar.call(this);

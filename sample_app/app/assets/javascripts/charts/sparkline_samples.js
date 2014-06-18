@@ -1,4 +1,4 @@
-(function() {
+ function coreAdmSparklineSamples() {
 
   $(function() {
     var barChartDataset, colors, drawMouseSpeedDemo, initBarChart, initLineChart, initPieChart, lineChartDataset, tooltipLabels;
@@ -131,4 +131,6 @@
     }
   });
 
-}).call(this);
+}
+
+ coreAdmSparklineSamples.call(this);

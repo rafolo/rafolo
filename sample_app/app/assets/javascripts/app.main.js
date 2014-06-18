@@ -49,6 +49,41 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 }]);
 
+//initializes js for core admin widgets
+//use: <div class="row" ro-core-admin-init>
+app.directive('roCoreAdminInit', function() {
+    return {
+
+        link: function($scope, element, attrs) {
+            // Trigger when number of children changes,
+            // including by directives like ng-repeat
+            var watch = $scope.$watch(function() {
+                return element.children().length;
+            }, function() {
+                // Wait for templates to render
+                $scope.$evalAsync(function() {
+                    // Finally, directives are evaluated
+                    // and templates are renderer here
+                    var children = element.children();
+                    console.log(children);
+
+                    //CHARTS
+                    coreAdmHorizontalBarCharts.call(this);
+                    coreAdmSparklineSamples.call(this);
+                    coreAdmXChartsBar.call(this);
+                    coreAdmXChartLeftSine.call(this);
+                    coreAdmXChartSine.call(this);
+
+                    //CA
+                    coreAdmCalendar.call(this);
+                    coreAdmGeneric.call(this);
+                    coreAdmGritter.call(this);
+                });
+            });
+        }
+    };
+});
+
 //#region Ng directives
 /*  We extend Angular with custom data bindings written as Ng directives */
 app.directive('onFocus', function () {

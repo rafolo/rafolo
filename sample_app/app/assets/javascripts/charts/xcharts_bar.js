@@ -1,4 +1,4 @@
-$(function () {
+function coreAdmXChartsBar() {
 
     var getData = function() {
         var data = {
@@ -36,4 +36,9 @@ $(function () {
         });
     }
 
-});
+};
+
+//document ready
+$(
+    coreAdmXChartsBar
+)

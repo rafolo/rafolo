@@ -1,5 +1,5 @@
 
-(function() {
+function coreAdmGeneric() {
 
   this.Theme = (function() {
 
@@ -20,6 +20,7 @@
   })();
 
   $(function() {
+
     var gauges;
     $('.icheck').iCheck({
       checkboxClass: 'icheckbox_flat-aero',
@@ -263,4 +264,6 @@
     }, 2500);
   });
 
-}).call(this);
+}
+
+coreAdmGeneric.call(this);

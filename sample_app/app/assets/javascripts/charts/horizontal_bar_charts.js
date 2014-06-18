@@ -1,4 +1,4 @@
-(function() {
+function coreAdmHorizontalBarCharts() {
 
   $(function() {
     var d1_h, d2_h, d3_h, ds_h, i, previousPoint, showTooltip;
@@ -94,4 +94,6 @@
     });
   });
 
-}).call(this);
+}
+
+coreAdmHorizontalBarCharts.call(this);

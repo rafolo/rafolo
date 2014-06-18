@@ -1,4 +1,4 @@
-$(function(){
+function coreAdmXChartLeftSine(){
     var tt = document.createElement('div'),
         leftOffset = -($('html').css('padding-left').replace('px', '') + $('body').css('margin-left').replace('px', '')),
         topOffset = -32;
@@ -48,4 +48,9 @@ $(function(){
     }
 
 
-});
+}
+
+//document ready
+$(
+    coreAdmXChartLeftSine
+)

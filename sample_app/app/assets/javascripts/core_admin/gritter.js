@@ -1,4 +1,4 @@
-(function() {
+function coreAdmGritter() {
 
   this.Growl = (function() {
 
@@ -66,4 +66,6 @@
     });
   });
 
-}).call(this);
+}
+
+coreAdmGritter.call(this);
