@@ -3,14 +3,22 @@ var libDirectives = angular.module("lib.directives", [])
 
         return {
             restrict: 'E',
+            require: "^ngController",
             templateUrl: '/assets/lib/directives/templates/vasabi-grid.html',
             scope: { items: '=', cols: '=', selectedItems: '=', customOptions: '=', pagingOptions: '=', crudCreate: '=', crudRead: '=', crudUpdate: '=', crudDelete: '='},
             replace: true,
             transclude: false,
-            controller: controller
+            controller: controller,
+            link: link
         };
 
+        function  link(scope,elem,attrs,ngCtrl) {
+
+           //scope.options.footerTemplate =  ngCtrl.getFooterTemplate();
+        }
+
         function controller($scope, $attrs) {
+
             $scope.selectedItems = [];
 
             var customOptions = $scope.customOptions;
@@ -19,6 +27,18 @@ var libDirectives = angular.module("lib.directives", [])
                 columnDefs: 'cols',
                 data: 'items'
             };
+
+//         fixedOptions.columnDefs.push({ "field": 'name', "displayName": 'Name2' });
+//            fixedOptions.columnDefs = [
+//                { field: 'name', displayName: 'Name' },
+//                { field: 'description', displayName: '?'},
+//                { field: 'born', displayName: 'Born'},
+//                { field: 'active', displayName: 'Active?'},
+//
+//
+//            ];
+
+//
 
             //crud columns TODO! reconsile with contrller
 //            debugger;
@@ -50,7 +70,7 @@ var libDirectives = angular.module("lib.directives", [])
                 enablePaging: enablePaging,
                 pagingOptions: pagingOptions,
                 showFooter: true,
-                totalServerItems: 'totalServerItems'
+                totalServerItems: $scope.totalServerItems
             };
 
             $scope.options = {};
@@ -89,7 +109,7 @@ var libDirectives = angular.module("lib.directives", [])
                     return;
                 }
 
-                debugger;
+                //debugger;
                 var index = this.row.rowIndex;
                 $scope.options.selectItem(index, true);
                 $scope.items[index] = $scope.crudRead($scope.items[index])

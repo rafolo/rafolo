@@ -48,6 +48,17 @@
                             </div>
 
                             <div class="form-group" bs-has-success>
+                                <label class="control-label col-lg-2">Desc</label>
+
+                                <div class="col-lg-10">
+                                    <input name="description" id="text" type="text" class="validate[required]"
+                                           data-prompt-position="topLeft" ng-model="selectedItems[0].description" required>
+<span class="help-block note" ng-show="myForm.description.$error.required"><i
+        class="icon-warning-sign"></i> Please type a value.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group" bs-has-success>
                                 <label class="control-label col-lg-2">Born</label>
 
                                 <div class="col-lg-10">

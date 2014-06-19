@@ -1,9 +1,5 @@
 SampleApp::Application.routes.draw do
 
-  # namespace :api do
-  #   resources :alarms, :defaults => {:format => 'json'} #xml to
-  # end
-
   scope "/api" do
     resources :alarms
   end

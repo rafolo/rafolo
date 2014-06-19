@@ -41,6 +41,7 @@
 //= require jquery.ibutton/index
 //= require angular/angular
 //= require angular-route/angular-route
+//= require angular-resource/angular-resource
 //= require modernizr/modernizr
 //= require lib/q
 //= #require lib/breeze

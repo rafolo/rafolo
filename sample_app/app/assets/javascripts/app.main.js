@@ -5,6 +5,7 @@
 window.app = angular.module('app', [
     'ngRoute',
     'ngGrid',
+    "ngResource",
     'leaflet-directive',
     'app.home',
     'app.about',

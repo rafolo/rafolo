@@ -5,20 +5,22 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
     this.getPagedDataAsync = function (http, setPagingData, pageSize, page, searchText) {
         setTimeout(function () {
             var data;
+            var link = '/api/alarms.json?page=' + page.toString() + '&per_page=' + pageSize.toString();
+            //debugger;//TODO! Cleanup debugger
             if (searchText) {
                 var ft = searchText.toLowerCase();
                 //TODO! Remove comments
 //                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
-                http.get('/api/alarms.json').success(function (largeLoad) {
+                http.get(link).success(function (largeLoad) {
                     data = largeLoad.filter(function (item) {
                         return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
                     });
-                    setPagingData(data, page, pageSize);
+                    setPagingData(data, page, pageSize, largeLoad.count);
                 });
             } else {
 //                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
-                http.get('/api/alarms.json').success(function (largeLoad) {
-                    setPagingData(largeLoad, page, pageSize);
+                http.get(link).success(function (largeLoad) {
+                    setPagingData(largeLoad.data, page, pageSize, largeLoad.count);
                 });
             }
         }, 100);
