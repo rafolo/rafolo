@@ -45,6 +45,9 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         var crudDeleteTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-remove\"></i><input type=\"button\" class=\"btn btn-red\"  value=\"r\" ng-click=\"crudDeleteHandler($index)\" /></div>";
         var chartTemplate = "<div class='easy-pie-chart-percent easyPieChart' style='display: inline-block; width: 150px; height: 150px; line-height: 150px;' data-percent='89'><span>11%</span><canvas width='150' height='150'></canvas></div>";
         $scope.columnDefs = [
+            { field: 'id', displayName: '_id'},
+            { field: 'se', displayName: '_se'},
+            { field: 'se', displayName: '_ce'},
             { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellInputEditableTemplate, colFilterText: '' },
             { field: 'description', displayName: '?', enableCellEdit: false, cellTemplate: chartTemplate },
@@ -52,11 +55,10 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellSelectEditableTemplate,
                 cellFilter: 'status'},
-            {field: 'R', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudReadTemplate}
-            ,
             {field: 'U', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudUpdateTemplate}
             ,
-            {field: 'D', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudDeleteTemplate}
+            {field: 'D', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudDeleteTemplate},
+            {field: 'R', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudReadTemplate}
 
         ];
 
@@ -99,15 +101,19 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
         $scope.delete = function (row) {
 
-            //TODO? Wiser method???
-            for (var i = 0; i < $scope.persons.length; i++) {
-                var person = $scope.persons[i];
-                if (row.id = person.id) {
-                    row.delete = true;
-                    alarmService.updateEntity(row);
-                    $scope.persons.splice(i, 1);
-                }
-            }
+            //debugger;
+//            //TODO? Wiser method???
+//            for (var i = 0; i < $scope.persons.length; i++) {
+//                var person = $scope.persons[i];
+//                if (row.id === person.id) {
+//                    row.delete = true;
+//                    alarmService.updateEntity(row);
+//                    //$scope.persons.splice(i, 1);
+//                    break;
+//                }
+//            }
+            row.delete = true;
+            alarmService.updateEntity(row);
 
         }
 

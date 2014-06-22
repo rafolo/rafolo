@@ -37,45 +37,74 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
             this.save.pending = true;
             this.save.promise = $timeout(function () {
 
-                var responsePromise;
-                if (row.read) {
-
-                    var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
-                    responsePromise = $http.get(link);
-                    return;
-                }
-
-                //delete
-                if (row.delete) {
-
-                    var _row = roJson.stripForUpdate(row);
-                    var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
-                    responsePromise = $http.delete(link);
-                    return;
-                }
 
                 if (row.create) {
                     //create
                     var _row = roJson.stripForInsert(row);
-                    responsePromise = $http.post("/api/alarms.json", _row);
-                    return;
+                    this.responsePromise = $http.post("/api/alarms.json", _row);
+                    this.responsePromise.row = row;
                 }
-
-                if (row.update) {
+                else if (row.read) {
+                    //read
+                    var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
+                    this.responsePromise = $http.get(link);
+                    this.responsePromise.row = row;
+                }
+                else if (row.update) {
+                    //update
+                    var _row = roJson.stripForUpdate(row);
+                    var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
+                    this.responsePromise = $http.put(link, angular.toJson(_row));
+                    this.responsePromise.row = row;
+                }
+                //delete
+                else if (row.delete) {
 
                     var _row = roJson.stripForUpdate(row);
                     var link = "/api/alarms/" + row.id + ".json"; //"/api/alarms/2.json"
-                    responsePromise = $http.put(link, angular.toJson(_row));
+                    this.responsePromise = $http.delete(link);
+                    this.responsePromise.row = row;
                 }
+                else
+                    throw "Unknown data type";
 
-                responsePromise.success(function (data, status, headers, config) {
-                    console.log("AJAX successed:" + data + " status" + status);
+
+                this.responsePromise.success(function (data, status, headers, config) {
+
+                    if (row.create) {
+                        //create
+                        this.responsePromise.row.id = data.id;
+                        this.responsePromise.row.create = false;
+                    }
+                    else if (row.read) {
+                        //read
+                        //this.responsePromise.row = data;
+                        angular.extend(this.responsePromise.row, data);
+                        this.responsePromise.row.read = false;
+                    }
+                    else if (row.update) {
+                        //update
+                        //nop
+                        this.responsePromise.row.update = false;
+                    }
+                    //delete
+                    else if (row.delete) {
+                        this.row = null;
+                        this.responsePromise.row.delete = false;
+                    }
+                    else
+                        throw "Unknown data type";
+
+                    this.responsePromise.row.serverErrors = null;
+
+                    console.log("AJAX successed:" + data + " status:" + status);
                 });
                 responsePromise.error(function (data, status, headers, config) {
                     alert("AJAX failed!" + status);
+                    this.responsePromise.row.serverErrors = "Ajax failed:" + status;
                 });
 
-
+                return responsePromise;
             }, 500);
         }
         this.save.pending = false;

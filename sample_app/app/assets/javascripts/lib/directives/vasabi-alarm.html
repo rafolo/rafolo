@@ -2,6 +2,7 @@
     .visible {
 
     }
+
     .hidden {
         display: none;
     }
@@ -32,7 +33,7 @@
 
                 <div class="box-content">
 
-                    <form  name="myForm" class="form-horizontal fill-up validatable">
+                    <form name="myForm" class="form-horizontal fill-up validatable">
 
                         <div class="padded">
 
@@ -52,9 +53,7 @@
 
                                 <div class="col-lg-10">
                                     <input name="description" id="text" type="text" class="validate[required]"
-                                           data-prompt-position="topLeft" ng-model="selectedItems[0].description" required>
-<span class="help-block note" ng-show="myForm.description.$error.required"><i
-        class="icon-warning-sign"></i> Please type a value.</span>
+                                           data-prompt-position="topLeft" ng-model="selectedItems[0].description">
                                 </div>
                             </div>
 
@@ -120,7 +119,7 @@
 
     <div class="col-md-8 separate-sections">
 
-        <leaflet markers="markers" center="osloCenter"  defaults="defaults"
+        <leaflet markers="markers" center="osloCenter" defaults="defaults"
                  height="480px"></leaflet>
     </div>
     <div class="col-md-4 separate-sections">
