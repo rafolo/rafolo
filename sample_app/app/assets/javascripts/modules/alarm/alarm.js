@@ -7,31 +7,20 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
     }])
     .controller("AlarmController", ['$scope', '$log', '$interval', '$http', '$timeout', "$resource", 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $http, $timeout, $resource, alarmService, statusesConstant) {
 
-        //1
-        $scope.persons = [];
-        $scope.statuses = statusesConstant;
-        $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
-        $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
-
-        var crudReadTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-refresh\"></i><input type=\"button\" class=\"btn btn-default\"  value=\"r\" ng-click=\"crudReadHandler($index)\" /></div>";
-        var crudUpdateTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-ok\"></i><input type=\"button\" class=\"btn btn-blue\"  value=\"r\" ng-click=\"crudUpdateHandler($index)\" /></div>";
-        var crudDeleteTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-remove\"></i><input type=\"button\" class=\"btn btn-red\"  value=\"r\" ng-click=\"crudDeleteHandler($index)\" /></div>";
-        var chartTemplate = "<div class='easy-pie-chart-percent easyPieChart' style='display: inline-block; width: 150px; height: 150px; line-height: 150px;' data-percent='89'><span>11%</span><canvas width='150' height='150'></canvas></div>";
-        $scope.columnDefs = [
-            { field: 'id', displayName: '_id'},
-            //{ field: 'serverErrors', displayName: '_e', enableCellEdit: false, cellTemplate : "/assets/lib/directives/templates/cells/errorCellTemplate.html", cellFilter: "error"},
-            { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
-                editableCellTemplate: $scope.cellInputEditableTemplate, colFilterText: '' },
-            { field: 'description', displayName: '?', enableCellEdit: false, cellTemplate: chartTemplate },
-            { field: 'born', displayName: 'Born', enableCellEdit: false, cellFilter: 'datetime' },
-            { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
-                editableCellTemplate: $scope.cellSelectEditableTemplate,
-                cellFilter: 'status'},
-            {field: 'U', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudUpdateTemplate},
-            {field: 'D', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudDeleteTemplate},
-            {field: 'R', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudReadTemplate}
-
-        ];
+    //1
+    $scope.statuses = statusesConstant;
+    $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
+    $scope.columnDefs = [
+        { field: 'id', displayName: '_id'},
+        //{ field: 'serverErrors', displayName: '_e', enableCellEdit: false, cellTemplate : "/assets/lib/directives/templates/cells/errorCellTemplate.html", cellFilter: "error"},
+        { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
+            editableCellTemplate: "/assets/lib/directives/templates/cells/inputCellEditableTemplate.html", colFilterText: '' },
+        { field: 'description', displayName: '?', enableCellEdit: false},
+        { field: 'born', displayName: 'Born', enableCellEdit: false, cellFilter: 'datetime' },
+        { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
+            editableCellTemplate: $scope.cellSelectEditableTemplate,
+            cellFilter: 'status'}
+    ];
 
 //Pagination
         $scope.totalServerItems = 0;
@@ -41,6 +30,8 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             currentPage: 1
         };
 
+//DATA
+        $scope.persons = [];
         $scope.setPagingData = function (data, page, pageSize, count) {
             $scope.persons = data;
             $scope.totalServerItems = count;
@@ -49,7 +40,12 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             }
         };
 
-//CRUD
+        alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+        $scope.$watch('pagingOptions', function (newVal, oldVal) {
+
+            alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+        }, true);
+
         $scope.create = function () {
             var row = {name: "created", born: new Date(), active: true, create: true };
             alarmService.updateEntity(row);
@@ -65,7 +61,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         $scope.update = function (row) {
             row.update = true;
             alarmService.updateEntity(row);
-        }
+        };
 
         $scope.delete = function (row) {
 
@@ -83,22 +79,21 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 }
             }
 
-        //TODO! Last row select does not select
-        if (0 != $scope.persons.length) {
-            $scope.options.selectRow(Math.max(0, index - 1), true);
-        }
+        $scope.persons.splice(index, 1);
 
-        $scope.items.splice(index, 1);
-
-        }
+        };
 
 
-        alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
-        $scope.$watch('pagingOptions', function (newVal, oldVal) {
 
-            alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
 
-        }, true);
+
+
+
+
+
+
+
+
 
 //MaoMapMapMapMap
         $scope.selectedItems3 = [

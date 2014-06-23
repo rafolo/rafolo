@@ -21,6 +21,7 @@ var libDirectives = angular.module("lib.directives", [])
 
             $scope.selectedItems = [];
 
+            //TODO! REmove
             $scope.hasErrors = function (row) {
                 ///debugger;
 
@@ -35,34 +36,21 @@ var libDirectives = angular.module("lib.directives", [])
                 return true;
             };
 
+            //customOptions
             var customOptions = $scope.customOptions;
+
+            //fixedOptions
+            var fixedColumns = [
+                {field: 'U', displayName: '', width: 30, enableCellEdit: false, cellTemplate: "/assets/lib/directives/templates/cells/crudUpdateTemplate.html"},
+                {field: 'D', displayName: '', width: 30, enableCellEdit: false, cellTemplate: "/assets/lib/directives/templates/cells/crudDeleteTemplate.html"},
+                {field: 'R', displayName: '', width: 30, enableCellEdit: false, cellTemplate: "/assets/lib/directives/templates/cells/crudReadTemplate.html"}
+            ];
+            $scope.cols = $scope.cols.concat(fixedColumns);
 
             var fixedOptions = {
                 columnDefs: 'cols',
                 data: 'items'
             };
-
-//         fixedOptions.columnDefs.push({ "field": 'name', "displayName": 'Name2' });
-//            fixedOptions.columnDefs = [
-//                { field: 'name', displayName: 'Name' },
-//                { field: 'description', displayName: '?'},
-//                { field: 'born', displayName: 'Born'},
-//                { field: 'active', displayName: 'Active?'},
-//
-//
-//            ];
-
-//
-
-            //crud columns TODO! reconsile with contrller
-//            debugger;
-//            $scope.crudReadTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-refresh\"></i><input type=\"button\" class=\"btn btn-default\"  value=\"r\" ng-click=\"crudReadHandler($index)\" /></div>";
-//            $scope.crudUpdateTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-ok\"></i><input type=\"button\" class=\"btn btn-blue\"  value=\"r\" ng-click=\"crudUpdateHandler($index)\" /></div>";
-//            $scope.crudDeleteTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-remove\"></i><input type=\"button\" class=\"btn btn-red\"  value=\"r\" ng-click=\"crudDeleteHandler($index)\" /></div>";
-//
-//            fixedOptions.columnDefs.push({field: 'R', displayName: '', enableCellEdit: false, cellTemplate: $scope.crudReadTemplate});
-//            fixedOptions.columnDefs.push({field: 'U', displayName: '', enableCellEdit: false, cellTemplate: $scope.crudUpdateTemplate});
-//            fixedOptions.columnDefs.push({field: 'D', displayName: '', enableCellEdit: false, cellTemplate: $scope.crudDeleteTemplate});
 
             //defaultOptions
             //debugger;
@@ -90,10 +78,11 @@ var libDirectives = angular.module("lib.directives", [])
             };
 
             $scope.options = {};
-
             angular.extend($scope.options, defaultOptions);
             angular.extend($scope.options, customOptions);
             angular.extend($scope.options, fixedOptions);
+
+
 
             $scope.$watch('search', function (value) {
                 $scope.options.filterOptions.filterText = value;
@@ -103,7 +92,6 @@ var libDirectives = angular.module("lib.directives", [])
             $scope.$on('ngGridEventData', function () {
                 $scope.options.selectRow(0, true);
             });
-
 
             //Crud Handlers
             $scope.crudCreateHandler = function () {
@@ -154,10 +142,15 @@ var libDirectives = angular.module("lib.directives", [])
                 $scope.options.selectItem(index, false);
                 $scope.crudDelete($scope.items[index]);
 
+                //TODO! Last row select does not select
+                if (0 != $scope.options.items.length) {
+                    $scope.options.selectRow(Math.max(0, index - 1), true);
+                }
             };
 
         }
     })
+    //TODO! Belongs sw else
     .directive("vasabiAlarm", function () {
         return {
             restrict: "A",
