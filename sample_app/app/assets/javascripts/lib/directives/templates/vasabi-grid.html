@@ -46,8 +46,10 @@
 
     </style>
 
-    <div class="box-header padding">
-        <input type="button" class="btn btn-green" value="..." ng-click="crudCreateHandler($index)"/>
+    <div class=" left-inner-addon box-header padding">
+        <input type="button" class="btn btn-green" value="" ng-click="crudCreateHandler($index)"/>
+        <i class="icon-save"></i><input type="button" class="btn btn-blue"  value="" ng-click="crudUpdateAll()" />
+        <i class="icon-undo"></i><input type="button" class="btn btn-default"  value="" ng-click="crudReadAll()" />
         <input type="text" ng-model="search" placeholder="Search... eg. name:rafolo" style="margin-left:25px"/>
     </div>
 

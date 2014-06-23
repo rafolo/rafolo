@@ -5,7 +5,7 @@ var libDirectives = angular.module("lib.directives", [])
             restrict: 'E',
             require: "^ngController",
             templateUrl: '/assets/lib/directives/templates/vasabi-grid.html',
-            scope: { items: '=', cols: '=', selectedItems: '=', customOptions: '=', pagingOptions: '=', crudCreate: '=', crudRead: '=', crudUpdate: '=', crudDelete: '='},
+            scope: { items: '=', cols: '=', selectedItems: '=', customOptions: '=', pagingOptions: '=', crudCreate: '=', crudRead: '=', crudUpdate: '=', crudDelete: '=', crudReadAll: '=', crudUpdateAll: '='},
             replace: true,
             transclude: false,
             controller: controller,
@@ -54,11 +54,11 @@ var libDirectives = angular.module("lib.directives", [])
 
             //defaultOptions
             //debugger;
-            var pagingOptions = $scope.pagingOptions; //TODO! move to custom options
-            var enablePaging = false;
-            if (pagingOptions) {
-                enablePaging = true;
-            }
+//            var pagingOptions = $scope.pagingOptions; //TODO! move to custom options
+//            var enablePaging = false;
+//            if (pagingOptions) {
+//                enablePaging = true;
+//            }
             var defaultOptions = {
                 primaryKey: "id",
                 selectedItems: $scope.selectedItems,
@@ -70,11 +70,12 @@ var libDirectives = angular.module("lib.directives", [])
                 },
                 multiSelect: false,
                 enableCellEditOnFocus: true,
-                enablePaging: enablePaging,
-                pagingOptions: pagingOptions,
+                //enablePaging: enablePaging,
+                //pagingOptions: pagingOptions,
                 showFooter: true,
                 totalServerItems: $scope.totalServerItems, //TODO! Paging scope does not scope
-                checkboxCellTemplate: "/assets/lib/directives/templates/cells/checkboxCellTemplate.html"
+                checkboxCellTemplate: "/assets/lib/directives/templates/cells/checkboxCellTemplate.html",
+                footerTemplate: "/assets/lib/directives/templates/cells/footerTemplate.html"
             };
 
             $scope.options = {};
@@ -146,6 +147,30 @@ var libDirectives = angular.module("lib.directives", [])
                 if (0 != $scope.options.items.length) {
                     $scope.options.selectRow(Math.max(0, index - 1), true);
                 }
+            };
+
+            $scope.crudUpdateAllHandler = function () {
+
+                if (!$scope.crudUpdateAll) {
+                    console.error('crud-update-all handler not provided');
+                    return;
+                }
+
+                var index = this.row.rowIndex;
+                $scope.options.selectItem(index, false);
+                $scope.crudUpdateAll($scope.items[index]);
+            };
+
+            $scope.crudReadAllHandler = function () {
+
+                if (!$scope.crudReadAll) {
+                    console.error('crud-read-all handler not provided');
+                    return;
+                }
+
+                var index = this.row.rowIndex;
+                $scope.options.selectItem(index, false);
+                $scope.crudReadAll($scope.items[index]);
             };
 
         }

@@ -1,8 +1,8 @@
 <div class="ngSelectionCell" >
-    <div><a class="icon-exclamation-sign" href="#" title="{{ row.entity.serverErrors }}"
+    <div><a class="icon-exclamation-sign" href="" title="{{ row.entity.serverErrors }}"
             ng-show="row.entity.serverErrors !== undefined"></a></div>
     <input tabindex="-1" class="ngSelectionCheckbox" type="checkbox"
-           ng-checked="row.selected"/>
+           ng-checked="row.selected" ng-show="row.entity.serverErrors == undefined"/>
 </div>
 
 <!--TODO!Implemente-->

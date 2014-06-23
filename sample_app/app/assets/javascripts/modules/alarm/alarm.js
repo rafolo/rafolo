@@ -7,28 +7,36 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
     }])
     .controller("AlarmController", ['$scope', '$log', '$interval', '$http', '$timeout', "$resource", 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $http, $timeout, $resource, alarmService, statusesConstant) {
 
-    //1
-    $scope.statuses = statusesConstant;
-    $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
-    $scope.columnDefs = [
-        { field: 'id', displayName: '_id'},
-        //{ field: 'serverErrors', displayName: '_e', enableCellEdit: false, cellTemplate : "/assets/lib/directives/templates/cells/errorCellTemplate.html", cellFilter: "error"},
-        { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
-            editableCellTemplate: "/assets/lib/directives/templates/cells/inputCellEditableTemplate.html", colFilterText: '' },
-        { field: 'description', displayName: '?', enableCellEdit: false},
-        { field: 'born', displayName: 'Born', enableCellEdit: false, cellFilter: 'datetime' },
-        { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
-            editableCellTemplate: $scope.cellSelectEditableTemplate,
-            cellFilter: 'status'}
-    ];
+//Columns
+        $scope.statuses = statusesConstant;
+        $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
+        $scope.columnDefs = [
+            { field: 'id', displayName: 'id', enableCellEdit: false},
+            { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
+                editableCellTemplate: "/assets/lib/directives/templates/cells/inputCellEditableTemplate.html", colFilterText: '' },
+            { field: 'description', displayName: '?', enableCellEdit: false},
+            { field: 'born', displayName: 'Born', enableCellEdit: false, cellFilter: 'datetime' },
+            { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
+                editableCellTemplate: $scope.cellSelectEditableTemplate,
+                cellFilter: 'status'}
+        ];
 
-//Pagination
-        $scope.totalServerItems = 0;
-        $scope.pagingOptions = {
-            pageSizes: [5, 10, 50],
-            pageSize: 10,
-            currentPage: 1
-        };
+        //
+        $scope.gridOptions = {
+            enablePaging: true,
+            pagingOptions: {
+                pageSizes: [5, 10, 15],
+                pageSize: 10,
+                currentPage: 1
+            }
+        }
+////Pagination
+//        $scope.totalServerItems = 0;
+//        $scope.pagingOptions = {
+//            pageSizes: [5, 10, 50],
+//            pageSize: 10,
+//            currentPage: 1
+//        };
 
 //DATA
         $scope.persons = [];
@@ -40,10 +48,11 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             }
         };
 
-        alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
-        $scope.$watch('pagingOptions', function (newVal, oldVal) {
+        alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
+        $scope.$watch('gridOptions.pagingOptions', function (newVal, oldVal) {
+        //$scope.$watch($scope.gridOptions.pagingOptions, function (newVal, oldVal) {
 
-            alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+            alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         }, true);
 
         $scope.create = function () {
@@ -67,7 +76,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
             //debugger;
             //TODO? Wiser method???
-            var index=-1;
+            var index = -1;
             for (var i = 0; i < $scope.persons.length; i++) {
                 var person = $scope.persons[i];
                 if (row.id === person.id) {
@@ -79,21 +88,20 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 }
             }
 
-        $scope.persons.splice(index, 1);
+            $scope.persons.splice(index, 1);
 
         };
 
+        $scope.updateAll = function (row) {
 
+            for (var i = 0; i < $scope.persons.length; i++) {
+                alarmService.updateEntity($scope.persons[i]);
+            }
+        };
 
-
-
-
-
-
-
-
-
-
+        $scope.readAll = function (row) {
+            alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+        };
 
 //MaoMapMapMapMap
         $scope.selectedItems3 = [
@@ -124,7 +132,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
         $scope.$watch('selectedItems3', function (newVal, oldVal) {
             //if (newVal !== oldVal && newVal[0].age !== oldVal[0].age) {
-            if (newVal !== oldVal ) {
+            if (newVal !== oldVal) {
 //                angular.extend($scope, {osloCenter: {
 //                    lat: newVal[0].age,
 //                    lng: 12.75,
@@ -243,8 +251,8 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             }
 
             var _error = input[0];
-            if (input.length>1){
-                _error+= "...";
+            if (input.length > 1) {
+                _error += "...";
             }
 
             return _error;
