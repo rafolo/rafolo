@@ -12,14 +12,28 @@ var libDirectives = angular.module("lib.directives", [])
             link: link
         };
 
-        function  link(scope,elem,attrs,ngCtrl) {
+        function link(scope, elem, attrs, ngCtrl) {
 
-           //scope.options.footerTemplate =  ngCtrl.getFooterTemplate();
+            //scope.options.footerTemplate =  ngCtrl.getFooterTemplate();
         }
 
         function controller($scope, $attrs) {
 
             $scope.selectedItems = [];
+
+            $scope.hasErrors = function (row) {
+                ///debugger;
+
+                if (row.entity.serverErrors === undefined) {
+                    return false;
+                }
+
+                if (row.entity.serverErrors.length == 0) {
+                    return false;
+                }
+
+                return true;
+            };
 
             var customOptions = $scope.customOptions;
 
@@ -58,6 +72,7 @@ var libDirectives = angular.module("lib.directives", [])
                 enablePaging = true;
             }
             var defaultOptions = {
+                primaryKey: "id",
                 selectedItems: $scope.selectedItems,
                 showSelectionCheckbox: true,
                 showFooter: true,
@@ -70,7 +85,8 @@ var libDirectives = angular.module("lib.directives", [])
                 enablePaging: enablePaging,
                 pagingOptions: pagingOptions,
                 showFooter: true,
-                totalServerItems: $scope.totalServerItems
+                totalServerItems: $scope.totalServerItems, //TODO! Paging scope does not scope
+                checkboxCellTemplate: "/assets/lib/directives/templates/cells/checkboxCellTemplate.html"
             };
 
             $scope.options = {};
@@ -99,7 +115,7 @@ var libDirectives = angular.module("lib.directives", [])
 
                 var row = $scope.crudCreate();
                 $scope.items.push(row);
-                $scope.options.selectRow($scope.items.length, true); //TODO! select item
+                $scope.options.selectRow($scope.items.length - 1, true); //TODO! select item
             };
 
             $scope.crudReadHandler = function () {
@@ -112,7 +128,7 @@ var libDirectives = angular.module("lib.directives", [])
                 //debugger;
                 var index = this.row.rowIndex;
                 $scope.options.selectItem(index, true);
-                $scope.items[index] = $scope.crudRead($scope.items[index])
+                $scope.crudRead($scope.items[index])
             };
 
             $scope.crudUpdateHandler = function () {
@@ -137,7 +153,7 @@ var libDirectives = angular.module("lib.directives", [])
                 var index = this.row.rowIndex;
                 $scope.options.selectItem(index, false);
                 $scope.crudDelete($scope.items[index]);
-                $scope.items.splice(index, 1);
+
             };
 
         }

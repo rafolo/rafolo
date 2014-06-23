@@ -1,8 +1,8 @@
-<div >
-    <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
+<div>
+    <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css"/>
     <style>
         .gridStyle {
-            border: 1px solid rgb(212,212,212);
+            border: 1px solid rgb(212, 212, 212);
             height: 300px;
             width: 100%;
         }
@@ -10,9 +10,11 @@
         .left-inner-addon {
             position: relative;
         }
+
         .left-inner-addon input {
             padding-left: 30px;
         }
+
         .left-inner-addon i {
             position: absolute;
             padding: 10px 12px;
@@ -22,9 +24,11 @@
         .right-inner-addon {
             position: relative;
         }
+
         .right-inner-addon input {
             padding-right: 30px;
         }
+
         .right-inner-addon i {
             position: absolute;
             right: 0px;
@@ -32,12 +36,19 @@
             pointer-events: none;
         }
 
+        .visible {
+
+        }
+
+        .hidden {
+            display: none;
+        }
 
     </style>
 
     <div class="box-header padding">
-        <input type="button" class="btn btn-green" value="..." ng-click="crudCreateHandler($index)" />
-        <input type="text" ng-model="search" placeholder="Search... eg. name:rafolo" style="margin-left:25px" />
+        <input type="button" class="btn btn-green" value="..." ng-click="crudCreateHandler($index)"/>
+        <input type="text" ng-model="search" placeholder="Search... eg. name:rafolo" style="margin-left:25px"/>
     </div>
 
     <div class="box-content">

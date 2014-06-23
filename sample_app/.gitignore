@@ -23,3 +23,5 @@ vendor/assets/components/
 #ignore npm
 node_modules/
 
+#ignore compiled assets
+public/assets 

@@ -44,7 +44,9 @@ SampleApp::Application.configure do
   #show plastique examples
   config.show_examples = true
 
-  #heroku
-  config.assets.initialize_on_precompile = false
+  #show public/assets/ after /app/assets giving them  this way the h-priority
+  #clear browser data too
+  #config.serve_static_assets = false
+
 
 end

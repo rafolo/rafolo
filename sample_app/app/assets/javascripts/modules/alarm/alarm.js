@@ -7,38 +7,11 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
     }])
     .controller("AlarmController", ['$scope', '$log', '$interval', '$http', '$timeout', "$resource", 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $http, $timeout, $resource, alarmService, statusesConstant) {
 
-//        debugger;
-//        coreAdminInit.call(this);
-
-
-//        $scope.$watchCollection( 'conferences', function( old, nuew ) {
-//            if( old === nuew ) return;
-//            $( '#dataTablex' ).dataTable().fnDestroy();
-//            $timeout(function () {
-//                $( '#dataTablex' ).dataTable();
-//            });
-//        });
-
-        //test
         //1
         $scope.persons = [];
         $scope.statuses = statusesConstant;
         $scope.cellInputEditableTemplate = '<input ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-blur="updateEntity(row)" />';
         $scope.cellSelectEditableTemplate = '<select ng-class="\'colt\' + col.index" ng-input="COL_FIELD" ng-model="COL_FIELD" ng-options="id as name for (id, name) in statuses" ng-blur="updateEntity(row)" />';
-
-        //$scope.footerTemplate = $resource("/libs/directives/vasabi-grid/templates/footer.html");
-//        this.getFooterTemplate = function () {
-//            var footerTemplate
-//            $timeout(function () {
-//                $http.get("/libs/directives/vasabi-grid/templates/footer.html").success(function (data) {
-//                    footerTemplate = data
-//                });
-//            }, 500);
-//
-//            debugger;
-//            footerTemplate = "trata";
-//            return footerTemplate;
-//        };
 
         var crudReadTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-refresh\"></i><input type=\"button\" class=\"btn btn-default\"  value=\"r\" ng-click=\"crudReadHandler($index)\" /></div>";
         var crudUpdateTemplate = "<div class=\"left-inner-addon \"> <i class=\"icon-ok\"></i><input type=\"button\" class=\"btn btn-blue\"  value=\"r\" ng-click=\"crudUpdateHandler($index)\" /></div>";
@@ -46,8 +19,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         var chartTemplate = "<div class='easy-pie-chart-percent easyPieChart' style='display: inline-block; width: 150px; height: 150px; line-height: 150px;' data-percent='89'><span>11%</span><canvas width='150' height='150'></canvas></div>";
         $scope.columnDefs = [
             { field: 'id', displayName: '_id'},
-            { field: 'se', displayName: '_se'},
-            { field: 'se', displayName: '_ce'},
+            //{ field: 'serverErrors', displayName: '_e', enableCellEdit: false, cellTemplate : "/assets/lib/directives/templates/cells/errorCellTemplate.html", cellFilter: "error"},
             { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellInputEditableTemplate, colFilterText: '' },
             { field: 'description', displayName: '?', enableCellEdit: false, cellTemplate: chartTemplate },
@@ -55,8 +27,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,
                 editableCellTemplate: $scope.cellSelectEditableTemplate,
                 cellFilter: 'status'},
-            {field: 'U', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudUpdateTemplate}
-            ,
+            {field: 'U', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudUpdateTemplate},
             {field: 'D', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudDeleteTemplate},
             {field: 'R', displayName: '', width: 30, enableCellEdit: false, cellTemplate: crudReadTemplate}
 
@@ -71,10 +42,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         };
 
         $scope.setPagingData = function (data, page, pageSize, count) {
-
-            //TODO! Reconsile
-            var pagedData = data;//data.slice((page - 1) * pageSize, page * pageSize);
-            $scope.persons = pagedData;
+            $scope.persons = data;
             $scope.totalServerItems = count;
             if (!$scope.$$phase) {
                 $scope.$apply();
@@ -102,43 +70,35 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         $scope.delete = function (row) {
 
             //debugger;
-//            //TODO? Wiser method???
-//            for (var i = 0; i < $scope.persons.length; i++) {
-//                var person = $scope.persons[i];
-//                if (row.id === person.id) {
-//                    row.delete = true;
-//                    alarmService.updateEntity(row);
-//                    //$scope.persons.splice(i, 1);
-//                    break;
-//                }
-//            }
-            row.delete = true;
-            alarmService.updateEntity(row);
+            //TODO? Wiser method???
+            var index=-1;
+            for (var i = 0; i < $scope.persons.length; i++) {
+                var person = $scope.persons[i];
+                if (row.id === person.id) {
+                    row.delete = true;
+                    alarmService.updateEntity(row);
+                    $scope.persons.splice(i, 1);
+                    index = i;
+                    break;
+                }
+            }
+
+        //TODO! Last row select does not select
+        if (0 != $scope.persons.length) {
+            $scope.options.selectRow(Math.max(0, index - 1), true);
+        }
+
+        $scope.items.splice(index, 1);
 
         }
 
-        $scope.pagingOptions.currentPage = 1;
+
         alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
-//        $scope.$watch($scope.pagingOptions, function (newVal, oldVal) {
-//            if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
-//                alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
-//            }
-//        }, true);
-//TODO! Remove redundand
         $scope.$watch('pagingOptions', function (newVal, oldVal) {
 
-//            if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
             alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
-//            }
-        }, true);
 
-//        $scope.$watch('pagingOptions.pageSize', function (newVal, oldVal) {
-//
-//            alert("ddd");
-//            if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
-//                alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
-//            }
-//        }, true);
+        }, true);
 
 //MaoMapMapMapMap
         $scope.selectedItems3 = [
@@ -168,7 +128,8 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         };
 
         $scope.$watch('selectedItems3', function (newVal, oldVal) {
-            if (newVal !== oldVal && newVal[0].age !== oldVal[0].age) {
+            //if (newVal !== oldVal && newVal[0].age !== oldVal[0].age) {
+            if (newVal !== oldVal ) {
 //                angular.extend($scope, {osloCenter: {
 //                    lat: newVal[0].age,
 //                    lng: 12.75,
@@ -277,6 +238,21 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             _chart = "<p ng-bind-html=\"" + _chart + "\"></p>";
             return _chart;
 
+        };
+    })
+    .filter('error', function ($filter) {
+        return function (input) {
+
+            if (input == null) {
+                return "";
+            }
+
+            var _error = input[0];
+            if (input.length>1){
+                _error+= "...";
+            }
+
+            return _error;
         };
     })
     .factory('statusesConstant', function () {

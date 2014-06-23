@@ -53,7 +53,7 @@ class AlarmsController < ApplicationController
         format.json { render json: @alarm, status: :created, location: @alarm }
       else
         format.html { render action: "new" }
-        format.json { render json: @alarm.errors, status: :unprocessable_entity }
+        format.json { render json: {errors: @alarm.errors.full_messages}, status: :unprocessable_entity }
       end
     end 
   end
@@ -69,7 +69,7 @@ class AlarmsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @alarm.errors, status: :unprocessable_entity }
+        format.json { render json: {errors: @alarm.errors.full_messages}, status: :unprocessable_entity }
       end
     end
   end

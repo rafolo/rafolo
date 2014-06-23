@@ -72,6 +72,7 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
                 this.responsePromise.success(function (data, status, headers, config) {
 
                     if (row.create) {
+                        //debugger;
                         //create
                         this.responsePromise.row.id = data.id;
                         this.responsePromise.row.create = false;
@@ -83,6 +84,7 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
                         this.responsePromise.row.read = false;
                     }
                     else if (row.update) {
+                        //debugger;
                         //update
                         //nop
                         this.responsePromise.row.update = false;
@@ -95,13 +97,16 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
                     else
                         throw "Unknown data type";
 
-                    this.responsePromise.row.serverErrors = null;
+                    this.responsePromise.row.serverStatus = status;
+                    this.responsePromise.row.serverErrors = undefined;
 
                     console.log("AJAX successed:" + data + " status:" + status);
                 });
                 responsePromise.error(function (data, status, headers, config) {
-                    alert("AJAX failed!" + status);
-                    this.responsePromise.row.serverErrors = "Ajax failed:" + status;
+                    //debugger;
+                    //alert("AJAX failed!" + status);
+                    this.responsePromise.row.serverStatus = status;
+                    this.responsePromise.row.serverErrors = data.errors;
                 });
 
                 return responsePromise;

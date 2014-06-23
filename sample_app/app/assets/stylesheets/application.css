@@ -11,5 +11,5 @@
  *= require_self
  *= require leaflet-dist/leaflet
  *= require ng-grid/ng-grid
- *= #require_tree .
+ *= require_tree .
 */
