@@ -73,7 +73,7 @@ var libDirectives = angular.module("lib.directives", [])
                 //enablePaging: enablePaging,
                 //pagingOptions: pagingOptions,
                 showFooter: true,
-                totalServerItems: $scope.totalServerItems, //TODO! Paging scope does not scope
+                //totalServerItems: $scope.totalServerItems, //TODO! Paging scope does not scope
                 checkboxCellTemplate: "/assets/lib/directives/templates/cells/checkboxCellTemplate.html",
                 footerTemplate: "/assets/lib/directives/templates/cells/footerTemplate.html"
             };
@@ -82,7 +82,6 @@ var libDirectives = angular.module("lib.directives", [])
             angular.extend($scope.options, defaultOptions);
             angular.extend($scope.options, customOptions);
             angular.extend($scope.options, fixedOptions);
-
 
 
             $scope.$watch('search', function (value) {
@@ -140,13 +139,18 @@ var libDirectives = angular.module("lib.directives", [])
                 }
 
                 var index = this.row.rowIndex;
-                $scope.options.selectItem(index, false);
+                //TODO! Last row select does not select
+                if (0 != $scope.items.length) {
+                    if (index == $scope.items.length - 1) {
+                        $scope.options.selectRow(Math.max(0, index - 1 - 1), true);
+                    }
+                    else {
+                        $scope.options.selectRow(Math.max(0, index - 1), true);
+                    }
+                }
+
                 $scope.crudDelete($scope.items[index]);
 
-                //TODO! Last row select does not select
-                if (0 != $scope.options.items.length) {
-                    $scope.options.selectRow(Math.max(0, index - 1), true);
-                }
             };
 
             $scope.crudUpdateAllHandler = function () {

@@ -27,22 +27,17 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             pagingOptions: {
                 pageSizes: [5, 10, 15],
                 pageSize: 10,
-                currentPage: 1
+                currentPage: 1,
+                //totalServerItems: 5000
             }
+
         }
-////Pagination
-//        $scope.totalServerItems = 0;
-//        $scope.pagingOptions = {
-//            pageSizes: [5, 10, 50],
-//            pageSize: 10,
-//            currentPage: 1
-//        };
 
 //DATA
         $scope.persons = [];
         $scope.setPagingData = function (data, page, pageSize, count) {
             $scope.persons = data;
-            $scope.totalServerItems = count;
+            $scope.gridOptions.totalServerItems = count.toString(); //ngGrid watches only string totalServerItems
             if (!$scope.$$phase) {
                 $scope.$apply();
             }
@@ -50,7 +45,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
         alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         $scope.$watch('gridOptions.pagingOptions', function (newVal, oldVal) {
-        //$scope.$watch($scope.gridOptions.pagingOptions, function (newVal, oldVal) {
+            //$scope.$watch($scope.gridOptions.pagingOptions, function (newVal, oldVal) {
 
             alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         }, true);
@@ -84,11 +79,10 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                     alarmService.updateEntity(row);
                     $scope.persons.splice(i, 1);
                     index = i;
-                    break;
+                    return;
                 }
             }
 
-            $scope.persons.splice(index, 1);
 
         };
 
@@ -100,7 +94,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         };
 
         $scope.readAll = function (row) {
-            alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+            alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         };
 
 //MaoMapMapMapMap
@@ -244,7 +238,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         };
     })
     .filter('error', function ($filter) {
-        return function (input) {
+        return function (input, field) {
 
             if (input == null) {
                 return "";
@@ -255,7 +249,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 _error += "...";
             }
 
-            return _error;
+            return field + ":" + _error;
         };
     })
     .factory('statusesConstant', function () {

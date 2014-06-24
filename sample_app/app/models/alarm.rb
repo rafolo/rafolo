@@ -15,6 +15,6 @@ class Alarm < ActiveRecord::Base
   attr_accessible :born, :description, :name, :active
 
   validates :name, :born, :presence => true
-  validates_length_of :name, :minimum => 5
+  validates_length_of :name, :minimum => 8
 
 end

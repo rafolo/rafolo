@@ -12,7 +12,7 @@
         }
 
         .left-inner-addon input {
-            padding-left: 30px;
+            padding-left: 20px;
         }
 
         .left-inner-addon i {
@@ -44,13 +44,21 @@
             display: none;
         }
 
+        .btn-table {
+            width:10px;
+            height:10px;
+            /*padding: 1px 1px 1px 1px;*/
+            /*font-size: 7px;*/
+            /*margin: 5px 5px -5px -5px;*/
+        }
+
     </style>
 
     <div class=" left-inner-addon box-header padding">
-        <input type="button" class="btn btn-green" value="" ng-click="crudCreateHandler($index)"/>
-        <i class="icon-save"></i><input type="button" class="btn btn-blue"  value="" ng-click="crudUpdateAll()" />
+        <i class="icon-ok"></i><input type="button" class="btn btn-default" value="" ng-click="crudCreateHandler($index)"/>
+        <i class="icon-save"></i><input type="button" class="btn btn-default"  value="" ng-click="crudUpdateAll()" />
         <i class="icon-undo"></i><input type="button" class="btn btn-default"  value="" ng-click="crudReadAll()" />
-        <input type="text" ng-model="search" placeholder="Search... eg. name:rafolo" style="margin-left:25px"/>
+        <input type="text" ng-model="search" placeholder="name:rafolo" style="margin-left:0px"/>
     </div>
 
     <div class="box-content">

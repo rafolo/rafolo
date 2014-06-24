@@ -1,11 +1,11 @@
 <style>
-    .visible {
+    /*.visible {*/
 
-    }
+    /*}*/
 
-    .hidden {
-        display: none;
-    }
+    /*.hidden {*/
+    /*display: none;*/
+    /*}*/
 </style>
 
 <!-- Form 111111111111111111111111111111111111111111111111111111111-->
@@ -45,8 +45,10 @@
                                 <div class="col-lg-10">
                                     <input name="name" id="text" type="text" class="validate[required]"
                                            data-prompt-position="topLeft" ng-model="selectedItems[0].name" required>
-<span class="help-block note" ng-show="myForm.name.$error.required"><i
-        class="icon-warning-sign"></i> Please type a value.</span>
+                                    <span class="help-block note" ng-show="myForm.name.$error.required"><i
+                                        class="icon-warning-sign"></i> Please type a value.</span>
+         <span class="help-block note" ng-show="selectedItems[0].serverErrors!=undefined"><i
+                 class="icon-warning-sign"></i> {{selectedItems[0].serverErrors | error:"Name"}}</span>
                                 </div>
                             </div>
 
@@ -117,132 +119,132 @@
 </div>
 
 <!--Map-->
-<div class="row" ng-cloak class="ng-cloak">
+<!--<div class="row" ng-cloak class="ng-cloak">-->
 
-    <div class="col-md-8 separate-sections">
+<!--<div class="col-md-8 separate-sections">-->
 
-        <leaflet markers="markers" center="osloCenter" defaults="defaults"
-                 height="480px"></leaflet>
-    </div>
-    <div class="col-md-4 separate-sections">
-        <div>
-            <div class="box">
-                <div class="box-header">
-                    <span class="title"><i class="icon-warning-sign"></i> Forms with validation</span>
-                </div>
+<!--<leaflet markers="markers" center="osloCenter" defaults="defaults"-->
+<!--height="480px"></leaflet>-->
+<!--</div>-->
+<!--<div class="col-md-4 separate-sections">-->
+<!--<div>-->
+<!--<div class="box">-->
+<!--<div class="box-header">-->
+<!--<span class="title"><i class="icon-warning-sign"></i> Forms with validation</span>-->
+<!--</div>-->
 
-                <div class="box-content">
+<!--<div class="box-content">-->
 
-                    <vasabi-grid
-                            items="persons2"
-                            cols="columnDefs2"
-                            selected-items="selectedItems3"
-                            custom-options="gridOptions">
-                    </vasabi-grid>
+<!--<vasabi-grid-->
+<!--items="persons2"-->
+<!--cols="columnDefs2"-->
+<!--selected-items="selectedItems3"-->
+<!--custom-options="gridOptions">-->
+<!--</vasabi-grid>-->
 
-                </div>
-            </div>
+<!--</div>-->
+<!--</div>-->
 
-        </div>
-    </div>
-</div>
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 
-<div class="row" style="margin-top:5px;">
-    <div class="col-md-12 separate-sections" style="margin-top: 5px;">
-        <!--Selection-->
-        <div class="selectedItems">{{selectedItems3[0].name}}
-        </div>
-    </div>
-</div>
+<!--<div class="row" style="margin-top:5px;">-->
+<!--<div class="col-md-12 separate-sections" style="margin-top: 5px;">-->
+<!--&lt;!&ndash;Selection&ndash;&gt;-->
+<!--<div class="selectedItems">{{selectedItems3[0].name}}-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 
 <!--Form 22222222222222222222222222222222222222222222222222222222222-->
-<div class="row" ng-cloak class="ng-cloak">
+<!--<div class="row" ng-cloak class="ng-cloak">-->
 
-    <div class="col-md-9 separate-sections">
-        <vasabi-grid
-                items="persons2"
-                cols="columnDefs2"
-                selected-items="selectedItems2"
-                custom-options="gridOptions">
-        </vasabi-grid>
-    </div>
-    <div class="col-md-3 separate-sections">
-        <div>
-            <div class="box">
-                <div class="box-header">
-                    <span class="title"><i class="icon-warning-sign"></i> Forms with validation</span>
-                </div>
+<!--<div class="col-md-9 separate-sections">-->
+<!--<vasabi-grid-->
+<!--items="persons2"-->
+<!--cols="columnDefs2"-->
+<!--selected-items="selectedItems2"-->
+<!--custom-options="gridOptions">-->
+<!--</vasabi-grid>-->
+<!--</div>-->
+<!--<div class="col-md-3 separate-sections">-->
+<!--<div>-->
+<!--<div class="box">-->
+<!--<div class="box-header">-->
+<!--<span class="title"><i class="icon-warning-sign"></i> Forms with validation</span>-->
+<!--</div>-->
 
-                <div class="box-content">
+<!--<div class="box-content">-->
 
-                    <form name="myForm2" class="form-horizontal fill-up validatable">
+<!--<form name="myForm2" class="form-horizontal fill-up validatable">-->
 
-                        <div class="padded">
+<!--<div class="padded">-->
 
-                            <div class="form-group" bs-has-success>
-                                <label class="control-label col-lg-2">Name</label>
+<!--<div class="form-group" bs-has-success>-->
+<!--<label class="control-label col-lg-2">Name</label>-->
 
-                                <div class="col-lg-10">
-                                    <input name="name" id="text" type="text" class="validate[required]"
-                                           data-prompt-position="topLeft" ng-model="selectedItems2[0].name" required>
-<span class="help-block note" ng-show="myForm2.name.$error.required"><i
-        class="icon-warning-sign"></i> Please type a value.</span>
-                                </div>
-                            </div>
+<!--<div class="col-lg-10">-->
+<!--<input name="name" id="text" type="text" class="validate[required]"-->
+<!--data-prompt-position="topLeft" ng-model="selectedItems2[0].name" required>-->
+<!--<span class="help-block note" ng-show="myForm2.name.$error.required"><i-->
+<!--class="icon-warning-sign"></i> Please type a value.</span>-->
+<!--</div>-->
+<!--</div>-->
 
-                            <div class="form-group" bs-has-success>
-                                <label for="select" class="control-label col-lg-2">Age</label>
+<!--<div class="form-group" bs-has-success>-->
+<!--<label for="select" class="control-label col-lg-2">Age</label>-->
 
-                                <div class="col-lg-10">
-                                    <select name="age"
-                                            id="select"
-                                            name="select"
-                                            ng-model="selectedItems2[0].age"
-                                            ng-options="option.age as option.name for option in myComboData"
-                                            ng-change="changeValue(selectedItems[0])"
-                                            required>
-                                        <option value="">-- Select ... --</option>
-                                    </select>
-<span class="help-block note" ng-show="myForm2.age.$error.required"><i
-        class="icon-warning-sign"></i> Please select a value.</span>
-                                </div>
-                            </div>
-
-
-                            <div class="form-group" bs-has-success>
-                                <label class="control-label col-lg-2">Born</label>
-
-                                <div class="col-lg-10">
-                                    <input name="born" id="text" type="text" class="validate[required]"
-                                           data-prompt-position="topLeft" ng-model="selectedItems2[0].born" required>
-<span class="help-block note" ng-show="myForm2.born.$error.required"><i
-        class="icon-warning-sign"></i> Please type a value.</span>
-                                </div>
-                            </div>
+<!--<div class="col-lg-10">-->
+<!--<select name="age"-->
+<!--id="select"-->
+<!--name="select"-->
+<!--ng-model="selectedItems2[0].age"-->
+<!--ng-options="option.age as option.name for option in myComboData"-->
+<!--ng-change="changeValue(selectedItems[0])"-->
+<!--required>-->
+<!--<option value="">-- Select ... --</option>-->
+<!--</select>-->
+<!--<span class="help-block note" ng-show="myForm2.age.$error.required"><i-->
+<!--class="icon-warning-sign"></i> Please select a value.</span>-->
+<!--</div>-->
+<!--</div>-->
 
 
-                        </div>
+<!--<div class="form-group" bs-has-success>-->
+<!--<label class="control-label col-lg-2">Born</label>-->
 
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-blue">Save changes</button>
-                            <button type="button" class="btn btn-default">Cancel</button>
-                        </div>
-                    </form>
+<!--<div class="col-lg-10">-->
+<!--<input name="born" id="text" type="text" class="validate[required]"-->
+<!--data-prompt-position="topLeft" ng-model="selectedItems2[0].born" required>-->
+<!--<span class="help-block note" ng-show="myForm2.born.$error.required"><i-->
+<!--class="icon-warning-sign"></i> Please type a value.</span>-->
+<!--</div>-->
+<!--</div>-->
 
-                </div>
-            </div>
 
-        </div>
-    </div>
-</div>
+<!--</div>-->
 
-<div class="row" style="margin-top:5px;">
-    <div class="col-md-12 separate-sections" style="margin-top: 5px;">
-        <!--Selection-->
-        <div class="selectedItems">{{selectedItems2[0].name}}
-        </div>
-    </div>
-</div>
+<!--<div class="form-actions">-->
+<!--<button type="submit" class="btn btn-blue">Save changes</button>-->
+<!--<button type="button" class="btn btn-default">Cancel</button>-->
+<!--</div>-->
+<!--</form>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="row" style="margin-top:5px;">-->
+<!--<div class="col-md-12 separate-sections" style="margin-top: 5px;">-->
+<!--&lt;!&ndash;Selection&ndash;&gt;-->
+<!--<div class="selectedItems">{{selectedItems2[0].name}}-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 
 
 
