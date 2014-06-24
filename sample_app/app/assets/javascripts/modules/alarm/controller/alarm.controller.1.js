@@ -1,4 +1,4 @@
-alarmModule.controller("AlarmController", ['$scope', '$log', '$interval', '$timeout', "$resource", 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $timeout, $resource, alarmService, statusesConstant) {
+alarmModule.controller("Alarm1Controller", ['$scope', '$log', '$interval', '$timeout', "$resource", 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $timeout, $resource, alarmService, statusesConstant) {
 
 //Columns
         $scope.statuses = statusesConstant;
@@ -92,102 +92,23 @@ alarmModule.controller("AlarmController", ['$scope', '$log', '$interval', '$time
             alarmService.getPagedDataAsync($scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         };
 
-//MaoMapMapMapMap
-        $scope.selectedItems3 = [
-            {name: 'tutu'}
-        ];
-        angular.extend($scope, {osloCenter: {
-            lat: 59.93,
-            lng: 10.75,
-            zoom: 12
-        }});
-
-        $scope.markers = {
-            start: {
-                lat: 59.93, //newVal[0].age,
-                lng: 12.75,
-                message: "Start ",// + x.toString().substr(4) + " " + y.toString().substr(4),
-                focus: true,
-                draggable: false
-            },
-            end: {
-                lat: 59.91,
-                lng: 10.75,
-                message: "End",
-                focus: true,
-                draggable: false
-            }
-        };
-
-        $scope.$watch('selectedItems3', function (newVal, oldVal) {
-            //if (newVal !== oldVal && newVal[0].age !== oldVal[0].age) {
-            if (newVal !== oldVal) {
-//                angular.extend($scope, {osloCenter: {
-//                    lat: newVal[0].age,
-//                    lng: 12.75,
-//                    zoom: 12
-//                }});
-                $scope.markers = {
-                    start: {
-                        lat: newVal[0].age, //newVal[0].age,
-                        lng: 12.75,
-                        message: "End ",// + x.toString().substr(4) + " " + y.toString().substr(4),
-                        focus: true,
-                        draggable: false
-                    },
-                    end: {
-                        lat: 59.91,
-                        lng: 10.75,
-                        message: "Start",
-                        focus: true,
-                        draggable: false
-                    }
-                };
-
-//                for(var i=0;i<10;i++)
-//                {
-////                    $scope.markers.put("mid"+i, {
-////                        lat: 59.91 + i/10*newVal[0].age,
-////                        lng: 10.75,
-////                        message: "End",
-////                        focus: true,
-////                        draggable: false
-////                    });
-//                }
-            }
-        }, true);
-
-//222222222222222222222222222222222222222222222222222
-        $scope.persons2 = [
-            {name: "Person1", age: 59.93},
-            {name: "Person2", age: 59.83},
-            {name: "Person3", age: 59.73},
-            {name: "Person4", age: 59.63},
-            {name: "Person5", age: 59.53}
-        ];
-
-        $scope.columnDefs2 = [
-            {field: 'name', displayName: 'Name'},
-            {field: 'age', displayName: 'Age'}
-        ];
-
 
 //        //COMBO
-        $scope.activeComboData = [
-            {name: "Active", active: true},
-            {name: "Inactive", active: false}
-        ];
-        $scope.myComboData = [
-            {name: "Old", age: 50},
-            {name: "Young", age: 10}
-        ];
-//        //COMBO/
+//        $scope.activeComboData = [
+//            {name: "Active", active: true},
+//            {name: "Inactive", active: false}
+//        ];
+//        $scope.myComboData = [
+//            {name: "Old", age: 50},
+//            {name: "Young", age: 10}
+//        ];
+        angular.extend(this, new AlarmCombo($scope));
 
-//        //Internals - do not touch
+        //Internals - do not touch
         //$scope.$http = $http; //TODO! remove and injext services in VGBC
         //angular.extend(this, new VasabiGridBaseController($scope));
-//        //angular.extend(this, new VasabiChartBaseController($scope));
-//        //angular.extend(this, new VasabiMapBaseController($scope));
+        //angular.extend(this, new VasabiChartBaseController($scope));
+       ///angular.extend(this, new VasabiMapBaseController($scope));
 
     }
     ]);
