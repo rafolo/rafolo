@@ -1,4 +1,4 @@
-var libDirectives = angular.module("lib.directives", [])
+var libDirectives = angular.module("lib.directives", ["lib.filters"])
     .directive('vasabiGrid', function ($compile, $timeout) {
 
         return {

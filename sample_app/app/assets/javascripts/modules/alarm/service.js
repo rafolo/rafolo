@@ -2,7 +2,7 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
 
     //Grid
     //Load
-    this.getPagedDataAsync = function (http, setPagingData, pageSize, page, searchText) {
+    this.getPagedDataAsync = function (setPagingData, pageSize, page, searchText) {
         setTimeout(function () {
             var data;
             var link = '/api/alarms.json?page=' + page.toString() + '&per_page=' + pageSize.toString();
@@ -11,7 +11,7 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
                 var ft = searchText.toLowerCase();
                 //TODO! Remove comments
 //                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
-                http.get(link).success(function (largeLoad) {
+                $http.get(link).success(function (largeLoad) {
                     data = largeLoad.filter(function (item) {
                         return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
                     });
@@ -19,7 +19,7 @@ alarmModule.service('alarmService', ['$timeout', '$http', 'roJson', function ($t
                 });
             } else {
 //                    $scope.$http.get('/largeLoad.json').success(function (largeLoad) {
-                http.get(link).success(function (largeLoad) {
+                $http.get(link).success(function (largeLoad) {
                     setPagingData(largeLoad.data, page, pageSize, largeLoad.count);
                 });
             }

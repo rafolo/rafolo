@@ -5,7 +5,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             controller: 'AlarmController'
         });
     }])
-    .controller("AlarmController", ['$scope', '$log', '$interval', '$http', '$timeout', "$resource", 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $http, $timeout, $resource, alarmService, statusesConstant) {
+    .controller("AlarmController", ['$scope', '$log', '$interval', '$timeout', "$resource", 'alarmService', 'statusesConstant', function ($scope, $log, $interval, $timeout, $resource, alarmService, statusesConstant) {
 
 //Columns
         $scope.statuses = statusesConstant;
@@ -21,7 +21,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 cellFilter: 'status'}
         ];
 
-        //
+//Options
         $scope.gridOptions = {
             enablePaging: true,
             pagingOptions: {
@@ -33,7 +33,7 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
         }
 
-//DATA
+//Data
         $scope.persons = [];
         $scope.setPagingData = function (data, page, pageSize, count) {
             $scope.persons = data;
@@ -43,11 +43,9 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             }
         };
 
-        alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
+        alarmService.getPagedDataAsync($scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         $scope.$watch('gridOptions.pagingOptions', function (newVal, oldVal) {
-            //$scope.$watch($scope.gridOptions.pagingOptions, function (newVal, oldVal) {
-
-            alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
+            alarmService.getPagedDataAsync($scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         }, true);
 
         $scope.create = function () {
@@ -57,7 +55,6 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         }
 
         $scope.read = function (row) {
-
             row.read = true;
             alarmService.updateEntity(row);
         }
@@ -68,9 +65,6 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
         };
 
         $scope.delete = function (row) {
-
-            //debugger;
-            //TODO? Wiser method???
             var index = -1;
             for (var i = 0; i < $scope.persons.length; i++) {
                 var person = $scope.persons[i];
@@ -83,18 +77,26 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
                 }
             }
 
-
         };
 
         $scope.updateAll = function (row) {
 
             for (var i = 0; i < $scope.persons.length; i++) {
-                alarmService.updateEntity($scope.persons[i]);
+                try {
+                    var row = $scope.persons[i];
+                    if (angular.isDefined(row.create)
+                        || angular.isDefined(row.update)) {
+                        alarmService.updateEntity(row);
+                    }
+
+                } catch (e) {
+                    console.log(e.message)
+                }
             }
         };
 
         $scope.readAll = function (row) {
-            alarmService.getPagedDataAsync($http, $scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
+            alarmService.getPagedDataAsync($scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         };
 
 //MaoMapMapMapMap
@@ -189,72 +191,10 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 //        //COMBO/
 
 //        //Internals - do not touch
-        $scope.$http = $http; //TODO! remove and injext services in VGBC
-        angular.extend(this, new VasabiGridBaseController($scope));
+        //$scope.$http = $http; //TODO! remove and injext services in VGBC
+        //angular.extend(this, new VasabiGridBaseController($scope));
 //        //angular.extend(this, new VasabiChartBaseController($scope));
 //        //angular.extend(this, new VasabiMapBaseController($scope));
 
     }
-    ]).
-    directive('ngBlur', function () {
-        return function (scope, elem, attrs) {
-            elem.bind('blur', function () {
-                scope.$apply(attrs.ngBlur);
-            });
-        };
-    })
-    .filter('status', function (statusesConstant) {
-        return function (input) {
-            if (statusesConstant[input]) {
-                return statusesConstant[input];
-            } else {
-                return 'unknown';
-            }
-        };
-    })
-    .filter('datetime', function ($filter) {
-        return function (input) {
-            if (input == null) {
-                return "";
-            }
-
-            var _date = $filter('date')(new Date(input), //use other filter & modify it
-                'MMM dd yyyy - HH:mm:ss');
-
-            return '(' + _date + ')';
-
-        };
-    }).filter('chart', function ($filter) {
-        return function (input) {
-            if (input == null) {
-                return "";
-            }
-
-            var _chart = input + "<div class='easyPieChart' style='display: inline-block; width: 150px; height: 150px; line-height: 150px;' data-percent='89'></div>";
-
-            _chart = "<p ng-bind-html=\"" + _chart + "\"></p>";
-            return _chart;
-
-        };
-    })
-    .filter('error', function ($filter) {
-        return function (input, field) {
-
-            if (input == null) {
-                return "";
-            }
-
-            var _error = input[0];
-            if (input.length > 1) {
-                _error += "...";
-            }
-
-            return field + ":" + _error;
-        };
-    })
-    .factory('statusesConstant', function () {
-        return {
-            false: 'inactive',
-            true: 'active'
-        };
-    });
+    ]);

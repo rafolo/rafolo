@@ -12,4 +12,10 @@ var libDirectives = angular.module("lib.directives", [])
             transclude: true,
             templateUrl: '/assets/lib/directives/templates/my-div-with-model.html'
         };
+    }).directive('ngBlur', function () {
+        return function (scope, elem, attrs) {
+            elem.bind('blur', function () {
+                scope.$apply(attrs.ngBlur);
+            });
+        };
     });
