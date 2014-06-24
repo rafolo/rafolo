@@ -10,3 +10,6 @@ test:
 production:
   <<: *common
   landscape_title: ...
+beta:
+  <<: *common
+  landscape_title: beta
