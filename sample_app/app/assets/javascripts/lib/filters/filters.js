@@ -1,5 +1,5 @@
 var libFilters = angular.module("lib.filters", [])
-    .filter('datetime', function ($filter) {
+    .filter('datetime', ["$filter", function ($filter) {
         return function (input) {
             if (input == null) {
                 return "";
@@ -11,7 +11,7 @@ var libFilters = angular.module("lib.filters", [])
             return '(' + _date + ')';
 
         };
-    }).filter('chart', function ($filter) {
+    }]).filter('chart', ["$filter", function ($filter) {
         return function (input) {
             if (input == null) {
                 return "";
@@ -23,9 +23,9 @@ var libFilters = angular.module("lib.filters", [])
             return _chart;
 
         };
-    })
+    }])
     //TODO! Add filtering by field name
-    .filter('error', function ($filter) {
+    .filter('error', ["$filter", function ($filter) {
         return function (input, field) {
 
             if (input == null) {
@@ -39,4 +39,4 @@ var libFilters = angular.module("lib.filters", [])
 
             return field + ":" + _error;
         };
-    });
+    }]);

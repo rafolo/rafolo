@@ -1,6 +1,6 @@
 var libDirectives;
 libDirectives = angular.module("lib.directives", [])
-    .factory('bsProcessValidator', function ($timeout) {
+    .factory('bsProcessValidator', ["$timeout", function ($timeout) {
         return function (scope, element, ngClass, bsClass) {
             $timeout(function () {
                 var input = element.find('input');
@@ -19,24 +19,24 @@ libDirectives = angular.module("lib.directives", [])
                 }
             });
         };
-    })
-    .directive('bsHasSuccess', function (bsProcessValidator) {
+    }])
+    .directive('bsHasSuccess', ["bsProcessValidator", function (bsProcessValidator) {
         return {
             restrict: 'A',
             link: function (scope, element) {
                 bsProcessValidator(scope, element, 'ng-valid', 'has-success');
             }
         };
-    })
-    .directive('bsHasError', function (bsProcessValidator) {
+    }])
+    .directive('bsHasError', ["bsProcessValidator", function (bsProcessValidator) {
         return {
             restrict: 'A',
             link: function (scope, element) {
                 bsProcessValidator(scope, element, 'ng-invalid', 'has-error');
             }
         };
-    })
-    .directive('bsHas', function (bsProcessValidator) {
+    }])
+    .directive('bsHas', ["bsProcessValidator", function (bsProcessValidator) {
         return {
             restrict: 'A',
             link: function (scope, element) {
@@ -44,4 +44,4 @@ libDirectives = angular.module("lib.directives", [])
                 bsProcessValidator(scope, element, 'ng-invalid', 'has-error');
             }
         };
-    });
+    }]);

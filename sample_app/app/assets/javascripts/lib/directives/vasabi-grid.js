@@ -1,5 +1,5 @@
 var libDirectives = angular.module("lib.directives", ["lib.filters"])
-    .directive('vasabiGrid', function ($compile, $timeout) {
+    .directive('vasabiGrid', ["$compile", "$timeout", function ($compile, $timeout) {
 
         return {
             restrict: 'E',
@@ -178,7 +178,7 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
             };
 
         }
-    })
+    }])
     //TODO! Belongs sw else
     .directive("vasabiAlarm", function () {
         return {
