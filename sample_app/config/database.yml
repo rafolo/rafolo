@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development: &development
   adapter: sqlite3
-  database: db/development.sqlite3
+  database: <%=ENV['OPENSHIFT_DATA_DIR']%>/development.sqlite3
   pool: 5
   timeout: 5000
 
@@ -14,17 +14,35 @@ development: &development
 # Do not set this db to the same as development or production.
 test: &test
   adapter: sqlite3
-  database: db/test.sqlite3
+  database: <%=ENV['OPENSHIFT_DATA_DIR']%>/test.sqlite3
   pool: 5
   timeout: 5000
 
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: vasabi_rafolo_production
+#production:
+#  adapter: mysql2
+#  encoding: utf8
+#  reconnect: false
+#  pool: 5
+#  database: <%=ENV['OPENSHIFT_APP_NAME']%>
+#  username: <%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>
+#  password: <%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>
+#  host:   <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+#  port:   <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
+#production:
+#  adapter: postgresql
+#  encoding: utf8
+#  reconnect: false
+#  pool: 5
+#  database: <%=ENV['OPENSHIFT_APP_NAME']%>
+#  username: <%=ENV['OPENSHIFT_POSTGRESQL_DB_USERNAME']%>
+#  password: <%=ENV['OPENSHIFT_POSTGRESQL_DB_PASSWORD']%>
+#  host:   <%=ENV['OPENSHIFT_POSTGRESQL_DB_HOST']%>
+#  port:   <%=ENV['OPENSHIFT_POSTGRESQL_DB_PORT']%>
+production: &production
+  adapter: sqlite3
+  database: <%=ENV['OPENSHIFT_DATA_DIR']%>/production.sqlite3
   pool: 5
-  username: rafal@pkey.pl
-  password: 123456
+  timeout: 5000
 
 beta:
   <<: *development

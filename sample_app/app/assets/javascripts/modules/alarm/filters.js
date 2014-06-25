@@ -1,4 +1,4 @@
-alarmModule.filter('status', function (statusesConstant) {
+alarmModule.filter('status', ["statusesConstant", function (statusesConstant) {
     return function (input) {
         if (statusesConstant[input]) {
             return statusesConstant[input];
@@ -6,4 +6,4 @@ alarmModule.filter('status', function (statusesConstant) {
             return 'unknown';
         }
     };
-});
+}]);

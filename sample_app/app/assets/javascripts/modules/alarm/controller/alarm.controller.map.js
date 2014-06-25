@@ -34,56 +34,60 @@ alarmModule.controller("AlarmMapController", ['$scope', '$log', '$interval', '$t
         {name: "Person5", age: 59.53}
     ];
 
-        $scope.selectedItems3 = [
-            {name: 'tutu'}
-        ];
-        angular.extend($scope, {osloCenter: {
-            lat: 59.93,
+    $scope.selectedItems3 = [
+        {name: 'tutu'}
+    ];
+    angular.extend($scope, {osloCenter: {
+        lat: 59.93,
+        lng: 10.75,
+        zoom: 12
+    }});
+
+    $scope.markers = {
+        start: {
+            lat: 59.93, //newVal[0].age,
+            lng: 12.75,
+            message: "Start ",// + x.toString().substr(4) + " " + y.toString().substr(4),
+            focus: true,
+            draggable: false
+        },
+        end: {
+            lat: 59.91,
             lng: 10.75,
-            zoom: 12
-        }});
+            message: "End",
+            focus: true,
+            draggable: false
+        }
+    };
 
-        $scope.markers = {
-            start: {
-                lat: 59.93, //newVal[0].age,
-                lng: 12.75,
-                message: "Start ",// + x.toString().substr(4) + " " + y.toString().substr(4),
-                focus: true,
-                draggable: false
-            },
-            end: {
-                lat: 59.91,
-                lng: 10.75,
-                message: "End",
-                focus: true,
-                draggable: false
-            }
-        };
+    $scope.$watch('selectedItems3', function (newVal, oldVal) {
+        if (newVal[0] == undefined) {
+            return;
+        }
 
-        $scope.$watch('selectedItems3', function (newVal, oldVal) {
-            //if (newVal !== oldVal && newVal[0].age !== oldVal[0].age) {
-            if (newVal !== oldVal) {
+        //if (newVal !== oldVal && newVal[0].age !== oldVal[0].age) {
+        if (newVal !== oldVal) {
 //                angular.extend($scope, {osloCenter: {
 //                    lat: newVal[0].age,
 //                    lng: 12.75,
 //                    zoom: 12
 //                }});
-                $scope.markers = {
-                    start: {
-                        lat: newVal[0].age, //newVal[0].age,
-                        lng: 12.75,
-                        message: "End ",// + x.toString().substr(4) + " " + y.toString().substr(4),
-                        focus: true,
-                        draggable: false
-                    },
-                    end: {
-                        lat: 59.91,
-                        lng: 10.75,
-                        message: "Start",
-                        focus: true,
-                        draggable: false
-                    }
-                };
+            $scope.markers = {
+                start: {
+                    lat: newVal[0].age, //newVal[0].age,
+                    lng: 12.75,
+                    message: "End ",// + x.toString().substr(4) + " " + y.toString().substr(4),
+                    focus: true,
+                    draggable: false
+                },
+                end: {
+                    lat: 59.91,
+                    lng: 10.75,
+                    message: "Start",
+                    focus: true,
+                    draggable: false
+                }
+            };
 
 //                for(var i=0;i<10;i++)
 //                {
@@ -95,9 +99,9 @@ alarmModule.controller("AlarmMapController", ['$scope', '$log', '$interval', '$t
 ////                        draggable: false
 ////                    });
 //                }
-            }
-        }, true);
+        }
+    }, true);
 
 
-    }
-    ]);
+}
+]);

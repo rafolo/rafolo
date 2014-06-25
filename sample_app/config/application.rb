@@ -104,5 +104,8 @@ module SampleApp
 
     #check modernizer
     config.check_modernizer = true
+
+    #do not init
+    config.assets.initialize_on_precompile = false
   end
 end
