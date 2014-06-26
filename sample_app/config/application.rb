@@ -105,7 +105,7 @@ module SampleApp
     #check modernizer
     config.check_modernizer = true
 
-    #do not init
-    config.assets.initialize_on_precompile = false
+    #TODO! Remove needed only on heroku
+    config.assets.precompile += %w[ *.css *.js *.scss]
   end
 end
