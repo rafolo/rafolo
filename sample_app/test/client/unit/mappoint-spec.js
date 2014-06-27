@@ -8,7 +8,7 @@ describe("the mappoint module", function () {
 
         module("ngRoute");
         module("app.mappoint");
-        jasmine.getJSONFixtures().fixturesPath='base/test/client/fixture'
+        jasmine.getJSONFixtures().fixturesPath='base/test/client/fixture';
 
         inject(function($rootScope, $controller, $log) {
             $scope = $rootScope.$new();

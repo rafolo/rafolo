@@ -15,6 +15,8 @@ group :development, :test do
   gem 'autorefresh', '~>1.0.0'
   gem 'watchr', '~> 0.7'
   gem 'webrick', '~> 1.3.1'
+
+  gem 'simplecov', :require => false #rcov for RoR4'
 end
 
 # Gems used only for assets and not required
