@@ -10,6 +10,7 @@ group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.9.0'
   gem 'guard-rspec', '0.5.5'
+  gem 'minitest' #minitest for R1.9 and test units for 1.8
   gem 'test-unit', '~> 2.5.5'
   gem 'annotate', '~> 2.6.3'
   gem 'autorefresh', '~>1.0.0'
@@ -17,6 +18,8 @@ group :development, :test do
   gem 'webrick', '~> 1.3.1'
 
   gem 'simplecov', :require => false #rcov for RoR4'
+  gem 'shoulda'
+  gem 'memory_test_fix'
 end
 
 # Gems used only for assets and not required
