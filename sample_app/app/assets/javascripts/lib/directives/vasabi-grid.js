@@ -12,21 +12,6 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
 
                 $scope.selectedItems = [];
 
-                //TODO! REmove
-                $scope.hasErrors = function (row) {
-                    ///debugger;
-
-                    if (row.entity.serverErrors === undefined) {
-                        return false;
-                    }
-
-                    if (row.entity.serverErrors.length == 0) {
-                        return false;
-                    }
-
-                    return true;
-                };
-
                 //customOptions
                 var customOptions = $scope.customOptions;
 
@@ -43,13 +28,6 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
                     data: 'items'
                 };
 
-                //defaultOptions
-                //debugger;
-//            var pagingOptions = $scope.pagingOptions; //TODO! move to custom options
-//            var enablePaging = false;
-//            if (pagingOptions) {
-//                enablePaging = true;
-//            }
                 var defaultOptions = {
                     primaryKey: "id",
                     selectedItems: $scope.selectedItems,
@@ -73,7 +51,6 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
                 angular.extend($scope.options, defaultOptions);
                 angular.extend($scope.options, customOptions);
                 angular.extend($scope.options, fixedOptions);
-
 
                 $scope.$watch('search', function (value) {
                     $scope.options.filterOptions.filterText = value;
@@ -187,9 +164,6 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
                 //scope.options.footerTemplate =  ngCtrl.getFooterTemplate();
             }
         };
-
-
-
 
     }])
     //TODO! Belongs sw else
