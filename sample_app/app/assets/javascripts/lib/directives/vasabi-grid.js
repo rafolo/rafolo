@@ -5,7 +5,7 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
             restrict: 'E',
             require: "^ngController",
             templateUrl: '/assets/lib/directives/templates/vasabi-grid.html',
-            scope: { items: '=', cols: '=', selectedItems: '=', customOptions: '=', pagingOptions: '=', crudCreate: '=', crudRead: '=', crudUpdate: '=', crudDelete: '=', crudReadAll: '=', crudUpdateAll: '='},
+            scope: { items: '=', cols: '=', selectedItems: '=', totalServerItems: '=', customOptions: '=', pagingOptions: '=', crudCreate: '=', crudRead: '=', crudUpdate: '=', crudDelete: '=', crudReadAll: '=', crudUpdateAll: '='},
             replace: true,
             transclude: false,
             controller:  ["$scope", function($scope, $attrs) {

@@ -22,15 +22,18 @@ alarmModule.controller("Alarm1Controller", ['$scope', '$log', '$interval', '$tim
                 pageSize: 10,
                 currentPage: 1,
                 //totalServerItems: 5000
-            }
+            },
+            totalServerItems: 'totalServerItems'
 
-        }
+        };
+
+    $scope.totalServerItems = 1;
 
 //Data
         $scope.persons = [];
         $scope.setPagingData = function (data, page, pageSize, count) {
             $scope.persons = data;
-            $scope.gridOptions.totalServerItems = count.toString(); //ngGrid watches only string totalServerItems
+            $scope.totalServerItems = count.toString(); //ngGrid watches only string totalServerItems
             if (!$scope.$$phase) {
                 $scope.$apply();
             }

@@ -1,4 +1,5 @@
-# inside tasks/test.rake
+# RK this overides rake test task
+#TODO! Add diferent locations for testing e.g. rake test #tests all tests under test/server
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
