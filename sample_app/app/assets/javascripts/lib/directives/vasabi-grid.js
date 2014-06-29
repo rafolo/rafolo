@@ -95,7 +95,17 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
                     var row = $scope.crudCreate();
                     $scope.items.push(row);
                     $scope.options.selectRow($scope.items.length - 1, true); //TODO! select item
-                    $scope.totalServerItems+=1;
+
+                    //it happens: totalServer is String to update the grid data or int to read from
+                    if (typeof($scope.totalServerItems)=='string' || $scope.totalServerItems instanceof String)
+                    {
+                        var value = parseInt($scope.totalServerItems);
+                        value+=1;
+                        $scope.totalServerItems = value.toString();
+                    }
+                    else {
+                        $scope.totalServerItems += 1;
+                    }
                 };
 
                 $scope.crudReadHandler = function () {
