@@ -95,6 +95,7 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
                     var row = $scope.crudCreate();
                     $scope.items.push(row);
                     $scope.options.selectRow($scope.items.length - 1, true); //TODO! select item
+                    $scope.totalServerItems+=1;
                 };
 
                 $scope.crudReadHandler = function () {
@@ -141,6 +142,7 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
                     }
 
                     $scope.crudDelete($scope.items[index]);
+                    $scope.totalServerItems-=1;
 
                 };
 
