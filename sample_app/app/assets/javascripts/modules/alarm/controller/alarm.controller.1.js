@@ -39,7 +39,7 @@ alarmModule.controller("Alarm1Controller", ['$scope', '$log', '$interval', '$tim
             }
         };
 
-        alarmService.getPagedDataAsync($scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
+        //alarmService.getPagedDataAsync($scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         $scope.$watch('gridOptions.pagingOptions', function (newVal, oldVal) {
             alarmService.getPagedDataAsync($scope.setPagingData, $scope.gridOptions.pagingOptions.pageSize, $scope.gridOptions.pagingOptions.currentPage);
         }, true);
