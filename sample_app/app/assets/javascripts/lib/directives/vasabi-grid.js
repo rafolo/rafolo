@@ -12,6 +12,10 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
 
                 $scope.selectedItems = [];
 
+                $scope.$on('ngGridEventData', function(){
+                    $scope.options.selectRow(0, true);
+                });
+
                 //customOptions
                 var customOptions = $scope.customOptions;
 
@@ -73,6 +77,7 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
                     $scope.items.push(row);
                     $scope.options.selectRow($scope.items.length - 1, true); //TODO! select item
 
+                    //update total count
                     //it happens: totalServer is String to update the grid data or int to read from
                     if (typeof($scope.totalServerItems)=='string' || $scope.totalServerItems instanceof String)
                     {
@@ -83,6 +88,13 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
                     else {
                         $scope.totalServerItems += 1;
                     }
+
+                    //move to last page
+                    if (0 != $scope.items.length) {
+                        $scope.options.pagingOptions.currentPage = Math.ceil($scope.totalServerItems/$scope.options.pagingOptions.pageSize);
+                        $scope.options.selectItem(2, true);
+                    }
+
                 };
 
                 $scope.crudReadHandler = function () {
@@ -130,6 +142,14 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
 
                     $scope.crudDelete($scope.items[index]);
                     $scope.totalServerItems-=1;
+
+                    //move to last visible page
+                    if ($scope.options.pagingOptions.currentPage>0) {
+                        if (0 == ($scope.totalServerItems%$scope.options.pagingOptions.pageSize)){
+                            $scope.options.pagingOptions.currentPage--;
+                        }
+
+                    }
 
                 };
 
