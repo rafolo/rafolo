@@ -7,7 +7,7 @@ describe("the mappoint module", function () {
         mappointServiceMock = jasmine.createSpyObj('mappointService', ['getData']);
 
         module("ngRoute");
-        module("app.mappoint");
+        module("app.mappoint.points");
         jasmine.getJSONFixtures().fixturesPath='base/test/client/fixture';
 
         inject(function($rootScope, $controller, $log) {
