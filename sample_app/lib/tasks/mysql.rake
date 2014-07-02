@@ -37,8 +37,8 @@ namespace :rafolo do
     desc 'Restarts mysql server'
     task :restart => [:env, :environment] do
       pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
-      Rake::Task['rafolo:mysql:stop'].invoke if File.exists? pid_file
 
+      Rake::Task['rafolo:mysql:stop'].invoke if File.exists? pid_file
       Rake::Task['rafolo:mysql:start'].invoke
     end
 
