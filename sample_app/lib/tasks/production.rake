@@ -7,8 +7,8 @@ namespace :rafolo do
 
       desc "dump all"
       task :all => [:mysql, :src] do
-        Rake::Task['rafolo:production:dump:run'].invoke("production-src-dump.cmd")
         Rake::Task['rafolo:production:dump:run'].invoke("production-mysql-dump.cmd")
+        Rake::Task['rafolo:production:dump:run'].invoke("production-src-dump.cmd")
       end
 
 
@@ -27,12 +27,12 @@ namespace :rafolo do
 
           puts "Executing: " + cmd + " " + Dir.pwd
 
-          pid = Process.spawn(cmd).pid
-          File.open(pid_file, 'w+') { |f| f.puts pid }
-          Process.waitpid(pid)
+          # pid = Process.spawn(cmd).pid
+          File.open(pid_file, 'w+') { |f| exec(cmd) }
+          # Process.waitpid(pid)
         ensure
           Dir.chdir(dir)
-          File.delete pid_file if File.exists? pid_file #TODO! remove if and debug
+          File.delete pid_file #if File.exists? pid_file #TODO! remove if and debug
         end
       end
 
