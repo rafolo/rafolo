@@ -9,6 +9,7 @@ namespace :rafolo do
     MYSQL_PATH='c:\\mysql-5.1.73-winx64\\'
     ENV['RAFOLO_MYSQL_START_CMD'] = "#{MYSQL_PATH}bin\\mysqld.exe "
 
+
   #mac
   elsif OS.mac?
     raise NotImplementedError; #we dunno howto on mac
