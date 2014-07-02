@@ -1,23 +1,12 @@
 require File.expand_path("../helpers/templates.rb", __FILE__)
 
 namespace :rafolo do
-  namespace :staging do
-
-
-    desc 'Stops mysql server'
-    task :start => [:env, :environment] do
-      pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
-      raise 'MySQl started - cannot start!' if File.exists? pid_file
-
-      pid = Process.spawn(ENV['RAFOLO_MYSQL_START_CMD'])
-      File.open(pid_file, 'w+') { |f| f.puts pid }
-    end
-
+  namespace :production do
 
     DUMPINPROGRESS_FILEPATH='tmp/dumpinprogress.pid'
 
     desc "production dump"
-    task :dump => [:env, :environment] do
+    task :sqldump => [:env, :environment] do
       pid_file = File.expand_path(DUMPINPROGRESS_FILEPATH, Rails.root)
       raise 'Dump in progress - cannot start!' if File.exists? pid_file
 
@@ -25,7 +14,7 @@ namespace :rafolo do
         dir = Dir.pwd
         path = File.expand_path("script", Rails.root)
         Dir.chdir(path)
-        cmd = "dump.cmd"
+        cmd = "production-dump.cmd"
 
         # o = path + '/dump.cmd'
         #erb_resolver 'config/SomeFile.xml' do |t|
