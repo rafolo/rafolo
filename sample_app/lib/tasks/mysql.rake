@@ -12,6 +12,7 @@ namespace :rafolo do
     14      ALRM (alarm clock)
     15      TERM (software termination signal)
 =end
+    desc 'Starts mysql server'
     task :stop => [:env, :environment] do
       pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
       raise 'MySQL not started - cannot stop!' if !File.exists? pid_file
@@ -24,12 +25,21 @@ namespace :rafolo do
       File.delete pid_file
     end
 
+    desc 'Stops mysql server'
     task :start => [:env, :environment] do
       pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
       raise 'MySQl started - cannot start!' if File.exists? pid_file
 
       pid = Process.spawn(ENV['RAFOLO_MYSQL_START_CMD'])
       File.open(pid_file, 'w+') { |f| f.puts pid }
+    end
+
+    desc 'Restarts mysql server'
+    task :restart => [:env, :environment] do
+      pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
+      Rake::Task['rafolo:mysql:stop'].invoke if File.exists? pid_file
+
+      Rake::Task['rafolo:mysql:start'].invoke
     end
 
     # This is lock example
