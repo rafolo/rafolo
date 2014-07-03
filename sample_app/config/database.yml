@@ -45,5 +45,8 @@ beta:
   <<: *development
   database: db/beta.sqlite3
 
+staging1:
+  <<: *local_production_mysql
+
 cucumber:
   <<: *test

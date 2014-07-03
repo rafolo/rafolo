@@ -6,36 +6,19 @@ namespace :rafolo do
     namespace :dump do
 
       desc "dump all"
-      task :all => [:mysql, :src] do
-        Rake::Task['rafolo:production:dump:run'].invoke("production-mysql-dump.cmd")
-        Rake::Task['rafolo:production:dump:run'].invoke("production-src-dump.cmd")
+      task :all => [:runmysql, :runsrc] do #=> [:mysql, :src] do #TODO! closes after shell exec in first task ...brrr
+
       end
 
-
-      DUMPINPROGRESS_FILEPATH='tmp/dumpinprogress.pid'
-
-      desc "run a script"
-      task :run, [:cmd] => [:env, :environment] do |t, args|
-        pid_file = File.expand_path(DUMPINPROGRESS_FILEPATH, Rails.root)
-        raise 'Dump in progress - cannot start!' if File.exists? pid_file
-
-        begin
-          dir = Dir.pwd
-          path = File.expand_path("script", Rails.root)
-          Dir.chdir(path)
-          cmd = args[:cmd]
-
-          puts "Executing: " + cmd + " " + Dir.pwd
-
-          # pid = Process.spawn(cmd).pid
-          File.open(pid_file, 'w+') { |f| exec(cmd) }
-          # Process.waitpid(pid)
-        ensure
-          Dir.chdir(dir)
-          File.delete pid_file #if File.exists? pid_file #TODO! remove if and debug
-        end
+      task :runmysql do
+        runner = CmdRunner.new
+        runner.run "production-mysql-dump.cmd"
       end
 
+      task :runsrc do
+        runner = CmdRunner.new
+        runner.run "production-src-dump.cmd"
+      end
 
       desc 'Dump src'
       task :src do
@@ -70,6 +53,41 @@ namespace :rafolo do
     def get_items()
       ['rafal@pkey.pl', 'google.com']
     end
+
+    class CmdRunner
+
+      DUMPINPROGRESS_FILEPATH='tmp/dumpinprogress.pid'
+
+      def initialize
+
+      end
+
+      def run cmd
+
+        pid_file = File.expand_path(DUMPINPROGRESS_FILEPATH, Rails.root)
+        #TODO!raise 'Dump in progress - cannot start!' if File.exists? pid_file
+
+        begin
+          dir = Dir.pwd
+          path = File.expand_path("script", Rails.root)
+
+          Dir.chdir(path)
+
+          puts "Executing: " + Dir.pwd + cmd
+
+          #pid = Process.spawn(cmd)
+          # File.open(pid_file, 'w+') { |f| exec(cmd) }
+          #Process.wait(pid)
+          a=0
+            exec(cmd)
+        ensure
+          Dir.chdir(dir)
+          #File.delete pid_file #if File.exists? pid_file #TODO! remove if and debug
+        end
+      end
+
+      end
+
 
 
     class MySqlCmdGenerator
