@@ -42,6 +42,24 @@ namespace :rafolo do
       Rake::Task['rafolo:mysql:start'].invoke
     end
 
+    require 'active_record'
+    desc "Get all the pico HTML mess into a Ruby model"
+    task :import => [:env, :environment] do
+
+      Rake::Task["db:create"].invoke
+
+      ActiveRecord::Base.establish_connection(Rails.env)
+
+      path = "#{ENV['RAFOLO_DUMP_ROOT']}/dep/db/"
+      Dir.foreach(path) do |script|
+        next if script == '.' or script == '..'
+        puts "Processing: #{script}\n"
+        ActiveRecord::Base.connection.execute IO.read(path + script)
+      end
+
+      puts "File executed\n"
+    end
+
     # This is lock example
     #
     # task :lock => [:env, :environment] do

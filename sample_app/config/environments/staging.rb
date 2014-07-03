@@ -13,6 +13,6 @@ SampleApp::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = false
 
-  config.assets.js_compressor = Uglifier.new(mangle: false)
+  #TODO! Start staging error occures config.assets.js_compressor = Uglifier.new(mangle: false)
 
 end
