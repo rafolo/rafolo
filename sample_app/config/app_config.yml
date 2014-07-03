@@ -13,3 +13,6 @@ production:
 beta:
   <<: *common
   landscape_title: beta
+staging1:
+  <<: *common
+  landscape_title: staging1
