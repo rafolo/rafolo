@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe AlarmsController do
+
   describe "routing" do
 
     it "routes to #index" do
@@ -30,6 +31,5 @@ describe AlarmsController do
     it "routes to #destroy" do
       delete("/alarms/1").should route_to("alarms#destroy", :id => "1")
     end
-
   end
 end

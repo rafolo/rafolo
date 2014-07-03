@@ -7,5 +7,11 @@ describe "Alarms" do
       get root_path
       response.status.should be(200)
     end
+
+    it "should render correct ui lab links" do
+      get alarms_path
+      should have_link("Buttons", href: "../ui_lab/buttons.html")
+      #assert_select 'a[href=?]', /..\/\/ui_lab\/buttons\.html/, :count => 1
+    end
   end
 end
