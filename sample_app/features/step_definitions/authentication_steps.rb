@@ -20,7 +20,7 @@ Given /^the user submits valid signin information$/ do
   fill_in "Password", with: @user.password
   click_button "Sign in"
 end
-^
+
 Then /^he should see his profile page$/ do
   page.should have_selector('title', text: @user.name)
 end
