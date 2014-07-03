@@ -1,0 +1,17 @@
+<html>
+<head>
+  <script type="text/javascript" src="scripts/swfobject-1.5.1.js"></script>
+  <script>
+      function embed() {
+          var so = new SWFObject("<%= swf_file %>", "swf", "420", "360", "9.0.0", "#ffffff", []);
+          so.addVariable("layout", "<%= layout %>");
+          so.write("flash-content");
+      }
+  </script>
+</head>
+<body onload="embed()">
+<center>
+  <div id="flash-content"></div>
+</center>
+</body>
+</html>

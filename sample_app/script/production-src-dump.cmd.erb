@@ -1,0 +1,6 @@
+REM HELLO <%=Time.now%>
+pushd <%=output%>
+"<%=githome%>\Cmd"\git.cmd clone  ssh://53a66617500446d6fc000abd@vasabi-rafolo.rhcloud.com/~/git/vasabi.git/
+cd vasabi
+rd /s /q .git
+popd

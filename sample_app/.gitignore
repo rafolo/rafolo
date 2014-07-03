@@ -25,3 +25,5 @@ node_modules/
 
 #ignore compiled assets
 public/assets 
+
+script/*.cmd 

@@ -20,6 +20,7 @@ group :development, :test do
   gem 'simplecov', :require => false #rcov for RoR4'
   gem 'shoulda'
   gem 'memory_test_fix'
+  gem 'os'
 end
 
 # Gems used only for assets and not required
