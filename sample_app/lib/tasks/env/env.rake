@@ -11,6 +11,8 @@ namespace :rafolo do
 
     ENV['RAFOLO_GIT_HOME'] = "c:\\Program Files (x86)\\Git"
 
+    ENV['PLINK_HOME'] = "c:\\Program Files (x86)\\PuTTY\\"
+
     ENV['RAFOLO_DUMP_ROOT'] = "c:\\dev\\cc\\Modules\\Repos\\Openshift5"
 
 
