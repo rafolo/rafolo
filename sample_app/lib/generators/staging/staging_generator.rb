@@ -10,6 +10,12 @@ class StagingGenerator < Rails::Generators::NamedBase
 #{file_name}:
   <<: *local_production_mysql
   database: "#{file_name}"
+
+#{file_name}-adm:
+  <<: *local_production_mysql
+  database: "#{file_name}"
+  username: root
+  password:
 }
 
     append_to_file 'config/database.yml', str

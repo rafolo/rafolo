@@ -1,0 +1,5 @@
+REM HELLO <%=Time.now%>
+    <% for @item in @items %>
+REM           <%= h(@item) %>
+    <% end %>
+"<%=plinkhome%>"plink.exe -load <%=session%>  -L 3306:localhost:3306 "mysqldump --port=3306 -h $OPENSHIFT_MYSQL_DB_HOST -u$OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD $OPENSHIFT_APP_NAME" > <%=output%>

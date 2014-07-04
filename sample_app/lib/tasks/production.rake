@@ -10,6 +10,7 @@ namespace :rafolo do
 
       end
 
+      desc "remove errors"
       task :stripmysql do
 
         dir = ENV['RAFOLO_DUMP_ROOT'].strip + "/dep/db"
