@@ -59,7 +59,17 @@ namespace :rafolo do
       Dir.foreach(path) do |script|
         next if script == '.' or script == '..'
         puts "Processing: #{script}\n"
-        ActiveRecord::Base.connection.execute IO.read(path + script)
+
+        sql = IO.read(path + script)
+        ssql = sql.split(/;/)
+
+        ssql.each do |s|
+          s = s + ";"
+          puts "Executing:" + s
+          ActiveRecord::Base.connection.execute s
+        end
+        # ActiveRecord::Base.connection.execute sql
+
       end
 
       puts "File executed\n"

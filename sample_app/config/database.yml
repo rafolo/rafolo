@@ -52,6 +52,31 @@ staging:
 staging-s1:
   <<: *local_production_mysql
   database: staging-s1
+  username: root
+  password:
 
 cucumber:
   <<: *test
+
+#TODO! Change name if !metter
+s66:
+  <<: *local_production_mysql
+  database: "s66"
+
+s66-adm:
+  <<: *local_production_mysql
+  database: "s66"
+  username: root
+  password:
+
+
+#TODO! Change name if !metter
+s67:
+  <<: *local_production_mysql
+  database: "s67"
+
+s67-adm:
+  <<: *local_production_mysql
+  database: "s67"
+  username: root
+  password:
