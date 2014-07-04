@@ -82,7 +82,7 @@ namespace :rafolo do
         # copyTo = dir + "production-mysql-" + Time.now.to_s(:number) + ".sql"dir = ENV['RAFOLO_DUMP_ROOT'].strip + "\\dep\\db\\";
 
         copyTo = "production-mysql-" + Time.now.to_s(:number) + ".sql"
-        MySqlCmdGenerator.new("openshift-vasabi", copyTo, get_items, CONFIG_TEMPLATE).save(CONFIG)
+        MySqlCmdGenerator.new(ENV['PLINK_HOME'], "openshift-vasabi", copyTo, get_items, CONFIG_TEMPLATE).save(CONFIG)
 
       end
     end
@@ -134,10 +134,11 @@ namespace :rafolo do
 
     class MySqlCmdGenerator
       include ERB::Util
-      attr_accessor :session, :output, :items, :template, :date
+      attr_accessor :plinkhome, :session, :output, :items, :template, :date
 
-      def initialize(session, output, items, template, date=Time.now)
+      def initialize(plinkhome, session, output, items, template, date=Time.now)
         @date = date
+        @plinkhome=plinkhome
         @session = session
         @output = output
         @items = items
