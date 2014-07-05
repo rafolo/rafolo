@@ -21,5 +21,5 @@ before_install:
 script: karma start #bundle exec rake spec:models
 #script: "./testscript.sh" #future script commented for now
 
-  - RAILS_ENV=test bundle exec rake --trace db:migrate test
-  - karma start --single-run --browsers PhantomJS test/karma/config/unit.js
+#- RAILS_ENV=test bundle exec rake --trace db:migrate test
+#- karma start --single-run --browsers PhantomJS test/karma/config/unit.js
