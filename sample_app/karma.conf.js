@@ -29,7 +29,7 @@ module.exports = function (config) {
         ],
 
         //browsers: ['Chrome'],
-        browsers: ['Firefox'],
+        browsers: ['Firefox'], //@Travis no CHrome
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
