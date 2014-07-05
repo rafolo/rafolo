@@ -11,8 +11,9 @@ module.exports = function (config) {
         plugins: [
             'karma-jasmine',
             'jasmine-jquery',
+            'karma-phantomjs-launcher',
             'karma-chrome-launcher',
-            'karma-firefox-launcher'
+            'karma-firefox-launcher',
         ],
 
         files: [
@@ -29,7 +30,21 @@ module.exports = function (config) {
         ],
 
         //browsers: ['Chrome'],
-        browsers: ['Firefox'], //@Travis no CHrome
+        browsers: ['Firefox', 'Chrome', 'PhantomJS', 'PhantomJS_custom'], //@Travis no CHrome
+
+        // you can define custom flags
+        customLaunchers: {
+            'PhantomJS_custom': {
+                base: 'PhantomJS',
+                options: {
+                    windowName: 'my-window',
+                    settings: {
+                        webSecurityEnabled: false
+                    }
+                },
+                flags: ['--remote-debugger-port=9000']
+            }
+        },
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
