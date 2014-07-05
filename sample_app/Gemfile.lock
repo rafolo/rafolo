@@ -252,6 +252,7 @@ DEPENDENCIES
   os
   rails (= 3.2.3)
   rails_12factor
+  rake
   rb-fsevent (>= 0.4.3.1)
   rspec-rails (= 2.9.0)
   sass-rails (= 3.2.6)
