@@ -13,3 +13,4 @@ before_script:
 # uncomment this line if your project needs to run something other than `rake`:
 #script: bundle exec rspec spec:models
 script: bundle exec rake spec:models
+#script: "./testscript.sh"
