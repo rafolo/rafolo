@@ -6,8 +6,10 @@ describe("the mappoint module", function () {
     beforeEach(function () {
         mappointServiceMock = jasmine.createSpyObj('mappointService', ['getData']);
 
+        debugger;
         module("ngRoute");
         module("app.mappoint.points");
+
         jasmine.getJSONFixtures().fixturesPath='base/test/client/fixture';
 
         inject(function($rootScope, $controller, $log) {
@@ -16,7 +18,7 @@ describe("the mappoint module", function () {
 
             mappointServiceMock.getData.andReturn(getJSONFixture('legend.json'));
 
-            ctrl = $controller('LegendController', {
+            ctrl = $controller('MapPointsController', {
                 $scope: $scope,
                 mappointService: mappointServiceMock
             });
@@ -26,6 +28,6 @@ describe("the mappoint module", function () {
 
     it("should start with map point data populated", function () {
         expect(mappointServiceMock.getData).toHaveBeenCalled();
-        expect($scope.amsterdam.lat).not.toBeUndefined();
+        expect($scope.osloCenter.lat).not.toBeUndefined();
     });
 });
