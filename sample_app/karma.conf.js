@@ -28,8 +28,8 @@ module.exports = function (config) {
             {pattern: 'test/client/unit/**/*.js'}
         ],
 
-        browsers: ['Chrome'],
-        //browsers: ['Firefox'],
+        //browsers: ['Chrome'],
+        browsers: ['Firefox'],
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
