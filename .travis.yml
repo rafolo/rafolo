@@ -32,5 +32,6 @@ script:
   - rake about
 
 after_success:
-  - cd .. #return to root
+  - cd .. #return to
+  - pwd
   - ./after_success.sh
