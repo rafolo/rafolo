@@ -12,18 +12,18 @@ notifications:
 
 before_script:
   - cd sample_app
-  - bundle install
-  - npm install
-  - bower install
+#  - bundle install
+#  - npm install
+#  - bower install
 before_install:
-  - "export DISPLAY=:99.0" #for GUI test
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+#  - "export DISPLAY=:99.0" #for GUI test
+#  - "sh -e /etc/init.d/xvfb start"
+#  - sleep 3 # give xvfb some time to start
 
 script:
-  - bundle exec rake spec:lib
-  - bundle exec rake spec:models
-  - karma start --browsers PhantomJS --single-run
+#  - bundle exec rake spec:lib
+#  - bundle exec rake spec:models
+#  - karma start --browsers PhantomJS --single-run
 #script: "./testscript.sh" #future script commented for now
 
 after_success: ./after_success.sh
