@@ -25,5 +25,6 @@ script:
 #  - bundle exec rake spec:models
 #  - karma start --browsers PhantomJS --single-run
 #script: "./testscript.sh" #future script commented for now
+  - rake about
 
 after_success: ./after_success.sh
