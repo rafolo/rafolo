@@ -11,7 +11,8 @@ notifications:
   email:
     - rafal@pkey.pl
 
-#before_script:
+before_script:
+  - sudo chown -R travis .
 
 before_install:
   - cd sample_app
