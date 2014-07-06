@@ -1,6 +1,7 @@
 #/usr/bin/env/sh
-set -e
+set -e #exit geantly
 
+echo -e "Starting up...\n"
 
 #uncomment in debug
 TRAVIS_PULL_REQUEST="false"
