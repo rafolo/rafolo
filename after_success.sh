@@ -8,7 +8,7 @@ TRAVIS_PULL_REQUEST="false"
 #TRAVIS_DUMP_ROOT=$PWD/cc/modules/branches/ci/sample_app-artifacts
 ##GH_TOKEN="052a204f8df159b9a8646327929d530c881532ff"
 
-if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+#if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
   cd sample_app
 
@@ -50,4 +50,4 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   git push -fq origin master > /dev/null
 
   echo -e "Magic done...thx\n"
-fi
+#fi
