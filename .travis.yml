@@ -1,43 +1,29 @@
 language: ruby
-cache: bundler
 rvm:
 #  - "1.8.7"
 #  - "1.9.2"
   - "1.9.3"
-env:
-  - GH_TOKEN=052a204f8df159b9a8646327929d530c881532ff
-
-notifications:
-  email:
-    - rafal@pkey.pl
-
+#  - jruby-18mode # JRuby in 1.8 mode
+#  - jruby-19mode # JRuby in 1.9 mode
+#  - rbx
 
 before_script:
-  - sudo chown -R travis .
-
-before_install:
   - cd sample_app
-#  - "export DISPLAY=:99.0" #for GUI test
-#  - "sh -e /etc/init.d/xvfb start"
-#  - sleep 3 # give xvfb some time to start
-
-install:
   - bundle install
-  #- npm install
-  #- bower install
+  - npm install
+  - bower install
+before_install:
+  - "export DISPLAY=:99.0" #for GUI test
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
 
-#before_script:
-
-
+# uncomment this line if your project needs to run something other than `rake`:
+#script: bundle exec rspec spec:models
 script:
-#  - bundle exec rake spec:lib
-#  - bundle exec rake spec:models
-#  - karma start --browsers PhantomJS --single-run
+  - bundle exec rake spec:lib
+  - bundle exec rake spec:models
+  - karma start --browsers PhantomJS --single-run #bundle exec rake spec:models
 #script: "./testscript.sh" #future script commented for now
-  - rake about
 
-after_success:
-  - cd .. #return to
-  - pwd
-  - chmod +x ./after_success.sh #bug
-  - ./after_success.sh
+#- RAILS_ENV=test bundle exec rake --trace db:migrate test
+#- karma start --single-run --browsers PhantomJS test/karma/config/unit.js
