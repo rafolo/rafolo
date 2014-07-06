@@ -11,6 +11,7 @@ notifications:
   email:
     - rafal@pkey.pl
 
+
 before_script:
   - sudo chown -R travis .
 
