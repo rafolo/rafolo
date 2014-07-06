@@ -31,4 +31,6 @@ script:
 #script: "./testscript.sh" #future script commented for now
   - rake about
 
-after_success: ./after_success.sh
+after_success:
+  - cd .. #return to root
+  - ./after_success.sh
