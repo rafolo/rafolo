@@ -3,7 +3,7 @@ set -e
 
 
 #uncomment in debug
-#TRAVIS_PULL_REQUEST="false"
+TRAVIS_PULL_REQUEST="false"
 #TRAVIS_BUILD_NUMBER="10"
 #TRAVIS_DUMP_ROOT=$PWD/cc/modules/branches/ci/sample_app-artifacts
 ##GH_TOKEN="052a204f8df159b9a8646327929d530c881532ff"
