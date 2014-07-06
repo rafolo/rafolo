@@ -12,7 +12,7 @@ notifications:
 
 before_script:
   - cd sample_app
-#  - bundle install
+  - bundle install
 #  - npm install
 #  - bower install
 before_install:
