@@ -1,5 +1,6 @@
 #/usr/bin/env/sh
 set -e #exit geantly
+set -x #comment if quiet
 
 echo -e "Starting up...\n"
 
