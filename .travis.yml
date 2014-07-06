@@ -24,6 +24,9 @@ install:
   #- npm install
   #- bower install
 
+#before_script:
+
+
 script:
 #  - bundle exec rake spec:lib
 #  - bundle exec rake spec:models
@@ -34,4 +37,5 @@ script:
 after_success:
   - cd .. #return to
   - pwd
+  - chmod +x ./after_success.sh #bug
   - ./after_success.sh
