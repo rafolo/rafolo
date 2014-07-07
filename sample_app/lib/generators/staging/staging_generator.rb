@@ -5,6 +5,15 @@ class StagingGenerator < Rails::Generators::NamedBase
     copy_file "files/staging.rb", "config/environments/#{file_name}.rb"
 
     str =  %Q{
+#TODO! Change your db
+local_production_mysql: &local_production_mysql
+  adapter: mysql2
+  encoding: utf8
+  database: vasabi
+  username: vasabi
+  password: vasabi
+  host: 127.0.0.1
+  port: 3306
 
 #TODO! Change name if !metter
 #{file_name}:

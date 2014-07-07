@@ -23,7 +23,7 @@ namespace :vasabi do
   namespace :test do
 
     desc "test"
-    task :all => ["coverage:spec", "rafolo:karma"] do |t|
+    task :all => ["rafolo:karma:all", "coverage:spec" ] do |t|
 
       #File.open(Rails.root+ "")
     end
@@ -46,8 +46,6 @@ namespace :vasabi do
                          rails g staging
                          switch to environment
                          rake rafolo:mysql:import
-
-
 )
     end
   end
