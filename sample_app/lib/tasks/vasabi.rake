@@ -14,6 +14,8 @@ namespace :vasabi do
 
     desc "deploy"
     task :freeze => "rafolo:deploy:copy" do |t|
+
+
     end
   end
 
@@ -22,6 +24,8 @@ namespace :vasabi do
 
     desc "test"
     task :all => ["coverage:spec", "rafolo:karma"] do |t|
+
+      #File.open(Rails.root+ "")
     end
   end
 
@@ -38,6 +42,7 @@ namespace :vasabi do
                          rake rafolo:dump:scriptmysql
 
                          open project from dump folder
+
                          rails g staging
                          switch to environment
                          rake rafolo:mysql:import
