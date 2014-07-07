@@ -80,3 +80,24 @@ s67-adm:
   database: "s67"
   username: root
   password:
+
+#TODO! Change your db
+local_production_mysql: &local_production_mysql
+  adapter: mysql2
+  encoding: utf8
+  database: vasabi
+  username: vasabi
+  password: vasabi
+  host: 127.0.0.1
+  port: 3306
+
+#TODO! Change name if !metter
+s14:
+  <<: *local_production_mysql
+  database: "s14"
+
+s14-adm:
+  <<: *local_production_mysql
+  database: "s14"
+  username: root
+  password:

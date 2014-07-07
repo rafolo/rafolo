@@ -43,16 +43,18 @@ namespace :rafolo do
 
       task :runmysql => :scriptmysql do
         runner = CmdRunner.new
-        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\dep\\db\\"
+        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\" + Time.now.to_s(:number) + "\\dep\\db\\"
         runner.run dir, "production-mysql-dump.cmd"
+
 
       end
 
       task :runsrc => :scriptsrc do
         runner = CmdRunner.new
-        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\src\\"
+        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\" + Time.now.to_s(:number) + "\\src\\"
         runner.run dir, "production-src-dump.cmd"
 
+        FileUtils.remove_dir(dir + "vasabi\.git") #TODO!Vasabi to consts, git is not deleted
       end
 
       desc 'rafolo:dump:scriptsrc - generates src dump configuration cmd file'
@@ -76,6 +78,7 @@ namespace :rafolo do
         PWD = Rails.root.join("script")
         CONFIG_TEMPLATE = File.read(File.join(PWD, 'production-mysql-dump.cmd.erb'))
         CONFIG = File.join(PWD, 'production-mysql-dump.cmd')
+
 
         # dir = ENV['RAFOLO_DUMP_ROOT'].strip + "\\dep\\db\\";
         # FileUtils.mkdir_p(dir) unless File.directory?(dir)
