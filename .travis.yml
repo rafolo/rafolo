@@ -23,7 +23,7 @@ before_install:
 script:
   - bundle exec rake spec:lib
   - bundle exec rake spec:models
-  - karma start --browsers PhantomJS --single-run #bundle exec rake spec:models
+  - #karma start --browsers PhantomJS --single-run #bundle exec rake spec:models
   - karma start --browsers Firefox --single-run #bundle exec rake spec:models
 #script: "./testscript.sh" #future script commented for now
 after_script:
