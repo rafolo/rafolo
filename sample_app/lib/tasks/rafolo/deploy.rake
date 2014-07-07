@@ -22,7 +22,7 @@ namespace :rafolo do
       src_dir = dump_dir+"\\src\\"
       copy_files(Rails.root, src_dir)
       #build
-      copy_files(Rails.root, dump_dir+"\\build\\", %r((.git|log|node_modules|spec|tmp|test|bower.json|karma.*.js|protractor.config)))
+      copy_files(Rails.root, dump_dir+"\\build\\", %r((.git|coverage|log|node_modules|spec|tmp|test|package.json|bower.json|grunt.js|karma.*.js|protractor.conf.js)))
       #doc
       cov_dir= Rails.root
       cov_dir+="coverage"
