@@ -16,7 +16,7 @@ namespace :rafolo do
 
     #TODO Get rid of absolute path
     #where production dump lives
-    ENV['RAFOLO_PRD_DUMP_ROOT'] = "c:\\dev\\cc\\Modules\\Repos\\Openshift5"
+    ENV['RAFOLO_PRD_DUMP_ROOT'] = "c:\\dev\\cc\\Modules\\Repos\\GitHub\\rafolo\\cc\\modules\\branches\\dump"
 
     #TODO Get rid of absolute path
     #where prepared version lives
