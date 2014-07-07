@@ -20,6 +20,7 @@ Spork.prefork do
     SimpleCov.start do
       #add_filter 'test'
       #command_name 'Mintest'
+      coverage_dir 'coverage/server/simplecov'
     end
   end
 
