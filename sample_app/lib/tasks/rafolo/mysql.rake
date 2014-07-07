@@ -55,7 +55,7 @@ namespace :rafolo do
 
       ActiveRecord::Base.establish_connection(Rails.env)
 
-      path = "#{ENV['RAFOLO_DUMP_ROOT']}/dep/db/"
+      path = "#{ENV['RAFOLO_PRD_DUMP_ROOT']}/dep/db/"
       Dir.foreach(path) do |script|
         next if script == '.' or script == '..'
         puts "Processing: #{script}\n"

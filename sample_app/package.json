@@ -13,6 +13,7 @@
     "karma-junit-reporter": "*",
     "karma-jasmine": "*",
     "karma-ng-scenario": "*",
+    "karma-coverage": "*",
     "protractor": "*"
 },
 "license": "MIT",

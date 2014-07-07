@@ -13,10 +13,16 @@ namespace :rafolo do
 
     ENV['PLINK_HOME'] = "c:\\Program Files (x86)\\PuTTY\\"
 
-    ENV['RAFOLO_DUMP_ROOT'] = "c:\\dev\\cc\\Modules\\Repos\\Openshift5"
 
+    #TODO Get rid of absolute path
+    #where production dump lives
+    ENV['RAFOLO_PRD_DUMP_ROOT'] = "c:\\dev\\cc\\Modules\\Repos\\Openshift5"
 
-  #mac
+    #TODO Get rid of absolute path
+    #where prepared version lives
+    ENV['RAFOLO_CIS_FREEZE_DUMP_HOME'] = %Q(c:\\dev\\cc\\Modules\\Repos\\GitHub\\rafolo\\cc\\modules\\branches\\ci\\sample_app-artifacts)
+
+    #mac
   elsif OS.mac?
     raise NotImplementedError; #we dunno howto on mac
   #unknown os
