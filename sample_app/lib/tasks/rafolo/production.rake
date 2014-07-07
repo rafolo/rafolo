@@ -1,4 +1,4 @@
-require File.expand_path("../helpers/templates.rb", __FILE__)
+require File.expand_path("../../helpers/templates.rb", __FILE__)
 
 namespace :rafolo do
   namespace :production do
@@ -13,7 +13,7 @@ namespace :rafolo do
       desc "remove errors"
       task :stripmysql do
 
-        dir = ENV['RAFOLO_DUMP_ROOT'].strip + "/dep/db"
+        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "/dep/db"
 
         #replace *!40101 ;
         begin
@@ -43,14 +43,14 @@ namespace :rafolo do
 
       task :runmysql => :scriptmysql do
         runner = CmdRunner.new
-        dir = ENV['RAFOLO_DUMP_ROOT'].strip + "\\dep\\db\\"
+        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\dep\\db\\"
         runner.run dir, "production-mysql-dump.cmd"
 
       end
 
       task :runsrc => :scriptsrc do
         runner = CmdRunner.new
-        dir = ENV['RAFOLO_DUMP_ROOT'].strip + "\\src\\"
+        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\src\\"
         runner.run dir, "production-src-dump.cmd"
 
       end
