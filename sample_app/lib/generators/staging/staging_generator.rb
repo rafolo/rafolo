@@ -3,6 +3,7 @@ class StagingGenerator < Rails::Generators::NamedBase
 
   def copy_staging_file
     copy_file "files/staging.rb", "config/environments/#{file_name}.rb"
+    copy_file "files/staging.rb", "config/environments/#{file_name}-adm.rb"
 
     str =  %Q{
 #TODO! Change your db

@@ -55,17 +55,22 @@ namespace :rafolo do
 
       ActiveRecord::Base.establish_connection(Rails.env)
 
-      path = "#{ENV['RAFOLO_PRD_DUMP_ROOT']}/dep/db/"
-      Dir.foreach(path) do |script|
+      path = File.expand_path('../../../../../../dep/db', __FILE__) + "/**/*.sql"
+      #path = "#{ENV['RAFOLO_PRD_DUMP_ROOT']}/dep/db/"
+      Dir.glob(path).each do |script|
+      #Dir.foreach(path) do |script|
         next if script == '.' or script == '..'
         puts "Processing: #{script}\n"
 
-        sql = IO.read(path + script)
-        ssql = sql.split(/;/)
+        sql = IO.read(script)
+        sqls = sql.split(/;/)
 
-        ssql.each do |s|
-          s = s + ";"
-          puts "Executing:" + s
+        sqls.each do |s|
+
+          sql = s + ";"
+          sql.sub!("/*!", "-- /*!")
+
+          puts "Executing:" + sql
           ActiveRecord::Base.connection.execute s
         end
         # ActiveRecord::Base.connection.execute sql

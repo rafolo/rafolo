@@ -41,20 +41,44 @@ namespace :rafolo do
         end
       end
 
-      task :runmysql => :scriptmysql do
-        runner = CmdRunner.new
-        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\" + Time.now.to_s(:number) + "\\dep\\db\\"
-        runner.run dir, "production-mysql-dump.cmd"
+      desc "runmysql"
+      task :runmysql, [:cookie] do |t, args|
 
+        if args[:cookie].nil?
+          cookie = Time.now.to_s(:number)
+        else
+          cookie = args[:cookie]
+        end
+
+        runner = CmdRunner.new
+        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\" + cookie + "\\dep\\db\\"
+        runner.run dir, "production-mysql-dump.cmd"
 
       end
 
-      task :runsrc => :scriptsrc do
-        runner = CmdRunner.new
-        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\" + Time.now.to_s(:number) + "\\src\\"
-        runner.run dir, "production-src-dump.cmd"
+      task :runsrc, [:cookie] do |t, args|
 
-        FileUtils.remove_dir(dir + "vasabi\.git") #TODO!Vasabi to consts, git is not deleted
+        if args[:cookie].nil?
+          cookie = Time.now.to_s(:number)
+        else
+          cookie = args[:cookie]
+        end
+        # runner = CmdRunner.new
+        # dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\" + Time.now.to_s(:number) + "\\src\\"
+        # runner.run dir, "production-src-dump.cmd"
+        #
+        # FileUtils.remove_dir(dir + "vasabi\.git") #TODO!Vasabi to consts, git is not deleted
+        dir = ENV['RAFOLO_PRD_DUMP_ROOT'].strip + "\\" + cookie
+        FileUtils.mkdir(dir)
+        dir+= "\\src\\"
+        FileUtils.mkdir(dir)
+        Dir.chdir dir do #TODO! Add git depth 0 to make traffic smaller
+          #TODO! vasabi to constants
+          %x(git clone ssh://53a66617500446d6fc000abd@vasabi-rafolo.rhcloud.com/~/git/vasabi.git/)
+
+          FileUtils.remove_dir("vasabi/.git")
+        end
+
       end
 
       desc 'rafolo:dump:scriptsrc - generates src dump configuration cmd file'
