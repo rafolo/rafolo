@@ -57,6 +57,7 @@ namespace :rafolo do
 
       path = File.expand_path('../../../../../../dep/db', __FILE__) + "/**/*.sql"
       #path = "#{ENV['RAFOLO_PRD_DUMP_ROOT']}/dep/db/"
+
       Dir.glob(path).each do |script|
       #Dir.foreach(path) do |script|
         next if script == '.' or script == '..'
