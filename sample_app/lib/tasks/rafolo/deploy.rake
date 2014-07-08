@@ -20,7 +20,7 @@ namespace :rafolo do
 
       #src
       src_dir = dump_dir+"\\src\\"
-      copy_files(Rails.root, src_dir)
+      #copy_files(Rails.root, src_dir)
       #build
       copy_files(Rails.root, dump_dir+"\\build\\", %r((.git|coverage|log|node_modules|spec|tmp|test|package.json|bower.json|grunt.js|karma.*.js|protractor.conf.js)))
       #doc
@@ -51,7 +51,7 @@ namespace :rafolo do
 
     def copy_files src_dir, dst_dir, exclude = nil
       Dir.chdir src_dir do
-        Dir.glob('**/*.*').each do |file|
+        Dir.glob('**/*').each do |file| #*.* returns files with extensions buhaha e.g. Gemfile not
           dir, filename = strip_io_name(File.dirname(file)), strip_io_name(File.basename(file))
 
           if filename.to_s=~exclude or dir.to_s =~exclude
