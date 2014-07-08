@@ -1,3 +1,4 @@
+require 'mkmf'
 namespace :vasabi do
   ##
   ## cis
@@ -20,7 +21,22 @@ namespace :vasabi do
     desc "check"
     task :check do
       puts "Checking ide..."
-      raise "Add some checkings" #TODO! Add checklist
+      validate_executable 'ruby', 'Ruby executable is not available. Please download Ruby v1.9.3 from http://rubyinstaller.org/downloads/'
+      validate_executable 'node', 'Node.js executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
+      validate_executable 'npm', 'Npm(node package manager) executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
+      validate_executable 'bower', 'Bower executable is not available. Please run: "npm install -g bower".'
+      validate_executable 'karma', 'Karma executable is not available. Please run: "npm install -g karma" and "npm install -g karma-cli"'
+      validate_executable 'protractor', 'Protractor executable is not available. Please run: "npm install -g protractor"'
+
+      #TODO! Add checklist: DevKit, mySql installation
+    end
+
+    def validate_executable(executable, message)
+      raise message if find_executable(executable) == nil
+    end
+
+    def validate_folder_exists(folder)
+
     end
   end
 
