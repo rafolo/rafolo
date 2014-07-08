@@ -14,6 +14,8 @@ Spork.prefork do
   require 'rspec/rails'
   require 'rspec/autorun'
 
+  require File.expand_path("../../app/helpers/menu_helper.rb", __FILE__)
+
   #RK Simple cov
   if ENV['COVERAGE']
     require 'simplecov'

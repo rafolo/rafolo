@@ -1,10 +1,10 @@
-require 'rspec'
+require 'spec_helper'
 
-describe 'Menu Helper adds menu' do
+describe 'Menu Helper' do
 
-  it 'should should add two menus'  do
+  it 'has two menus'  do
 
-    items = left_menu
+    items = MenuHelper.left_menu
     items.empty?.should == false
   end
 end
