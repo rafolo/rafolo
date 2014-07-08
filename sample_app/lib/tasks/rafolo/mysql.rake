@@ -30,6 +30,7 @@ namespace :rafolo do
       pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
       raise 'MySQl started - cannot start!' if File.exists? pid_file
 
+      FileUtils.mkdir(Rails.root.join('tmp'))
       pid = Process.spawn(ENV['RAFOLO_MYSQL_START_CMD'])
       File.open(pid_file, 'w+') { |f| f.puts pid }
     end
