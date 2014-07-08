@@ -16,7 +16,9 @@ describe "Alarms" do
     end
 
     it "has correct gui" do
-      visit '/alarm/index/#/alarm?locale=en'
+      visit alarm_index_path
+
+      current_path.should eq(alarm_index_path)
 
       #should have_link("Buttons", href: "../ui_lab/buttons.html")
       #assert_select 'a[href=?]', /..\/\/ui_lab\/buttons\.html/, :count => 1
