@@ -1,17 +1,44 @@
 require 'spec_helper'
 
 describe "Alarms" do
+  subject { page }
+
+  let(:user) { FactoryGirl.create(:user) }
+
+  before { sign_in user }
+
   describe "GET /alarms" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get root_path
+    before { visit root_path }
+
+    it "has page available" do
+      get alarms_path
       response.status.should be(200)
     end
 
-    it "should render correct ui lab links" do
-      get alarms_path
-      should have_link("Buttons", href: "../ui_lab/buttons.html")
+    it "has correct gui" do
+      visit '/alarm/index/#/alarm?locale=en'
+
+      #should have_link("Buttons", href: "../ui_lab/buttons.html")
       #assert_select 'a[href=?]', /..\/\/ui_lab\/buttons\.html/, :count => 1
+      should have_link('Default', href: '/alarm/index?locale=en')
+      should have_xpath('//*[@id="breadcrumbs"]/div[2]/span[1]')
+      should have_content("Your alarms")
+
     end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
