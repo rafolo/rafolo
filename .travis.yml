@@ -1,11 +1,12 @@
 language: ruby
 rvm:
 #  - "1.8.7"
-#  - "1.9.2"
   - "1.9.3"
-#  - jruby-18mode # JRuby in 1.8 mode
-#  - jruby-19mode # JRuby in 1.9 mode
-#  - rbx
+
+notifications:
+  email:
+    - rafal@pkey.pl
+    - olgierd.falat@gmail.com
 
 before_script:
   - cd sample_app
@@ -16,6 +17,8 @@ before_install:
   - "export DISPLAY=:99.0" #for GUI test
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
+
+
 
 # uncomment this line if your project needs to run something other than `rake`:
 #script: bundle exec rspec spec:models
