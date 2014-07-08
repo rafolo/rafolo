@@ -3,6 +3,7 @@ namespace :rafolo do
 
     MYSQLD_FILEPATH='tmp/mysqld.pid'
 
+
 =begin
     1       HUP (hang up)
     2       INT (interrupt)
