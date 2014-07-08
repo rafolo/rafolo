@@ -1,3 +1,5 @@
+require 'pp'
+
 namespace :rafolo do
   namespace :mysql do
 
@@ -13,20 +15,20 @@ namespace :rafolo do
     14      ALRM (alarm clock)
     15      TERM (software termination signal)
 =end
-    desc 'Starts mysql server'
+    desc 'Stops mysql server'
     task :stop => [:env, :environment] do
       pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
       raise 'MySQL not started - cannot stop!' if !File.exists? pid_file
 
-      File.open(pid_file, 'r') { |f|
-        pid = f.readline.to_s.strip.to_i
-        Process.kill(9, pid)
+        File.open(pid_file, 'r') { |f|
+          pid = f.readline.to_s.strip.to_i
+          Process.kill(9, pid)
 
       }
       File.delete pid_file
     end
 
-    desc 'Stops mysql server'
+    desc 'Starts mysql server'
     task :start => [:env, :environment] do
       pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
       raise 'MySQl started - cannot start!' if File.exists? pid_file
