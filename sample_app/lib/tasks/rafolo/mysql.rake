@@ -18,6 +18,7 @@ namespace :rafolo do
     desc 'Stops mysql server'
     task :stop => [:env, :environment] do
       pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
+
       raise 'MySQL not started - cannot stop!' if !File.exists? pid_file
 
         File.open(pid_file, 'r') { |f|
@@ -31,9 +32,12 @@ namespace :rafolo do
     desc 'Starts mysql server'
     task :start => [:env, :environment] do
       pid_file = File.expand_path(MYSQLD_FILEPATH, Rails.root)
-      raise 'MySQl started - cannot start!' if File.exists? pid_file
-
-      FileUtils.mkdir(Rails.root.join('tmp'))
+      pp pid_file
+      raise 'MySQL started - cannot start!' if File.exists? pid_file
+      TMP_DIR = Rails.root.join('tmp')
+      if not Dir.exist? TMP_DIR
+        FileUtils.mkdir(TMP_DIR)
+      end
       pid = Process.spawn(ENV['RAFOLO_MYSQL_START_CMD'])
       File.open(pid_file, 'w+') { |f| f.puts pid }
     end
