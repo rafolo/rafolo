@@ -1,9 +1,27 @@
 namespace :vasabi do
-  ## deploy
-  namespace :checkide do
+  ##
+  ## cis
+  namespace :cis do
 
-    desc "deploy"
-    task :all do
+    desc "script - run on every commit"
+    task :script => ["rafolo:karma:phantomjs", "rafolo:karma:firefox", "coverage:spec"] do |t|
+
+
+    end
+
+    desc "aftersuccess - run on every success"
+    task :aftersuccess  do |t|
+
+      puts "Happy codding!"
+    end
+
+  end
+
+  ## deploy
+  namespace :ide do
+
+    desc "check"
+    task :check do
       puts "Checking ide..."
       raise "Add some checkings" #TODO! Add checklist
     end
@@ -22,7 +40,7 @@ namespace :vasabi do
   ## test
   namespace :test do
 
-    desc "test"
+    desc "all"
     task :all => ["rafolo:karma:all", "coverage:spec"] do |t|
 
       #File.open(Rails.root+ "")
