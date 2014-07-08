@@ -7,9 +7,13 @@ namespace :rafolo do
   #win
   if OS.windows?
     MYSQL_PATH='c:\\mysql-5.1.73-winx64\\'
-    ENV['RAFOLO_MYSQL_START_CMD'] = "#{MYSQL_PATH}bin\\mysqld.exe "
+    ENV['RAFOLO_MYSQL_START_CMD'] = "#{MYSQL_PATH}bin\\mysqld.exe --console"
 
-    ENV['RAFOLO_GIT_HOME'] = "c:\\Program Files (x86)\\Git"
+    RAFOLO_GIT_HOME='c:\\Program Files (x86)\\Git'
+    if(!Dir.exists?(RAFOLO_GIT_HOME))
+      RAFOLO_GIT_HOME='c:\\Program Files (x86)\\Git'
+    end
+    ENV['RAFOLO_GIT_HOME'] = RAFOLO_GIT_HOME
 
     ENV['PLINK_HOME'] = "c:\\Program Files (x86)\\PuTTY\\"
 
