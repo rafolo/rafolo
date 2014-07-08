@@ -4,14 +4,11 @@ namespace :vasabi do
   namespace :cis do
 
     desc "script - run on every commit"
-    task :script => ["rafolo:karma:phantomjs", "rafolo:karma:firefox", "coverage:spec"] do |t|
-
-
+    task :script => ["rafolo:karma:phantomjs", "rafolo:karma:firefox", "spec:lib", "spec:models"] do |t|
     end
 
     desc "aftersuccess - run on every success"
     task :aftersuccess  do |t|
-
       puts "Happy codding!"
     end
 
