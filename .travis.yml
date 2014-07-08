@@ -17,17 +17,19 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
 
-
 # uncomment this line if your project needs to run something other than `rake`:
 #script: bundle exec rspec spec:models
 script:
-  - bundle exec rake spec:lib
-  - bundle exec rake spec:models
-  - #karma start --browsers PhantomJS --single-run #bundle exec rake spec:models
-  - karma start --browsers Firefox --single-run #bundle exec rake spec:models
+#  - bundle exec rake spec:lib
+#  - bundle exec rake spec:models
+#  - #karma start --browsers PhantomJS --single-run #bundle exec rake spec:models
+#  - karma start --browsers Firefox --single-run #bundle exec rake spec:models
 #script: "./testscript.sh" #future script commented for now
+script:
+  - bundle exec rake vasabi:cis:script
 after_script:
   - killall firefox  #Force close for karma start --browsers Firefox --single-run
-
+after_success:
+  - bundle exec rake vasabi:cis:script
 #- RAILS_ENV=test bundle exec rake --trace db:migrate test
 #- karma start --single-run --browsers PhantomJS test/karma/config/unit.js
