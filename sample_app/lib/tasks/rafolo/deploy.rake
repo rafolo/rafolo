@@ -49,6 +49,7 @@ namespace :rafolo do
       # end
     end
 
+
     def copy_files src_dir, dst_dir, exclude = nil
       Dir.chdir src_dir do
         Dir.glob('**/*').each do |file| #*.* returns files with extensions buhaha e.g. Gemfile not
