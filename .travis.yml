@@ -30,6 +30,6 @@ script:
 after_script:
   - killall firefox  #Force close for karma start --browsers Firefox --single-run
 after_success:
-  - bundle exec rake vasabi:cis:script
+  - bundle exec rake vasabi:cis:aftersuccess
 #- RAILS_ENV=test bundle exec rake --trace db:migrate test
 #- karma start --single-run --browsers PhantomJS test/karma/config/unit.js
