@@ -4,12 +4,22 @@ describe ApplicationHelper do
   
   describe "full_title" do
     
-    it "should include the page title" do
-      full_title('foo').should =~ /foo/
+    it "should include app title" do
+
+      str = SampleApp::Application.config.app_config["app_title"].to_s
+
+      #TODO! One day create matcher , see custom_matchers.rb
+      #full_title('foo').should =~ str
+      full_title('foo').should include (str)
     end
 
     it "should include the base title" do
-      full_title('foo').should =~ /^Ruby on Rails Tutorial Sample App/
+
+      str = SampleApp::Application.config.app_config["landscape_title"].to_s
+
+      #TODO! One day create matcher , see custom_matchers.rb
+      #full_title('foo').should =~ str
+      full_title('foo').should include (str)
     end
 
     it "should not include a bar on the home page" do
