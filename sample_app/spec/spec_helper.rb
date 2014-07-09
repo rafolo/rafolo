@@ -14,7 +14,9 @@ Spork.prefork do
   require 'rspec/rails'
   require 'rspec/autorun'
 
-  require File.expand_path("../../app/helpers/menu_helper.rb", __FILE__)
+  #TODO!??
+  Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
+
 
   #RK Simple cov
   if ENV['COVERAGE']
@@ -29,6 +31,11 @@ Spork.prefork do
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+  require 'shoulda/matchers/integrations/rspec' # after require 'rspec/rails'
+
+
+  ##Config
   RSpec.configure do |config|
     # ## Mock Framework
     #
@@ -56,6 +63,18 @@ end
 Spork.each_run do
   # This code will be run each time you run your specs.
 
+  #TODO! Speed up?
+  # Reloading support files each run
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+  ##RK Reload files
+  Dir[Rails.root.join("lib/extensions/menu/**/*.rb")].each {|f| require f}
+
+  # Reload FactoryGirl2 factories
+  FactoryGirl.reload
+
+  # Reload locales
+  I18n.backend.reload!
 end
 
 # --- Instructions ---

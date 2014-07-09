@@ -1,5 +1,5 @@
 
-require File.expand_path '../menu_module.rb', __FILE__
+require File.expand_path('../menu_module.rb', __FILE__)
 
 module MenuExtension
   # class MenuItem
@@ -17,7 +17,7 @@ module MenuExtension
 
   public
 
-  def get_menuable classes=[]
+  def MenuExtension.get_menuable classes=[]
     result = []
     classes.each do |c|
       if (c.respond_to? :menuable)
