@@ -39,7 +39,6 @@ namespace :vasabi do
       validate_executable 'karma', 'karma', 'Karma executable is not available. Please run: "npm install -g karma" and "npm install -g karma-cli"'
       validate_executable 'protractor', 'protractor', 'Protractor executable is not available. Please run: "npm install -g protractor"'
 
-
       fputs "Done"
     end
 
@@ -101,7 +100,12 @@ namespace :vasabi do
     end
   end
 
-  ## dump
+  # please start rake vasabi:dump
+  #
+  # open project from dump folder
+  #
+  # rails g staging s14
+  # rake rafolo:mysql:import RAILS_ENV=s14
   namespace :dump do
     desc "dump"
     task :all do #=> ["rafolo:production:dump:all"] do |t|
@@ -113,21 +117,6 @@ namespace :vasabi do
       Rake::Task["rafolo:production:dump:runsrc"].invoke(cookie)
       Rake::Task["rafolo:production:dump:runmysql"].invoke(cookie)
 
-      return
-
-      #TODO Run tasks one by one
-      raise %Q(
-            please start rake rafolo:dump:scriptsrc
-                         rake rafolo:dump:runsrc
-                         rake rafolo:dump:runmsql
-                         rake rafolo:dump:scriptmysql
-
-                         open project from dump folder
-
-                         rails g staging
-                         switch to environment
-                         rake rafolo:mysql:import
-)
     end
 
     ##
