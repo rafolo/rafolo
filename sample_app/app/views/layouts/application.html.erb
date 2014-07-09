@@ -81,20 +81,20 @@
 
         <!-- Example Standard Navigation -->
         <% if SampleApp::Application.config.show_examples %>
-        <li class="cdrop active"><a href="#">Link</a></li>
+            <li class="cdrop active"><a href="#">Link</a></li>
 
-        <li class="cdrop"><a href="#">Link</a></li>
+            <li class="cdrop"><a href="#">Link</a></li>
 
-        <li class="dropdown cdrop">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-        <%end%>
+            <li class="dropdown cdrop">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+        <% end %>
 
       </ul>
 
@@ -109,7 +109,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle dropdown-avatar" data-toggle="dropdown">
               <span>
-                <img class="menu-avatar" src="/assets/avatars/avatar1.jpg"/> <span><%=user_friendly_name%> <i class="icon-caret-down"></i></span>
+                <img class="menu-avatar" src="/assets/avatars/avatar1.jpg"/> <span><%= user_friendly_name %>
+                <i class="icon-caret-down"></i></span>
                 <span class="badge badge-dark-red">5</span>
               </span>
           </a>
@@ -134,7 +135,7 @@
               <span>Logout</span></a></li>
           </ul>
         </li>
-        <%= render "shared/localizator" %>
+        <%#= render "shared/localizator" %>
       </ul>
     </div>
 
@@ -288,9 +289,9 @@
               </a>
             </li>
 
-    </ul>
+          </ul>
 
-    </li>
+        </li>
 
     <% end %>
 
@@ -299,40 +300,40 @@
 
   <!-- Example Standard Left Menu Gauges-->
   <% if SampleApp::Application.config.show_examples %>
-  <div class="hidden-sm hidden-xs">
-    <div class="text-center" style="margin-top: 60px">
-      <div class="easy-pie-chart-percent" style="display: inline-block" data-percent="89"><span>89%</span></div>
-      <div style="padding-top: 20px"><b>CPU Usage</b></div>
-    </div>
+      <div class="hidden-sm hidden-xs">
+        <div class="text-center" style="margin-top: 60px">
+          <div class="easy-pie-chart-percent" style="display: inline-block" data-percent="89"><span>89%</span></div>
+          <div style="padding-top: 20px"><b>CPU Usage</b></div>
+        </div>
 
-    <hr class="divider" style="margin-top: 60px">
+        <hr class="divider" style="margin-top: 60px">
 
-    <div class="sparkline-box side">
+        <div class="sparkline-box side">
 
-      <div class="sparkline-row">
-        <h4 class="gray"><span>Orders</span> 847</h4>
+          <div class="sparkline-row">
+            <h4 class="gray"><span>Orders</span> 847</h4>
 
-        <div class="sparkline big" data-color="gray"><!--16,7,23,13,12,11,15,4,19,18,4,24--></div>
+            <div class="sparkline big" data-color="gray"><!--16,7,23,13,12,11,15,4,19,18,4,24--></div>
+          </div>
+
+          <hr class="divider">
+          <div class="sparkline-row">
+            <h4 class="dark-green"><span>Income</span> $43.330</h4>
+
+            <div class="sparkline big" data-color="darkGreen"><!--6,3,24,25,27,29,14,26,20,8,12,20--></div>
+          </div>
+
+          <hr class="divider">
+          <div class="sparkline-row">
+            <h4 class="blue"><span>Reviews</span> 223</h4>
+
+            <div class="sparkline big" data-color="blue"><!--11,19,20,20,5,18,11,6,16,20,26,11--></div>
+          </div>
+
+          <hr class="divider">
+        </div>
       </div>
-
-      <hr class="divider">
-      <div class="sparkline-row">
-        <h4 class="dark-green"><span>Income</span> $43.330</h4>
-
-        <div class="sparkline big" data-color="darkGreen"><!--6,3,24,25,27,29,14,26,20,8,12,20--></div>
-      </div>
-
-      <hr class="divider">
-      <div class="sparkline-row">
-        <h4 class="blue"><span>Reviews</span> 223</h4>
-
-        <div class="sparkline big" data-color="blue"><!--11,19,20,20,5,18,11,6,16,20,26,11--></div>
-      </div>
-
-      <hr class="divider">
-    </div>
-  </div>
-  <%end%>
+  <% end %>
 </div>
 
 <!-- RK Main Content -->
@@ -398,6 +399,21 @@
       </div>
     </div>
   </div>
+
+
+  <!--###TDD Missings-->
+  <!--TODO! Delete after tests works-->
+  <div>
+    TDD Missings
+
+    <div >
+      <select class="alert">
+        <option value="1">one</option>
+        <option value="2">two</option>
+      </select>
+    </div>
+  </div>
+
 
   <!-- RK Main View -->
   <div class="container">
