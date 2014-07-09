@@ -24,12 +24,18 @@ describe 'layouts/application' do
       before do
         user = double('user')
         user.stub(:has_completed_onboarding?) { false }
+        user.stub(:email) { "test@example.com" }
         assign(:current_user, user)
       end
 
       it "should display alert" do
         render
         rendered.should have_selector('.alert')
+        #TODO! Make it work ###TDD Missings
+        # have_selector(".alert") do |content| See also:
+        #   content.should have_selector(:option, :value => 1)
+        #   content.should have_selector(:option, :value => 2)
+        # end
       end
 
     end
