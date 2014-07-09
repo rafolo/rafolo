@@ -32,7 +32,10 @@ SampleApp::Application.routes.draw do
     end
   end
   resources :sessions, only: [:new, :create, :destroy]
+
+  match 'microposts(/(/:id))(.:format)', to: 'microposts#destroy'
   resources :microposts, only: [:create, :destroy]
+
   resources :relationships, only: [:create, :destroy]
 
   root to: 'static_pages#home'
@@ -57,7 +60,8 @@ SampleApp::Application.routes.draw do
   get '*javascripts/debug/live.js', to: redirect('/assets/debug/live.js') #TODO! generate non hard coded link in template
   get '*images/avatars/:file.:ext', to: redirect('/assets/avatars/%{file}.%{ext}')
 
-  get '/api/Todo/Metadata', to: 'static_pages#metadata'
+  #TODO! Remove
+  #get '/api/Todo/Metadata', to: 'static_pages#metadata'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
