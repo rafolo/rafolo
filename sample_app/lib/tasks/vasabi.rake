@@ -72,7 +72,7 @@ namespace :vasabi do
     end
 
     def funny_puts msg, steps=0
-      steps =0
+
       STDOUT.write msg
       steps.times { |i| STDOUT.write "."; sleep 2 }
       STDOUT.write "\r"
