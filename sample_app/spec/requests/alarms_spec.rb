@@ -22,7 +22,7 @@ describe "Alarms" do
 
       #should have_link("Buttons", href: "../ui_lab/buttons.html")
       #assert_select 'a[href=?]', /..\/\/ui_lab\/buttons\.html/, :count => 1
-      should have_link('Default', href: '/alarm/index?locale=en')
+      should have_link('Default', href: "/credit_card/index?locale=en")
       should have_xpath('//*[@id="breadcrumbs"]/div[2]/span[1]')
       should have_content("Your alarms")
 

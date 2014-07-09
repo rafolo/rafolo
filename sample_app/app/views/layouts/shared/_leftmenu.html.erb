@@ -23,9 +23,7 @@
               <ul id="menu_<%= i.title %>" class="collapse ">
                 <% i.children.each do |child| %>
                     <li class="">
-                      <a href="<%= t2l(child.link) %>">
-                        <i class="icon-hand-up"></i> <%= t2(child.title) %>
-                      </a>
+                      <a href="<%= t2l(child.link) %>"><i class="icon-hand-up"></i><%=t2(child.title.strip).strip%></a>
                     </li>
                 <% end %>
               </ul>
