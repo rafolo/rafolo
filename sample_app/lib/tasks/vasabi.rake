@@ -18,31 +18,53 @@ namespace :vasabi do
     desc "check"
     task :check do
       fputs "Checking ide", 3
-      validate_executable 'mysqld.exe', 'Mysqld executable is not available. Please download to:' + ENV['RAFOLO_MYSQL_PATH'], ENV['RAFOLO_MYSQL_PATH'] + "\\bin"
-      validate_executable 'node', 'Node.js executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
-      validate_executable 'npm', 'Npm(node package manager) executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
-      validate_executable 'bower', 'Bower executable is not available. Please run: "npm install -g bower".'
-      validate_executable 'karma', 'Karma executable is not available. Please run: "npm install -g karma" and "npm install -g karma-cli"'
-      validate_executable 'protractor', 'Protractor executable is not available. Please run: "npm install -g protractor"'
 
-      #TODO! Add checklist: DevKit
+      validate_executable 'ruby', 'ruby', 'Ruby executable is not available. Please download to:' + ENV['RAFOLO_RUBY_HOME'], ENV['RAFOLO_RUBY_HOME'] + "\\bin" do
+
+        expected_version = "1.9.3"
+        output = %x{ruby.exe -v}.strip
+        if output.include?(expected_version)
+          puts "   version #{expected_version}...ok"
+        else
+          raise "Ruby version icorrect expected: #{expected_version} but was: #{output}"
+        end
+
+      end
+
+      validate_executable 'devkit', 'install', 'Devkit executable is not available. Please download to:' + ENV['RAFOLO_DEVKIT_HOME'], ENV['RAFOLO_DEVKIT_HOME'] + "\\bin"
+      validate_executable 'mysql', 'mysqld', 'Mysqld executable is not available. Please download to:' + ENV['RAFOLO_MYSQL_PATH'], ENV['RAFOLO_MYSQL_PATH'] + "\\bin"
+      validate_executable 'node', 'node', 'Node.js executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
+      validate_executable 'npm', 'npm', 'Npm(node package manager) executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
+      validate_executable 'bower', 'bower', 'Bower executable is not available. Please run: "npm install -g bower".'
+      validate_executable 'karma', 'karma', 'Karma executable is not available. Please run: "npm install -g karma" and "npm install -g karma-cli"'
+      validate_executable 'protractor', 'protractor', 'Protractor executable is not available. Please run: "npm install -g protractor"'
+
+
       fputs "Done"
     end
 
-    def validate_executable(executable, message, defaultpath="")
+    def validate_executable(name,  executable, message, defaultpath="", &block)
+
+      puts "Validating:" + name
+      STDOUT.write "   "
 
       pathname = defaultpath + "\\" + executable;
       pathname.sub!("\\\\", "\\")
 
       if !find_executable(executable) && defaultpath != ""
-        STDOUT.write "checking for #{executable} in #{defaultpath}..."
+        STDOUT.write "   checking for #{executable} in #{defaultpath}..."
+        pathname+=".exe" if !pathname.include?('.exe')
         if !File.exist?(pathname)
           raise message
         else
-          STDOUT.write "yes"
+          puts "yes"
         end
       end
 
+      block.call if block_given?
+
+      puts "ok"
+      puts ""
     end
 
     def validate_folder_exists(folder)
@@ -50,6 +72,7 @@ namespace :vasabi do
     end
 
     def funny_puts msg, steps=0
+      steps =0
       STDOUT.write msg
       steps.times { |i| STDOUT.write "."; sleep 2 }
       STDOUT.write "\r"
