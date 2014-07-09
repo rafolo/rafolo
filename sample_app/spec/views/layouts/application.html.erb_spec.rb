@@ -30,6 +30,9 @@ describe 'layouts/application' do
                                  microposts
                                 }
         assign(:current_user, user)
+
+        micropost = Micropost.new :content=>"new micrpost"
+        assign(:micropost, micropost)
       end
 
       it "should display alert" do

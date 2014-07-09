@@ -21,13 +21,21 @@ class StaticPagesController < ApplicationController
   end
 
   def dashboard
+
+    #TODO! remove after TDD Works
+    if signed_in?
+      @micropost = current_user.microposts.build
+    end
+
     render :layout => "application"
+
+
   end
 
 
   def lookups
-    @rooms      = Room.all
-    @tracks     = Track.all
+    @rooms = Room.all
+    @tracks = Track.all
     @time_slots = TimeSlot.all
   end
 

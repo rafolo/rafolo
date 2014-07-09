@@ -2,6 +2,9 @@ class AlarmsController < ApplicationController
   # GET /alarms
   # GET /alarms.json
   def index
+
+
+
     #@alarms = Alarm.all
     @alarms = Alarm.paginate :page => params[:page], :per_page => params[:per_page]
 
