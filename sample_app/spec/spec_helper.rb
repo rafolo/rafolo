@@ -70,8 +70,9 @@ Spork.each_run do
   ##RK Reload files
   Dir[Rails.root.join("lib/extensions/menu/**/*.rb")].each {|f| require f}
 
+  #TODO! Speed up?
   # Reload FactoryGirl2 factories
-  FactoryGirl.reload
+  #FactoryGirl.reload
 
   # Reload locales
   I18n.backend.reload!

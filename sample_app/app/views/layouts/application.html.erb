@@ -402,13 +402,13 @@
 
 
   <!--###TDD Missings-->
-  <!--TODO! Delete after tests works-->
+  TODO! Delete after tests works/
 
   <!--for selector tests-->
   <div>
     TDD Missings
 
-    <div >
+    <div>
       <select class="alert">
         <option value="1">one</option>
         <option value="2">two</option>
@@ -418,19 +418,34 @@
 
   <!--microposts-->
   <div class="span8">
-    <% if signed_in? && current_user.microposts.any? %>
-        <h3>Micropost count<%= current_user.microposts.count %></h3>
-        <% @current_user.microposts.each do |micropost|%>
-        <ol class="microposts">
-          <%= micropost.content %>
-          <%= link_to "delete", :controller => "microposts", :action => "destroy", :id => micropost
-          %>
-        </ol>
-        <%end %>
+    <% if signed_in? %>
 
-    <% end %>
+        <% if current_user.microposts.any? %>
+            <h3>Micropost count<%= current_user.microposts.count %></h3>
+            <% @current_user.microposts.each do |micropost| %>
+                <ol class="microposts">
+                  <%= micropost.content %>
+                  <%= link_to "delete", :controller => "microposts", :action => "destroy", :id => micropost
+                  %>
+                </ol>
+
+            <% end %>
+
+            <%if !@micropost.nil?%>
+            <%= form_for(@micropost) do |f| %>
+                <%= render 'shared/error_messages', object: f.object %>
+                <div class="field" style="height: 30px;">
+                  <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+                </div>
+                <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+            <% end %>
+            <% end %>
+
+
+        <% end
+           end %>
   </div>
-
+ //
   <!-- RK Main View -->
   <div class="container">
     <%= yield %>
