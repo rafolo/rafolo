@@ -6,8 +6,8 @@ namespace :rafolo do
   task :env
   #win
   if OS.windows?
-    MYSQL_PATH='c:\\mysql-5.1.73-winx64\\'
-    ENV['RAFOLO_MYSQL_START_CMD'] = "#{MYSQL_PATH}bin\\mysqld.exe --console"
+    ENV['RAFOLO_MYSQL_PATH']='c:\\mysql-5.1.73-winx64\\'
+    ENV['RAFOLO_MYSQL_START_CMD'] = "#{ENV['RAFOLO_MYSQL_PATH']}bin\\mysqld.exe --console"
 
     RAFOLO_GIT_HOME='c:\\Program Files (x86)\\Git'
     if(!Dir.exists?(RAFOLO_GIT_HOME))

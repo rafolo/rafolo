@@ -5,26 +5,58 @@ namespace :vasabi do
   ## deploy
   namespace :ide do
 
+    desc "about - shows ide configuration"
+    task :about do
+
+      fputs "Evaluating ", 3 #:)
+
+      ENV.each do |item|
+        puts item if item.to_s.include?('RAFOLO')
+      end
+    end
+
     desc "check"
     task :check do
-      puts "Checking ide..."
-      validate_executable 'ruby', 'Ruby executable is not available. Please download Ruby v1.9.3 from http://rubyinstaller.org/downloads/'
+      fputs "Checking ide", 3
+      validate_executable 'mysqld.exe', 'Mysqld executable is not available. Please download to:' + ENV['RAFOLO_MYSQL_PATH'], ENV['RAFOLO_MYSQL_PATH'] + "\\bin"
       validate_executable 'node', 'Node.js executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
       validate_executable 'npm', 'Npm(node package manager) executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
       validate_executable 'bower', 'Bower executable is not available. Please run: "npm install -g bower".'
       validate_executable 'karma', 'Karma executable is not available. Please run: "npm install -g karma" and "npm install -g karma-cli"'
       validate_executable 'protractor', 'Protractor executable is not available. Please run: "npm install -g protractor"'
 
-      #TODO! Add checklist: DevKit, mySql installation
+      #TODO! Add checklist: DevKit
+      fputs "Done"
     end
 
-    def validate_executable(executable, message)
-      raise message if find_executable(executable) == nil
+    def validate_executable(executable, message, defaultpath="")
+
+      pathname = defaultpath + "\\" + executable;
+      pathname.sub!("\\\\", "\\")
+
+      if !find_executable(executable) && defaultpath != ""
+        STDOUT.write "checking for #{executable} in #{defaultpath}..."
+        if !File.exist?(pathname)
+          raise message
+        else
+          STDOUT.write "yes"
+        end
+      end
+
     end
 
     def validate_folder_exists(folder)
 
     end
+
+    def funny_puts msg, steps=0
+      STDOUT.write msg
+      steps.times { |i| STDOUT.write "."; sleep 2 }
+      STDOUT.write "\r"
+
+    end
+
+    alias fputs funny_puts
   end
 
   ## deploy
@@ -87,3 +119,4 @@ namespace :vasabi do
   end
 
 end
+
