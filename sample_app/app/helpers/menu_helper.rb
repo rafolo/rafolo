@@ -5,7 +5,7 @@ module MenuHelper
 
   def MenuHelper.left_menu
     Rails.application.eager_load!
-    return get_menuable ApplicationController.descendants
+    return MenuExtension.get_menuable ApplicationController.descendants
   end
 
 end
