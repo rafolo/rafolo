@@ -7,8 +7,8 @@ namespace :rafolo do
   #win
   if OS.windows?
 
-    ENV['RAFOLO_RUBY_HOME']='c:\\c:\MotorolaRhoMobileSuite4.0.0\ruby\\'
-    ENV['RAFOLO_DEVKIT_HOME']='c:\\c:\MotorolaRhoMobileSuite4.0.0\devkit\\'
+    ENV['RAFOLO_RUBY_HOME']='c:\\MotorolaRhoMobileSuite4.0.0\\ruby\\'
+    ENV['RAFOLO_DEVKIT_HOME']='c:\\MotorolaRhoMobileSuite4.0.0\\devkit\\'
 
     ENV['RAFOLO_MYSQL_PATH']='c:\\mysql-5.1.73-winx64\\'
     ENV['RAFOLO_MYSQL_START_CMD'] = "#{ENV['RAFOLO_MYSQL_PATH']}bin\\mysqld.exe --console"

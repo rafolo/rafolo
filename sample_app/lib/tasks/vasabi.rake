@@ -31,7 +31,7 @@ namespace :vasabi do
 
       end
 
-      validate_executable 'devkit', 'install', 'Devkit executable is not available. Please download to:' + ENV['RAFOLO_DEVKIT_HOME'], ENV['RAFOLO_DEVKIT_HOME'] + "\\bin"
+      validate_executable 'devkit', "install", 'Devkit executable is not available. Please download to:' + ENV['RAFOLO_DEVKIT_HOME'], ENV['RAFOLO_DEVKIT_HOME'] + "\\bin"
       validate_executable 'mysql', 'mysqld', 'Mysqld executable is not available. Please download to:' + ENV['RAFOLO_MYSQL_PATH'], ENV['RAFOLO_MYSQL_PATH'] + "\\bin"
       validate_executable 'node', 'node', 'Node.js executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
       validate_executable 'npm', 'npm', 'Npm(node package manager) executable is not available. Please download Node.js v0.10.28 from http://nodejs.org/'
