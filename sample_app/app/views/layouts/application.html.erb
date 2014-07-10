@@ -122,7 +122,8 @@
               <div class="avatar">
                 <img src="/assets/avatars/avatar1.jpg"/>
               </div>
-              <span>John Smith</span>
+              <!--#TODO! Check what to show for unsigned user-->
+              <span><%=current_user.name if signed_in? %></span>
             </li>
 
             <li class="divider"></li>
@@ -141,7 +142,7 @@
             <li><a href="/profile/index/#messages"><i class="icon-envelope"></i> <span>Messages</span>
               <span class="label label-dark-red pull-right">5</span></a></li>
             <li><a href="<%= signout_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i>
-              <span>Logout</span></a></li>
+              <span>Sign out</span></a></li>
           </ul>
           <!--Gravatar popup links END-->
         </li>

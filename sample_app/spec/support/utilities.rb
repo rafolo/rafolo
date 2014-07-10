@@ -8,3 +8,9 @@ def sign_in(user)
   # Sign in when not using Capybara.
   cookies[:remember_token] = user.remember_token
 end
+
+def localize_path link
+  #TODO! For now we are just appending locale, get if from params
+  link+="?locale=en"
+  return link
+end
