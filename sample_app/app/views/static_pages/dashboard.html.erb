@@ -10,6 +10,8 @@
 
 
 <!--TDD Missings START-->
+<div style="background: darkseagreen;">
+
 TODO! Delete after tests works/
 
 <% if signed_in? %>
@@ -18,6 +20,14 @@ TODO! Delete after tests works/
         <section>
           <%= render 'shared/user_info' %>
         </section>
+        <% if current_user.microposts.any? %>
+            <h3>Microposts (<%= current_user.microposts.count %>)</h3>
+            <ol class="microposts">
+              <%= render current_user.microposts %>
+            </ol>
+
+            <%#= will_paginate current_user.microposts %>
+        <% end %>
         <section>
           <%= render 'shared/micropost_form' %>
         </section>
@@ -41,49 +51,18 @@ TODO! Delete after tests works/
 <% end %>
 
 <!--for selector tests-->
-<div style="background: green;">
-
-
-<div >
-  TDD Missings
-
   <div>
-    <select class="alert">
-      <option value="1">one</option>
-      <option value="2">two</option>
-    </select>
+    TDD Missings
+
+    <div>
+      <select class="alert">
+        <option value="1">one</option>
+        <option value="2">two</option>
+      </select>
+    </div>
   </div>
-</div>
-
-<!--microposts-->
-<div class="span8">
-  <% if signed_in? %>
-
-      <% if current_user.microposts.any? %>
-          <h3>Micropost count<%= current_user.microposts.count %></h3>
-          <% @current_user.microposts.each do |micropost| %>
-              <ol class="microposts">
-                <%= micropost.content %>
-                <%= link_to "delete", :controller => "microposts", :action => "destroy", :id => micropost
-                %>
-              </ol>
-
-          <% end %>
-
-          <%if !@micropost.nil?%>
-              <%= form_for(@micropost) do |f| %>
-                  <%= render 'shared/error_messages', object: f.object %>
-                  <div class="field" style="height: 30px;">
-                    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
-                  </div>
-                  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
-              <% end %>
-          <% end %>
 
 
-      <% end
-         end %>
-</div>
 </div>
 <!--TDD Missings END-->
 
@@ -106,16 +85,19 @@ TODO! Delete after tests works/
 
         <li class="sparkline-row">
           <h4 class="blue"><span>Orders</span> 847</h4>
+
           <div class="sparkline big" data-color="blue"><!--25,11,5,28,25,19,27,6,4,23,20,6--></div>
         </li>
 
         <li class="sparkline-row">
           <h4 class="green"><span>Reviews</span> 223</h4>
+
           <div class="sparkline big" data-color="green"><!--28,26,13,18,8,6,24,19,3,6,19,6--></div>
         </li>
 
         <li class="sparkline-row">
           <h4 class="red"><span>New visits</span> 7930</h4>
+
           <div class="sparkline big"><!--16,23,28,8,12,9,25,11,16,16,17,13--></div>
         </li>
 
@@ -134,7 +116,6 @@ TODO! Delete after tests works/
         <span class="breadcrumb-label"><i class="icon-home"></i> Home</span>
         <span class="breadcrumb-arrow"><span></span></span>
       </div>
-
 
 
       <div class="breadcrumb-button">
@@ -216,7 +197,9 @@ TODO! Delete after tests works/
 
     <div class="box">
       <div class="box-header">
-        <div class="title">Charts <div ng-view></div></div>
+        <div class="title">Charts
+          <div ng-view></div>
+        </div>
         <ul class="box-toolbar">
           <li class="toolbar-link">
             <a href="#" data-toggle="dropdown"><i class="icon-cog"></i></a>
@@ -322,7 +305,8 @@ TODO! Delete after tests works/
           <div class="news-content">
             <div class="news-title"><a href="#">Twitter Bootstrap v3.0 is coming!</a></div>
             <div class="news-text">
-              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project ...
+              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project
+              ...
             </div>
           </div>
         </div>
@@ -362,7 +346,8 @@ TODO! Delete after tests works/
           <div class="news-content">
             <div class="news-title"><a href="#">Twitter Bootstrap v3.0 is coming!</a></div>
             <div class="news-text">
-              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project ...
+              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project
+              ...
             </div>
           </div>
         </div>
@@ -378,7 +363,8 @@ TODO! Delete after tests works/
           <div class="news-content">
             <div class="news-title"><a href="#">Twitter Bootstrap v3.0 is coming!</a></div>
             <div class="news-text">
-              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project ...
+              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project
+              ...
             </div>
           </div>
         </div>
@@ -418,7 +404,8 @@ TODO! Delete after tests works/
           <div class="news-content">
             <div class="news-title"><a href="#">Twitter Bootstrap v3.0 is coming!</a></div>
             <div class="news-text">
-              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project ...
+              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project
+              ...
             </div>
           </div>
         </div>
@@ -434,7 +421,8 @@ TODO! Delete after tests works/
           <div class="news-content">
             <div class="news-title"><a href="#">Twitter Bootstrap v3.0 is coming!</a></div>
             <div class="news-text">
-              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project ...
+              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project
+              ...
             </div>
           </div>
         </div>
@@ -474,7 +462,8 @@ TODO! Delete after tests works/
           <div class="news-content">
             <div class="news-title"><a href="#">Twitter Bootstrap v3.0 is coming!</a></div>
             <div class="news-text">
-              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project ...
+              With 2.2.2 out the door, our attention has shifted almost entirely to the next major update to the project
+              ...
             </div>
           </div>
         </div>
@@ -491,17 +480,22 @@ TODO! Delete after tests works/
     <ul class="chat-box timeline">
 
       <li class="arrow-box-left gray">
-        <div class="avatar"><img class="avatar-small" src="/assets/avatars/avatar1.jpg" /></div>
+        <div class="avatar"><img class="avatar-small" src="/assets/avatars/avatar1.jpg"/></div>
         <div class="info">
       <span class="name">
-        <span class="label label-green">COMMENT</span> <strong class="indent">Alex</strong> posted a comment on this task: <strong>Core Admin</strong>
+        <span class="label label-green">COMMENT</span> <strong class="indent">Alex</strong> posted a comment on this task: <strong>Core
+        Admin</strong>
       </span>
           <span class="time"><i class="icon-time"></i> 3 minutes ago</span>
         </div>
         <div class="content">
           <blockquote>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
           </blockquote>
           <div>
             <a href="#"><i class="icon-paper-clip"></i> <b>project_news.docx</b></a>
@@ -510,20 +504,22 @@ TODO! Delete after tests works/
       </li>
 
       <li class="arrow-box-left gray">
-        <div class="avatar"><img class="avatar-small" src="/assets/avatars/avatar2.jpg" /></div>
+        <div class="avatar"><img class="avatar-small" src="/assets/avatars/avatar2.jpg"/></div>
         <div class="info">
       <span class="name">
-        <span class="label label-blue">TASK</span> <strong class="indent">Michael</strong> completed this task: <strong class="strikethrough">Core Admin</strong>
+        <span class="label label-blue">TASK</span> <strong class="indent">Michael</strong> completed this task: <strong class="strikethrough">Core
+        Admin</strong>
       </span>
           <span class="time"><i class="icon-time"></i> 6 minutes ago</span>
         </div>
       </li>
 
       <li class="arrow-box-left gray">
-        <div class="avatar"><img class="avatar-small" src="/assets/avatars/avatar3.jpg" /></div>
+        <div class="avatar"><img class="avatar-small" src="/assets/avatars/avatar3.jpg"/></div>
         <div class="info">
       <span class="name">
-        <span class="label label-purple">FILE</span> <strong class="indent">Alex</strong> added 3 new files in project: <strong>Core Admin</strong>
+        <span class="label label-purple">FILE</span> <strong class="indent">Alex</strong> added 3 new files in project: <strong>Core
+        Admin</strong>
       </span>
           <span class="time"><i class="icon-time"></i> 12 minutes ago</span>
         </div>
@@ -557,7 +553,7 @@ TODO! Delete after tests works/
       <div class="box-content padded">
 
         <div class="fields">
-          <div class="avatar"><img class="avatar-small" src="/assets/avatars/avatar2.jpg" /></div>
+          <div class="avatar"><img class="avatar-small" src="/assets/avatars/avatar2.jpg"/></div>
           <ul>
             <li><b>Add a comment for project <a href="#">Core Admin</a></b></li>
             <li class="note">Click on the textarea below to expand it!</li>
@@ -572,6 +568,7 @@ TODO! Delete after tests works/
 
           <div class="clearfix actions">
             <span class="note">An optional note can go here</span>
+
             <div class="pull-right faded-toolbar">
               <a href="#" class="tip" title="Attach files"><i class="icon-paper-clip"></i></a>
               <a href="#" class="btn btn-blue btn-xs">Send</a>

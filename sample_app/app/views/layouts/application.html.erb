@@ -127,20 +127,25 @@
 
             <li class="divider"></li>
 
-
-            <!--TODO! Remove <li><a href="/profile/index/#profile"><i class="icon-user"></i> <span>Profile</span></a></li>-->
+            <!--Gravatar popup links START-->
             <li><%= link_to user_path(current_user) do %>
-                  <i class="icon-user"></i> <span>Profile2</span>
+                <i class="icon-user"></i> <span>Profile</span>
+            <% end %>
+          </li>
+
+            <li><%= link_to users_path do %>
+                  <i class="icon-cog"></i> <span>Users</span>
               <% end %>
             </li>
 
-            <li><a href="/profile/index/#settings"><i class="icon-cog"></i> <span>Settings</span></a></li>
             <li><a href="/profile/index/#messages"><i class="icon-envelope"></i> <span>Messages</span>
               <span class="label label-dark-red pull-right">5</span></a></li>
             <li><a href="<%= signout_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i>
               <span>Logout</span></a></li>
           </ul>
+          <!--Gravatar popup links END-->
         </li>
+        <!--TODO! Reactivate-->
         <%#= render "shared/localizator" %>
       </ul>
     </div>
