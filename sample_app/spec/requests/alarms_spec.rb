@@ -20,13 +20,24 @@ describe "Alarms" do
 
       current_path.should eq(alarm_index_path)
 
-      #should have_link("Buttons", href: "../ui_lab/buttons.html")
-      #assert_select 'a[href=?]', /..\/\/ui_lab\/buttons\.html/, :count => 1
       should have_link('Default', href: "/credit_card/index?locale=en")
       should have_xpath('//*[@id="breadcrumbs"]/div[2]/span[1]')
       should have_content("Your alarms")
-
     end
+
+    it "has correct UI lab links" do
+      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
+      visit alarm_index_path
+      puts body
+      should have_xpath('//a[@href="/ui_lab/buttons.html"]')
+      should have_xpath('//a[@href="/ui_lab/general.html"]')
+      should have_xpath('//a[@href="/ui_lab/icons.html"]')
+      should have_xpath('//a[@href="/ui_lab/grid.html"]')
+      should have_xpath('//a[@href="/ui_lab/tables.html"]')
+      should have_xpath('//a[@href="/ui_lab/widgets.html"]')
+      should have_xpath('//a[@href="/ui_lab/widgets.html"]')
+    end
+
   end
 end
 
