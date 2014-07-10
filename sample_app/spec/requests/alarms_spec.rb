@@ -28,7 +28,6 @@ describe "Alarms" do
     it "has correct UI lab links" do
       SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
       visit alarm_index_path
-      puts body
       should have_xpath('//a[@href="/ui_lab/buttons.html"]')
       should have_xpath('//a[@href="/ui_lab/general.html"]')
       should have_xpath('//a[@href="/ui_lab/icons.html"]')
@@ -41,8 +40,13 @@ describe "Alarms" do
     it "has correct Forms link" do
       SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
       visit alarm_index_path
-      puts body
       should have_xpath('//a[@href="/forms/forms.html"]')
+    end
+
+    it "has correct Charts link" do
+      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
+      visit alarm_index_path
+      should have_xpath('//a[@href="/charts/charts.html"]')
     end
 
   end
