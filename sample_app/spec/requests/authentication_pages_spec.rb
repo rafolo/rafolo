@@ -83,8 +83,8 @@ describe "Authentication" do
 
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
-          it { should have_selector('title', text: 'Sign in') }
-          it { should have_selector('div.alert.alert-notice') }
+          it { should have_selector('span', text: 'Login') }
+          # TODO! show allert if not signin - not sure? it { should have_selector('div.alert.alert-notice') }
         end
 
         describe "submitting to the update action" do
@@ -94,17 +94,19 @@ describe "Authentication" do
 
         describe "visiting the user index" do
           before { visit users_path }
-          it { should have_selector('title', text: 'Sign in') }
+          it { should have_selector('span', text: 'Login') }
         end
 
         describe "visiting the following page" do
           before { visit following_user_path(user) }
-          it { should have_selector('title', text: 'Sign in') }
+          it { should have_selector('span', text: 'Login') }
+
         end
 
         describe "visiting the followers page" do
           before { visit followers_user_path(user) }
-          it { should have_selector('title', text: 'Sign in') }
+          it { should have_selector('span', text: 'Login') }
+
         end
       end
     end
