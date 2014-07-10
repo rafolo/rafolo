@@ -24,7 +24,7 @@ class StaticPagesController < ApplicationController
 
     #TODO! remove after TDD Works
     if signed_in?
-      @micropost = current_user.microposts.build
+      @micropost2 = current_user.microposts.build
     end
 
     render :layout => "application"

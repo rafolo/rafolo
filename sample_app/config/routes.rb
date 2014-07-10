@@ -33,7 +33,7 @@ SampleApp::Application.routes.draw do
   end
   resources :sessions, only: [:new, :create, :destroy]
 
-  match 'microposts(/(/:id))(.:format)', to: 'microposts#destroy' #TODO! Remove after tests works
+  #match 'microposts(/(/:id))(.:format)', to: 'microposts#destroy' #TODO! Remove after tests works
   resources :microposts, only: [:create, :destroy]
 
   resources :relationships, only: [:create, :destroy]
