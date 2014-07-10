@@ -24,6 +24,7 @@ describe 'layouts/application' do
       before do
         user = double('user')
         user.stub(:has_completed_onboarding?) { false }
+        user.stub(:name) { "test" }
         user.stub(:email) { "test@example.com" }
         user.stub(:microposts) { microposts = []
                                  microposts.push Micropost.new :content=>"micropost1"

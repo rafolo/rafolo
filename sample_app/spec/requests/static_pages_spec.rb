@@ -74,7 +74,7 @@ describe "Static pages" do
     # page.should have_selector 'title', text: full_title('Contact')
     click_link "Home"
     click_link "Sign up now!"
-    page.should have_selector 'title', text: full_title('Sign up')
+    page.should have_selector 'span', text: full_title('Sign Up')
     puts page.html
     click_link "Core Admin" #TODO! to const
     page.should have_selector '.navbar-header', text: 'Core Admin'
