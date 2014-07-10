@@ -49,6 +49,16 @@ describe "Alarms" do
       should have_xpath('//a[@href="/charts/charts.html"]')
     end
 
+    it "has correct Others links" do
+      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
+      visit alarm_index_path
+      should have_xpath('//a[@href="/other/wizard.html"]')
+      should have_xpath('//a[@href="/other/login.html"]')
+      should have_xpath('//a[@href="/other/sign_up.html"]')
+      should have_xpath('//a[@href="/other/full_calendar.html"]')
+      should have_xpath('//a[@href="/other/error404.html"]')
+    end
+
   end
 end
 
