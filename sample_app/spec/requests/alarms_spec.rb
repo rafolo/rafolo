@@ -38,6 +38,13 @@ describe "Alarms" do
       should have_xpath('//a[@href="/ui_lab/widgets.html"]')
     end
 
+    it "has correct Forms link" do
+      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
+      visit alarm_index_path
+      puts body
+      should have_xpath('//a[@href="/forms/forms.html"]')
+    end
+
   end
 end
 
