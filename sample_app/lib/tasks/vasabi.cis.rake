@@ -5,7 +5,7 @@ namespace :vasabi do
   namespace :cis do
 
     desc "script - run on every commit"
-    task :script => ["rafolo:karma:phantomjs", "rafolo:karma:firefox", "spec"] do |t|
+    task :script => ["spec", "rafolo:karma:phantomjs", "rafolo:karma:firefox"] do |t|
     end
 
     desc "aftersuccess - run on every success"
