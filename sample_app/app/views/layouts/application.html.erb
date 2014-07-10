@@ -127,7 +127,13 @@
 
             <li class="divider"></li>
 
-            <li><a href="/profile/index/#profile"><i class="icon-user"></i> <span>Profile</span></a></li>
+
+            <!--TODO! Remove <li><a href="/profile/index/#profile"><i class="icon-user"></i> <span>Profile</span></a></li>-->
+            <li><%= link_to user_path(current_user) do %>
+                  <i class="icon-user"></i> <span>Profile2</span>
+              <% end %>
+            </li>
+
             <li><a href="/profile/index/#settings"><i class="icon-cog"></i> <span>Settings</span></a></li>
             <li><a href="/profile/index/#messages"><i class="icon-envelope"></i> <span>Messages</span>
               <span class="label label-dark-red pull-right">5</span></a></li>
