@@ -89,7 +89,7 @@ describe "Authentication" do
 
         describe "submitting to the update action" do
           before { put user_path(user) }
-          specify { response.should redirect_to(signin_path) }
+          specify { response.should redirect_to(localize_path(signin_path)) }
         end
 
         describe "visiting the user index" do
@@ -149,7 +149,7 @@ describe "Authentication" do
 
       describe "submitting a PUT request to the Users#update action" do
         before { put user_path(wrong_user) }
-        specify { response.should redirect_to(root_path) }
+        specify { response.should redirect_to(localize_path(root_path)) }
       end
     end
 
@@ -161,7 +161,7 @@ describe "Authentication" do
 
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(user) }
-        specify { response.should redirect_to(root_path) }
+        specify { response.should redirect_to(localize_path(root_path)) }
       end
     end
   end
