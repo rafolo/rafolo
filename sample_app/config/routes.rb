@@ -12,8 +12,6 @@ SampleApp::Application.routes.draw do
 
   resources :alarms, constraints: { format: 'html' }
 
-
-
   get "profile/index"
 
   get "alarm/index"
@@ -33,7 +31,6 @@ SampleApp::Application.routes.draw do
   end
   resources :sessions, only: [:new, :create, :destroy]
 
-  #match 'microposts(/(/:id))(.:format)', to: 'microposts#destroy' #TODO! Remove after tests works
   resources :microposts, only: [:create, :destroy]
 
   resources :relationships, only: [:create, :destroy]
@@ -59,9 +56,6 @@ SampleApp::Application.routes.draw do
   get '*javascripts/generic.js', to: redirect('/assets/core_admin/generic.js')
   get '*javascripts/debug/live.js', to: redirect('/assets/debug/live.js') #TODO! generate non hard coded link in template
   get '*images/avatars/:file.:ext', to: redirect('/assets/avatars/%{file}.%{ext}')
-
-  #TODO! Remove
-  #get '/api/Todo/Metadata', to: 'static_pages#metadata'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
