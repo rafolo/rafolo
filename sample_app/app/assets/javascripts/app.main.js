@@ -52,7 +52,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 //initializes js for core admin widgets
 //use: <div class="row" ro-core-admin-init>
-app.directive('roCoreAdminInit', function() {
+app.directive('roCoreAdminInit', function() { //TODO! Move to lib
     return {
 
         link: function($scope, element, attrs) {
