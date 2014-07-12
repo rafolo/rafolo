@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1'
-gem 'bcrypt-ruby', '3.0.1'
+gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.5'
 #gem 'mysql2', '0.3.11'
@@ -11,11 +11,14 @@ gem 'will_paginate', '3.0.5'
 # RK 4.1
 gem 'activeresource'
 gem 'tzinfo-data'
+gem 'protected_attributes'
+
 
 group :development, :test do
   gem 'rake' #for travis
   gem 'sqlite3'
-  gem 'rspec-rails', '2.9.0'
+  gem 'rspec-rails'
+  gem 'rspec-its', '~> 1.0.0.pre' #rk 4.1
   gem 'guard-rspec', '0.5.5'
   #gem 'minitest' #minitest for R1.9 and test units for 1.8
   #gem 'test-unit', '~> 2.5.5'

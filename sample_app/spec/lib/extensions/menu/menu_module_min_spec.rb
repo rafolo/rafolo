@@ -1,6 +1,6 @@
-#require 'spec_helper.rb'
-require 'rspec'
-require 'extensions/menu/menu_module.rb'
+require 'spec_helper.rb'
+# require 'rspec'
+# require 'extensions/menu/menu_module.rb'
 
 class Test1 < ActionController::Base
   has_menu2 "Maps", "trwam.pl", enabled: true

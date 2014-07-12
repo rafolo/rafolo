@@ -4,10 +4,10 @@ module ApplicationHelper
   # Returns the full title on a per-page basis.
   #TODO! remove arg
   def full_title(page_title)
-    base_title = SampleApp::Application.config.app_config["app_title"] + ' '
-    base_title += '(' + SampleApp::Application.config.app_config["landscape_title"] + ')'
-
-    base_title
+    #TODO! uncomment config
+    #base_title = SampleApp::Application.config.app_config["app_title"] + ' '
+    #base_title += '(' + SampleApp::Application.config.app_config["landscape_title"] + ')'
+    # base_title
 
      if page_title.empty?
        base_title

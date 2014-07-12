@@ -1,1 +1,1 @@
-#require 'extensions/config/config_module.rb'
+require 'extensions/config/config_module.rb'
