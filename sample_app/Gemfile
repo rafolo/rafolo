@@ -13,6 +13,7 @@ gem 'activeresource'
 gem 'tzinfo-data'
 gem 'protected_attributes'
 
+gem 'spring', group: :development #TODO! move to group below
 
 group :development, :test do
   gem 'rake' #for travis
