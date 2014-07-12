@@ -40,4 +40,7 @@ SampleApp::Application.configure do
   silence_warnings do
     BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
   end
+
+  #RK 4.1
+  config.eager_load = false #TODO! true if preload tool
 end
