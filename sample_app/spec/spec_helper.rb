@@ -39,6 +39,7 @@ require 'capybara'
 
 
 Spork.prefork do
+
   # Loading more in this block will cause your tests to run faster. However,
   # if you change any configuration or code from libraries loaded here, you'll
   # need to restart spork for it take effect.
@@ -67,22 +68,32 @@ Spork.prefork do
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
-
   require 'shoulda/matchers/integrations/rspec' # after require 'rspec/rails'
 
   Spork.each_run do
     # This code will be run each time you run your specs.
+    ##BUGFIX
+    #Spork ActiveRecords
     load_schema = lambda {
       load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
       # ActiveRecord::Migrator.up('db/migrate') # use migrations
     }
     silence_stream(STDOUT, &load_schema)
 
-    #TODO! Speed up?
+    #capybara
+    include Capybara::DSL
+
+    #helpers
+    # full_names = Dir["#{Rails.root}/app/helpers/*.rb"]
+    # full_names.collect do |full_name|
+    #   include Object.const_get(File.basename(full_name,'.rb').camelize)
+    # end
+
+    ## Load
     # Reloading support files each run
     Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-    ##RK Reload files
+    # Reloading extra files, all app* are already loaded by rails
     Dir[Rails.root.join("lib/extensions/menu/**/*.rb")].each {|f| require f}
 
     #TODO! Speed up?

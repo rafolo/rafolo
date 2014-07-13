@@ -1,5 +1,5 @@
 module ApplicationHelper
-  include SessionsHelper
+  #include SessionsHelper
 
   # Returns the full title on a per-page basis.
   #TODO! remove arg
@@ -9,6 +9,7 @@ module ApplicationHelper
 
     base_title
 
+    # TODO! Belowes are not used remove or use for some page
      if page_title.empty?
        base_title
      else
