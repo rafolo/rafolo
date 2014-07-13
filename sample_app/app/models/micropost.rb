@@ -14,7 +14,8 @@ class Micropost < ActiveRecord::Base
   belongs_to :user
 
   validates :user_id, presence: true
-  validates :content, presence: true, length: { miniumum: 3, maximum: 140 }
+  # TODO! LEARN! Change minimum to minimual e.i. typo -will not be cought
+  validates :content, presence: true, length: {  minimum:3, maximum: 140 }
 
   default_scope order: 'microposts.created_at DESC'
 

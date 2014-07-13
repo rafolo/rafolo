@@ -84,6 +84,7 @@ Spork.prefork do
     include Capybara::DSL
 
     #helpers
+    # http://stackoverflow.com/questions/10217755/rails-3-2-3-with-spork-does-not-recognize-helper-methods-in-cucumber-tests
     # full_names = Dir["#{Rails.root}/app/helpers/*.rb"]
     # full_names.collect do |full_name|
     #   include Object.const_get(File.basename(full_name,'.rb').camelize)
