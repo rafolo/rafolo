@@ -34,6 +34,14 @@ local_production_mysql: &local_production_mysql
   host: 127.0.0.1
   port: 3306
 
+local_test_mysql: &local_test_mysql
+  adapter: mysql2
+  encoding: utf8
+  database: vasabi_test
+  username: root
+  password:
+  host: 127.0.0.1
+  port: 3306
 
 test: &test
   <<: *local_test_sqlite3
