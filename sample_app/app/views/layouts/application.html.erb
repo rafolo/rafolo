@@ -134,6 +134,7 @@
             <% end %>
           </li>
 
+            <!--TODO! LEARN! block by linlk_to-->
             <li><%= link_to users_path do %>
                   <i class="icon-cog"></i> <span>Users</span>
               <% end %>
@@ -142,7 +143,12 @@
             <li><a href="/profile/index/#messages"><i class="icon-envelope"></i> <span>Messages</span>
               <span class="label label-dark-red pull-right">5</span></a></li>
             <li><a href="<%= signout_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i>
-              <span>Sign out</span></a></li>
+              <span>Sign out</span></a>
+            </li>
+            <!--TODO! Add test for about link and content, modify about page -->
+            <li><a href="<%= about_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i>
+              <span>About...</span></a>
+            </li>
           </ul>
           <!--Gravatar popup links END-->
         </li>
