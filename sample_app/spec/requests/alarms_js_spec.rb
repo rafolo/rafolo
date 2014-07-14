@@ -7,6 +7,7 @@ describe "Alarms" do
 
   before { sign_in user }
 
+
   describe "GET /alarms" do
     before { visit root_path }
 
