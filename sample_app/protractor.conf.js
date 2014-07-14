@@ -16,5 +16,13 @@ exports.config = {
     jasmineNodeOpts: {
         showColors: true,
         defaultTimeoutInterval: 30000
+    },
+    onPrepare: function(){
+        global.dvr = browser.driver;
+    },
+    suites: {
+        homepage: 'test/client/e2e/homepage/**/*spec.js',
+        sessions: 'test/client/e2e/sessions/**/*spec.js'
+        //search: ['tests/e2e/contact_search/**/*Spec.js']
     }
 };
