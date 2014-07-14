@@ -22,4 +22,16 @@
       {locale: I18n.locale}
     end
 
+    before_filter :auth, :except => [:home, :new, :create]
+
+    def auth
+      if !signed_in?
+        respond_to do |format|
+          format.json { render :json => [], :status => :unauthorized }
+          format.html { redirect_to root_path}
+        end
+        return false
+      end
+    end
+
   end
