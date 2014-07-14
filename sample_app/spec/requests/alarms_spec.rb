@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "Alarms" do
+
   subject { page }
 
   let(:user) { FactoryGirl.create(:user) }
