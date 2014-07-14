@@ -22,7 +22,6 @@ describe "Alarms" do
 
       #TODO! uncomment current_path.should eq(alarm_index_path)
 
-      save_and_open_page
       should have_link 'Default', href: localize_path("/credit_card/index")
       should have_xpath('//*[@id="breadcrumbs"]/div[2]/span[1]')
       should have_content("Your alarms")

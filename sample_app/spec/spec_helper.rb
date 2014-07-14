@@ -1,8 +1,11 @@
+# http://www.opinionatedprogrammer.com/2011/02/capybara-and-selenium-with-rspec-and-rails-3/#comment-220
+
 require 'rubygems'
 require 'spork'
 require 'shoulda'
 require 'factory_girl_rails'
 require 'capybara'
+require 'active_record'
 
 
 #uncomment the following line to use spork with the debugger
@@ -38,6 +41,10 @@ require 'capybara'
 # free to delete them.
 
 
+
+
+
+
 Spork.prefork do
 
   # Loading more in this block will cause your tests to run faster. However,
@@ -48,6 +55,9 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'rspec/autorun'
+
+  require 'capybara/rspec'
+  require 'capybara/rails'
 
   #TODO!??
   #Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
@@ -69,6 +79,17 @@ Spork.prefork do
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
   require 'shoulda/matchers/integrations/rspec' # after require 'rspec/rails'
+
+  # #capybara
+  class ActiveRecord::Base
+    mattr_accessor :shared_connection
+    @@shared_connection = nil
+
+    def self.connection
+      @@shared_connection || ConnectionPool::Wrapper.new(:size => 1) { retrieve_connection }
+    end
+  end
+
 
   Spork.each_run do
     # This code will be run each time you run your specs.
@@ -103,6 +124,9 @@ Spork.prefork do
 
     # Reload locales
     I18n.backend.reload!
+
+    # #capybara
+    ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
   end
 
   ##Config
@@ -121,7 +145,7 @@ Spork.prefork do
     # If you're not using ActiveRecord, or you'd prefer not to run each of your
     # examples within a transaction, remove the following line or assign false
     # instead of true.
-    config.use_transactional_fixtures = true
+    config.use_transactional_fixtures = false
 
     # If true, the base class of anonymous controllers will be inferred
     # automatically. This will be the default behavior in future versions of

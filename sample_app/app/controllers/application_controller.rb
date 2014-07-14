@@ -22,6 +22,7 @@
       {locale: I18n.locale}
     end
 
+    # TODO! Add Authorisations for JSON and others
     # before_filter :auth, :except => [:home, :new, :create]
 
     # def auth
