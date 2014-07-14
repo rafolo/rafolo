@@ -1,6 +1,9 @@
-var Homepage = require('./sign-in.po.js');
+var SignInPage = require('./sign-in.po.js');
 describe('Sign-in Tests', function(){
-    var angularHomepage = new AngularHomepage();
-    angularHomepage.nameInput.sendKeys('Rafael');
-    //...
+    beforeEach(function() {
+        isAngularSite(false);
+    });
+    var signInPage = new SignInPage();
+    signInPage.signIn('olgierd.falat@gmail.com', '123456')
+
 });
