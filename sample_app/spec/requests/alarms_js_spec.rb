@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Alarms" do
   subject { page }
 
-  let(:user) { FactoryGirl.create(:user) }
+  user = FactoryGirl.create(:user)
 
   before { sign_in user }
 
@@ -15,7 +15,7 @@ describe "Alarms" do
       response.status.should be(200)
     end
 
-    it "has correct gui" do
+    it "has correct gui", js: true do
       visit alarm_index_path
 
       current_path.should eq(alarm_index_path)
@@ -26,9 +26,8 @@ describe "Alarms" do
     end
 
 
-
     it "has correct UI lab links" do
-      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
+      SampleApp::Application.config.show_examples = true #TODO: possible site effect for other Specs ?
       visit alarm_index_path
       should have_xpath('//a[@href="/ui_lab/buttons.html"]')
       should have_xpath('//a[@href="/ui_lab/general.html"]')
@@ -40,19 +39,19 @@ describe "Alarms" do
     end
 
     it "has correct Forms link" do
-      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
+      SampleApp::Application.config.show_examples = true #TODO: possible site effect for other Specs ?
       visit alarm_index_path
       should have_xpath('//a[@href="/forms/forms.html"]')
     end
 
     it "has correct Charts link" do
-      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
+      SampleApp::Application.config.show_examples = true #TODO: possible site effect for other Specs ?
       visit alarm_index_path
       should have_xpath('//a[@href="/charts/charts.html"]')
     end
 
     it "has correct Others links" do
-      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
+      SampleApp::Application.config.show_examples = true #TODO: possible site effect for other Specs ?
       visit alarm_index_path
       should have_xpath('//a[@href="/other/wizard.html"]')
       should have_xpath('//a[@href="/other/login.html"]')
