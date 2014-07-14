@@ -14,8 +14,14 @@ Run
 
 ## Protractor install
     ~$ npm install -g protractor
-    
+
 ## Tests
 Run
     ~$ karma start
+    ~$ protractor
 
+Troubleshooting:
+
+Protractor not starting on Windows:
+
+    ~$ webdriver-manager start --standalone

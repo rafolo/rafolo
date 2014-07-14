@@ -8,10 +8,6 @@ exports.config = {
         'browserName': 'chrome'
     },
 
-    // Spec patterns are relative to the current working directly when
-    // protractor is called.
-    specs: ['node_modules/protractor/example/example_spec.js'],
-
     // Options to be passed to Jasmine-node.
     jasmineNodeOpts: {
         showColors: true,
@@ -19,6 +15,15 @@ exports.config = {
     },
     onPrepare: function(){
         global.dvr = browser.driver;
+        global.isAngularSite = function(flag){
+            browser.ignoreSynchronization = !flag;
+        };
+
+        global.protractor = protractor;
+        global.browser = browser;
+        global.$ = browser.$;
+        global.$$ = browser.$$;
+        global.element = browser.element;
     },
     suites: {
         homepage: 'test/client/e2e/homepage/**/*spec.js',
