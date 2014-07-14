@@ -1,3 +1,4 @@
+
 # http://www.opinionatedprogrammer.com/2011/02/capybara-and-selenium-with-rspec-and-rails-3/#comment-220
 
 require 'rubygems'
