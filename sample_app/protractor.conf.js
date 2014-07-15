@@ -36,11 +36,17 @@ exports.config = {
         }));
     },
     suites: {
-        homepage: 'test/client/e2e/homepage/**/*spec.js',
+        alarms: 'test/client/e2e/alarms/**/*spec.js',
         sessions: 'test/client/e2e/sessions/**/*spec.js'
         //search: ['tests/e2e/contact_search/**/*Spec.js']
     },
 
     baseUrl: 'http://127.0.0.1:3000',
-    allScriptsTimeout: 50000
+    allScriptsTimeout: 50000,
+    params: {
+        signIn: {
+            user: 'olgierd.falat@gmail.com',
+            password: '123456'
+        }
+    }
 };

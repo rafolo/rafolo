@@ -25,3 +25,9 @@ Troubleshooting:
 Protractor not starting on Windows:
 
     ~$ webdriver-manager start --standalone
+
+Protractor Debug helper methods:
+
+    browser.debugger();
+
+    browser.pause();
