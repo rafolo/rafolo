@@ -10,8 +10,6 @@ describe('Sign-in Tests', function(){
 
     it('should sign with valid credentials', function() {
         signInPage.signIn('olgierd.falat@gmail.com', '123456')
-
-        //expect(todoList.count()).toEqual(2);
-        //expect(todoList.get(1).getText()).toEqual('build an angular app');
+        expect(signInPage.isSignedIn()).toBe(true);
     });
 });

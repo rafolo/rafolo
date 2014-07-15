@@ -13,5 +13,9 @@ var SignInPage = function() {
         this.password.sendKeys(password);
         this.signInLink.click();
     };
+
+    this.isSignedIn = function() {
+        return element(By.id('signout')).isPresent();
+    }
 };
 module.exports = SignInPage;
