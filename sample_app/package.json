@@ -14,7 +14,8 @@
     "karma-jasmine": "*",
     "karma-ng-scenario": "*",
     "karma-coverage": "*",
-    "protractor": "*"
+    "protractor": "*",
+    "protractor-screenshot-reporter": "*"
 },
 "license": "MIT",
 "repository": {
@@ -25,5 +26,5 @@
 "url": "https://github.com/rafolo/rafolo/issues"
 },
 "readmeFilename": "README.md",
-"homepage": "https://github.com/rafolo/rafolo"
+"homepage": "https://github.com/rafolo/rafolo/tree/master/sample_app"
 }

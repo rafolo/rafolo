@@ -1,11 +1,10 @@
 var SignInPage = function() {
     //console.log(dvr);
-    this.email = dvr.findElement(By.css('#session_email'));
-    this.password = dvr.findElement(By.css('#session_password'));
-    this.signInLink = dvr.findElement(By.css('input[type="submit"]'));
+    this.email = element(By.css('#session_email'));
+    this.password = element(By.css('#session_password'));
+    this.signInLink = element(By.css('input[type="submit"]'));
 
-    this.get = function() {
-        //browser.debugger();
+    this.visit = function() {
         browser.get('/signin');
     };
 
