@@ -11,12 +11,12 @@ notifications:
 before_script:
   - cd sample_app
   - bundle install
+  - npm run update-webdriver
   - npm install
   - bower install
 before_install:
   - "export DISPLAY=:99.0" #for GUI test
   - "sh -e /etc/init.d/xvfb start"
-  - npm run update-webdriver
   - sleep 3 # give xvfb some time to start
 
 
