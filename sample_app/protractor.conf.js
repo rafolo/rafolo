@@ -6,9 +6,12 @@ exports.config = {
     // The address of a running selenium server.
     seleniumAddress: 'http://localhost:4444/wd/hub',
 
+    //chromeOnly: true,
+    //chromeDriver: '../selenium/chromedriver'
+
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': 'firefox'
     },
 
     // Spec patterns are relative to the current working directly when

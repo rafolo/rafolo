@@ -12,9 +12,7 @@ before_script:
   - cd sample_app
   - bundle install
   - npm install
-  #- npm run update-webdriver
-  - webdriver-manager update --standalone
-  - webdriver-manager start
+  #- webdriver-manager update --standalone
   - bower install
 before_install:
   - "export DISPLAY=:99.0" #for GUI test
