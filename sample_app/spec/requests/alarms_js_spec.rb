@@ -19,7 +19,7 @@ describe "Alarms.js" do
 
     it "has correct gui elements", js: true do
       visit alarm_index_path
-
+      page!
       current_path.should eq(alarm_index_path)
 
       should have_link('Default', href: "/credit_card/index?locale=en")
