@@ -12,6 +12,7 @@ before_script:
   - cd sample_app
   - bundle install
   - npm run update-webdriver
+  - npm webdriver-manager start
   - npm install
   - bower install
 before_install:
