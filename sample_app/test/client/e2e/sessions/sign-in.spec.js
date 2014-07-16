@@ -22,4 +22,8 @@ describe('Sign-in Tests', function(){
         expect(signInPage.isSignedIn()).toBe(false);
         expect(signInPage.validationMessage()).toBe('Invalid email/password combination.');
     });
+
+    it('should fail', function() {
+        expect(false).toBe(true);
+    });
 });
