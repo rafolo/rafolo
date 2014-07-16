@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="PhantomJS 1.9.7 (Windows 7)" package="" timestamp="2014-07-14T14:29:55" id="0" hostname="PCSamsung" tests="3" errors="0" failures="0" time="1.063">
+  <testsuite name="PhantomJS 1.9.7 (Windows 8)" package="" timestamp="2014-07-16T13:48:45" id="0" hostname="Olo-Laptop" tests="3" errors="0" failures="0" time="1.108">
     <properties>
-      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.7 Safari/534.34"/>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.7 Safari/534.34"/>
     </properties>
-    <testcase name="should succeed" time="0.028" classname="PhantomJS 1.9.7 (Windows 7).the home module"/>
-    <testcase name="should call sayHello on app.home.helloWorldService" time="0.005" classname="PhantomJS 1.9.7 (Windows 7).the home module"/>
-    <testcase name="should start with map point data populated" time="1.03" classname="PhantomJS 1.9.7 (Windows 7).the mappoint module"/>
+    <testcase name="should succeed" time="0.046" classname="PhantomJS 1.9.7 (Windows 8).the home module"/>
+    <testcase name="should call sayHello on app.home.helloWorldService" time="0.005" classname="PhantomJS 1.9.7 (Windows 8).the home module"/>
+    <testcase name="should start with map point data populated" time="1.057" classname="PhantomJS 1.9.7 (Windows 8).the mappoint module"/>
     <system-out><![CDATA[
 ]]></system-out>
     <system-err/>

@@ -31,7 +31,7 @@ describe "Authentication" do
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
       before { sign_in user
-                puts html
+                #puts html
       }
 
 
