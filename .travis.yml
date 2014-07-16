@@ -16,6 +16,8 @@ before_script:
 before_install:
   - "export DISPLAY=:99.0" #for GUI test
   - "sh -e /etc/init.d/xvfb start"
+  - ./node_modules/protractor/bin/install_selenium_standalone
+  - java -jar selenium/selenium-server-standalone-2.35.0.jar -Dwebdriver.chrome.driver=./selenium/chromedriver &  
   - sleep 3 # give xvfb some time to start
 
 
