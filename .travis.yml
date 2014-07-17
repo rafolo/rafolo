@@ -23,7 +23,7 @@ before_install:
   - cd sample_app
   - npm install -g protractor
   - webdriver-manager update --standalone
-  #- webdriver-manager start
+  - webdriver-manager start &
 
 
 
