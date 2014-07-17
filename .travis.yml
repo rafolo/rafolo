@@ -9,14 +9,21 @@ notifications:
     - olgierd.falat@gmail.com
 
 before_script:
-  - cd sample_app
+  #- cd sample_app
   - bundle install
   - npm install
-  - bower install
+  #- npm run update-webdriver
+  #- webdriver-manager update --standalone
+  #- webdriver-manager start
+  #- bower install
 before_install:
   - "export DISPLAY=:99.0" #for GUI test
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
+  - cd sample_app
+  - npm install -g protractor
+  - webdriver-manager update --standalone
+  #- webdriver-manager start
 
 
 
@@ -29,7 +36,8 @@ script:
 #  - karma start --browsers Firefox --single-run #bundle exec rake spec:models
 #script: "./testscript.sh" #future script commented for now
 script:
-  - bundle exec rake vasabi:cis:script
+  #- bundle exec rake vasabi:cis:script
+  - protractor
 after_script:
   - killall firefox  #Force close for karma start --browsers Firefox --single-run
 after_success:
