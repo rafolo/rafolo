@@ -20,6 +20,7 @@ before_install:
   - "export DISPLAY=:99.0" #for GUI test
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
+  - npm run update-webdriver
   - webdriver-manager update --standalone
 
 
