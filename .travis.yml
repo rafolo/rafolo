@@ -19,13 +19,13 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
   - cd sample_app
+ install:
   - npm install -g protractor
   - bundle install
   - npm install
   - webdriver-manager update --standalone
   - webdriver-manager start &
   - bower install
-
 
 # uncomment this line if your project needs to run something other than `rake`:
 #script: bundle exec rspec spec:models
