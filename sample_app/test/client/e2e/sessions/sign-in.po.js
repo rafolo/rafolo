@@ -8,6 +8,8 @@ var SignInPage = function() {
     };
 
     this.signIn = function(email, password) {
+        console.log("Email: " + email);
+        console.log("Password: " + password);
         this.email.sendKeys(email);
         this.password.sendKeys(password);
         this.signInLink.click();
