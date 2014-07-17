@@ -37,7 +37,7 @@ script:
 #script: "./testscript.sh" #future script commented for now
 script:
   #- bundle exec rake vasabi:cis:script
-  - npm run protractor
+  - protractor
 after_script:
   - killall firefox  #Force close for karma start --browsers Firefox --single-run
 after_success:
