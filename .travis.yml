@@ -14,8 +14,8 @@ before_script:
   - npm install
   #- npm run update-webdriver
   #- webdriver-manager update --standalone
-  - webdriver-manager start
-  - bower install
+  #- webdriver-manager start
+  #- bower install
 before_install:
   - "export DISPLAY=:99.0" #for GUI test
   - "sh -e /etc/init.d/xvfb start"
