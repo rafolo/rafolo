@@ -1,0 +1,13 @@
+{
+  "name": "responsive-tables",
+  "_cacheHeaders": {
+    "ETag": "\"030007fbe82558de33e211e0efa235f4c0eb65ce\"",
+    "Content-Length": "1649",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:030007fbe",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/zurb/responsive-tables/a61cf0b7e16b8b0f3555178dafb1f894c6f39fba/responsive-tables.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/zurb/responsive-tables/a61cf0b7e16b8b0f3555178dafb1f894c6f39fba/responsive-tables.js"
+}

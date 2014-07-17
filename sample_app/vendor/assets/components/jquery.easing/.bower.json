@@ -1,0 +1,13 @@
+{
+  "name": "jquery.easing",
+  "_cacheHeaders": {
+    "ETag": "\"ef7432107950d6f5706a031f081a188887c128b5\"",
+    "Content-Length": "8097",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:ef7432107",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/Hexanet/jquery.ibutton/master/lib/jquery.easing.1.3.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/Hexanet/jquery.ibutton/master/lib/jquery.easing.1.3.js"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "jquery.metadata",
+  "_cacheHeaders": {
+    "ETag": "\"6c5d2d140037706da31edfce3eceef8f883e97d8\"",
+    "Content-Length": "4013",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:6c5d2d140",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/Hexanet/jquery.ibutton/master/lib/jquery.metadata.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/Hexanet/jquery.ibutton/master/lib/jquery.metadata.js"
+}

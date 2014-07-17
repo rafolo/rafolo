@@ -1,0 +1,13 @@
+{
+  "name": "touchTouch",
+  "_cacheHeaders": {
+    "ETag": "\"16498e68cd20835bba6aa84e40507603050448a6\"",
+    "Content-Length": "6009",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:16498e68c",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/martinaglv/touchTouch/master/assets/touchTouch/touchTouch.jquery.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/martinaglv/touchTouch/master/assets/touchTouch/touchTouch.jquery.js"
+}

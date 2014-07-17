@@ -1,0 +1,13 @@
+{
+  "name": "jquery.ibutton",
+  "_cacheHeaders": {
+    "ETag": "\"2e59aa129ce5a50b6baba3115bc634cbec5b71ec\"",
+    "Content-Length": "16108",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:2e59aa129",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/Hexanet/jquery.ibutton/master/lib/jquery.ibutton.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/Hexanet/jquery.ibutton/master/lib/jquery.ibutton.js"
+}
