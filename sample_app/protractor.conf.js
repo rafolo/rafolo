@@ -44,7 +44,7 @@ exports.config = {
         //search: ['tests/e2e/contact_search/**/*Spec.js']
     },
 
-    baseUrl: 'http://127.0.0.1:3000',
+    baseUrl: 'http://vasabi-rafolo.rhcloud.com',
     allScriptsTimeout: 50000,
     params: {
         signIn: {

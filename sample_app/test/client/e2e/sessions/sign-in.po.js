@@ -2,14 +2,13 @@ var SignInPage = function() {
     this.email = element(By.css('#session_email'));
     this.password = element(By.css('#session_password'));
     this.signInLink = element(By.css('input[type="submit"]'));
+    this.singOutLink = element(By.xpath("//a[@href='/signout?locale=en']"));
     var params = browser.params;
     this.visit = function() {
         browser.get('/signin');
     };
 
     this.signIn = function(email, password) {
-        console.log("Email: " + email);
-        console.log("Password: " + password);
         this.email.sendKeys(email);
         this.password.sendKeys(password);
         this.signInLink.click();
@@ -21,7 +20,7 @@ var SignInPage = function() {
     }
 
     this.isSignedIn = function() {
-        return element(By.id('signout')).isPresent();
+        return this.singOutLink.isPresent();
     }
 
     this.validationMessage = function() {
