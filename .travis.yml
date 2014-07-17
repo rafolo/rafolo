@@ -20,11 +20,11 @@ before_install:
   - sleep 3 # give xvfb some time to start
   - cd sample_app
   - npm install -g protractor
-  - bundle install
-  - npm install
+  #- bundle install
+  #- npm install
   - webdriver-manager update --standalone
   - webdriver-manager start &
-  - bower install
+  #- bower install
 
 
 # uncomment this line if your project needs to run something other than `rake`:
