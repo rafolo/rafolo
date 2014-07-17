@@ -9,7 +9,7 @@ notifications:
     - olgierd.falat@gmail.com
 
 before_script:
-  - cd sample_app
+  #- cd sample_app
   - bundle install
   - npm install
   #- npm run update-webdriver
