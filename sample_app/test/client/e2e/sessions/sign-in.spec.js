@@ -3,6 +3,7 @@ describe('Sign-in Tests', function(){
     var signInPage = new SignInPage();
     var params = browser.params;
     beforeEach(function() {
+        dvr.manage().deleteAllCookies();
         isAngularSite(false);
         signInPage.visit();
     });
@@ -21,9 +22,5 @@ describe('Sign-in Tests', function(){
         signInPage.signIn('unknown', 'unknown');
         expect(signInPage.isSignedIn()).toBe(false);
         expect(signInPage.validationMessage()).toBe('Invalid email/password combination.');
-    });
-
-    it('should fail', function() {
-        expect(false).toBe(true);
     });
 });

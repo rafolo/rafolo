@@ -26,6 +26,7 @@ before_install:
   - webdriver-manager start &
   - bower install
 
+install: true
 
 # uncomment this line if your project needs to run something other than `rake`:
 #script: bundle exec rspec spec:models
@@ -36,7 +37,7 @@ script:
 #  - karma start --browsers Firefox --single-run #bundle exec rake spec:models
 #script: "./testscript.sh" #future script commented for now
 script:
-  #- bundle exec rake vasabi:cis:script
+  - bundle exec rake vasabi:cis:script
   - protractor --baseUrl http://vasabi-rafolo.rhcloud.com/
 after_script:
   - killall firefox  #Force close for karma start --browsers Firefox --single-run
