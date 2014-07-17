@@ -10,8 +10,6 @@ notifications:
 
 before_script:
   #- cd sample_app
-  - bundle install
-  - npm install
   #- npm run update-webdriver
   #- webdriver-manager update --standalone
   #- webdriver-manager start
@@ -22,9 +20,11 @@ before_install:
   - sleep 3 # give xvfb some time to start
   - cd sample_app
   - npm install -g protractor
+  - bundle install
+  - npm install
   - webdriver-manager update --standalone
-  #- webdriver-manager start
-
+  - webdriver-manager start &
+  - bower install
 
 
 # uncomment this line if your project needs to run something other than `rake`:
@@ -37,7 +37,7 @@ script:
 #script: "./testscript.sh" #future script commented for now
 script:
   #- bundle exec rake vasabi:cis:script
-  - protractor
+  - protractor --baseUrl http://vasabi-rafolo.rhcloud.com/
 after_script:
   - killall firefox  #Force close for karma start --browsers Firefox --single-run
 after_success:
