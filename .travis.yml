@@ -21,11 +21,12 @@ before_install:
   - cd sample_app
   - npm install -g protractor
   #- bundle install
-  #- npm install
+  - npm install
   - webdriver-manager update --standalone
   - webdriver-manager start &
-  #- bower install
+  - bower install
 
+install: true
 
 # uncomment this line if your project needs to run something other than `rake`:
 #script: bundle exec rspec spec:models
