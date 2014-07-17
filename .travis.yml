@@ -38,7 +38,7 @@ script:
 #script: "./testscript.sh" #future script commented for now
 script:
   - bundle exec rake vasabi:cis:script
-  - protractor --baseUrl http://127.0.0.1:24669/
+  - protractor --baseUrl http://vasabi-rafolo.rhcloud.com/
 after_script:
   - killall firefox  #Force close for karma start --browsers Firefox --single-run
 after_success:
