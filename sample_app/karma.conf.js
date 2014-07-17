@@ -32,8 +32,9 @@ module.exports = function (config) {
         ],
 
         //browsers: ['Chrome'],
+        browsers: ['Firefox', 'PhantomJS', 'PhantomJS_custom'], //@Travis no CHrome, force with karma start --browsers -Firefox
         //browsers: ['Firefox', 'Chrome', 'PhantomJS', 'PhantomJS_custom'], //@Travis no CHrome, force with karma start --browsers -Firefox
-        browsers: ['PhantomJS'], //@Travis no Chrome, force with karma start --browsers -Firefox
+        //browsers: ['PhantomJS'], //@Travis no Chrome, force with karma start --browsers -Firefox
 
         // you can define custom flags
         customLaunchers: {

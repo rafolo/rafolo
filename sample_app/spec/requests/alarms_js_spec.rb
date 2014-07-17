@@ -18,11 +18,14 @@ describe "Alarms.js" do
     end
 
     it "has correct gui elements", js: true do
+      SampleApp::Application.config.show_examples = true #TODO: possible site effect for other Specs ?
+
       visit alarm_index_path
 
       current_path.should eq(alarm_index_path)
 
-      should have_link('Default', href: "/credit_card/index?locale=en")
+      page!
+      #should have_link('Default', href: "/credit_card/index?locale=en")
       should have_xpath('//*[@id="breadcrumbs"]/div[2]/span[1]')
       should have_content("Your alarms")
     end

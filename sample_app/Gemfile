@@ -6,13 +6,17 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.5'
 #gem 'mysql2', '0.3.11'
 
+gem 'rake' #for travis
+
+#gem 'ruby-debug-base19x' #for vagrant debug
+#gem 'ruby-debug-ide'
 
 group :development, :test do
   # gem 'capybara-webkit'
   gem 'capybara-screenshot', :group => :test
   gem 'capybara', '1.1.2'
   gem 'connection_pool'
-  gem 'rake' #for travis
+
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.9.0'
   gem 'guard-rspec', '0.5.5'
