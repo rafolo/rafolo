@@ -17,6 +17,10 @@
     "protractor": "*",
     "protractor-screenshot-reporter": "*"
 },
+"scripts": {
+    "postinstall": "node_modules/.bin/bower install",
+    "start": "grunt"
+},
 "license": "MIT",
 "repository": {
 "type": "git",
@@ -28,3 +32,4 @@
 "readmeFilename": "README.md",
 "homepage": "https://github.com/rafolo/rafolo/tree/master/sample_app"
 }
+
