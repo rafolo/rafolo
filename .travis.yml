@@ -21,6 +21,7 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
   - cd sample_app
+  - npm install -g protractor
   - npm run update-webdriver
   - webdriver-manager update --standalone
 
