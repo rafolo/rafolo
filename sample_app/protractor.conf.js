@@ -28,7 +28,7 @@ exports.config = {
         global.isAngularSite = function(flag){
             browser.ignoreSynchronization = !flag;
         };
-        jasmine.getEnv().addReporter(new ScreenShotReporter({
+        /*jasmine.getEnv().addReporter(new ScreenShotReporter({
             baseDirectory: 'tmp/protractor',
             pathBuilder: function pathBuilder(spec, descriptions, results, capabilities) {
                 // Return '<browser>/<specname>' as path for screenshots:
@@ -36,7 +36,7 @@ exports.config = {
                 return path.join(capabilities.caps_.browserName, descriptions.join('-'));
             },
             takeScreenShotsOnlyForFailedSpecs: true
-        }));
+        }));*/
     },
     suites: {
         alarms: 'test/client/e2e/alarms/**/*spec.js',
