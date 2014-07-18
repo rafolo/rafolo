@@ -32,9 +32,9 @@ namespace :rafolo do
 
     #mac
   elsif OS.mac?
-    raise NotImplementedError; #we dunno howto on mac
+    #raise NotImplementedError; #we dunno howto on mac
   #unknown os
-    raise NotImplementedError; #how comes?
+    #raise NotImplementedError; #how comes?
   end
 
   ENV.each do |k, v|
