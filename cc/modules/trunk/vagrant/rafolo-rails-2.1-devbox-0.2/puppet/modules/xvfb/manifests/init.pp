@@ -18,24 +18,24 @@ class xvfb {
   mode => 777,
   }
   
-  file { '/home/vagrant/ff-xvfb.sh':
-    content => template('xvfb/ff-xvfb.sh.erb'),
+  file { '/home/vagrant/ff.sh':
+    content => template('xvfb/ff.sh.erb'),
 	ensure => present,
 	mode => 777
   }
   
-  check_mode { "/home/vagrant/ff-xvfb.sh":
+  check_mode { "/home/vagrant/ff.sh":
   mode => 777,
   }
   
   #autostart
-  exec {
-  "echo './ff-xvfb.sh' >> ~/.bashrc "
+  exec { 'appent_bashrc':
+  command => "echo '/home/vagrant/ff.sh' >> ~/.bashrc "
   }
   
   #postinstall
   ## start 
-  exec {
-  "echo '/home/vagrant/ff-xvfb.sh' "
+  exec { 'firstime_autostart':
+  command => "echo '/home/vagrant/ff.sh' "
   }
 }

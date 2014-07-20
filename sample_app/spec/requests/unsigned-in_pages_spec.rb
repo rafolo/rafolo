@@ -25,6 +25,12 @@ describe "Unsigned-in pages" do
       should have_xpath('/html/body//h1', text: 'Welcome to the Sample App')
     end
 
+    it "has correct gui elements", js: true do
+
+      current_path.should eq(root_path)
+      should have_content("Welcome to the Sample App")
+    end
+
     describe "menu" do
 
       it { should have_link('Home') }
@@ -50,6 +56,7 @@ describe "Unsigned-in pages" do
 
     end
   end
+
 
 
 end

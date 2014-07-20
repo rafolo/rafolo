@@ -18,7 +18,7 @@ bundler_stubs/
 .idea/
 
 #ignore bower
-vendor/assets/components/
+#vendor/assets/components/
 
 #ignore npm
 node_modules/
