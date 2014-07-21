@@ -5,9 +5,15 @@ define check_mode($mode) {
 }
 
 class xvfb {
-  exec { 'install_xvfb': command => "sudo apt-get update && sudo apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic x-ttcidfont-conf xvfb x11-apps imagemagick firefox " 
+  
+  # Fonts 
+  #exec { 'install_xvfb': command => "sudo apt-get update && sudo apt-get install -y libgl1-mesa-dri xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic x-ttcidfont-conf xvfb x11-apps imagemagick " 
+  exec { 'install_xvfb': command => "sudo apt-get update && sudo apt-get install -y xvfb  " 
+  
   }
   
+  # Script
+  ## xvfb.sh
   file { '/home/vagrant/xvfb.sh':
     content => template('xvfb/xvfb.sh.erb'),
 	ensure => present,
@@ -18,6 +24,7 @@ class xvfb {
   mode => 777,
   }
   
+  ## ff.sh
   file { '/home/vagrant/ff.sh':
     content => template('xvfb/ff.sh.erb'),
 	ensure => present,
@@ -28,12 +35,18 @@ class xvfb {
   mode => 777,
   }
   
-  #autostart
+  # Ruby 1.9.3
+  exec { 'install_r193': command => " rvm install 1.9.3 "
+  }
+  exec { 'use_r193': command => " rvm use 1.9.3 --default"
+  }
+  
+  #autostart TODO!
   exec { 'appent_bashrc':
   command => "echo '/home/vagrant/ff.sh' >> ~/.bashrc "
   }
   
-  #postinstall
+  #postinstall TODO!
   ## start 
   exec { 'firstime_autostart':
   command => "echo '/home/vagrant/ff.sh' "

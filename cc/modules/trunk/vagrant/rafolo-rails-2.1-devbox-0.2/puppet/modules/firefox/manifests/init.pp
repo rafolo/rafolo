@@ -10,7 +10,7 @@
 # === Examples
 #
 # class { 'firefox':
-#   version => '24.0-0ubuntu1'
+#   version => '17.0.1-0ubuntu1_i386'
 # }
 #
 # === Authors

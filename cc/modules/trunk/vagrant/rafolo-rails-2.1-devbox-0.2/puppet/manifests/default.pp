@@ -1,6 +1,7 @@
 ##to start from command line:
 # cd /vagrant/puppet
-# sudo puppet apply --verbose --modulepath=modules manifest/default.pp
+# sudo puppet apply --verbose --modulepath=modules manifests/default.pp 
+# or use /vagrant/p.sh 
 #
 
 $ar_databases = ['activerecord_unittest', 'activerecord_unittest2']
@@ -162,17 +163,22 @@ class install_mc {
 class { 'install_mc':
 }
 
-# XVFB
+class install_vim {
+  package { 'vim': ensure => present }
+}
+
+class { 'install_vim':
+}
+
+# xvfb
 class { 'xvfb':
 }
 
 # firefox
-class install_ff {
-  package { 'firefox': ensure => present }
+class { 'firefox':
+  version => '17.0.1-0ubuntu1' #no _386 at end!
 }
 
-class { 'install_ff':
-}
+#class { 'install_ff':
+#}
 
-
-notify { 'Rafolo customisation ...done': }
