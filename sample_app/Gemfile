@@ -12,6 +12,8 @@ gem 'rake' #for travis
 #gem 'ruby-debug-ide'
 
 group :development, :test do
+  #gem "selenium-webdriver", '2.35.1'
+  gem 'headless'
   gem 'database_cleaner', '0.7.0'
   # gem 'capybara-webkit'
   gem 'capybara-screenshot', :group => :test
