@@ -1,14 +1,13 @@
 {
   "name": "jquery.sparkline",
   "_cacheHeaders": {
-    "ETag": "\"1e014-4d43a5e5a23c0\"",
-    "Last-Modified": "Sun, 27 Jan 2013 00:37:43 GMT",
+    "ETag": "\"c003923e03b7fbf3cc85132c6a8e68206066e12c\"",
     "Content-Length": "122900",
-    "Content-Type": "application/javascript"
+    "Content-Type": "text/plain; charset=utf-8"
   },
-  "_release": "e-tag:1e014-4d4",
+  "_release": "e-tag:c003923e0",
   "main": "index.js",
-  "_source": "http://omnipotent.net/jquery.sparkline/2.1.1/jquery.sparkline.js",
+  "_source": "https://raw.githubusercontent.com/rafolo/rafolo/master/sample_app/lib/assets/javascripts/jquery.sparkline/jquery.sparkline.js",
   "_target": "*",
-  "_originalSource": "http://omnipotent.net/jquery.sparkline/2.1.1/jquery.sparkline.js"
+  "_originalSource": "https://raw.githubusercontent.com/rafolo/rafolo/master/sample_app/lib/assets/javascripts/jquery.sparkline/jquery.sparkline.js"
 }

@@ -22,7 +22,7 @@ Run
 
 Troubleshooting:
 
-Protractor not starting on Windows:
+Protractor not starting on Windows/Mac:
 
     ~$ webdriver-manager start --standalone
 

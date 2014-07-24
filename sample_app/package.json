@@ -1,22 +1,22 @@
-
 {
 "name": "sample-app",
 "version": "0.0.1",
 "description": "A starter project for geolocalisation",
 "devDependencies": {
-    "bower": "*",
-    "phantomjs": "*",
-    "karma": "*",
-    "karma-cli": "*",
-    "karma-phantomjs-launcher": "*",
-    "karma-chrome-launcher": "*",
-    "karma-firefox-launcher": "*",
-    "karma-junit-reporter": "*",
-    "karma-jasmine": "*",
-    "karma-ng-scenario": "*",
-    "karma-coverage": "*",
-    "protractor": "*",
-    "protractor-screenshot-reporter": "*"
+    "bower": "1.3.8",
+    "phantomjs": "1.9.7-15",
+    "karma": "0.12.17",
+    "karma-cli": "0.0.4",
+    "karma-phantomjs-launcher": "0.1.4",
+    "karma-chrome-launcher": "0.1.4",
+    "karma-firefox-launcher": "0.1.3",
+    "karma-junit-reporter": "0.2.2",
+    "karma-jasmine": "0.1.5",
+    "karma-ng-scenario": "0.1.0",
+    "karma-coverage": "0.2.4",
+    "protractor": "1.0.0",
+    "protractor-screenshot-reporter": "0.0.5",
+    "jasmine-jquery": "1.3.1"
 },
 "scripts": {
     "postinstall": "node_modules/.bin/bower install",
@@ -33,4 +33,3 @@
 "readmeFilename": "README.md",
 "homepage": "https://github.com/rafolo/rafolo/tree/master/sample_app"
 }
-
