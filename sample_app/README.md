@@ -1,6 +1,6 @@
-# Sample app
+#Sample app [![Build Status](https://travis-ci.org/rafolo/rafolo.svg?branch=master)](https://github.com/rafolo/rafolo/tree/master/sample_app)
 
-Sample geolocalisation application
+Sample geo-localisation application
 
 ## Bower install
 Run

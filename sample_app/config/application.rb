@@ -79,7 +79,7 @@ module SampleApp
                                  '.png',  '.gif', '.jpg', '.jpeg', '.svg', # Images
                                  '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
                              ]
-      ) && (!path.include? 'jasmine')
+      ) && (!path.include? 'jasmine') && (!path.include? 'bootstrap-datepicker')
     end)
 
     #config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
