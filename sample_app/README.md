@@ -1,4 +1,4 @@
-#Sample app [![Build Status](https://travis-ci.org/rafolo/rafolo.svg?branch=master)](https://github.com/rafolo/rafolo/tree/master/sample_app)
+#Sample app [![Build Status](https://travis-ci.org/rafolo/rafolo.svg?branch=master)](https://travis-ci.org/rafolo/rafolo)
 
 Sample geo-localisation application
 
