@@ -48,6 +48,6 @@
         "jquery": ">=2"
     },
     "script" : {
-        "postinstall" : "node_modules/bin/bower install"
+        "postinstall" : "node_modules/.bin/bower install"
     }
 }
