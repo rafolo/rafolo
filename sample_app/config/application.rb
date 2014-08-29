@@ -79,7 +79,7 @@ module SampleApp
                                  '.png',  '.gif', '.jpg', '.jpeg', '.svg', # Images
                                  '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
                              ]
-      ) && (!path.include? 'jasmine')
+      ) && (!path.include? 'jasmine') && (!path.include? 'bootstrap-datepicker/build')
     end)
 
     #config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
@@ -104,8 +104,5 @@ module SampleApp
 
     #check modernizer
     config.check_modernizer = true
-
-    #TODO! Remove needed only on heroku
-    config.assets.precompile += %w[ *.css *.js *.scss]
   end
 end

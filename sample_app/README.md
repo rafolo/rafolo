@@ -1,9 +1,13 @@
-# Sample app
+#Sample app [![Build Status](https://travis-ci.org/rafolo/rafolo.svg?branch=master)](https://travis-ci.org/rafolo/rafolo)
 
-Sample geolocalisation application
+Sample geo-localisation application
+
+## Prerequisite:
+
+  firefox required
 
 ## Bower install
-Run
+
     ~$ npm install
     ~$ npm install -g bower
     ~$ bower install
@@ -16,7 +20,7 @@ Run
     ~$ npm install -g protractor
 
 ## Tests
-Run
+
     ~$ karma start
     ~$ protractor
 

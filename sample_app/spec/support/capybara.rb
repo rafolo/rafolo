@@ -25,6 +25,8 @@ Capybara::Screenshot.register_filename_prefix_formatter(:rspec) do |example|
   "fail-#{example.description.gsub(' ', '-').gsub(/^.*\/spec\//,'')}"
 end
 
+
+
 #TODO! Annotate image or path with error desc 2
 # RSpec.configure do |config|
 #   config.after(:each) do
@@ -41,3 +43,11 @@ end
 #     end
 #   end
 # end
+
+Capybara.default_selector = :css
+
+Capybara.register_driver :selenium do |app|
+  require 'selenium/webdriver'
+  Selenium::WebDriver::Firefox::Binary.path = "/vagrant/bin/ff.sh"
+  Capybara::Selenium::Driver.new(app, :browser => :firefox)
+end
