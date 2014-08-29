@@ -1,7 +1,7 @@
 ##to start from command line:
 # cd /vagrant/puppet
 # sudo puppet apply --verbose --modulepath=modules manifests/default.pp 
-# or use /vagrant/p.sh 
+# or use /vagrant/dev/p.sh 
 #
 
 $ar_databases = ['activerecord_unittest', 'activerecord_unittest2']
@@ -10,8 +10,8 @@ $home = '/home/vagrant'
 
 # Pick a Ruby version modern enough, that works in the currently supported Rails
 # versions, and for which RVM provides binaries.
-# $ruby_version = '2.1.1'
-$ruby_version = '1.9.3'
+$ruby_version = '2.1.1'
+# $ruby_version = '1.9.3'
 
 notify { 'Starting rafolo customisation :)...': }
 
