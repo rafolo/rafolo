@@ -2,8 +2,12 @@
 
 Sample geo-localisation application
 
+## Prerequisite:
+
+  firefox required
+
 ## Bower install
-Run
+
     ~$ npm install
     ~$ npm install -g bower
     ~$ bower install
@@ -16,7 +20,7 @@ Run
     ~$ npm install -g protractor
 
 ## Tests
-Run
+
     ~$ karma start
     ~$ protractor
 
