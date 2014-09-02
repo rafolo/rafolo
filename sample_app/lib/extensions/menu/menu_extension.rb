@@ -2,19 +2,6 @@
 require File.expand_path('../menu_module.rb', __FILE__)
 
 module MenuExtension
-  # class MenuItem
-  #
-  #   attr_accessor :name, :children, :link, :enabled
-  #
-  #   def initialize n, l, e
-  #     @name = n
-  #     @link = l
-  #     @enabled = e
-  #     @children = []
-  #   end
-  #
-  # end
-
   public
 
   def MenuExtension.get_menuable classes=[]

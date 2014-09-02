@@ -14,10 +14,9 @@ module Menu
       options = args.extract_options!
 
       cattr_accessor :title, :link, :menuable, :enabled, :children, :instance_writer => false, :instance_reader => false
-
       self.title = title
       self.link = link
-      self.menuable = true;
+      self.menuable = true
 
       if options.has_key?(:enabled)
         self.enabled = options[:enabled]
@@ -35,12 +34,13 @@ module Menu
     def enabled?
       true
     end
-
   end
 
   def self.enabled?
     return false
   end
+
+
 
   class ActionController::Base
     include ActiveModel::MassAssignmentSecurity

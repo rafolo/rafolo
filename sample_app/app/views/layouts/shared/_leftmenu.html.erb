@@ -1,6 +1,6 @@
 <% MenuHelper.left_menu.each do |i| %>
     <% if i.children.empty? %>
-        <li class="active">
+        <li class="<%= item_css_selected(i, "active")%>">
           <span class="glow"></span>
           <a href="<%=t2l(i.link)%>">
             <i class="icon-dashboard icon-2x"></i>
@@ -20,9 +20,9 @@
           </a>
 
           <% if !i.children.empty? %>
-              <ul id="menu_<%= i.title %>" class="collapse ">
+              <ul id="menu_<%= i.title %>" class="collapse <%= item_css_selected(i, "in")%>">
                 <% i.children.each do |child| %>
-                    <li class="">
+                    <li class="<%= item_css_selected(child, "active")%>">
                       <a href="<%= t2l(child.link) %>"><i class="icon-hand-up"></i><%=t2(child.title.strip).strip%></a>
                     </li>
                 <% end %>
