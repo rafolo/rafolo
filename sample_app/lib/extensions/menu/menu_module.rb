@@ -13,7 +13,7 @@ module Menu
 
       options = args.extract_options!
 
-      cattr_accessor :title, :link, :menuable, :enabled, :children, :instance_writer => false, :instance_reader => false
+      cattr_accessor :title, :link, :menuable, :enabled, :icon, :order, :children, :instance_writer => false, :instance_reader => false
       self.title = title
       self.link = link
       self.menuable = true
@@ -24,11 +24,24 @@ module Menu
         self.enabled = self.enabled?
       end
 
+      self.icon = 'icon-hand-up'
+      if options.has_key?(:icon)
+        self.icon = options[:icon]
+      end
+      self.order = 1000000
+      if options.has_key?(:order)
+        self.order = options[:order]
+      end
+
       #children
       self.children = []
-      items = options.reject { |key, value| key == :enabled || key == :cssclass }
-      items.each { |key, value| self.children << MenuItem.new(key, value, true) }
-
+      items = options.reject { |key, value| key == :enabled || key == :icon || key == :order }
+      children = items[:children]
+      if children.nil?
+       items.each { |key, value| self.children << MenuItem.new(key, value, true, icon, order) }
+      else
+        self.children = children
+      end
     end
 
     def enabled?

@@ -8,7 +8,7 @@ module MenuExtension
     result = []
     classes.each do |c|
       if (c.respond_to? :menuable)
-        mi = Menu::MenuItem.new(c.title, c.link, c.enabled?)
+        mi = Menu::MenuItem.new(c.title, c.link, c.enabled?, c.icon, c.order)
         c.children.each { |i| mi.children << i }
         result << mi
 

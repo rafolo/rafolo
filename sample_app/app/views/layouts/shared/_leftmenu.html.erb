@@ -3,16 +3,16 @@
         <li class="<%= item_css_selected(i, "active")%>">
           <span class="glow"></span>
           <a href="<%=t2l(i.link)%>">
-            <i class="icon-dashboard icon-2x"></i>
+            <i class="<%= i.icon %> icon-2x"></i>
             <span><%= t2(i.title) %></span>
           </a>
         </li>
     <% else %>
-        <li class="dark-nav ">
+        <li class="dark-nav <%= item_css_selected(i, "active")%>">
 
           <span class="glow"></span>
           <a class="accordion-toggle collapsed " data-toggle="collapse" href="#menu_<%= i.title %>">
-            <i class="icon-beaker icon-2x"></i>
+            <i class="<%= i.icon %> icon-2x"></i>
                     <span>
                       <%= t2(i.title) %>
                       <i class="icon-caret-down"></i>
@@ -23,7 +23,7 @@
               <ul id="menu_<%= i.title %>" class="collapse <%= item_css_selected(i, "in")%>">
                 <% i.children.each do |child| %>
                     <li class="<%= item_css_selected(child, "active")%>">
-                      <a href="<%= t2l(child.link) %>"><i class="icon-hand-up"></i><%=t2(child.title.strip).strip%></a>
+                      <a href="<%= t2l(child.link) %>"><i class="<%= child.icon %>"></i><%=t2(child.title.strip).strip%></a>
                     </li>
                 <% end %>
               </ul>

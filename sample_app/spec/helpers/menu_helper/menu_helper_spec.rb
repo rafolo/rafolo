@@ -30,7 +30,7 @@ describe 'Menu Helper' do
     helper.params[:controller] = "map_point"
     helper.params[:action] = "route"
 
-    item = MenuHelper.left_menu.find {|i| i.title == "Maps"}
+    item = MenuHelper.left_menu.find {|i| i.title == "Localisation"}
     item_css_selected(item, "li").should == "li"
 
     child = item.children.find {|i| i.title == "Routes"}
@@ -42,7 +42,7 @@ describe 'Menu Helper' do
     helper.params[:controller] = "map_point"
     helper.params[:action] = "home"
 
-    item = MenuHelper.left_menu.find {|i| i.title == "Maps"}
+    item = MenuHelper.left_menu.find {|i| i.title == "Localisation"}
     child = item.children.each {|i| item_css_selected(i, "active").should == nil}
   end
 
