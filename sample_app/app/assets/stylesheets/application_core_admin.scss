@@ -2356,7 +2356,8 @@ input[type="button"].btn-block {
     overflow: hidden;
     background-color: #e5e5e5; }
   /* line 63, /home/andrei/core-admin-release/core-admin/source/stylesheets/bootstrap/_dropdowns.scss */
-  .dropdown-menu > li > a {
+  /*.dropdown-menu > li > a {*/
+  .dropdown-menu > li {
     display: block;
     padding: 3px 20px;
     clear: both;
