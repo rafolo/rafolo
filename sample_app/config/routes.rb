@@ -1,5 +1,16 @@
 SampleApp::Application.routes.draw do
 
+
+  get "settings/index"
+
+  get "tasks/index"
+
+  get "fuel/index"
+
+  get "worksheet/index"
+
+  get "comments/index"
+
   scope "/api" do
     resources :alarms
   end
@@ -23,6 +34,10 @@ SampleApp::Application.routes.draw do
   get "credit_card/index"
 
   get "credit_card/transactions"
+
+  get "reports/index"
+
+  get "safeguard/index"
 
   resources :users do
     member do

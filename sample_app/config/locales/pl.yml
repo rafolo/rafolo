@@ -3,10 +3,21 @@
 
 pl:
   #menu
+  Localisation: Lokalizacja
+  Alarms: Alarmy
   Payments: Płatności
   Default: Domyślny
+  Transactions: Transakcje
   Maps: Mapy
   Points: Punkty
+  Routes: Trasy
+  Reports: Raporty
+  Safeguard: Ochrona
+  Comments: Wiadomości
+  "Work sheet": Czas pracy
+  Fuel: Paliwo
+  Tasks: Zadania
+  Settings: Ustawienia
 
   Login: Autoryzacja
   Email: E-mail
@@ -14,6 +25,7 @@ pl:
   "Sign in": Logowanie
   "New user?" : Nowy użytkownik?
   "Sign up now!" : "Rejestracja"
+  "Subscription Error" : Bieżąca strona nie wchodzi w skład twojej subscrypcji. Jeśli masz jakieś pytania zadzwoń do nas ...
 
   activerecord:
     attributes:

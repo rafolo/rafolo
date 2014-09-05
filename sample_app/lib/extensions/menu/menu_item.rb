@@ -4,7 +4,7 @@ module Menu
 
     attr_accessor :title, :children, :link, :enabled, :icon, :order
 
-    def initialize t, l, e, i, o
+    def initialize t, l, e, i, o = 1000000
       @title = t
       @link = l
       @enabled = e

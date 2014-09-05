@@ -3,10 +3,21 @@
 
 en:
   #menu
+  Localisation: Localisation
+  Alarms: Alarms
   Payments: Payments
   Default: Default
+  Transactions: Transactions
   Maps: Maps
   Points: Points
+  Routes: Routes
+  Reports: Reports
+  Safeguard: Safeguard
+  Comments: Comments
+  "Work sheet": Work sheet
+  Fuel: Fuel
+  Tasks: Tasks
+  Settings: Settings
 
   #ogin: Logowanie
   Email: E-mail
@@ -14,6 +25,7 @@ en:
   "Sign in": Sign in
   "New user?" : New user?
   "Sign up now!" : Sign up now!
+  "Subscription Error" : You have tried to access a page which is not included in your subscription package. If you have any questions, please call us on ...
 
   activerecord:
     attributes:

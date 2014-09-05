@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe 'Menu Helper' do
   include MenuHelper
+  include Menu
 
   it 'has two menus'  do
 
@@ -46,5 +47,13 @@ describe 'Menu Helper' do
     child = item.children.each {|i| item_css_selected(i, "active").should == nil}
   end
 
-
+  # it "should sort menu items" do
+  #   items = MenuHelper.left_menu
+  #   order = items[0].order
+  #   items.each do |item|
+  #     currentOrder = item.order
+  #     currentOrder.should >= order
+  #     order = currentOrder
+  #   end
+  # end
 end
