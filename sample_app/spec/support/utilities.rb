@@ -1,10 +1,11 @@
 include ApplicationHelper
+include LocalizationHelper
 
 def sign_in(user)
   visit signin_path
   fill_in "session[email]",    with: user.email
   fill_in "session[password]", with: user.password
-  click_button "Sign in"
+  click_button t2(".Sign in")
   # Sign in when not using Capybara.
   cookies[:remember_token] = user.remember_token
 end
