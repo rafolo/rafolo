@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
+
+
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>Logowanie</title>
+
+
+  <!--<link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />-->
+  <link href="/assets/application_core_admin.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/assets/custom_core_admin.css" media="screen" rel="stylesheet" type="text/css">
+  <!--<link href="/assets/custom.css.scss" media="screen" rel="stylesheet" type="text/css" />-->
+  <script src="/assets/application.js" type="text/javascript"></script>
+
+
+  
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Core Admin</a>
+
+
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-collapse-top">
+    <div class="navbar-right">
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="cdrop active"><a href="/">Home</a></li>
+        <li class="cdrop active"><a href="/help?locale=pl">Help</a></li>
+            <li class="cdrop active"><a href="/signin?locale=pl">Sign in</a></li>
+        <li class="dropdown cdrop">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
+  <ul class="dropdown-menu">
+    <li><a href="/sessions/new?locale=en">EN</a></li>
+    <li><a href="/sessions/new?locale=pl">PL</a></li>
+    <li class="divider">
+    <li><a href="/sessions/new?locale=pl">  Default  </a></li>
+  </ul>
+</li>
+
+      </ul>
+
+    </div>
+
+<div class="container">
+
+  <div class="col-md-4 col-md-offset-4">
+
+
+    <div class="padded">
+      <div class="login box" style="margin-top: 80px;">
+
+        <div class="box-header">
+         <!-- <span class="title">Login</span>-->
+          <span class="title">Autoryzacja</span>
+        </div>
+
+        <div class="box-content padded">
+          <form accept-charset="UTF-8" action="/sessions?locale=pl" class="separate-sections" method="post">
+<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+              
+              <div class="input-group addon-left">
+            <span class="input-group-addon" href="#">
+              <i class="icon-envelope"></i>
+            </span>
+                <input id="session_email" name="session[email]" placeholder="E-mail" size="30" type="text" value="rafal_40@pkey.pl">
+              </div>
+
+              <div class="input-group addon-left">
+            <span class="input-group-addon" href="#">
+              <i class="icon-key"></i>
+            </span>
+                <input id="session_password" name="session[password]" placeholder="Hasło" size="30" type="password" value="123456">
+              </div>
+
+              <div>
+                <input class="btn btn-blue btn-block" name="commit" type="submit" value="Logowanie">
+              </div>
+</form>
+          <div>
+            <p>Nowy użytkownik? <a href="/signup?locale=pl">Rejestracja</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <a href="#" class="btn btn-facebook btn-block"><i class="icon-facebook-sign"></i> Facebook</a>
+        </div>
+        <div class="col-md-6">
+          <a href="#" class="btn btn-twitter btn-block"><i class="icon-twitter"></i> Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div></nav>
+</body>
+</html>

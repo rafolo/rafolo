@@ -1,0 +1,2 @@
+module SafeguardHelper
+end
