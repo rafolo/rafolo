@@ -22,9 +22,8 @@ Capybara::Screenshot.register_filename_prefix_formatter(:rspec) do |example|
   # line_number = meta[:line_number]
   # desc = meta[:full_description].gsub(/\W+/, "-")[0..64]
 
-  "fail-#{example.description.gsub(' ', '-').gsub(/^.*\/spec\//,'')}"
+  "fail-#{example.description.gsub(' ', '-').gsub(/^.*\/spec\//, '')}"
 end
-
 
 
 #TODO! Annotate image or path with error desc 2
@@ -48,6 +47,14 @@ Capybara.default_selector = :css
 
 Capybara.register_driver :selenium do |app|
   require 'selenium/webdriver'
-  Selenium::WebDriver::Firefox::Binary.path = "/vagrant/bin/ff.sh"
+
+  if OS.linux?
+    Selenium::WebDriver::Firefox::Binary.path = "/vagrant/bin/ff.sh"
+  elsif OS.mac?
+    Selenium::WebDriver::Firefox::Binary.path = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+  else
+    raise "Unknown Capybara test platform"
+  end
+
   Capybara::Selenium::Driver.new(app, :browser => :firefox)
 end

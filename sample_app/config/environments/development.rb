@@ -35,6 +35,8 @@ SampleApp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.assets.compile = true
+
   #custom settings
 
   #no ALT+TAB anymore - refresh files on change - see: rake watchr
@@ -46,7 +48,7 @@ SampleApp::Application.configure do
 
   #show public/assets/ after /app/assets giving them  this way the h-priority
   #clear browser data too
-  #config.serve_static_assets = false
+  config.serve_static_assets = false
 
 
 end
