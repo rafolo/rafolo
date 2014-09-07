@@ -1,4 +1,5 @@
 require 'spec_helper'
+require Rails.root.join("app/helpers/localization_helper.rb")
 
 describe "Authentication" do
 
@@ -9,7 +10,7 @@ describe "Authentication" do
     visit signin_path
     }
 
-    it { should have_selector('span', text: 'Login') }
+    it { should have_selector('span', text: t2('Login')) }
     it { should have_field('session[email]') }
   end
 
@@ -17,13 +18,13 @@ describe "Authentication" do
     before { visit signin_path }
 
     describe "with invalid information" do
-      before { click_button "Sign in" }
+      before { click_button t2("Sign in") }
 
-      it { should have_selector('title', text: 'Sign in') }
+      it { should have_selector('title', text: t2('Sign in')) }
       it { should have_error_message }
 
       describe "after visiting another page" do
-        before { click_link "Home" }
+        before { click_link t2 ("Home") }
         it { should_not have_error_message }
       end
     end
