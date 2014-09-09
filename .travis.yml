@@ -7,6 +7,7 @@ notifications:
   email:
     - rafal@pkey.pl
     - olgierd.falat@gmail.com
+  slack: rafolo:75NnG2TQXkedDSsODx8fiykp
 
 before_script:
   #- cd sample_app
