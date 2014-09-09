@@ -20,7 +20,7 @@ before_install:
   - sleep 3 # give xvfb some time to start
   - cd sample_app
   - npm install -g protractor
-  - bundle install  --retry 3
+  - travis_retry bundle install
   - npm install
   - webdriver-manager update --standalone
   - webdriver-manager start &
