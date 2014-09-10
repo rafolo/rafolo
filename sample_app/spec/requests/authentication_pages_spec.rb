@@ -61,7 +61,7 @@ describe "Authentication" do
           visit edit_user_path(user)
           fill_in "session[email]", with: user.email
           fill_in "session[password]", with: user.password
-          click_button "Sign in"
+          click_button t2("Sign in")
         end
 
         describe "after signing in" do
