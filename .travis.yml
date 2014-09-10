@@ -7,6 +7,7 @@ notifications:
   email:
     - rafal@pkey.pl
     - olgierd.falat@gmail.com
+  slack: rafolo:75NnG2TQXkedDSsODx8fiykp
 
 before_script:
   #- cd sample_app
@@ -20,7 +21,7 @@ before_install:
   - sleep 3 # give xvfb some time to start
   - cd sample_app
   - npm install -g protractor
-  - bundle install
+  - travis_retry bundle install
   - npm install
   - webdriver-manager update --standalone
   - webdriver-manager start &
