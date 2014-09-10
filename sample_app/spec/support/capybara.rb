@@ -52,7 +52,7 @@ Capybara.register_driver :selenium do |app|
     if (File.exists?("/vagrant/bin/ff.sh")
       Selenium::WebDriver::Firefox::Binary.path = "/vagrant/bin/ff.sh"
     elsif
-      #NOP
+      puts 'Overide this line if needed'
     end
   elsif OS.mac?
     Selenium::WebDriver::Firefox::Binary.path = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
