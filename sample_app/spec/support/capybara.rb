@@ -49,7 +49,11 @@ Capybara.register_driver :selenium do |app|
   require 'selenium/webdriver'
 
   if OS.linux?
-    Selenium::WebDriver::Firefox::Binary.path = "/vagrant/bin/ff.sh"
+    if (File.exists?("/vagrant/bin/ff.sh")
+      Selenium::WebDriver::Firefox::Binary.path = "/vagrant/bin/ff.sh"
+    elsif
+      #NOP
+    end
   elsif OS.mac?
     Selenium::WebDriver::Firefox::Binary.path = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
   else
