@@ -17,6 +17,8 @@ end
 
 def localize_path link
   #TODO! For now we are just appending locale, get if from params
-  link+="?locale=en"
+  #Done just review
+  locale = I18n.locale.to_s
+  link+="?locale=#{locale}"
   return link
 end

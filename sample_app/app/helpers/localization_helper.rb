@@ -2,7 +2,8 @@ module LocalizationHelper
   def translate2(key, options = {})
 
     if (I18n.exists?(key))
-      return I18n.translate(key)
+      translation = I18n.translate(key)
+      return translation
     end
 
     if key[0]==='.'

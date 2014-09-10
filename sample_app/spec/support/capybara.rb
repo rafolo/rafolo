@@ -1,7 +1,17 @@
 require 'capybara-screenshot'
 require 'capybara-screenshot/rspec'
 
-def page! filename=nil
+def opage! filename=nil
+
+  puts "Testing #{page.current_path}"
+
+
+
+  screenshot_and_open_image
+
+end
+
+def spage! filename=nil
 
   puts "Testing #{page.current_path}"
 
@@ -9,9 +19,7 @@ def page! filename=nil
   # default_filename = "#{Rails.root.join("tmp")}/#{path}-#{Time.now.to_s(:number)}.png"
   #
   # filename ||= default_filename
-  #screenshot_and_save_page
-
-  screenshot_and_open_image
+  screenshot_and_save_page
 
 end
 
@@ -22,7 +30,7 @@ Capybara::Screenshot.register_filename_prefix_formatter(:rspec) do |example|
   # line_number = meta[:line_number]
   # desc = meta[:full_description].gsub(/\W+/, "-")[0..64]
 
-  "fail-#{example.description.gsub(' ', '-').gsub(/^.*\/spec\//, '')}"
+  "#{Rails.root.join("tmp")}/capybara/" + "fail-#{example.description.gsub(' ', '-').gsub(/^.*\/spec\//, '')}"
 end
 
 
