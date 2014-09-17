@@ -5,7 +5,7 @@ def opage! filename=nil
 
   puts "Testing #{page.current_path}"
 
-
+  prepare_capybara
 
   screenshot_and_open_image
 
@@ -15,12 +15,21 @@ def spage! filename=nil
 
   puts "Testing #{page.current_path}"
 
+  prepare_capybara
+
   # path = "page" + page.current_path.strip.gsub(/\W+/, '.')
   # default_filename = "#{Rails.root.join("tmp")}/#{path}-#{Time.now.to_s(:number)}.png"
   #
   # filename ||= default_filename
   screenshot_and_save_page
 
+end
+
+#create dir etc.
+def prepare_capybara
+
+  capybara_dir = "#{Rails.root.join("tmp", "capybara")}"
+  FileUtils.mkdir_p(capybara_dir) unless File.exists?(capybara_dir)
 end
 
 #TODO! Annotate image or path with error desc 1

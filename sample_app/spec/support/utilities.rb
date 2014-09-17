@@ -19,6 +19,6 @@ def localize_path link
   #TODO! For now we are just appending locale, get if from params
   #Done just review
   locale = I18n.locale.to_s
-  link+="?locale=#{locale}"
+  link+="?locale=#{locale}" unless link.include?("locale")
   return link
 end

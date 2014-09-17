@@ -12,8 +12,6 @@ namespace :vasabi do
     task :aftersuccess  do |t|
       puts "Happy codding!"
     end
-
   end
-
 
 end

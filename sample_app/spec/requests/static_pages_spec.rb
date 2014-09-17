@@ -69,17 +69,17 @@ describe "Static pages" do
   it "should have the right links on the layouts" do
     visit root_path
     click_link "Sign in"
-    page.should have_selector 'title', text: full_title('Sign in')
+    page.should have_selector 'title', text: full_title(t2('Sign in'))
     #TODO! uncomment
     # click_link "About"
     # page.should have_selector 'title', text: full_title('About Us')
     click_link "Help"
-    page.should have_selector 'title', text: full_title('Help')
+    page.should have_selector 'title', text: full_title(t2('Help'))
     # click_link "Contact"
     # page.should have_selector 'title', text: full_title('Contact')
     click_link "Home"
     click_link "Sign up now!"
-    page.should have_selector 'span', text: full_title('Sign Up')
+    page.should have_selector 'span', text: full_title(t2('Sign Up'))
     #puts page.html
     click_link "Core Admin" #TODO! to const
     page.should have_selector '.navbar-header', text: 'Core Admin'

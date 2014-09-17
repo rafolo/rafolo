@@ -27,6 +27,12 @@ pl:
   "Sign up now!" : "Rejestracja"
   "Subscription Error" : Bieżąca strona nie wchodzi w skład twojej subscrypcji. Jeśli masz jakieś pytania zadzwoń do nas ...
 
+  date:
+      order:
+        - :day
+        - :month
+        - :year
+
   activerecord:
     attributes:
       user:
