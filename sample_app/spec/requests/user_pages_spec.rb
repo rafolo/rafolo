@@ -62,15 +62,16 @@ describe "User pages" do
     let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
     let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
 
-    before { visit user_path(user)
-             current_path.should user_path(user)
-            }
+    before {
+            visit user_path(user)
+           }
     it {
-
+      current_path.should user_path(user)
       should have_selector('h1', text: user.name)
     }
-    it { spage!
-    opage!
+    it {
+      #spage!
+      #opage!
       should have_selector('title', text: user.name)
     }
 
