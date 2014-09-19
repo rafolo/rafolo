@@ -26,7 +26,7 @@ before_install:
   - webdriver-manager update --standalone
   - webdriver-manager start &
   - travis_retry bower install
-  - bundle exec rackup -p 3000
+  - rackup -p 3000
 
 install: true
 
