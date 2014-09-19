@@ -66,10 +66,11 @@ describe "User pages" do
       sign_in user
       visit user_path(user)
     end
-    it {
-      current_path.should user_path(user)
+
+    #it "debugging ", js: true do TODO! Learn uncomment to debug
+    it do
       should have_selector('h1', text: user.name)
-    }
+    end
     it {
       #spage!
       #opage!
