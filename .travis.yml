@@ -26,6 +26,7 @@ before_install:
   - webdriver-manager update --standalone
   - webdriver-manager start &
   - travis_retry bower install
+  - bundle exec rackup -p 3000
 
 install: true
 
@@ -39,7 +40,7 @@ script:
 #script: "./testscript.sh" #future script commented for now
 script:
   - bundle exec rake vasabi:cis:script
-  - protractor --baseUrl http://vasabi-rafolo.rhcloud.com/
+  - protractor --baseUrl http://127.0.0.1:3000/
 after_script:
   - killall firefox  #Force close for karma start --browsers Firefox --single-run
 after_success:
