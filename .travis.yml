@@ -25,7 +25,7 @@ before_install:
   - travis_retry npm install
   - webdriver-manager update --standalone
   - webdriver-manager start &
-  - bower install
+  - travis_retry bower install
 
 install: true
 
