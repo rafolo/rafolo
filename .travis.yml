@@ -28,7 +28,8 @@ before_install:
   - webdriver-manager start &
   - travis_retry bower install
   - RAILS_ENV=test
-  - bundle exec rake db:setup
+  - bundle exec rake --trace db:migrate test
+  - bundle exec rake --trace db:seed test
   - rackup -p 3000 &
 
 install: true
