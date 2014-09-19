@@ -22,7 +22,7 @@ before_install:
   - cd sample_app
   - npm install -g protractor
   - travis_retry bundle install
-  - npm install
+  - travis_retry npm install
   - webdriver-manager update --standalone
   - webdriver-manager start &
   - bower install
