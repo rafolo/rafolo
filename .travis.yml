@@ -27,7 +27,8 @@ before_install:
   - webdriver-manager update --standalone
   - webdriver-manager start &
   - travis_retry bower install
-  - rackup
+  - rackup -p 3000 &
+  - sleep 10
 
 install: true
 
