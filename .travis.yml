@@ -23,10 +23,10 @@ before_install:
   - npm install -g protractor
   - travis_retry bundle install
   - travis_retry npm install
-  - travis_retry bower install
-  - rackup -p 3000
   - webdriver-manager update --standalone
   - webdriver-manager start &
+  - travis_retry bower install
+  - rackup -p 3000 &
 
 install: true
 
