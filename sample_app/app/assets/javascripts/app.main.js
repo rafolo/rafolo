@@ -7,13 +7,15 @@ window.app = angular.module('app', [
     'ngGrid',
     "ngResource",
     'leaflet-directive',
+    'lib.directives.xchart',
     'app.home',
     'app.about',
     'app.alarm',
     'app.todo',
     'app.mappoint.points',
     'app.mappoint.routes',
-    'app.profile'
+    'app.profile',
+    'app.reports'
 ]);
 
 // Add global "services" (like breeze and Q) to the Ng injector
