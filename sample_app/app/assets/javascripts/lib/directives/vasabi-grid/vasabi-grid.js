@@ -4,7 +4,7 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
         return {
             restrict: 'E',
             require: "^ngController",
-            templateUrl: '/assets/lib/directives/templates/vasabi-grid.html',
+            templateUrl: '/assets/lib/directives/vasabi-grid/templates/vasabi-grid.html',
             scope: { items: '=', cols: '=', selectedItems: '=', totalServerItems: '=', customOptions: '=', pagingOptions: '=', crudCreate: '=', crudRead: '=', crudUpdate: '=', crudDelete: '=', crudReadAll: '=', crudUpdateAll: '='},
             replace: true,
             transclude: false,
@@ -21,9 +21,9 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
 
                 //fixedOptions
                 var fixedColumns = [
-                    {field: 'U', displayName: '', width: 30, enableCellEdit: false, cellTemplate: "/assets/lib/directives/templates/cells/crudUpdateTemplate.html"},
-                    {field: 'D', displayName: '', width: 30, enableCellEdit: false, cellTemplate: "/assets/lib/directives/templates/cells/crudDeleteTemplate.html"},
-                    {field: 'R', displayName: '', width: 30, enableCellEdit: false, cellTemplate: "/assets/lib/directives/templates/cells/crudReadTemplate.html"}
+                    {field: 'U', displayName: '', width: 30, enableCellEdit: false, cellTemplate: "/assets/lib/directives/vasabi-grid/templates/cells/crudUpdateTemplate.html"},
+                    {field: 'D', displayName: '', width: 30, enableCellEdit: false, cellTemplate: "/assets/lib/directives/vasabi-grid/templates/cells/crudDeleteTemplate.html"},
+                    {field: 'R', displayName: '', width: 30, enableCellEdit: false, cellTemplate: "/assets/lib/directives/vasabi-grid/templates/cells/crudReadTemplate.html"}
                 ];
                 $scope.cols = $scope.cols.concat(fixedColumns);
 
@@ -47,8 +47,8 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
                     //pagingOptions: pagingOptions,
                     showFooter: true,
                     //totalServerItems: $scope.totalServerItems, //TODO! Paging scope does not scope
-                    checkboxCellTemplate: "/assets/lib/directives/templates/cells/checkboxCellTemplate.html",
-                    footerTemplate: "/assets/lib/directives/templates/cells/footerTemplate.html"
+                    checkboxCellTemplate: "/assets/lib/directives/vasabi-grid/templates/cells/checkboxCellTemplate.html",
+                    footerTemplate: "/assets/lib/directives/vasabi-grid/templates/cells/footerTemplate.html"
                 };
 
                 $scope.options = {};
@@ -185,12 +185,12 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
             }
         };
 
-    }])
-    //TODO! Belongs sw else
-    .directive("vasabiAlarm", function () {
-        return {
-            restrict: "A",
-            transclude: true,
-            templateUrl: '/assets/lib/directives/vasabi-alarm.html'
-        };
-    });
+    }]);
+//    //TODO! Belongs sw else
+//    .directive("vasabiAlarm", function () {
+//        return {
+//            restrict: "A",
+//            transclude: true,
+//            templateUrl: '/assets/lib/directives/vasabi-alarm.html'
+//        };
+//    });
