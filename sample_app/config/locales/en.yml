@@ -18,8 +18,9 @@ en:
   Fuel: Fuel
   Tasks: Tasks
   Settings: Settings
+  Language: Language
 
-  #ogin: Logowanie
+  #login: Logowanie
   Email: E-mail
   Password: Password
   "Sign in": Sign in
