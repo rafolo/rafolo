@@ -10,6 +10,7 @@ window.app = angular.module('app', [
     'lib.directives',
     'lib.directives.xchart',
     'lib.directives.sparkline',
+    'lib.directives.easy-pie-chart',
     //'lib.directives.functional', directive not included in source control
     'app.home',
     'app.about',

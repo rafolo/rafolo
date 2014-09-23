@@ -26,4 +26,9 @@
 
         $scope.value1 = [5,8,10,24,14,24,23,20,9,5,10,12]; //as an array
         $scope.value2 = "30,19,10,24,24,14,23,20,9,5,10,12"; //as a string
+
+        $scope.value3 = 89;
+        $scope.value4 = 73;
+        $scope.value5 = 33;
+        $scope.value6 = 64;
     }]);

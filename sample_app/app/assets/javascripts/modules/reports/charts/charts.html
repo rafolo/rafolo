@@ -1,28 +1,35 @@
-﻿<div>
-    <div class="container">
-        <div class="box">
-            <div class="box-header"><span class="title">Line XChart:</span></div>
-            <div class="box-content padded">
-                <xchart id='myChart1' class="sine-chart" style="height: 300px" style="height: 300px;" data="data1" type="type1" opts="opts1"></xchart>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="box">
-            <div class="box-header"><span class="title">Bar XChart:</span></div>
-            <div class="box-content padded">
-                <xchart id='myChart2' style="height: 300px;" data="data2" type="type2" opts="opts2"></xchart>
-            </div>
-        </div>
-    </div>
+﻿<div class="container">
     <div class="box">
-        <div class="box-header"><span class="title">Sparkline</span></div>
+        <div class="box-header"><span class="title">Line XChart:</span></div>
         <div class="box-content padded">
-         <sparkline id="sparkline1" ng-model="value1"></sparkline>
+            <xchart id='myChart1' class="sine-chart" style="height: 300px" style="height: 300px;" data="data1" type="type1" opts="opts1"></xchart>
         </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box">
+        <div class="box-header"><span class="title">Bar XChart:</span></div>
         <div class="box-content padded">
-         <sparkline id="sparkline2" ng-model="value2" data-color="blue"></sparkline>
+            <xchart id='myChart2' style="height: 300px;" data="data2" type="type2" opts="opts2"></xchart>
         </div>
+    </div>
+</div>
+<div class="box">
+    <div class="box-header"><span class="title">Sparkline</span></div>
+    <div class="box-content padded">
+     <sparkline id="sparkline1" ng-model="value1"></sparkline>
+    </div>
+    <div class="box-content padded">
+     <sparkline id="sparkline2" ng-model="value2" data-color="blue"></sparkline>
+    </div>
+</div>
+<div class="box">
+    <div class="box-header"><span class="title">Easy Pie charts</span></div>
+    <div class="box-content padded separate-sections" style="text-align: center">
+        <easy-pie-chart id="pie1" ng-model="value3" style="display: inline-block; margin-left: 20px;"></easy-pie-chart>
+        <easy-pie-chart id="pie2" ng-model="value4" data-color="orange" style="display: inline-block; margin-left: 20px;"></easy-pie-chart>
+        <easy-pie-chart id="pie3" ng-model="value5" data-color="green" style="display: inline-block; margin-left: 20px;"></easy-pie-chart>
+        <easy-pie-chart id="pie4" ng-model="value6" data-color="blue" style="display: inline-block; margin-left: 20px;"></easy-pie-chart>
     </div>
 </div>
