@@ -9,7 +9,8 @@ window.app = angular.module('app', [
     'leaflet-directive',
     'lib.directives',
     'lib.directives.xchart',
-    'lib.directives.functional',
+    'lib.directives.sparkline',
+    //'lib.directives.functional', directive not included in source control
     'app.home',
     'app.about',
     'app.alarm',

@@ -21,7 +21,9 @@
         $scope.type2 = "bar";
         $scope.data2 = chartService.getData2();
         $scope.opts2 = { axisPaddingTop: 5, paddingLeft: 20 };
-
         //more examples at:
         //http://tenxer.github.io/xcharts/examples/
+
+        $scope.value1 = [5,8,10,24,14,24,23,20,9,5,10,12]; //as an array
+        $scope.value2 = "30,19,10,24,24,14,23,20,9,5,10,12"; //as a string
     }]);
