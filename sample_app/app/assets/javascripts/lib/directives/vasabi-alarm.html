@@ -8,6 +8,8 @@
     /*}*/
 </style>
 
+<div style="background-color: green;">
+&nbsp;
 <!-- Form 111111111111111111111111111111111111111111111111111111111-->
 <div class="row" ng-cloak class="ng-cloak" ng-controller="Alarm1Controller">
 
@@ -47,7 +49,7 @@
                                     <input name="name" id="text" type="text" class="validate[required]"
                                            data-prompt-position="topLeft" ng-model="selectedItems[0].name" required>
                                     <span class="help-block note" ng-show="myForm.name.$error.required"><i
-                                        class="icon-warning-sign"></i> Please type a value.</span>
+                                            class="icon-warning-sign"></i> Please type a value.</span>
          <span class="help-block note" ng-show="selectedItems[0].serverErrors!=undefined"><i
                  class="icon-warning-sign"></i> {{selectedItems[0].serverErrors | error:"Name"}}</span>
                                 </div>
@@ -119,7 +121,7 @@
     </div>
 </div>
 
-<!--MapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMapMap-->
+<!--Map Map Map Map Map Map Map Map Map Map Map Map Map Map Map Map-->
 <div class="row" ng-cloak class="ng-cloak" ng-controller="AlarmMapController">
 
     <div class="col-md-8 separate-sections">
@@ -245,8 +247,23 @@
         <div class="selectedItems">{{selectedItems2[0].name}}
         </div>
     </div>
+
 </div>
 
+<!--Calendar Calendar Calendar Calendar Calendar Calendar Calendar Calendar-->
+<div class="row" ng-cloak class="ng-cloak" ng-controller="AlarmCalendarController">
 
+    <div class="col-md-9 separate-sections">
+        <div ui-calendar="uiConfig.calendar" ng-model="eventSources" style="background-color: aliceblue;">
+        </div>
 
+        <div class="col-md-3 separate-sections" style="background-color: aliceblue;">
+            <!--Selection-->
+            Placeholder
+        </div>
+    </div>
+
+</div>
+
+</div>
 

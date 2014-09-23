@@ -57,6 +57,11 @@
 //= require charts/sparkline_samples
 
 //= #require debug/live-js/live-js #RK added on will
-
 //= require ng-grid/ng-grid-2.0.11.debug
+
+//= #calendar
+//= require angular-ui-calendar/src/calendar
+//= require fullcalendar/dist/fullcalendar
+//= require fullcalendar/dist/gcal
+
 //= require_tree .

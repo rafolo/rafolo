@@ -7,6 +7,7 @@ window.app = angular.module('app', [
     'ngGrid',
     "ngResource",
     'leaflet-directive',
+    'ui.calendar',
     'lib.directives',
     'lib.directives.xchart',
     'lib.directives.sparkline',

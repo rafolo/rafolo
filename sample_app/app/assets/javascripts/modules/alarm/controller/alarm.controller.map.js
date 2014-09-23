@@ -103,5 +103,6 @@ alarmModule.controller("AlarmMapController", ['$scope', '$log', '$interval', '$t
     }, true);
 
 
+    $scope.eventSources = [];
 }
 ]);

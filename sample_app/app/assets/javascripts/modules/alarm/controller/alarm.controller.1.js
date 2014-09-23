@@ -113,5 +113,6 @@ alarmModule.controller("Alarm1Controller", ['$scope', '$log', '$interval', '$tim
         //angular.extend(this, new VasabiChartBaseController($scope));
        ///angular.extend(this, new VasabiMapBaseController($scope));
 
+
     }
     ]);

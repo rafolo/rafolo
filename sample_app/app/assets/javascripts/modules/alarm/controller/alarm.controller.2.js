@@ -47,5 +47,7 @@ alarmModule.controller("Alarm2Controller", ['$scope', '$log', '$interval', '$tim
    //combo
     angular.extend(this, new AlarmCombo($scope))
 
+    $scope.eventSources = [];
+
 }
 ]);
