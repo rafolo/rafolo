@@ -22,38 +22,32 @@ describe "Unsigned-in pages" do
     #   should have_css('h1', text: "Welcome to the Sample App")
     # end
     it "welcomes users" do
-      should have_xpath('/html/body//h1', text: 'Welcome to the Sample App')
+      should have_xpath('/html/body//h1', text: t2('WelcomeMessage'))
     end
 
     it "has correct gui elements", js: true do
 
       current_path.should eq(root_path)
-      should have_content("Welcome to the Sample App")
+      should have_content(t2("WelcomeMessage"))
     end
 
     describe "menu" do
 
-      it { should have_link('Home') }
-      it { should have_link('Help') }
-      it { should have_link('Sign in') }
+      it { should have_link(t2('Home')) }
+      it { should have_link(t2('Help')) }
+      it { should have_link(t2('Sign in')) }
       # TODO! Add Language combo for unsigned page
 
     end
 
     describe "content" do
-
       it do
-        should have_link('Sign up now!')
+        should have_link(t2('Sign up now!'))
       end
 
       it do
-        should have_css('.btn', text: 'Sign up now!')
+        should have_css('.btn', text: t2('Sign up now!'))
       end
-
-      it do
-        should have_content('This is the home page for the Ruby on Rails Tutorial sample application.')
-      end
-
     end
   end
 

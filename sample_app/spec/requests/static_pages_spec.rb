@@ -7,7 +7,7 @@ describe "Static pages" do
   describe "Home page" do
     before { visit root_path }
     
-    it { should have_selector('h1', text: 'Sample App') }
+    it { should have_selector('h1', text: t2("WelcomeMessage")) }
     it { should have_selector('title', text: full_title('')) }  
     it { should_not have_selector('title', text: 'Dashboard') }
 
@@ -47,8 +47,8 @@ describe "Static pages" do
   describe "Help page" do
     before { visit help_path }
     
-    it { should have_selector('h1', text: 'Help') }
-    it { should have_selector('title', text: full_title('Help')) }   
+    it { should have_selector('h1', text: t2('Help')) }
+    it { should have_selector('title', text: full_title(t2('Help'))) }
   end
 
   describe "About page" do
@@ -68,20 +68,21 @@ describe "Static pages" do
 
   it "should have the right links on the layouts" do
     visit root_path
-    click_link "Sign in"
+    click_link t2("Sign in")
     page.should have_selector 'title', text: full_title(t2('Sign in'))
+
     #TODO! uncomment
     # click_link "About"
     # page.should have_selector 'title', text: full_title('About Us')
-    click_link "Help"
+    click_link t2("Help")
     page.should have_selector 'title', text: full_title(t2('Help'))
-    # click_link "Contact"
-    # page.should have_selector 'title', text: full_title('Contact')
-    click_link "Home"
-    click_link "Sign up now!"
+
+    click_link t2("Home")
+    click_link t2("Sign up now!")
     page.should have_selector 'span', text: full_title(t2('Sign Up'))
+
     #puts page.html
-    click_link "Core Admin" #TODO! to const
-    page.should have_selector '.navbar-header', text: 'Core Admin'
+    click_link "Vasabi" #TODO! to const
+    page.should have_selector '.navbar-header', text: 'Vasabi'
   end
 end

@@ -30,7 +30,7 @@
 <nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">Core Admin</a>
+    <a class="navbar-brand" href="#">Vasabi</a>
 
 
   </div>
@@ -40,12 +40,12 @@
     <div class="navbar-right">
 
       <ul class="nav navbar-nav navbar-left">
-        <li class="cdrop active"><%= link_to "Home", "/" %></li>
-        <li class="cdrop active"><%= link_to "Help", help_path %></li>
+        <li class="cdrop active"><%= link_to t2("Home"), "/" %></li>
+        <li class="cdrop active"><%= link_to t2("Help"), help_path %></li>
         <% if signed_in? %>
-            <li class="cdrop active"><%= link_to "Users", users_path %></li>
-            <li class="cdrop active"><%= link_to "Todo", "#/js" %></li>
-            <li class="cdrop active"><%= link_to "About", "#/about" %></li>
+            <li class="cdrop active"><%= link_to t2("Users"), users_path %></li>
+            <li class="cdrop active"><%= link_to t2("Todo"), "#/js" %></li>
+            <li class="cdrop active"><%= link_to t2("About"), "#/about" %></li>
             <li id="fat-menu" class="dropdown cdrop active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
@@ -55,17 +55,18 @@
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                  <%= link_to t2("Sign out"), signout_path, method: "delete" %>
                 </li>
               </ul>
             </li>
         <% else %>
-            <li class="cdrop active"><%= link_to "Sign in", signin_path %></li>
+            <li class="cdrop active"><%= link_to t2("Sign in"), signin_path %></li>
         <% end %>
         <%=render "shared/localizator"%>
       </ul>
 
     </div>
+  </div>
 </nav>
 <%= yield %>
 

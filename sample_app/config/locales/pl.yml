@@ -2,6 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 pl:
+  WelcomeMessage: Witamy w panelu administracyjnym
   #menu
   Localisation: Lokalizacja
   Alarms: Alarmy
@@ -23,10 +24,16 @@ pl:
   Login: Autoryzacja
   Email: E-mail
   Password: Hasło
+  Home: Start
+  Help: Pomoc
   "Sign in": Logowanie
-  "New user?" : Nowy użytkownik?
-  "Sign up now!" : "Rejestracja"
-  "Subscription Error" : Bieżąca strona nie wchodzi w skład twojej subscrypcji. Jeśli masz jakieś pytania zadzwoń do nas ...
+  "Sign out": Wyloguj
+  Users: Użytkownicy
+  Todo: Zadania
+  About: O programie
+  "New user?": Nowy użytkownik?
+  "Sign up now!": "Rejestracja"
+  "Subscription Error": Bieżąca strona nie wchodzi w skład twojej subscrypcji. Jeśli masz jakieś pytania zadzwoń do nas ...
 
   date:
       order:
