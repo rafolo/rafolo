@@ -4,3 +4,11 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
             templateUrl: '/assets/modules/alarm/alarm.view.html'
         });
     }]);
+
+//TODO! LEARN jak bindowac sie do elementow
+//debugger;
+$( "div" ).css( "border", "13px solid red" );
+$("div").bind("DOMSubtreeModified",function(){
+    allert("changed");
+});
+
