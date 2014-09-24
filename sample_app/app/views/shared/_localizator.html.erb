@@ -1,9 +1,9 @@
 <li class="dropdown cdrop">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t2("Language") %> <b class="caret"></b></a>
   <ul class="dropdown-menu">
-    <li><%= link_to_unless_current "EN", locale: "en" %></li>
-    <li><%= link_to_unless_current "PL", locale: "pl" %></li>
+    <li><%= link_to_unless_current "English", locale: "en" %></li>
+    <li><%= link_to_unless_current "Polski", locale: "pl" %></li>
     <li class="divider"></li>
-    <li><%= link_to_unless_current "  Default  ", locale: "pl" %></li>
+    <li><%= link_to_unless_current t2("Default"), locale: "pl" %></li>
   </ul>
 </li>

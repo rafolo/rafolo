@@ -2365,7 +2365,9 @@ input[type="button"].btn-block {
     line-height: 1.42857;
     color: #333333;
     white-space: nowrap; }
-
+  .dropdown-menu > li > a {
+    padding: 3px 0px !important;
+  }
 /* line 77, /home/andrei/core-admin-release/core-admin/source/stylesheets/bootstrap/_dropdowns.scss */
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   text-decoration: none;

@@ -81,19 +81,7 @@
 
         <!-- Example Standard Navigation -->
         <% if SampleApp::Application.config.show_examples %>
-            <li class="cdrop active"><a href="#">Link</a></li>
-
-            <li class="cdrop"><a href="#">Link</a></li>
-
-            <li class="dropdown cdrop">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
+            <%=render "shared/localizator"%>
         <% end %>
 
       </ul>
