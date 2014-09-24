@@ -53,8 +53,8 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_selector('span', text: 'Sign Up') }
-    it { should have_selector('title', text: full_title('Sign Up')) }
+    it { should have_selector('span', text: t2('Sign up')) }
+    it { should have_selector('title', text: full_title(t2('Sign up'))) }
   end
 
   describe "profile page" do
@@ -140,7 +140,7 @@ describe "User pages" do
 
     before { visit signup_path }
 
-    let(:submit) { "Create my account" }
+    let(:submit) { t2("Create my account") }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -150,8 +150,8 @@ describe "User pages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_selector('title', text: 'Sign Up') }
-        it { should have_content('error') }
+        it { should have_selector('title', text: t2('Sign up')) }
+        it { should have_content(t2('The form contains the following errors')) }
         it { should_not have_content('Password digest') }
       end
     end
@@ -197,17 +197,17 @@ describe "User pages" do
     describe "with invalid information" do
       before { click_button "Save changes" }
 
-      it { should have_content('error') }
+      it { should have_content(t2('The form contains the following errors')) }
     end
 
     describe "with valid information" do
       let(:new_name) { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name", with: new_name
-        fill_in "Email", with: new_email
-        fill_in "Password", with: user.password
-        fill_in "Confirm Password", with: user.password
+        fill_in t2("Name"), with: new_name
+        fill_in t2("Email"), with: new_email
+        fill_in t2("Password"), with: user.password
+        fill_in t2("Confirm Password"), with: user.password
         click_button "Save changes"
       end
 

@@ -26,14 +26,20 @@ pl:
   Password: Hasło
   Home: Start
   Help: Pomoc
-  "Sign in": Logowanie
+  "Sign in": Zaloguj się
   "Sign out": Wyloguj
   Users: Użytkownicy
   Todo: Zadania
   About: O programie
   "New user?": Nowy użytkownik?
-  "Sign up now!": "Rejestracja"
+  "Sign up now!": Zarejestruj się
+  "Sign up": Rejestracja
+  Name: Nazwa
+  "Confirm password": Potwierdż hasło
+  "Create my account": Utwórz konto
+  "Already have an account ?": Masz już konto ?
   "Subscription Error": Bieżąca strona nie wchodzi w skład twojej subscrypcji. Jeśli masz jakieś pytania zadzwoń do nas ...
+  "The form contains the following errors": Formularz zawiera poniższe błędy
 
   date:
       order:
@@ -44,7 +50,28 @@ pl:
   activerecord:
     attributes:
       user:
-        password_digest: "Password"
+        email: E-mail
+        name: Nazwa
+        password_digest: Hasło
+        password_confirmation: Potwierdzenie hasła
+        password: Hasło
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: jest już wykorzystany
+              blank: nie może być pusty
+              invalid: jest błędny
+            password:
+              too_short: jest za krótkie(minimalny rozmiar to 6 znaków)
+            password_digest:
+              blank: nie może być puste
+            password_confirmation:
+              blank: nie może być puste
+            name:
+              blank: nie może być pusta
 
   sessions:
         new:

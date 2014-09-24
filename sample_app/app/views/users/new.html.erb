@@ -1,4 +1,4 @@
-<% provide(:title, t2('Sign Up')) %>
+<% provide(:title, t2('Sign up')) %>
 <div class="container">
 
   <div class="col-md-4 col-md-offset-4">
@@ -8,7 +8,7 @@
       <div class="login box" style="margin-top: 80px;">
 
         <div class="box-header">
-          <span class="title">Sign Up</span>
+          <span class="title"><%= t2("Sign up") %></span>
         </div>
 
         <div class="box-content padded">
@@ -18,38 +18,38 @@
           <span class="input-group-addon" href="#">
             <i class="icon-envelope"></i>
           </span>
-                <%= f.text_field :email, placeholder: 'Email' %>
+                <%= f.text_field :email, placeholder: t2('Email') %>
               </div>
 
               <div class="input-group addon-left">
           <span class="input-group-addon" href="#">
             <i class="icon-user"></i>
           </span>
-                <%= f.text_field :name, placeholder: 'Name' %>
+                <%= f.text_field :name, placeholder: t2('Name') %>
               </div>
 
               <div class="input-group addon-left">
           <span class="input-group-addon" href="#">
             <i class="icon-key"></i>
           </span>
-                <%= f.password_field :password, placeholder: 'Password' %>
+                <%= f.password_field :password, placeholder: t2('Password') %>
               </div>
 
               <div class="input-group addon-left">
           <span class="input-group-addon" href="#">
             <i class="icon-key"></i>
           </span>
-                <%= f.password_field :password_confirmation, placeholder: 'Confirm password' %>
+                <%= f.password_field :password_confirmation, placeholder: t2('Confirm password') %>
               </div>
 
               <div>
-                <%= f.submit "Create my account", class: "btn btn-blue btn-block" %>
+                <%= f.submit t2("Create my account"), class: "btn btn-blue btn-block" %>
               </div>
           <% end %>
 
           <div>
             <a href="<%=signin_path%>">
-              Already have an account? <strong>Sign In</strong>
+              <%= t2("Already have an account ?") %> <strong><%= t2("Sign in")%></strong>.
             </a>
           </div>
         </div>

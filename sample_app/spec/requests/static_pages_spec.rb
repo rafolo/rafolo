@@ -79,7 +79,7 @@ describe "Static pages" do
 
     click_link t2("Home")
     click_link t2("Sign up now!")
-    page.should have_selector 'span', text: full_title(t2('Sign Up'))
+    page.should have_selector 'span', text: full_title(t2('Sign up'))
 
     #puts page.html
     click_link "Vasabi" #TODO! to const
