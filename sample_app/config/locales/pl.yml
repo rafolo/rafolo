@@ -40,6 +40,7 @@ pl:
   "Already have an account ?": Masz już konto ?
   "Subscription Error": Bieżąca strona nie wchodzi w skład twojej subscrypcji. Jeśli masz jakieś pytania zadzwoń do nas ...
   "The form contains the following errors": Formularz zawiera poniższe błędy
+  InvalidEmailPassword: Błędne hasło lub e-mail
 
   date:
       order:

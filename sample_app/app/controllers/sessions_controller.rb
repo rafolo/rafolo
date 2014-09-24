@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       #redirect_to root_path
       redirect_to dashboard_path
     else
-      flash.now[:error] = "Invalid email/password combination"
+      flash.now[:error] = t2("InvalidEmailPassword")
       render 'new'
     end
   end

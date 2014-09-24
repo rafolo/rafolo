@@ -40,6 +40,7 @@ en:
   "Already have an account ?": Already have an account ?
   "Subscription Error" : You have tried to access a page which is not included in your subscription package. If you have any questions, please call us on ...
   "The form contains the following errors": The form contains the following errors
+  InvalidEmailPassword: Invalid email/password combination
 
   activerecord:
     attributes:
