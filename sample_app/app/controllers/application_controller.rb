@@ -11,8 +11,7 @@
     private
 
     def set_locale
-
-      I18n.locale = params[:locale] if params[:locale].present?
+      I18n.locale = params[:locale] || SampleApp::Application.config.i18n.default_locale
       # current_user.locale
       # request.subdomain
       # request.env["HTTP_ACCEPT_LANGUAGE"]
