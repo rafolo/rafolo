@@ -1,6 +1,8 @@
 SampleApp::Application.routes.draw do
 
 
+  get "test/index"
+
   get "settings/index"
 
   get "tasks/index"
