@@ -75,6 +75,7 @@ app.directive('roCoreAdminInit', function() {
                     var children = element.children();
                     console.log(children);
 
+                    debugger;
                     //CHARTS                             //TODO! create subdirective for charts, remove document.ready call as unoptimal
                     coreAdmHorizontalBarCharts.call(this);
                     coreAdmSparklineSamples.call(this);
@@ -84,7 +85,7 @@ app.directive('roCoreAdminInit', function() {
 
                     //CA
                     coreAdmCalendar.call(this);
-                    coreAdmGeneric.call(this);
+                    //coreAdmGeneric.call(this);
                     coreAdmGritter.call(this);
                 });
             });
