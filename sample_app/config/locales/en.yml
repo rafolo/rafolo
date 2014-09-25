@@ -41,6 +41,7 @@ en:
   "Subscription Error" : You have tried to access a page which is not included in your subscription package. If you have any questions, please call us on ...
   "The form contains the following errors": The form contains the following errors
   InvalidEmailPassword: Invalid email/password combination
+  Tests: Tests
 
   activerecord:
     attributes:
