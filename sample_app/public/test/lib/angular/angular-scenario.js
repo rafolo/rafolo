@@ -10867,7 +10867,7 @@ function encodeUriQuery(val, pctEncodeSpaces) {
 
 /**
  * @ngdoc directive
- * @name ng.directives:ngApp
+ * @name ng.directive:ngApp
  *
  * @element ANY
  * @param {angular.Module} ngApp an optional application
@@ -10875,8 +10875,8 @@ function encodeUriQuery(val, pctEncodeSpaces) {
  *
  * @description
  *
- * Use this directives to auto-bootstrap an application. Only
- * one ngApp directives can be used per HTML document. The directives
+ * Use this directive to auto-bootstrap an application. Only
+ * one ngApp directive can be used per HTML document. The directive
  * designates the root of the application and is typically placed
  * at the root of the page.
  *
@@ -10884,7 +10884,7 @@ function encodeUriQuery(val, pctEncodeSpaces) {
  * HTML document you must manually bootstrap them using {@link angular.bootstrap}.
  * Applications cannot be nested.
  *
- * In the example below if the `ngApp` directives were not placed
+ * In the example below if the `ngApp` directive were not placed
  * on the `html` element then the document would not be compiled
  * and the `{{ 1+2 }}` would not be resolved to `3`.
  *
@@ -10950,7 +10950,7 @@ function angularInit(element, bootstrap) {
  * See: {@link guide/bootstrap Bootstrap}
  *
  * Note that ngScenario-based end-to-end tests cannot use this function to bootstrap manually.
- * They must use {@link api/ng.directives:ngApp ngApp}.
+ * They must use {@link api/ng.directive:ngApp ngApp}.
  *
  * @param {Element} element DOM element which is the root of angular application.
  * @param {Array<String|Function|Array>=} modules an array of modules to load into the application.
@@ -11053,7 +11053,7 @@ function assertArgFn(arg, name, acceptArrayAnnotation) {
 /**
  * throw error if the name given is hasOwnProperty
  * @param  {String} name    the name to test
- * @param  {String} context the context in which the name is used, such as module or directives
+ * @param  {String} context the context in which the name is used, such as module or directive
  */
 function assertNotHasOwnProperty(name, context) {
   if (name === 'hasOwnProperty') {
@@ -11147,7 +11147,7 @@ function setupModuleLoader(window) {
      * </pre>
      *
      * However it's more likely that you'll just use
-     * {@link ng.directives:ngApp ngApp} or
+     * {@link ng.directive:ngApp ngApp} or
      * {@link angular.bootstrap} to simplify this process for you.
      *
      * @param {!string} name The name of the module to create or retrieve.
@@ -11317,14 +11317,14 @@ function setupModuleLoader(window) {
 
           /**
            * @ngdoc method
-           * @name angular.Module#directives
+           * @name angular.Module#directive
            * @methodOf angular.Module
            * @param {string|Object} name Directive name, or an object map of directives where the
            *    keys are the names and the values are the factories.
            * @param {Function} directiveFactory Factory function for creating new instance of
            * directives.
            * @description
-           * See {@link ng.$compileProvider#directive $compileProvider.directives()}.
+           * See {@link ng.$compileProvider#directive $compileProvider.directive()}.
            */
           directive: invokeLater('$compileProvider', 'directive'),
 
@@ -11583,8 +11583,8 @@ function publishExternalAPI(angular){
  *
  * ### Methods
  * - `controller(name)` - retrieves the controller of the current element or its parent. By default
- *   retrieves controller associated with the `ngController` directives. If `name` is provided as
- *   camelCase directives name, then the controller for this directives will be retrieved (e.g.
+ *   retrieves controller associated with the `ngController` directive. If `name` is provided as
+ *   camelCase directive name, then the controller for this directive will be retrieved (e.g.
  *   `'ngModel'`).
  * - `injector()` - retrieves the injector of the current element or its parent.
  * - `scope()` - retrieves the {@link api/ng.$rootScope.Scope scope} of the current
@@ -14120,7 +14120,7 @@ function $TemplateCacheProvider() {
  *
  * Compiler related stuff:
  *
- * - "linkFn" - linking fn of a single directives
+ * - "linkFn" - linking fn of a single directive
  * - "nodeLinkFn" - function that aggregates all linking fns for a particular node
  * - "childLinkFn" -  function that aggregates all linking fns for child nodes of a particular node
  * - "compositeLinkFn" - function that aggregates all linking fns for a compilation root (nodeList)
@@ -14142,7 +14142,7 @@ function $TemplateCacheProvider() {
  * instance functions into a single template function which is then returned.
  *
  * The template function can then be used once to produce the view or as it is the case with
- * {@link ng.directives:ngRepeat repeater} many-times, in which
+ * {@link ng.directive:ngRepeat repeater} many-times, in which
  * case each call results in a view that is a DOM clone of the original template.
  *
  <doc:example module="compile">
@@ -14150,10 +14150,10 @@ function $TemplateCacheProvider() {
     <script>
       // declare a new module, and inject the $compileProvider
       angular.module('compile', [], function($compileProvider) {
-        // configure new 'compile' directives by passing a directives
+        // configure new 'compile' directive by passing a directive
         // factory function. The factory function injects the '$compile'
-        $compileProvider.directives('compile', function($compile) {
-          // directives factory creates a link function
+        $compileProvider.directive('compile', function($compile) {
+          // directive factory creates a link function
           return function(scope, element, attrs) {
             scope.$watch(
               function(scope) {
@@ -14272,17 +14272,17 @@ function $CompileProvider($provide) {
 
   /**
    * @ngdoc function
-   * @name ng.$compileProvider#directives
+   * @name ng.$compileProvider#directive
    * @methodOf ng.$compileProvider
    * @function
    *
    * @description
-   * Register a new directives with the compiler.
+   * Register a new directive with the compiler.
    *
-   * @param {string|Object} name Name of the directives in camel-case (i.e. <code>ngBind</code> which
+   * @param {string|Object} name Name of the directive in camel-case (i.e. <code>ngBind</code> which
    *    will match as <code>ng-bind</code>), or an object map of directives where the keys are the
    *    names and the values are the factories.
-   * @param {function|Array} directiveFactory An injectable directives factory function. See
+   * @param {function|Array} directiveFactory An injectable directive factory function. See
    *    {@link guide/directive} for more info.
    * @returns {ng.$compileProvider} Self for chaining.
    */
@@ -14401,8 +14401,8 @@ function $CompileProvider($provide) {
 
       /**
        * @ngdoc function
-       * @name ng.$compile.directives.Attributes#$addClass
-       * @methodOf ng.$compile.directives.Attributes
+       * @name ng.$compile.directive.Attributes#$addClass
+       * @methodOf ng.$compile.directive.Attributes
        * @function
        *
        * @description
@@ -14419,8 +14419,8 @@ function $CompileProvider($provide) {
 
       /**
        * @ngdoc function
-       * @name ng.$compile.directives.Attributes#$removeClass
-       * @methodOf ng.$compile.directives.Attributes
+       * @name ng.$compile.directive.Attributes#$removeClass
+       * @methodOf ng.$compile.directive.Attributes
        * @function
        *
        * @description
@@ -14531,8 +14531,8 @@ function $CompileProvider($provide) {
 
       /**
        * @ngdoc function
-       * @name ng.$compile.directives.Attributes#$observe
-       * @methodOf ng.$compile.directives.Attributes
+       * @name ng.$compile.directive.Attributes#$observe
+       * @methodOf ng.$compile.directive.Attributes
        * @function
        *
        * @description
@@ -14634,7 +14634,7 @@ function $CompileProvider($provide) {
      * @param {DOMElement=} $rootElement If the nodeList is the root of the compilation tree then the
      *        rootElement must be set the jqLite collection of the compile root. This is
      *        needed so that the jqLite collection items can be replaced with widgets.
-     * @param {number=} max directives priority
+     * @param {number=} max directive priority
      * @returns {?function} A composite linking function of all of the matched directives or null.
      */
     function compileNodes(nodeList, transcludeFn, $rootElement, maxPriority, ignoreDirective, previousCompileContext) {
@@ -14711,14 +14711,14 @@ function $CompileProvider($provide) {
 
 
     /**
-     * Looks for directives on the given node and adds them to the directives collection which is
+     * Looks for directives on the given node and adds them to the directive collection which is
      * sorted.
      *
      * @param node Node to search.
      * @param directives An array to which the directives are added to. This array is sorted before
      *        the function returns.
      * @param attrs The shared attrs object which is used to populate the normalized attributes.
-     * @param {number=} maxPriority Max directives priority.
+     * @param {number=} maxPriority Max directive priority.
      */
     function collectDirectives(node, directives, attrs, maxPriority, ignoreDirective) {
       var nodeType = node.nodeType,
@@ -14728,7 +14728,7 @@ function $CompileProvider($provide) {
 
       switch(nodeType) {
         case 1: /* Element */
-          // use the node name: <directives>
+          // use the node name: <directive>
           addDirective(directives,
               directiveNormalize(nodeName_(node).toLowerCase()), 'E', maxPriority, ignoreDirective);
 
@@ -14767,7 +14767,7 @@ function $CompileProvider($provide) {
             }
           }
 
-          // use class as directives
+          // use class as directive
           className = node.className;
           if (isString(className) && className !== '') {
             while (match = CLASS_DIRECTIVE_REGEXP.exec(className)) {
@@ -14803,7 +14803,7 @@ function $CompileProvider($provide) {
     }
 
     /**
-     * Given a node with an directives-start it collects all of the siblings until it find directives-end.
+     * Given a node with an directive-start it collects all of the siblings until it find directive-end.
      * @param node
      * @param attrStart
      * @param attrEnd
@@ -14849,8 +14849,8 @@ function $CompileProvider($provide) {
 
     /**
      * Once the directives have been collected, their compile functions are executed. This method
-     * is responsible for inlining directives templates as well as terminating the application
-     * of the directives if the terminal directives has been reached.
+     * is responsible for inlining directive templates as well as terminating the application
+     * of the directives if the terminal directive has been reached.
      *
      * @param {Array} directives Array of collected directives to execute their compile function.
      *        this needs to be pre-sorted by priority order.
@@ -14860,7 +14860,7 @@ function $CompileProvider($provide) {
      *        scope argument is auto-generated to the new child of the transcluded parent scope.
      * @param {JQLite} jqCollection If we are working on the root of the compile tree then this
      *        argument has the root jqLite array so that we can replace nodes on it.
-     * @param {Object=} originalReplaceDirective An optional directives that will be ignored when compiling
+     * @param {Object=} originalReplaceDirective An optional directive that will be ignored when compiling
      *        the transclusion.
      * @param {Array.<Function>} preLinkFns
      * @param {Array.<Function>} postLinkFns
@@ -14905,7 +14905,7 @@ function $CompileProvider($provide) {
         if (directiveValue = directive.scope) {
           newScopeDirective = newScopeDirective || directive;
 
-          // skip the check for directives with async templates, we'll check the derived sync directives when
+          // skip the check for directives with async templates, we'll check the derived sync directive when
           // the template arrives
           if (!directive.templateUrl) {
             assertNoDuplicate('new/isolated scope', newIsolateScopeDirective, directive, $compileNode);
@@ -14974,7 +14974,7 @@ function $CompileProvider($provide) {
             compileNode = $template[0];
 
             if ($template.length != 1 || compileNode.nodeType !== 1) {
-              throw $compileMinErr('tplrt', "Template for directives '{0}' must have exactly one root element. {1}", directiveName, '');
+              throw $compileMinErr('tplrt', "Template for directive '{0}' must have exactly one root element. {1}", directiveName, '');
             }
 
             replaceWith(jqCollection, $compileNode, compileNode);
@@ -15077,7 +15077,7 @@ function $CompileProvider($provide) {
           }
 
           if (!value && !optional) {
-            throw $compileMinErr('ctreq', "Controller '{0}', required by directives '{1}', can't be found!", require, directiveName);
+            throw $compileMinErr('ctreq', "Controller '{0}', required by directive '{1}', can't be found!", require, directiveName);
           }
           return value;
         } else if (isArray(require)) {
@@ -15137,7 +15137,7 @@ function $CompileProvider($provide) {
                 parentSet = parentGet.assign || function() {
                   // reset the change, or we will throw this exception on every $digest
                   lastValue = scope[scopeName] = parentGet(parentScope);
-                  throw $compileMinErr('nonassign', "Expression '{0}' used with directives '{1}' is non-assignable!",
+                  throw $compileMinErr('nonassign', "Expression '{0}' used with directive '{1}' is non-assignable!",
                       attrs[attrName], newIsolateScopeDirective.name);
                 };
                 lastValue = scope[scopeName] = parentGet(parentScope);
@@ -15168,7 +15168,7 @@ function $CompileProvider($provide) {
               }
 
               default: {
-                throw $compileMinErr('iscp', "Invalid isolate scope definition for directives '{0}'. Definition: {... {1}: '{2}' ...}",
+                throw $compileMinErr('iscp', "Invalid isolate scope definition for directive '{0}'. Definition: {... {1}: '{2}' ...}",
                     newIsolateScopeDirective.name, scopeName, definition);
               }
             }
@@ -15235,18 +15235,18 @@ function $CompileProvider($provide) {
 
 
     /**
-     * looks up the directives and decorates it with exception handling and proper parameters. We
+     * looks up the directive and decorates it with exception handling and proper parameters. We
      * call this the boundDirective.
      *
-     * @param {string} name name of the directives to look up.
-     * @param {string} location The directives must be found in specific format.
+     * @param {string} name name of the directive to look up.
+     * @param {string} location The directive must be found in specific format.
      *   String containing any of theses characters:
      *
      *   * `E`: element name
      *   * `A': attribute
      *   * `C`: class
      *   * `M`: comment
-     * @returns true if directives was added.
+     * @returns true if directive was added.
      */
     function addDirective(tDirectives, name, location, maxPriority, ignoreDirective, startAttrName, endAttrName) {
       if (name === ignoreDirective) return null;
@@ -15277,7 +15277,7 @@ function $CompileProvider($provide) {
      * The desired effect is to have both of the attributes present.
      *
      * @param {object} dst destination attributes (original DOM)
-     * @param {object} src source attributes (from the directives template)
+     * @param {object} src source attributes (from the directive template)
      */
     function mergeTemplateAttributes(dst, src) {
       var srcAttr = src.$attr,
@@ -15319,7 +15319,7 @@ function $CompileProvider($provide) {
           afterTemplateChildLinkFn,
           beforeTemplateCompileNode = $compileNode[0],
           origAsyncDirective = directives.shift(),
-          // The fact that we have to copy and patch the directives seems wrong!
+          // The fact that we have to copy and patch the directive seems wrong!
           derivedSyncDirective = extend({}, origAsyncDirective, {
             templateUrl: null, transclude: null, replace: null
           }),
@@ -15340,7 +15340,7 @@ function $CompileProvider($provide) {
             compileNode = $template[0];
 
             if ($template.length != 1 || compileNode.nodeType !== 1) {
-              throw $compileMinErr('tplrt', "Template for directives '{0}' must have exactly one root element. {1}",
+              throw $compileMinErr('tplrt', "Template for directive '{0}' must have exactly one root element. {1}",
                   origAsyncDirective.name, templateUrl);
             }
 
@@ -15471,7 +15471,7 @@ function $CompileProvider($provide) {
           }
 
           // we need to interpolate again, in case the attribute value has been updated
-          // (e.g. by another directives's compile function)
+          // (e.g. by another directive's compile function)
           interpolateFn = $interpolate(attr[name], true, getTrustedContext(node, name));
 
           // if attribute was updated so that there is no interpolation going on we don't want to
@@ -15546,12 +15546,12 @@ function $CompileProvider($provide) {
 
 var PREFIX_REGEXP = /^(x[\:\-_]|data[\:\-_])/i;
 /**
- * Converts all accepted directives format into proper directives name.
+ * Converts all accepted directives format into proper directive name.
  * All of these will become 'myDirective':
  *   my:Directive
- *   my-directives
- *   x-my-directives
- *   data-my:directives
+ *   my-directive
+ *   x-my-directive
+ *   data-my:directive
  *
  * Also there is special case for Moz prefix starting with upper case letter.
  * @param name Name to normalize
@@ -15562,10 +15562,10 @@ function directiveNormalize(name) {
 
 /**
  * @ngdoc object
- * @name ng.$compile.directives.Attributes
+ * @name ng.$compile.directive.Attributes
  * @description
  *
- * A shared object between directives compile / linking functions which contains normalized DOM element
+ * A shared object between directive compile / linking functions which contains normalized DOM element
  * attributes. The the values reflect current binding state `{{ }}`. The normalization is needed
  * since all of these are treated as equivalent in Angular:
  *
@@ -15574,8 +15574,8 @@ function directiveNormalize(name) {
 
 /**
  * @ngdoc property
- * @name ng.$compile.directives.Attributes#$attr
- * @propertyOf ng.$compile.directives.Attributes
+ * @name ng.$compile.directive.Attributes#$attr
+ * @propertyOf ng.$compile.directive.Attributes
  * @returns {object} A map of DOM element attribute names to the normalized name. This is
  *          needed to do reverse lookup from normalized name back to actual name.
  */
@@ -15583,8 +15583,8 @@ function directiveNormalize(name) {
 
 /**
  * @ngdoc function
- * @name ng.$compile.directives.Attributes#$set
- * @methodOf ng.$compile.directives.Attributes
+ * @name ng.$compile.directive.Attributes#$set
+ * @methodOf ng.$compile.directive.Attributes
  * @function
  *
  * @description
@@ -20283,7 +20283,7 @@ function $RootScopeProvider(){
        * `'Maximum iteration limit exceeded.'` if the number of iterations exceeds 10.
        *
        * Usually, you don't call `$digest()` directly in
-       * {@link ng.directives:ngController controllers} or in
+       * {@link ng.directive:ngController controllers} or in
        * {@link ng.$compileProvider#directive directives}.
        * Instead, you should call {@link ng.$rootScope.Scope#$apply $apply()} (typically from within a
        * {@link ng.$compileProvider#directive directives}), which will force a `$digest()`.
@@ -20431,7 +20431,7 @@ function $RootScopeProvider(){
        * scope is eligible for garbage collection.
        *
        * The `$destroy()` is usually used by directives such as
-       * {@link ng.directives:ngRepeat ngRepeat} for managing the
+       * {@link ng.directive:ngRepeat ngRepeat} for managing the
        * unrolling of the loop.
        *
        * Just before a scope is destroyed, a `$destroy` event is broadcasted on this scope.
@@ -21268,7 +21268,7 @@ function $SceDelegateProvider() {
  * ng.$sce#parse $sce.parseAs} rather than `$parse` to watch attribute bindings, which performs the
  * {@link ng.$sce#getTrusted $sce.getTrusted} behind the scenes on non-constant literals.
  *
- * As an example, {@link ng.directives:ngBindHtml ngBindHtml} uses {@link
+ * As an example, {@link ng.directive:ngBindHtml ngBindHtml} uses {@link
  * ng.$sce#parseAsHtml $sce.parseAsHtml(binding expression)}.  Here's the actual code (slightly
  * simplified):
  *
@@ -21284,7 +21284,7 @@ function $SceDelegateProvider() {
  *
  * ## Impact on loading templates
  *
- * This applies both to the {@link ng.directives:ngInclude `ng-include`} directives as well as
+ * This applies both to the {@link ng.directive:ngInclude `ng-include`} directive as well as
  * `templateUrl`'s specified by {@link guide/directive directives}.
  *
  * By default, Angular only loads templates from the same domain and protocol as the application
@@ -21328,7 +21328,7 @@ function $SceDelegateProvider() {
  *
  * | Context             | Notes          |
  * |---------------------|----------------|
- * | `$sce.HTML`         | For HTML that's safe to source into the application.  The {@link ng.directives:ngBindHtml ngBindHtml} directives uses this context for bindings. |
+ * | `$sce.HTML`         | For HTML that's safe to source into the application.  The {@link ng.directive:ngBindHtml ngBindHtml} directive uses this context for bindings. |
  * | `$sce.CSS`          | For CSS that's safe to source into the application.  Currently unused.  Feel free to use it in your own directives. |
  * | `$sce.URL`          | For URLs that are safe to follow as links.  Currently unused (`<a href=` and `<img src=` sanitize their urls and don't consititute an SCE context. |
  * | `$sce.RESOURCE_URL` | For URLs that are not only safe to follow as links, but whose contens are also safe to include in your application.  Examples include `ng-include`, `src` / `ngSrc` bindings for tags other than `IMG` (e.g. `IFRAME`, `OBJECT`, etc.)  <br><br>Note that `$sce.RESOURCE_URL` makes a stronger statement about the URL than `$sce.URL` does and therefore contexts requiring values trusted for `$sce.RESOURCE_URL` can be used anywhere that values trusted for `$sce.URL` are required. |
@@ -22012,10 +22012,10 @@ function $TimeoutProvider() {
             }
 
             angular.module('time', [])
-              // Register the 'myCurrentTime' directives factory method.
+              // Register the 'myCurrentTime' directive factory method.
               // We inject $timeout and dateFilter service since the factory method is DI.
-              .directives('myCurrentTime', function($timeout, dateFilter) {
-                // return the directives link function. (compile function not needed)
+              .directive('myCurrentTime', function($timeout, dateFilter) {
+                // return the directive link function. (compile function not needed)
                 return function(scope, element, attrs) {
                   var format,  // date format
                   timeoutId; // timeoutId, so that we can cancel the time updates
@@ -22230,7 +22230,7 @@ function urlIsSameOrigin(requestUrl) {
  * it is a global variable. In angular we always refer to it through the
  * `$window` service, so it may be overridden, removed or mocked for testing.
  *
- * Expressions, like the one defined for the `ngClick` directives in the example
+ * Expressions, like the one defined for the `ngClick` directive in the example
  * below, are evaluated with respect to the current scope.  Therefore, there is
  * no risk of inadvertently coding in a dependency on a global value in such an
  * expression.
@@ -23317,15 +23317,15 @@ function ngDirective(directive) {
 }
 
 /**
- * @ngdoc directives
- * @name ng.directives:a
+ * @ngdoc directive
+ * @name ng.directive:a
  * @restrict E
  *
  * @description
  * Modifies the default behavior of the html A tag so that the default action is prevented when
  * the href attribute is empty.
  *
- * This change permits the easy creation of action links with the `ngClick` directives
+ * This change permits the easy creation of action links with the `ngClick` directive
  * without changing the location or causing page reloads, e.g.:
  * `<a href="" ng-click="list.addItem()">Add Item</a>`
  */
@@ -23360,8 +23360,8 @@ var htmlAnchorDirective = valueFn({
 });
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngHref
+ * @ngdoc directive
+ * @name ng.directive:ngHref
  * @restrict A
  *
  * @description
@@ -23371,7 +23371,7 @@ var htmlAnchorDirective = valueFn({
  * value. Until Angular replaces the markup the link will be broken
  * and will most likely return a 404 error.
  *
- * The `ngHref` directives solves this problem.
+ * The `ngHref` directive solves this problem.
  *
  * The wrong way to write it:
  * <pre>
@@ -23443,15 +23443,15 @@ var htmlAnchorDirective = valueFn({
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngSrc
+ * @ngdoc directive
+ * @name ng.directive:ngSrc
  * @restrict A
  *
  * @description
  * Using Angular markup like `{{hash}}` in a `src` attribute doesn't
  * work right: The browser will fetch from the URL with the literal
  * text `{{hash}}` until Angular replaces the expression inside
- * `{{hash}}`. The `ngSrc` directives solves this problem.
+ * `{{hash}}`. The `ngSrc` directive solves this problem.
  *
  * The buggy way to write it:
  * <pre>
@@ -23468,15 +23468,15 @@ var htmlAnchorDirective = valueFn({
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngSrcset
+ * @ngdoc directive
+ * @name ng.directive:ngSrcset
  * @restrict A
  *
  * @description
  * Using Angular markup like `{{hash}}` in a `srcset` attribute doesn't
  * work right: The browser will fetch from the URL with the literal
  * text `{{hash}}` until Angular replaces the expression inside
- * `{{hash}}`. The `ngSrcset` directives solves this problem.
+ * `{{hash}}`. The `ngSrcset` directive solves this problem.
  *
  * The buggy way to write it:
  * <pre>
@@ -23493,8 +23493,8 @@ var htmlAnchorDirective = valueFn({
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngDisabled
+ * @ngdoc directive
+ * @name ng.directive:ngDisabled
  * @restrict A
  *
  * @description
@@ -23509,7 +23509,7 @@ var htmlAnchorDirective = valueFn({
  * The HTML specification does not require browsers to preserve the values of boolean attributes
  * such as disabled. (Their presence means true and their absence means false.)
  * This prevents the Angular compiler from retrieving the binding expression.
- * The `ngDisabled` directives solves this problem for the `disabled` attribute.
+ * The `ngDisabled` directive solves this problem for the `disabled` attribute.
  *
  * @example
     <doc:example>
@@ -23533,15 +23533,15 @@ var htmlAnchorDirective = valueFn({
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngChecked
+ * @ngdoc directive
+ * @name ng.directive:ngChecked
  * @restrict A
  *
  * @description
  * The HTML specification does not require browsers to preserve the values of boolean attributes
  * such as checked. (Their presence means true and their absence means false.)
  * This prevents the Angular compiler from retrieving the binding expression.
- * The `ngChecked` directives solves this problem for the `checked` attribute.
+ * The `ngChecked` directive solves this problem for the `checked` attribute.
  * @example
     <doc:example>
       <doc:source>
@@ -23564,15 +23564,15 @@ var htmlAnchorDirective = valueFn({
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngReadonly
+ * @ngdoc directive
+ * @name ng.directive:ngReadonly
  * @restrict A
  *
  * @description
  * The HTML specification does not require browsers to preserve the values of boolean attributes
  * such as readonly. (Their presence means true and their absence means false.)
  * This prevents the Angular compiler from retrieving the binding expression.
- * The `ngReadonly` directives solves this problem for the `readonly` attribute.
+ * The `ngReadonly` directive solves this problem for the `readonly` attribute.
  * @example
     <doc:example>
       <doc:source>
@@ -23595,15 +23595,15 @@ var htmlAnchorDirective = valueFn({
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngSelected
+ * @ngdoc directive
+ * @name ng.directive:ngSelected
  * @restrict A
  *
  * @description
  * The HTML specification does not require browsers to preserve the values of boolean attributes
  * such as selected. (Their presence means true and their absence means false.)
  * This prevents the Angular compiler from retrieving the binding expression.
- * The `ngSelected` directives solves this problem for the `selected` atttribute.
+ * The `ngSelected` directive solves this problem for the `selected` atttribute.
  * @example
     <doc:example>
       <doc:source>
@@ -23628,15 +23628,15 @@ var htmlAnchorDirective = valueFn({
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngOpen
+ * @ngdoc directive
+ * @name ng.directive:ngOpen
  * @restrict A
  *
  * @description
  * The HTML specification does not require browsers to preserve the values of boolean attributes
  * such as open. (Their presence means true and their absence means false.)
  * This prevents the Angular compiler from retrieving the binding expression.
- * The `ngOpen` directives solves this problem for the `open` attribute.
+ * The `ngOpen` directive solves this problem for the `open` attribute.
  *
  * @example
      <doc:example>
@@ -23697,7 +23697,7 @@ forEach(['src', 'srcset', 'href'], function(attrName) {
 
           attr.$set(attrName, value);
 
-          // on IE, if "ng:src" directives declaration is used and "src" attribute doesn't exist
+          // on IE, if "ng:src" directive declaration is used and "src" attribute doesn't exist
           // then calling element.setAttribute('src', 'foo') doesn't do anything, so we need
           // to set the property as well to achieve the desired effect.
           // we use attr[attrName] value since $set can sanitize the url.
@@ -23718,7 +23718,7 @@ var nullFormCtrl = {
 
 /**
  * @ngdoc object
- * @name ng.directives:form.FormController
+ * @name ng.directive:form.FormController
  *
  * @property {boolean} $pristine True if user has not interacted with the form yet.
  * @property {boolean} $dirty True if user has already interacted with the form.
@@ -23735,7 +23735,7 @@ var nullFormCtrl = {
  * `FormController` keeps track of all its controls and nested forms as well as state of them,
  * such as being valid/invalid or dirty/pristine.
  *
- * Each {@link ng.directives:form form} directives creates an instance
+ * Each {@link ng.directive:form form} directive creates an instance
  * of `FormController`.
  *
  */
@@ -23771,8 +23771,8 @@ function FormController(element, attrs) {
 
   /**
    * @ngdoc function
-   * @name ng.directives:form.FormController#$addControl
-   * @methodOf ng.directives:form.FormController
+   * @name ng.directive:form.FormController#$addControl
+   * @methodOf ng.directive:form.FormController
    *
    * @description
    * Register a control with the form.
@@ -23792,8 +23792,8 @@ function FormController(element, attrs) {
 
   /**
    * @ngdoc function
-   * @name ng.directives:form.FormController#$removeControl
-   * @methodOf ng.directives:form.FormController
+   * @name ng.directive:form.FormController#$removeControl
+   * @methodOf ng.directive:form.FormController
    *
    * @description
    * Deregister a control from the form.
@@ -23813,8 +23813,8 @@ function FormController(element, attrs) {
 
   /**
    * @ngdoc function
-   * @name ng.directives:form.FormController#$setValidity
-   * @methodOf ng.directives:form.FormController
+   * @name ng.directive:form.FormController#$setValidity
+   * @methodOf ng.directive:form.FormController
    *
    * @description
    * Sets the validity of a form control.
@@ -23861,8 +23861,8 @@ function FormController(element, attrs) {
 
   /**
    * @ngdoc function
-   * @name ng.directives:form.FormController#$setDirty
-   * @methodOf ng.directives:form.FormController
+   * @name ng.directive:form.FormController#$setDirty
+   * @methodOf ng.directive:form.FormController
    *
    * @description
    * Sets the form to a dirty state.
@@ -23879,8 +23879,8 @@ function FormController(element, attrs) {
 
   /**
    * @ngdoc function
-   * @name ng.directives:form.FormController#$setPristine
-   * @methodOf ng.directives:form.FormController
+   * @name ng.directive:form.FormController#$setPristine
+   * @methodOf ng.directive:form.FormController
    *
    * @description
    * Sets the form to its pristine state.
@@ -23904,12 +23904,12 @@ function FormController(element, attrs) {
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngForm
+ * @ngdoc directive
+ * @name ng.directive:ngForm
  * @restrict EAC
  *
  * @description
- * Nestable alias of {@link ng.directives:form `form`} directives. HTML
+ * Nestable alias of {@link ng.directive:form `form`} directive. HTML
  * does not allow nesting of form elements. It is useful to nest forms, for example if the validity of a
  * sub-group of controls needs to be determined.
  *
@@ -23919,27 +23919,27 @@ function FormController(element, attrs) {
  */
 
  /**
- * @ngdoc directives
- * @name ng.directives:form
+ * @ngdoc directive
+ * @name ng.directive:form
  * @restrict E
  *
  * @description
  * Directive that instantiates
- * {@link ng.directives:form.FormController FormController}.
+ * {@link ng.directive:form.FormController FormController}.
  *
  * If the `name` attribute is specified, the form controller is published onto the current scope under
  * this name.
  *
- * # Alias: {@link ng.directives:ngForm `ngForm`}
+ * # Alias: {@link ng.directive:ngForm `ngForm`}
  *
  * In Angular forms can be nested. This means that the outer form is valid when all of the child
  * forms are valid as well. However, browsers do not allow nesting of `<form>` elements, so
- * Angular provides the {@link ng.directives:ngForm `ngForm`} directives which behaves identically to
+ * Angular provides the {@link ng.directive:ngForm `ngForm`} directive which behaves identically to
  * `<form>` but can be nested.  This allows you to have nested forms, which is very useful when
  * using Angular validation directives in forms that are dynamically generated using the
- * {@link ng.directives:ngRepeat `ngRepeat`} directives. Since you cannot dynamically generate the `name`
+ * {@link ng.directive:ngRepeat `ngRepeat`} directive. Since you cannot dynamically generate the `name`
  * attribute of input elements using interpolation, you have to wrap each set of repeated inputs in an
- * `ngForm` directives and nest these in an outer `form` element.
+ * `ngForm` directive and nest these in an outer `form` element.
  *
  *
  * # CSS classes
@@ -23962,12 +23962,12 @@ function FormController(element, attrs) {
  * You can use one of the following two ways to specify what javascript method should be called when
  * a form is submitted:
  *
- * - {@link ng.directives:ngSubmit ngSubmit} directives on the form element
- * - {@link ng.directives:ngClick ngClick} directives on the first
+ * - {@link ng.directive:ngSubmit ngSubmit} directive on the form element
+ * - {@link ng.directive:ngClick ngClick} directive on the first
   *  button or input field of type submit (input[type=submit])
  *
- * To prevent double execution of the handler, use only one of the {@link ng.directives:ngSubmit ngSubmit}
- * or {@link ng.directives:ngClick ngClick} directives.
+ * To prevent double execution of the handler, use only one of the {@link ng.directive:ngSubmit ngSubmit}
+ * or {@link ng.directive:ngClick ngClick} directives.
  * This is because of the following form submission rules in the HTML specification:
  *
  * - If a form has only one input field then hitting enter in this field triggers form submit
@@ -24081,7 +24081,7 @@ var inputType = {
 
   /**
    * @ngdoc inputType
-   * @name ng.directives:input.text
+   * @name ng.directive:input.text
    *
    * @description
    * Standard HTML text input with angular data binding.
@@ -24158,7 +24158,7 @@ var inputType = {
 
   /**
    * @ngdoc inputType
-   * @name ng.directives:input.number
+   * @name ng.directive:input.number
    *
    * @description
    * Text input with number validation and transformation. Sets the `number` validation
@@ -24229,7 +24229,7 @@ var inputType = {
 
   /**
    * @ngdoc inputType
-   * @name ng.directives:input.url
+   * @name ng.directive:input.url
    *
    * @description
    * Text input with URL validation. Sets the `url` validation error key if the content is not a
@@ -24297,7 +24297,7 @@ var inputType = {
 
   /**
    * @ngdoc inputType
-   * @name ng.directives:input.email
+   * @name ng.directive:input.email
    *
    * @description
    * Text input with email validation. Sets the `email` validation error key if not a valid email
@@ -24365,7 +24365,7 @@ var inputType = {
 
   /**
    * @ngdoc inputType
-   * @name ng.directives:input.radio
+   * @name ng.directive:input.radio
    *
    * @description
    * HTML radio button.
@@ -24406,7 +24406,7 @@ var inputType = {
 
   /**
    * @ngdoc inputType
-   * @name ng.directives:input.checkbox
+   * @name ng.directive:input.checkbox
    *
    * @description
    * HTML checkbox.
@@ -24741,14 +24741,14 @@ function checkboxInputType(scope, element, attr, ctrl) {
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:textarea
+ * @ngdoc directive
+ * @name ng.directive:textarea
  * @restrict E
  *
  * @description
  * HTML textarea element control with angular data-binding. The data-binding and validation
  * properties of this element are exactly the same as those of the
- * {@link ng.directives:input input element}.
+ * {@link ng.directive:input input element}.
  *
  * @param {string} ngModel Assignable angular expression to data-bind to.
  * @param {string=} name Property name of the form under which the control is published.
@@ -24769,8 +24769,8 @@ function checkboxInputType(scope, element, attr, ctrl) {
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:input
+ * @ngdoc directive
+ * @name ng.directive:input
  * @restrict E
  *
  * @description
@@ -24883,7 +24883,7 @@ var VALID_CLASS = 'ng-valid',
 
 /**
  * @ngdoc object
- * @name ng.directives:ngModel.NgModelController
+ * @name ng.directive:ngModel.NgModelController
  *
  * @property {string} $viewValue Actual string value in the view.
  * @property {*} $modelValue The value in the model, that the control is bound to.
@@ -24891,7 +24891,7 @@ var VALID_CLASS = 'ng-valid',
        the control reads value from the DOM.  Each function is called, in turn, passing the value
        through to the next. Used to sanitize / convert the value as well as validation.
        For validation, the parsers should update the validity state using
-       {@link ng.directives:ngModel.NgModelController#$setValidity $setValidity()},
+       {@link ng.directive:ngModel.NgModelController#$setValidity $setValidity()},
        and return `undefined` for invalid values.
 
  *
@@ -24915,7 +24915,7 @@ var VALID_CLASS = 'ng-valid',
  *
  * @description
  *
- * `NgModelController` provides API for the `ng-model` directives. The controller contains
+ * `NgModelController` provides API for the `ng-model` directive. The controller contains
  * services for data-binding, validation, CSS updates, and value formatting and parsing. It
  * purposefully does not contain any logic which deals with DOM rendering or listening to
  * DOM events. Such DOM related logic should be provided by other directives which make use of
@@ -24944,7 +24944,7 @@ var VALID_CLASS = 'ng-valid',
     </file>
     <file name="script.js">
       angular.module('customControl', []).
-        directives('contenteditable', function() {
+        directive('contenteditable', function() {
           return {
             restrict: 'A', // only activate on element attribute
             require: '?ngModel', // get a hold of NgModelController
@@ -25001,9 +25001,9 @@ var VALID_CLASS = 'ng-valid',
  *
  * ## Isolated Scope Pitfall
  *
- * Note that if you have a directives with an isolated scope, you cannot require `ngModel`
+ * Note that if you have a directive with an isolated scope, you cannot require `ngModel`
  * since the model value will be looked up on the isolated scope rather than the outer scope.
- * When the directives updates the model value, calling `ngModel.$setViewValue()` the property
+ * When the directive updates the model value, calling `ngModel.$setViewValue()` the property
  * on the outer scope will not be updated.
  *
  * Here is an example of this situation.  You'll notice that even though both 'input' and 'div'
@@ -25011,7 +25011,7 @@ var VALID_CLASS = 'ng-valid',
  *
  * <example module="badIsolatedDirective">
     <file name="script.js">
-		angular.module('badIsolatedDirective', []).directives('bad', function() {
+		angular.module('badIsolatedDirective', []).directive('bad', function() {
 		  return {
 		    require: 'ngModel',
 		    scope: { },
@@ -25056,28 +25056,28 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
 
   /**
    * @ngdoc function
-   * @name ng.directives:ngModel.NgModelController#$render
-   * @methodOf ng.directives:ngModel.NgModelController
+   * @name ng.directive:ngModel.NgModelController#$render
+   * @methodOf ng.directive:ngModel.NgModelController
    *
    * @description
    * Called when the view needs to be updated. It is expected that the user of the ng-model
-   * directives will implement this method.
+   * directive will implement this method.
    */
   this.$render = noop;
 
   /**
    * @ngdoc function
-   * @name { ng.directives:ngModel.NgModelController#$isEmpty
-   * @methodOf ng.directives:ngModel.NgModelController
+   * @name { ng.directive:ngModel.NgModelController#$isEmpty
+   * @methodOf ng.directive:ngModel.NgModelController
    *
    * @description
    * This is called when we need to determine if the value of the input is empty.
    * 
-   * For instance, the required directives does this to work out if the input has data or not.
+   * For instance, the required directive does this to work out if the input has data or not.
    * The default `$isEmpty` function checks whether the value is `undefined`, `''`, `null` or `NaN`.
    * 
    * You can override this for input directives whose concept of being empty is different to the
-   * default. The `checkboxInputType` directives does this because in its case a value of `false`
+   * default. The `checkboxInputType` directive does this because in its case a value of `false`
    * implies empty.
    */
   this.$isEmpty = function(value) {
@@ -25103,8 +25103,8 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
 
   /**
    * @ngdoc function
-   * @name ng.directives:ngModel.NgModelController#$setValidity
-   * @methodOf ng.directives:ngModel.NgModelController
+   * @name ng.directive:ngModel.NgModelController#$setValidity
+   * @methodOf ng.directive:ngModel.NgModelController
    *
    * @description
    * Change the validity state, and notifies the form when the control changes validity. (i.e. it
@@ -25144,8 +25144,8 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
 
   /**
    * @ngdoc function
-   * @name ng.directives:ngModel.NgModelController#$setPristine
-   * @methodOf ng.directives:ngModel.NgModelController
+   * @name ng.directive:ngModel.NgModelController#$setPristine
+   * @methodOf ng.directive:ngModel.NgModelController
    *
    * @description
    * Sets the control to its pristine state.
@@ -25161,15 +25161,15 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
 
   /**
    * @ngdoc function
-   * @name ng.directives:ngModel.NgModelController#$setViewValue
-   * @methodOf ng.directives:ngModel.NgModelController
+   * @name ng.directive:ngModel.NgModelController#$setViewValue
+   * @methodOf ng.directive:ngModel.NgModelController
    *
    * @description
    * Read a value from view.
    *
    * This method should be called from within a DOM event handler.
-   * For example {@link ng.directives:input input} or
-   * {@link ng.directives:select select} directives call it.
+   * For example {@link ng.directive:input input} or
+   * {@link ng.directive:select select} directives call it.
    *
    * It internally calls all `$parsers` (including validators) and updates the `$modelValue` and the actual model path.
    * Lastly it calls all registered change listeners.
@@ -25231,15 +25231,15 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngModel
+ * @ngdoc directive
+ * @name ng.directive:ngModel
  *
  * @element input
  *
  * @description
- * The `ngModel` directives binds an `input`,`select`, `textarea` (or custom form control) to a
- * property on the scope using {@link ng.directives:ngModel.NgModelController NgModelController},
- * which is created and exposed by this directives.
+ * The `ngModel` directive binds an `input`,`select`, `textarea` (or custom form control) to a
+ * property on the scope using {@link ng.directive:ngModel.NgModelController NgModelController},
+ * which is created and exposed by this directive.
  *
  * `ngModel` is responsible for:
  *
@@ -25248,7 +25248,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
  * - Providing validation behavior (i.e. required, number, email, url).
  * - Keeping the state of the control (valid/invalid, dirty/pristine, validation errors).
  * - Setting related css classes on the element (`ng-valid`, `ng-invalid`, `ng-dirty`, `ng-pristine`).
- * - Registering the control with its parent {@link ng.directives:form form}.
+ * - Registering the control with its parent {@link ng.directive:form form}.
  *
  * Note: `ngModel` will try to bind to the property given by evaluating the expression on the
  * current scope. If the property doesn't already exist on this scope, it will be created
@@ -25260,15 +25260,15 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
  *
  * For basic examples, how to use `ngModel`, see:
  *
- *  - {@link ng.directives:input input}
- *    - {@link ng.directives:input.text text}
- *    - {@link ng.directives:input.checkbox checkbox}
- *    - {@link ng.directives:input.radio radio}
- *    - {@link ng.directives:input.number number}
- *    - {@link ng.directives:input.email email}
- *    - {@link ng.directives:input.url url}
- *  - {@link ng.directives:select select}
- *  - {@link ng.directives:textarea textarea}
+ *  - {@link ng.directive:input input}
+ *    - {@link ng.directive:input.text text}
+ *    - {@link ng.directive:input.checkbox checkbox}
+ *    - {@link ng.directive:input.radio radio}
+ *    - {@link ng.directive:input.number number}
+ *    - {@link ng.directive:input.email email}
+ *    - {@link ng.directive:input.url url}
+ *  - {@link ng.directive:select select}
+ *  - {@link ng.directive:textarea textarea}
  *
  */
 var ngModelDirective = function() {
@@ -25292,14 +25292,14 @@ var ngModelDirective = function() {
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngChange
+ * @ngdoc directive
+ * @name ng.directive:ngChange
  *
  * @description
  * Evaluate given expression when user changes the input.
  * The expression is not evaluated when the value change is coming from the model.
  *
- * Note, this directives requires `ngModel` to be present.
+ * Note, this directive requires `ngModel` to be present.
  *
  * @element input
  * @param {expression} ngChange {@link guide/expression Expression} to evaluate upon change
@@ -25379,8 +25379,8 @@ var requiredDirective = function() {
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngList
+ * @ngdoc directive
+ * @name ng.directive:ngList
  *
  * @description
  * Text input that converts between a delimited string and an array of strings. The delimiter
@@ -25468,8 +25468,8 @@ var ngListDirective = function() {
 
 var CONSTANT_VALUE_REGEXP = /^(true|false|\d+)$/;
 /**
- * @ngdoc directives
- * @name ng.directives:ngValue
+ * @ngdoc directive
+ * @name ng.directive:ngValue
  *
  * @description
  * Binds the given expression to the value of `input[select]` or `input[radio]`, so
@@ -25537,8 +25537,8 @@ var ngValueDirective = function() {
 };
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngBind
+ * @ngdoc directive
+ * @name ng.directive:ngBind
  * @restrict AC
  *
  * @description
@@ -25554,7 +25554,7 @@ var ngValueDirective = function() {
  * element attribute, it makes the bindings invisible to the user while the page is loading.
  *
  * An alternative solution to this problem would be using the
- * {@link ng.directives:ngCloak ngCloak} directives.
+ * {@link ng.directive:ngCloak ngCloak} directive.
  *
  *
  * @element ANY
@@ -25592,15 +25592,15 @@ var ngBindDirective = ngDirective(function(scope, element, attr) {
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngBindTemplate
+ * @ngdoc directive
+ * @name ng.directive:ngBindTemplate
  *
  * @description
- * The `ngBindTemplate` directives specifies that the element
+ * The `ngBindTemplate` directive specifies that the element
  * text content should be replaced with the interpolation of the template
  * in the `ngBindTemplate` attribute.
  * Unlike `ngBind`, the `ngBindTemplate` can contain multiple `{{` `}}`
- * expressions. This directives is needed since some HTML elements
+ * expressions. This directive is needed since some HTML elements
  * (such as TITLE and OPTION) cannot contain SPAN elements.
  *
  * @element ANY
@@ -25652,8 +25652,8 @@ var ngBindTemplateDirective = ['$interpolate', function($interpolate) {
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngBindHtml
+ * @ngdoc directive
+ * @name ng.directive:ngBindHtml
  *
  * @description
  * Creates a binding that will innerHTML the result of evaluating the `expression` into the current
@@ -25753,15 +25753,15 @@ function classDirective(name, selector) {
 }
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngClass
+ * @ngdoc directive
+ * @name ng.directive:ngClass
  * @restrict AC
  *
  * @description
- * The `ngClass` directives allows you to dynamically set CSS classes on an HTML element by databinding
+ * The `ngClass` directive allows you to dynamically set CSS classes on an HTML element by databinding
  * an expression that represents all classes to be added.
  *
- * The directives won't add duplicate classes if a particular class was already set.
+ * The directive won't add duplicate classes if a particular class was already set.
  *
  * When the expression changes, the previously added classes are removed and only then the
  * new classes are added.
@@ -25777,7 +25777,7 @@ function classDirective(name, selector) {
  *   names of the properties whose values are truthy will be added as css classes to the
  *   element.
  *
- * @example Example that demostrates basic bindings via ngClass directives.
+ * @example Example that demostrates basic bindings via ngClass directive.
    <example>
      <file name="index.html">
        <p ng-class="{strike: strike, bold: bold, red: red}">Map Syntax Example</p>
@@ -25883,7 +25883,7 @@ function classDirective(name, selector) {
 
 
    ## ngClass and pre-existing CSS3 Transitions/Animations
-   The ngClass directives still supports CSS3 Transitions/Animations even if they do not follow the ngAnimate CSS naming structure.
+   The ngClass directive still supports CSS3 Transitions/Animations even if they do not follow the ngAnimate CSS naming structure.
    Therefore, if any CSS3 Transition/Animation styles (outside of ngAnimate) are set on the element, then, if a ngClass animation
    is triggered, the ngClass animation will be skipped so that ngAnimate can allow for the pre-existing transition or animation to
    take over. This restriction allows for ngClass to still work with standard CSS3 Transitions/Animations that are defined
@@ -25892,17 +25892,17 @@ function classDirective(name, selector) {
 var ngClassDirective = classDirective('', true);
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngClassOdd
+ * @ngdoc directive
+ * @name ng.directive:ngClassOdd
  * @restrict AC
  *
  * @description
  * The `ngClassOdd` and `ngClassEven` directives work exactly as
- * {@link ng.directives:ngClass ngClass}, except they work in
+ * {@link ng.directive:ngClass ngClass}, except they work in
  * conjunction with `ngRepeat` and take effect only on odd (even) rows.
  *
- * This directives can be applied only within the scope of an
- * {@link ng.directives:ngRepeat ngRepeat}.
+ * This directive can be applied only within the scope of an
+ * {@link ng.directive:ngRepeat ngRepeat}.
  *
  * @element ANY
  * @param {expression} ngClassOdd {@link guide/expression Expression} to eval. The result
@@ -25940,17 +25940,17 @@ var ngClassDirective = classDirective('', true);
 var ngClassOddDirective = classDirective('Odd', 0);
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngClassEven
+ * @ngdoc directive
+ * @name ng.directive:ngClassEven
  * @restrict AC
  *
  * @description
  * The `ngClassOdd` and `ngClassEven` directives work exactly as
- * {@link ng.directives:ngClass ngClass}, except they work in
+ * {@link ng.directive:ngClass ngClass}, except they work in
  * conjunction with `ngRepeat` and take effect only on odd (even) rows.
  *
- * This directives can be applied only within the scope of an
- * {@link ng.directives:ngRepeat ngRepeat}.
+ * This directive can be applied only within the scope of an
+ * {@link ng.directive:ngRepeat ngRepeat}.
  *
  * @element ANY
  * @param {expression} ngClassEven {@link guide/expression Expression} to eval. The
@@ -25988,16 +25988,16 @@ var ngClassOddDirective = classDirective('Odd', 0);
 var ngClassEvenDirective = classDirective('Even', 1);
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngCloak
+ * @ngdoc directive
+ * @name ng.directive:ngCloak
  * @restrict AC
  *
  * @description
- * The `ngCloak` directives is used to prevent the Angular html template from being briefly
+ * The `ngCloak` directive is used to prevent the Angular html template from being briefly
  * displayed by the browser in its raw (uncompiled) form while your application is loading. Use this
- * directives to avoid the undesirable flicker effect caused by the html template display.
+ * directive to avoid the undesirable flicker effect caused by the html template display.
  *
- * The directives can be applied to the `<body>` element, but the preferred usage is to apply
+ * The directive can be applied to the `<body>` element, but the preferred usage is to apply
  * multiple `ngCloak` directives to small portions of the page to permit progressive rendering
  * of the browser view.
  *
@@ -26011,7 +26011,7 @@ var ngClassEvenDirective = classDirective('Even', 1);
  * </pre>
  *
  * When this css rule is loaded by the browser, all html elements (including their children) that
- * are tagged with the `ngCloak` directives are hidden. When Angular encounters this directives
+ * are tagged with the `ngCloak` directive are hidden. When Angular encounters this directive
  * during the compilation of the template it deletes the `ngCloak` element attribute, making
  * the compiled element visible.
  *
@@ -26021,7 +26021,7 @@ var ngClassEvenDirective = classDirective('Even', 1);
  *
  * Legacy browsers, like IE7, do not provide attribute selector support (added in CSS 2.1) so they
  * cannot match the `[ng\:cloak]` selector. To work around this limitation, you must add the css
- * class `ngCloak` in addition to the `ngCloak` directives as shown in the example below.
+ * class `ngCloak` in addition to the `ngCloak` directive as shown in the example below.
  *
  * @element ANY
  *
@@ -26032,7 +26032,7 @@ var ngClassEvenDirective = classDirective('Even', 1);
         <div id="template2" ng-cloak class="ng-cloak">{{ 'hello IE7' }}</div>
      </doc:source>
      <doc:scenario>
-       it('should remove the template directives and css class', function() {
+       it('should remove the template directive and css class', function() {
          expect(element('.doc-example-live #template1').attr('ng-cloak')).
            not().toBeDefined();
          expect(element('.doc-example-live #template2').attr('ng-cloak')).
@@ -26050,11 +26050,11 @@ var ngCloakDirective = ngDirective({
 });
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngController
+ * @ngdoc directive
+ * @name ng.directive:ngController
  *
  * @description
- * The `ngController` directives attaches a controller class to the view. This is a key aspect of how angular
+ * The `ngController` directive attaches a controller class to the view. This is a key aspect of how angular
  * supports the principles behind the Model-View-Controller design pattern.
  *
  * MVC components in angular:
@@ -26062,7 +26062,7 @@ var ngCloakDirective = ngDirective({
  * * Model — The Model is scope properties; scopes are attached to the DOM where scope properties
  *   are accessed through bindings.
  * * View — The template (HTML with data bindings) that is rendered into the View.
- * * Controller — The `ngController` directives specifies a Controller class; the class contains business
+ * * Controller — The `ngController` directive specifies a Controller class; the class contains business
  *   logic behind the application to decorate the scope with functions and values
  *
  * Note that an alternative way to define controllers is via the {@link ngRoute.$route $route} service.
@@ -26218,8 +26218,8 @@ var ngControllerDirective = [function() {
 }];
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngCsp
+ * @ngdoc directive
+ * @name ng.directive:ngCsp
  * @priority 1000
  *
  * @element html
@@ -26233,14 +26233,14 @@ var ngControllerDirective = [function() {
  * any of these restrictions.
  * 
  * AngularJS uses `Function(string)` generated functions as a speed optimization. Applying the `ngCsp`
- * directives will cause Angular to use CSP compatibility mode. When this mode is on AngularJS will
+ * directive will cause Angular to use CSP compatibility mode. When this mode is on AngularJS will
  * evaluate all expressions up to 30% slower than in non-CSP mode, but no security violations will
  * be raised.
  * 
- * In order to use this feature put the `ngCsp` directives on the root element of the application.
+ * In order to use this feature put the `ngCsp` directive on the root element of the application.
  * 
  * @example
- * This example shows how to apply the `ngCsp` directives to the `html` tag.
+ * This example shows how to apply the `ngCsp` directive to the `html` tag.
    <pre>
      <!doctype html>
      <html ng-app ng-csp>
@@ -26260,11 +26260,11 @@ var ngCspDirective = ['$sniffer', function($sniffer) {
 }];
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngClick
+ * @ngdoc directive
+ * @name ng.directive:ngClick
  *
  * @description
- * The ngClick directives allows you to specify custom behavior when
+ * The ngClick directive allows you to specify custom behavior when
  * an element is clicked.
  *
  * @element ANY
@@ -26289,7 +26289,7 @@ var ngCspDirective = ['$sniffer', function($sniffer) {
    </doc:example>
  */
 /*
- * A directives that allows creation of custom onclick handlers that are defined as angular
+ * A directive that allows creation of custom onclick handlers that are defined as angular
  * expressions and are compiled and executed within the current scope.
  *
  * Events that are handled via these handler are always configured not to propagate further.
@@ -26313,40 +26313,40 @@ forEach(
 );
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngDblclick
+ * @ngdoc directive
+ * @name ng.directive:ngDblclick
  *
  * @description
- * The `ngDblclick` directives allows you to specify custom behavior on a dblclick event.
+ * The `ngDblclick` directive allows you to specify custom behavior on a dblclick event.
  *
  * @element ANY
  * @param {expression} ngDblclick {@link guide/expression Expression} to evaluate upon
  * a dblclick. (The Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngMousedown
+ * @ngdoc directive
+ * @name ng.directive:ngMousedown
  *
  * @description
- * The ngMousedown directives allows you to specify custom behavior on mousedown event.
+ * The ngMousedown directive allows you to specify custom behavior on mousedown event.
  *
  * @element ANY
  * @param {expression} ngMousedown {@link guide/expression Expression} to evaluate upon
  * mousedown. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngMouseup
+ * @ngdoc directive
+ * @name ng.directive:ngMouseup
  *
  * @description
  * Specify custom behavior on mouseup event.
@@ -26356,12 +26356,12 @@ forEach(
  * mouseup. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngMouseover
+ * @ngdoc directive
+ * @name ng.directive:ngMouseover
  *
  * @description
  * Specify custom behavior on mouseover event.
@@ -26371,13 +26371,13 @@ forEach(
  * mouseover. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngMouseenter
+ * @ngdoc directive
+ * @name ng.directive:ngMouseenter
  *
  * @description
  * Specify custom behavior on mouseenter event.
@@ -26387,13 +26387,13 @@ forEach(
  * mouseenter. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngMouseleave
+ * @ngdoc directive
+ * @name ng.directive:ngMouseleave
  *
  * @description
  * Specify custom behavior on mouseleave event.
@@ -26403,13 +26403,13 @@ forEach(
  * mouseleave. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngMousemove
+ * @ngdoc directive
+ * @name ng.directive:ngMousemove
  *
  * @description
  * Specify custom behavior on mousemove event.
@@ -26419,13 +26419,13 @@ forEach(
  * mousemove. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngKeydown
+ * @ngdoc directive
+ * @name ng.directive:ngKeydown
  *
  * @description
  * Specify custom behavior on keydown event.
@@ -26435,13 +26435,13 @@ forEach(
  * keydown. (Event object is available as `$event` and can be interrogated for keyCode, altKey, etc.)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngKeyup
+ * @ngdoc directive
+ * @name ng.directive:ngKeyup
  *
  * @description
  * Specify custom behavior on keyup event.
@@ -26451,13 +26451,13 @@ forEach(
  * keyup. (Event object is available as `$event` and can be interrogated for keyCode, altKey, etc.)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngKeypress
+ * @ngdoc directive
+ * @name ng.directive:ngKeypress
  *
  * @description
  * Specify custom behavior on keypress event.
@@ -26467,13 +26467,13 @@ forEach(
  * keypress. (Event object is available as `$event` and can be interrogated for keyCode, altKey, etc.)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngSubmit
+ * @ngdoc directive
+ * @name ng.directive:ngSubmit
  *
  * @description
  * Enables binding angular expressions to onsubmit events.
@@ -26525,8 +26525,8 @@ forEach(
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngFocus
+ * @ngdoc directive
+ * @name ng.directive:ngFocus
  *
  * @description
  * Specify custom behavior on focus event.
@@ -26536,12 +26536,12 @@ forEach(
  * focus. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngBlur
+ * @ngdoc directive
+ * @name ng.directive:ngBlur
  *
  * @description
  * Specify custom behavior on blur event.
@@ -26551,12 +26551,12 @@ forEach(
  * blur. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngCopy
+ * @ngdoc directive
+ * @name ng.directive:ngCopy
  *
  * @description
  * Specify custom behavior on copy event.
@@ -26566,12 +26566,12 @@ forEach(
  * copy. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngCut
+ * @ngdoc directive
+ * @name ng.directive:ngCut
  *
  * @description
  * Specify custom behavior on cut event.
@@ -26581,12 +26581,12 @@ forEach(
  * cut. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngPaste
+ * @ngdoc directive
+ * @name ng.directive:ngPaste
  *
  * @description
  * Specify custom behavior on paste event.
@@ -26596,16 +26596,16 @@ forEach(
  * paste. (Event object is available as `$event`)
  *
  * @example
- * See {@link ng.directives:ngClick ngClick}
+ * See {@link ng.directive:ngClick ngClick}
  */
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngIf
+ * @ngdoc directive
+ * @name ng.directive:ngIf
  * @restrict A
  *
  * @description
- * The `ngIf` directives removes or recreates a portion of the DOM tree based on an
+ * The `ngIf` directive removes or recreates a portion of the DOM tree based on an
  * {expression}. If the expression assigned to `ngIf` evaluates to a false
  * value then the element is removed from the DOM, otherwise a clone of the
  * element is reinserted into the DOM.
@@ -26709,8 +26709,8 @@ var ngIfDirective = ['$animate', function($animate) {
 }];
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngInclude
+ * @ngdoc directive
+ * @name ng.directive:ngInclude
  * @restrict ECA
  *
  * @description
@@ -26841,8 +26841,8 @@ var ngIfDirective = ['$animate', function($animate) {
 
 /**
  * @ngdoc event
- * @name ng.directives:ngInclude#$includeContentRequested
- * @eventOf ng.directives:ngInclude
+ * @name ng.directive:ngInclude#$includeContentRequested
+ * @eventOf ng.directive:ngInclude
  * @eventType emit on the scope ngInclude was declared in
  * @description
  * Emitted every time the ngInclude content is requested.
@@ -26851,8 +26851,8 @@ var ngIfDirective = ['$animate', function($animate) {
 
 /**
  * @ngdoc event
- * @name ng.directives:ngInclude#$includeContentLoaded
- * @eventOf ng.directives:ngInclude
+ * @name ng.directive:ngInclude#$includeContentLoaded
+ * @eventOf ng.directive:ngInclude
  * @eventType emit on the current ngInclude scope
  * @description
  * Emitted every time the ngInclude content is reloaded.
@@ -26924,17 +26924,17 @@ var ngIncludeDirective = ['$http', '$templateCache', '$anchorScroll', '$compile'
 }];
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngInit
+ * @ngdoc directive
+ * @name ng.directive:ngInit
  * @restrict AC
  *
  * @description
- * The `ngInit` directives allows you to evaluate an expression in the
+ * The `ngInit` directive allows you to evaluate an expression in the
  * current scope.
  *
  * <div class="alert alert-error">
  * The only appropriate use of `ngInit` for aliasing special properties of
- * {@link api/ng.directives:ngRepeat `ngRepeat`}, as seen in the demo below. Besides this case, you
+ * {@link api/ng.directive:ngRepeat `ngRepeat`}, as seen in the demo below. Besides this case, you
  * should use {@link guide/dev_guide.mvc.understanding_controller controllers} rather than `ngInit`
  * to initialize values on a scope.
  * </div>
@@ -26980,13 +26980,13 @@ var ngInitDirective = ngDirective({
 });
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngNonBindable
+ * @ngdoc directive
+ * @name ng.directive:ngNonBindable
  * @restrict AC
  * @priority 1000
  *
  * @description
- * The `ngNonBindable` directives tells Angular not to compile or bind the contents of the current
+ * The `ngNonBindable` directive tells Angular not to compile or bind the contents of the current
  * DOM element. This is useful if the element contains what appears to be Angular directives and
  * bindings but which should be ignored by Angular. This could be the case if you have a site that
  * displays snippets of code. for instance.
@@ -27015,15 +27015,15 @@ var ngInitDirective = ngDirective({
 var ngNonBindableDirective = ngDirective({ terminal: true, priority: 1000 });
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngPluralize
+ * @ngdoc directive
+ * @name ng.directive:ngPluralize
  * @restrict EA
  *
  * @description
  * # Overview
- * `ngPluralize` is a directives that displays messages according to en-US localization rules.
+ * `ngPluralize` is a directive that displays messages according to en-US localization rules.
  * These rules are bundled with angular.js, but can be overridden
- * (see {@link guide/i18n Angular i18n} dev guide). You configure ngPluralize directives
+ * (see {@link guide/i18n Angular i18n} dev guide). You configure ngPluralize directive
  * by specifying the mappings between
  * {@link http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html
  * plural categories} and the strings to be displayed.
@@ -27227,11 +27227,11 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
 }];
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngRepeat
+ * @ngdoc directive
+ * @name ng.directive:ngRepeat
  *
  * @description
- * The `ngRepeat` directives instantiates a template once per item from a collection. Each template
+ * The `ngRepeat` directive instantiates a template once per item from a collection. Each template
  * instance gets its own scope, where the given loop variable is set to the current collection item,
  * and `$index` is set to the item index or key.
  *
@@ -27250,7 +27250,7 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  * # Special repeat start and end points
  * To repeat a series of elements instead of just one parent element, ngRepeat (as well as other ng directives) supports extending
  * the range of the repeater by defining explicit start and end points by using **ng-repeat-start** and **ng-repeat-end** respectively.
- * The **ng-repeat-start** directives works the same as **ng-repeat**, but will repeat all the HTML code (including the tag it's defined on)
+ * The **ng-repeat-start** directive works the same as **ng-repeat**, but will repeat all the HTML code (including the tag it's defined on)
  * up to and including the ending HTML tag where **ng-repeat-end** is placed.
  *
  * The example below makes use of this feature:
@@ -27288,7 +27288,7 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  *   </footer>
  * </pre>
  *
- * The custom start and end points for ngRepeat also support all other HTML directives syntax flavors provided in AngularJS (such
+ * The custom start and end points for ngRepeat also support all other HTML directive syntax flavors provided in AngularJS (such
  * as **data-ng-repeat-start**, **x-ng-repeat-start** and **ng:repeat-start**).
  *
  * @animations
@@ -27639,11 +27639,11 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
 }];
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngShow
+ * @ngdoc directive
+ * @name ng.directive:ngShow
  *
  * @description
- * The `ngShow` directives shows or hides the given HTML element based on the expression
+ * The `ngShow` directive shows or hides the given HTML element based on the expression
  * provided to the ngShow attribute. The element is shown or hidden by removing or adding
  * the `ng-hide` CSS class onto the element. The `.ng-hide` CSS class is predefined
  * in AngularJS and sets the display style to none (using an !important flag).
@@ -27691,7 +27691,7 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
  *
  * ## A note about animations with ngShow
  *
- * Animations in ngShow/ngHide work with the show and hide events that are triggered when the directives expression
+ * Animations in ngShow/ngHide work with the show and hide events that are triggered when the directive expression
  * is true and false. This system works like the animation system present with ngClass except that
  * you must also include the !important flag to override the display property
  * so that you can perform an animation when the element is hidden during the time of the animation.
@@ -27791,11 +27791,11 @@ var ngShowDirective = ['$animate', function($animate) {
 
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngHide
+ * @ngdoc directive
+ * @name ng.directive:ngHide
  *
  * @description
- * The `ngHide` directives shows or hides the given HTML element based on the expression
+ * The `ngHide` directive shows or hides the given HTML element based on the expression
  * provided to the ngHide attribute. The element is shown or hidden by removing or adding
  * the `ng-hide` CSS class onto the element. The `.ng-hide` CSS class is predefined
  * in AngularJS and sets the display style to none (using an !important flag).
@@ -27843,7 +27843,7 @@ var ngShowDirective = ['$animate', function($animate) {
  *
  * ## A note about animations with ngHide
  *
- * Animations in ngShow/ngHide work with the show and hide events that are triggered when the directives expression
+ * Animations in ngShow/ngHide work with the show and hide events that are triggered when the directive expression
  * is true and false. This system works like the animation system present with ngClass, except that
  * you must also include the !important flag to override the display property so
  * that you can perform an animation when the element is hidden during the time of the animation.
@@ -27942,12 +27942,12 @@ var ngHideDirective = ['$animate', function($animate) {
 }];
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngStyle
+ * @ngdoc directive
+ * @name ng.directive:ngStyle
  * @restrict AC
  *
  * @description
- * The `ngStyle` directives allows you to set CSS style on an HTML element conditionally.
+ * The `ngStyle` directive allows you to set CSS style on an HTML element conditionally.
  *
  * @element ANY
  * @param {expression} ngStyle {@link guide/expression Expression} which evals to an
@@ -27989,20 +27989,20 @@ var ngStyleDirective = ngDirective(function(scope, element, attr) {
 });
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngSwitch
+ * @ngdoc directive
+ * @name ng.directive:ngSwitch
  * @restrict EA
  *
  * @description
- * The ngSwitch directives is used to conditionally swap DOM structure on your template based on a scope expression.
+ * The ngSwitch directive is used to conditionally swap DOM structure on your template based on a scope expression.
  * Elements within ngSwitch but without ngSwitchWhen or ngSwitchDefault directives will be preserved at the location
  * as specified in the template.
  *
- * The directives itself works similar to ngInclude, however, instead of downloading template code (or loading it
+ * The directive itself works similar to ngInclude, however, instead of downloading template code (or loading it
  * from the template cache), ngSwitch simply choses one of the nested elements and makes it visible based on which element
  * matches the value obtained from the evaluated expression. In other words, you define a container element
- * (where you place the directives), place an expression on the **on="..." attribute**
- * (or the **ng-switch="..." attribute**), define any inner elements inside of the directives and place
+ * (where you place the directive), place an expression on the **on="..." attribute**
+ * (or the **ng-switch="..." attribute**), define any inner elements inside of the directive and place
  * a when attribute per element. The when attribute is used to inform ngSwitch which element to display when the on
  * expression is evaluated. If a matching expression is not found via a when attribute then an element with the default
  * attribute is displayed.
@@ -28177,14 +28177,14 @@ var ngSwitchDefaultDirective = ngDirective({
 });
 
 /**
- * @ngdoc directives
- * @name ng.directives:ngTransclude
+ * @ngdoc directive
+ * @name ng.directive:ngTransclude
  * @restrict AC
  *
  * @description
- * Directive that marks the insertion point for the transcluded DOM of the nearest parent directives that uses transclusion.
+ * Directive that marks the insertion point for the transcluded DOM of the nearest parent directive that uses transclusion.
  *
- * Any existing content of the element that this directives is placed on will be removed before the transcluded content is inserted.
+ * Any existing content of the element that this directive is placed on will be removed before the transcluded content is inserted.
  *
  * @element ANY
  *
@@ -28198,7 +28198,7 @@ var ngSwitchDefaultDirective = ngDirective({
          }
 
          angular.module('transclude', [])
-          .directives('pane', function(){
+          .directive('pane', function(){
              return {
                restrict: 'E',
                transclude: true,
@@ -28231,8 +28231,8 @@ var ngTranscludeDirective = ngDirective({
   controller: ['$element', '$transclude', function($element, $transclude) {
     if (!$transclude) {
       throw minErr('ngTransclude')('orphan',
-          'Illegal use of ngTransclude directives in the template! ' +
-          'No parent directives that requires a transclusion found. ' +
+          'Illegal use of ngTransclude directive in the template! ' +
+          'No parent directive that requires a transclusion found. ' +
           'Element: {0}',
           startingTag($element));
     }
@@ -28252,13 +28252,13 @@ var ngTranscludeDirective = ngDirective({
 });
 
 /**
- * @ngdoc directives
- * @name ng.directives:script
+ * @ngdoc directive
+ * @name ng.directive:script
  * @restrict E
  *
  * @description
  * Load content of a script tag, with type `text/ng-template`, into `$templateCache`, so that the
- * template can be used by `ngInclude`, `ngView` or directives templates.
+ * template can be used by `ngInclude`, `ngView` or directive templates.
  *
  * @param {'text/ng-template'} type must be set to `'text/ng-template'`
  *
@@ -28298,8 +28298,8 @@ var scriptDirective = ['$templateCache', function($templateCache) {
 
 var ngOptionsMinErr = minErr('ngOptions');
 /**
- * @ngdoc directives
- * @name ng.directives:select
+ * @ngdoc directive
+ * @name ng.directive:select
  * @restrict E
  *
  * @description
@@ -28313,14 +28313,14 @@ var ngOptionsMinErr = minErr('ngOptions');
  *
  * When an item in the `<select>` menu is selected, the array element or object property
  * represented by the selected option will be bound to the model identified by the `ngModel`
- * directives.
+ * directive.
  *
  * Optionally, a single hard-coded `<option>` element, with the value set to an empty string, can
  * be nested into the `<select>` element. This element will then represent the `null` or "not selected"
  * option. See example below for demonstration.
  *
  * Note: `ngOptions` provides iterator facility for `<option>` element which should be used instead
- * of {@link ng.directives:ngRepeat ngRepeat} when you want the
+ * of {@link ng.directive:ngRepeat ngRepeat} when you want the
  * `select` model to be bound to a non-string value. This is because an option element can only
  * be bound to string values at present.
  *
