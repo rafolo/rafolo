@@ -45,6 +45,7 @@ pl:
   InvalidEmailPassword: Błędne hasło lub e-mail
   Tests: Testy
   Dashboard: Panel
+  Search: Szukaj
 
   date:
       order:

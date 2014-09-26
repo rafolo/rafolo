@@ -45,6 +45,7 @@ en:
   InvalidEmailPassword: Invalid email/password combination
   Tests: Tests
   Dashboard: Dashboard
+  Search: Search
 
   activerecord:
     attributes:
