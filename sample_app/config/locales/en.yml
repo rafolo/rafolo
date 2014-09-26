@@ -42,6 +42,7 @@ en:
   "The form contains the following errors": The form contains the following errors
   InvalidEmailPassword: Invalid email/password combination
   Tests: Tests
+  Dashboard: Dashboard
 
   activerecord:
     attributes:

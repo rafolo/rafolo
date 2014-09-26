@@ -42,6 +42,7 @@ pl:
   "The form contains the following errors": Formularz zawiera poniższe błędy
   InvalidEmailPassword: Błędne hasło lub e-mail
   Tests: Testy
+  Dashboard: Panel
 
   date:
       order:
