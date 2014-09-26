@@ -24,9 +24,11 @@ describe "Alarms.js" do
 
       current_path.should eq(alarm_index_path)
 
+
       #should have_link('Default', href: "/credit_card/index?locale=en")
       should have_xpath('//*[@id="breadcrumbs"]/div[2]/span[1]')
       should have_content("Your alarms")
+      should have_content("Alarm")
     end
 
     it "has correct UI lab links" do

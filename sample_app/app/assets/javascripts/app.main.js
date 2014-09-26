@@ -1,5 +1,8 @@
 ﻿/* main: startup script creates the 'todo' module and adds custom Ng directives */
 
+//debugger;
+console.log("Wchode dzo glownego modulu");
+
 // 'app' is the one Angular (Ng) module in this app
 // 'app' module is in global namespace
 window.app = angular.module('app', [
