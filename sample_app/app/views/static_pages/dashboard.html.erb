@@ -1,4 +1,4 @@
-<% provide(:title, 'Dashboard') %>
+<% provide(:title, t2('Dashboard')) %>
 
 <!--RK These are menus for navigation-->
 <% content_for :navigation do %>
@@ -72,13 +72,8 @@ TODO! Delete after tests works/
       <div class="pull-left header">
         <h3 class="title">
           <i class="icon-dashboard"></i>
-          Dashboard
+          <%= t2("Dashboard") %>
         </h3>
-        <h5>
-                <span>
-                  A subtitle can go here
-                </span>
-        </h5>
       </div>
 
       <ul class="list-inline pull-right sparkline-box">
@@ -120,7 +115,7 @@ TODO! Delete after tests works/
 
       <div class="breadcrumb-button">
           <span class="breadcrumb-label">
-            <i class="icon-dashboard"></i> Dashboard
+            <i class="icon-dashboard"></i> <%= t2("Dashboard") %>
           </span>
         <span class="breadcrumb-arrow"><span></span></span>
       </div>
