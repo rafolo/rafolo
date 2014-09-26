@@ -175,7 +175,7 @@ describe "User pages" do
         let(:user) { User.find_by_email("user@example.com") }
 
         it { should have_content(user.name) }
-        it { should have_link('Sign out') }
+        it { should have_link(t2('Sign out')) }
       end
     end
   end
@@ -212,7 +212,7 @@ describe "User pages" do
       end
 
       it { should have_selector('title', text: new_name) }
-      it { should have_link('Sign out', href: localize_path(signout_path)) }
+      it { should have_link(t2('Sign out'), href: localize_path(signout_path)) }
       #TODO! uncomment & Add alert after add
       # it { should have_selector('div.alert.alert-success') }
       specify { user.reload.name.should == new_name }

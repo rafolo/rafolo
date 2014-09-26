@@ -37,10 +37,10 @@ describe "Authentication" do
 
 
       it { should have_selector('span', text: user.email) }
-      it { should have_link('Profile', href: localize_path(user_path(user))) }
-      it { should have_link('Users', href: localize_path(users_path)) }
-      it { should have_link('Sign out', href: localize_path(signout_path)) }
-      it { should_not have_link('Sign in', href: localize_path(signin_path)) }
+      it { should have_link(t2('Profile'), href: localize_path(user_path(user))) }
+      it { should have_link(t2('Users'), href: localize_path(users_path)) }
+      it { should have_link(t2('Sign out'), href: localize_path(signout_path)) }
+      it { should_not have_link(t2('Sign in'), href: localize_path(signin_path)) }
 
       #TODO! Verify logic
       # describe "followed by signout" do

@@ -99,7 +99,6 @@
               <span>
                 <img class="menu-avatar" src="/assets/avatars/avatar1.jpg"/> <span><%= user_friendly_name %>
                 <i class="icon-caret-down"></i></span>
-                <span class="badge badge-dark-red">5</span>
               </span>
           </a>
           <ul class="dropdown-menu">
@@ -118,24 +117,26 @@
 
             <!--Gravatar popup links START-->
             <li><%= link_to user_path(current_user) do %>
-                <i class="icon-user"></i> <span>Profile</span>
+                <i class="icon-user"></i> <span><%= t2("Profile") %></span>
             <% end %>
           </li>
 
             <!--TODO! LEARN! block by linlk_to-->
             <li><%= link_to users_path do %>
-                  <i class="icon-cog"></i> <span>Users</span>
+                  <i class="icon-cog"></i> <span><%= t2("Users") %></span>
               <% end %>
             </li>
 
-            <li><a href="/profile/index/#messages"><i class="icon-envelope"></i> <span>Messages</span>
-              <span class="label label-dark-red pull-right">5</span></a></li>
+            <li>
+                <a href="/profile/index/#messages"><i class="icon-envelope"></i> <span><%= t2("Messages") %></span>
+                </a>
+            </li>
             <li><a id="signout" href="<%= signout_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i>
-              <span>Sign out</span></a>
+              <span><%= t2("Sign out")%></span></a>
             </li>
             <!--TODO! Add test for about link and content, modify about page -->
-            <li><a href="<%= about_path %>" data-method="delete" rel="nofollow"><i class="icon-off"></i>
-              <span>About...</span></a>
+            <li><a href="<%= about_path %>" data-method="delete" rel="nofollow"><i class="icon-info-sign"></i>
+              <span><%= t2("About") %></span></a>
             </li>
           </ul>
           <!--Gravatar popup links END-->
