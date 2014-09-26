@@ -7,8 +7,8 @@ var alarmModule = angular.module('app.alarm', ['lib.directives'])
 
 //TODO! LEARN jak bindowac sie do elementow
 //debugger;
-$("sparkline").css("border", "13px solid red");
-//$("div").bind("DOMSubtreeModified",function(){
+//$(".sparkline").css("border", "13px solid red");
+//$(".sparkline").bind("DOMSubtreeModified",function(){
 //    alert("changed");
 //});
 //

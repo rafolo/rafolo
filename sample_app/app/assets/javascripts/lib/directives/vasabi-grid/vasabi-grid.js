@@ -187,7 +187,7 @@ var libDirectives = angular.module("lib.directives", ["lib.filters"])
 
     }]);
 //    //TODO! Belongs sw else
-//    .directive("vasabiAlarm", function () {
+//    .directives("vasabiAlarm", function () {
 //        return {
 //            restrict: "A",
 //            transclude: true,

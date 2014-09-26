@@ -6,7 +6,7 @@ alarmModule.controller("AlarmMapController", ['$scope', '$log', '$interval', '$t
     $scope.columnDefs2 = [
         { field: 'id', displayName: 'id', enableCellEdit: false},
         { field: 'name', displayName: 'Name', enableCellEditOnFocus: true,
-            editableCellTemplate: "/assets/lib/directives/templates/cells/inputCellEditableTemplate.html", colFilterText: '' },
+            editableCellTemplate: "/assets/lib/directives/vasabi-grid/templates/cells/inputCellEditableTemplate.html", colFilterText: '' },
         { field: 'description', displayName: '?', enableCellEdit: false},
         { field: 'born', displayName: 'Born', enableCellEdit: false, cellFilter: 'datetime' },
         { field: 'active', displayName: 'Active?', enableCellEditOnFocus: true,

@@ -6,13 +6,13 @@ window.app = angular.module('app', [
     'ngRoute',
     'ngGrid',
     "ngResource",
-    'leaflet-directive',
+    'leaflet-directives',
     'ui.calendar',
     'lib.directives',
     'lib.directives.xchart',
     'lib.directives.sparkline',
     'lib.directives.easy-pie-chart',
-    'lib.directives.functional',
+    //'lib.directives.functional',
     'app.home',
     'app.about',
     'app.alarm',
@@ -139,7 +139,7 @@ app.directive('onFocus', function () {
     });
 if (!Modernizr.input.placeholder) {
     // this browser does not support HTML5 placeholders
-    // see http://stackoverflow.com/questions/14777841/angularjs-inputplaceholder-directive-breaking-with-ng-model
+    // see http://stackoverflow.com/questions/14777841/angularjs-inputplaceholder-directives-breaking-with-ng-model
     app.directive('placeholder', function () {
         return {
             restrict: 'A',
