@@ -54,9 +54,9 @@ describe "Static pages" do
   describe "About page" do
     before { visit about_path }
 
-    it { should have_selector('h1', text: 'About Us') }
+    it { should have_selector('h1', text: t2('About Us')) }
 
-    it { should have_selector('title', text: full_title('About Us')) }      
+    it { should have_selector('title', text: full_title(t2('About Us'))) }
   end
 
   describe "Contact page" do
