@@ -3,13 +3,13 @@
 <tr>
   <td><%= micropost.content %></td>
   <td>
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    <%= t2("micropost.posted")%> <%= time_ago_in_words(micropost.created_at) %> <%= t2("micropost.ago")%>.
   </td>
   <td>
   <% if current_user?(micropost.user) %>
         <%= form_for(micropost, :method => :delete) do %>
-            <%= button_tag "Button Text", :type => :submit, :class => "btn btn-xs btn-default" do %>
-                <i class="icon-cog"></i>
+            <%= button_tag "", :type => :submit, :class => "btn btn-xs btn-default" do %>
+                <i class="icon-remove"></i>
             <% end %>
         <% end %>
   <% end %>

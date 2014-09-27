@@ -67,14 +67,14 @@ describe "Authentication" do
         describe "after signing in" do
           it "should render the desired protected page" do
             page.should have_content(t2('Dashboard'))
-            page.should have_content(User.name)
+            page.should have_content(user.name)
           end
 
           describe "when signing in again" do
 
             it "should render the default dashboardpage" do
               page.should have_content(t2('Dashboard'))
-              page.should have_content(User.name)
+              page.should have_content(user.name)
             end
           end
         end

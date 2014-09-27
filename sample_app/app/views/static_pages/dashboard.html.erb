@@ -1,25 +1,49 @@
 <% provide(:title, t2('Dashboard')) %>
 
+<div class="action-nav-normal action-nav-line">
+
+  <div class="row action-nav-row">
+    <div class="col-sm-2 action-nav-button">
+      <a href="<%= user_path(current_user) %>" title="<%= t2("Profile")%>">
+        <i class="icon-user"></i>
+        <span><%= current_user.name %></span>
+      </a>
+    </div>
+
+    <div class="col-sm-2 action-nav-button">
+      <a href="/alarm/index/#/alarm" title="<%= t2("Alarms") %>">
+        <i class="icon-bell-alt"></i>
+        <span><%= t2("Alarms") %></span>
+      </a>
+    </div>
+
+    <div class="col-sm-2 action-nav-button">
+      <a href="<%= users_path %>" title="<%= t2("Users") %>">
+        <i class="icon-user"></i>
+        <span><%= t2("Users") %></span>
+      </a>
+    </div>
+  </div>
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-10">
 
         <div class="box">
-          <div class="box-header">
-            <span class="title"><%= current_user.name %></span>
-          </div>
-
           <div class="box-content">
-                  <%= render 'shared/user_info' %>
-
                   <% if current_user.microposts.any? %>
-                      <h3>Microposts (<%= current_user.microposts.count %>)</h3>
+                    <div class="box-header">
+                      <span class="title"><%= t2("Messages") %></span>
+                      <ul class="box-toolbar">
+                        <li><span class="label label-green">(<%= current_user.microposts.count %>)</span></li>
+                      </ul>
+                    </div>
+
 
                     <table class="table table-normal">
                       <thead>
                       <tr>
-                        <td>Message</td>
-                        <td>Time</td>
+                        <td><%= t2("micropost.text") %></td>
+                        <td><%= t2("micropost.time") %></td>
                         <td style="width: 40px"></td>
                       </tr>
                       </thead>
@@ -35,72 +59,14 @@
                       <%#= will_paginate current_user.microposts %>
                   <% end %>
 
-                  <%= render 'shared/micropost_form' %>
           </div>
         </div>
 
-      </div>
-      <div class="col-md-3">
-        <!-- find me in partials/action_nav_normal -->
-
-        <!--big normal buttons-->
-        <div class="action-nav-normal">
-
-          <div class="row action-nav-row">
-            <div class="col-sm-6 action-nav-button">
-              <a href="#" title="New Project">
-                <i class="icon-file-alt"></i>
-                <span>New Project</span>
-              </a>
-              <span class="triangle-button red"><i class="icon-plus"></i></span>
-            </div>
-
-            <div class="col-sm-6 action-nav-button">
-              <a href="#" title="Messages">
-                <i class="icon-comments-alt"></i>
-                <span>Messages</span>
-              </a>
-              <span class="label label-black">14</span>
-            </div>
-          </div>
-
-          <div class="row action-nav-row">
-            <div class="col-sm-6 action-nav-button">
-              <a href="#" title="Files">
-                <i class="icon-folder-open-alt"></i>
-                <span>Files</span>
-              </a>
-            </div>
-
-            <div class="col-sm-6 action-nav-button">
-              <a href="#" title="Users">
-                <i class="icon-user"></i>
-                <span>Users</span>
-              </a>
-              <span class="triangle-button green"><span class="inner">+3</span></span>
-            </div>
-          </div>
-
-          <div class="row action-nav-row">
-            <div class="col-sm-6 action-nav-button">
-              <a href="#" title="Friends">
-                <i class="icon-facebook-sign"></i>
-                <span>Friends</span>
-              </a>
-            </div>
-
-            <div class="col-sm-6 action-nav-button">
-              <a href="#" title="Followers">
-                <i class="icon-twitter"></i>
-                <span>Followers</span>
-              </a>
-              <span class="triangle-button blue"><span class="inner">+8</span></span>
-            </div>
-          </div>
-
-        </div>
       </div>
 
     </div>
 
+    <%= render 'shared/micropost_form' %>
 
+
+</div>

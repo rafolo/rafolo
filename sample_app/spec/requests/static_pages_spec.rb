@@ -38,7 +38,7 @@ describe "Static pages" do
         #TODO! VErif logic & delete
         # it { should have_link("0 following", href: localize_path(following_user_path(user)) ) }
         # it { should have_link("1 followers", href: localize_path(followers_user_path(user)) )}
-         it { should have_link("view my profile", href: localize_path(user_path(user)) )}
+         it { should have_link(user.name, href: localize_path(user_path(user)) )}
 
       end
     end

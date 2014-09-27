@@ -47,6 +47,8 @@ en:
   Tests: Tests
   Dashboard: Dashboard
   Search: Search
+  Create: Create
+  "New alarm": New alarm
 
   sparkline:
     orders: Orders
@@ -63,3 +65,10 @@ en:
         new:
           Login: "Login"
           description: "..."
+
+  micropost:
+    posted: Posted
+    ago: ago
+    compose: Compose new micropost...
+    text: Text
+    time: Time
