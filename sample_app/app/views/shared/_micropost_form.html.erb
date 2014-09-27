@@ -1,7 +1,20 @@
-<%= form_for(@micropost2) do |f| %>
+<%= form_for(@micropost2, :html => { :class => 'fill-up'}) do |f| %>
   <%= render 'shared/error_messages', object: @micropost2 %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost...", :rows => 3 %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+    <div class="row">
+      <div class="col-lg-6">
+
+        <ul class="padded separate-sections">
+
+          <li class="input">
+            <%= f.text_area :content, placeholder: "Compose new micropost...", :rows => 3 %>
+          </li>
+        </ul>
+          <div class="form-actions">
+            <%= content_tag :button, :type => :submit, :class => "btn btn-blue" do %>
+                Post
+            <% end %>
+          </div>
+
+      </div>
+    </div>
 <% end %>
