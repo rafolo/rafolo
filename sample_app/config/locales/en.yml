@@ -47,6 +47,12 @@ en:
   Dashboard: Dashboard
   Search: Search
 
+  sparkline:
+    orders: Orders
+    reviews: Reviews
+    income: Income
+    new_visits: New visits
+
   activerecord:
     attributes:
       user:
