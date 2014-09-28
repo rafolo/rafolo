@@ -64,6 +64,8 @@ pl:
         password_digest: Hasło
         password_confirmation: Potwierdzenie hasła
         password: Hasło
+      micropost:
+        content: Zawartość
 
     errors:
       models:
@@ -81,6 +83,11 @@ pl:
               blank: nie może być puste
             name:
               blank: nie może być pusta
+
+        micropost:
+          attributes:
+            content:
+              too_long: jest za długa (maksymalnie %{count} znaków)
 
   sessions:
         new:

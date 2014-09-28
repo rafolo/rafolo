@@ -60,6 +60,8 @@ en:
     attributes:
       user:
         password_digest: "Password"
+      micropost:
+        content: Content
 
   sessions:
         new:
