@@ -28,6 +28,10 @@ describe "Static pages" do
         end
       end
 
+      it "should render title icon" do
+        page.should have_selector("h3>i.icon-dashboard")
+      end
+
       describe "follower/following counts" do
         let(:other_user) { FactoryGirl.create(:user) }
         before do

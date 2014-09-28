@@ -342,7 +342,7 @@
       <div class="area-top clearfix">
         <div class="pull-left header">
           <h3 class="title">
-            <i class="icon-dashboard"></i>
+            <i class="<%= yield :selected_menu_icon %>"></i>
             <%= yield :title %>
           </h3>
           <h5>
@@ -390,7 +390,7 @@
 
         <div class="breadcrumb-button blue">
           <span class="breadcrumb-label">
-            <i class="icon-dashboard"></i> <%= yield :title %>
+            <i class="<%= yield :selected_menu_icon %>"></i> <%= yield :title %>
           </span>
           <span class="breadcrumb-arrow"><span></span></span>
         </div>

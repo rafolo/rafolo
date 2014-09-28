@@ -1,7 +1,7 @@
 SampleApp::Application.routes.draw do
 
 
-  get "test/index"
+  get "workshop/index"
 
   get "settings/index"
 

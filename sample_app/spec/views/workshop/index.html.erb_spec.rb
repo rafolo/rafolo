@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "test/index.html.erb" do
+describe "workshop/index.html.erb" do
   pending "add some examples to (or delete) #{__FILE__}"
 end

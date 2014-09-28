@@ -4,6 +4,10 @@ describe 'Menu Helper' do
   include MenuHelper
   include Menu
 
+  before do
+    @view_flow = ActionView::OutputFlow.new
+  end
+
   it 'has two menus'  do
 
     items = MenuHelper.left_menu

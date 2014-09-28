@@ -1,5 +1,6 @@
 include ApplicationHelper
 include LocalizationHelper
+include ContentHelper
 
 def sign_in(user)
   visit signin_path

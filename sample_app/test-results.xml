@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="PhantomJS 1.9.7 (Mac OS X)" package="" timestamp="2014-09-22T14:21:13" id="0" hostname="Olgierds-MacBook-Air.local" tests="3" errors="0" failures="0" time="0.045">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.7 Safari/534.34"/>
+    </properties>
+    <testcase name="should succeed" time="0.026" classname="PhantomJS 1.9.7 (Mac OS X).the home module"/>
+    <testcase name="should call sayHello on app.home.helloWorldService" time="0.003" classname="PhantomJS 1.9.7 (Mac OS X).the home module"/>
+    <testcase name="should start with map point data populated" time="0.016" classname="PhantomJS 1.9.7 (Mac OS X).the mappoint module"/>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+  <testsuite name="Firefox 32.0.0 (Mac OS X 10.9)" package="" timestamp="2014-09-22T14:21:13" id="0" hostname="Olgierds-MacBook-Air.local" tests="3" errors="0" failures="0" time="0.093">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0"/>
+    </properties>
+    <testcase name="should succeed" time="0.044" classname="Firefox 32.0.0 (Mac OS X 10.9).the home module"/>
+    <testcase name="should call sayHello on app.home.helloWorldService" time="0.008" classname="Firefox 32.0.0 (Mac OS X 10.9).the home module"/>
+    <testcase name="should start with map point data populated" time="0.041" classname="Firefox 32.0.0 (Mac OS X 10.9).the mappoint module"/>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>
