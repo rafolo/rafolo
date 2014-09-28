@@ -16,8 +16,8 @@ describe "User pages" do
       visit users_path
     end
 
-    it { should have_selector('title', text: 'All users') }
-    it { should have_selector('h1', text: 'All users') }
+    it { should have_selector('title', text: t2('Users')) }
+    it { should have_selector('h3', text: t2('Users')) }
 
     describe "pagination" do
       # it { should have_selector('div.pagination') }#TODO! Looks different now?
@@ -25,7 +25,7 @@ describe "User pages" do
 
       it "should list each user" do
         User.paginate(page: 1).each do |user|
-          page.should have_selector('li>a', text: user.name)
+          page.should have_selector('div>a', text: user.name)
         end
       end
     end
