@@ -69,7 +69,7 @@ describe "User pages" do
 
     #it "debugging ", js: true do TODO! Learn uncomment to debug
     it do
-      should have_selector('h1', text: user.name)
+      should have_selector('div.news-title a', text: user.name)
     end
     it {
       #spage!

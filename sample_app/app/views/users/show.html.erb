@@ -1,26 +1,28 @@
 <% provide(:title, @user.name) %>
 <% provide(:selected_menu_icon, 'icon-user') %>
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <section>
-      <%= render 'shared/stats' %>
-    </section>
-  </aside>
-  <div class="span8">
-    <%= render 'follow_form' if signed_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
+  <div class="col-md-10">
+    <div class="box">
+      <div class="box-content">
+        <%= render @user %>
+        <div class="box-section">
+          <%= render 'shared/stats' %>
+        </div>
+        <div class=box-section"">
+          <%= render 'follow_form' if signed_in? %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <%= will_paginate @microposts %>
-    <% end %>
+<div class="row">
+  <div class="col-md-10">
+
+    <div class="box">
+      <div class="box-content">
+        <%= render 'shared/user_microposts' %>
+      </div>
+    </div>
   </div>
 </div>

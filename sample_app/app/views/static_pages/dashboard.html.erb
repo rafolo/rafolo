@@ -31,33 +31,7 @@
 
         <div class="box">
           <div class="box-content">
-                  <% if current_user.microposts.any? %>
-                    <div class="box-header">
-                      <span class="title"><%= t2("Messages") %></span>
-                      <ul class="box-toolbar">
-                        <li><span class="label label-green">(<%= current_user.microposts.count %>)</span></li>
-                      </ul>
-                    </div>
-
-
-                    <table class="table table-normal">
-                      <thead>
-                      <tr>
-                        <td><%= t2("micropost.text") %></td>
-                        <td><%= t2("micropost.time") %></td>
-                        <td style="width: 40px"></td>
-                      </tr>
-                      </thead>
-
-                      <tbody>
-                        <%= render current_user.microposts %>
-                      </tbody>
-
-                     </table>
-
-                      <%#= will_paginate current_user.microposts %>
-                  <% end %>
-
+              <%= render 'shared/user_microposts' %>
           </div>
         </div>
 
