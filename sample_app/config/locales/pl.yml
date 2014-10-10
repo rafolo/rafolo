@@ -51,6 +51,8 @@ pl:
   "New alarm": Nowy alarm
   Following: Obserwuje
   following: obserwuje
+  Followers: Obserwujący
+  followers: obserwujący
 
   sparkline:
     orders: Zamówienia

@@ -51,6 +51,8 @@ en:
   "New alarm": New alarm
   Following: Following
   following: following
+  Followers: Followers
+  followers: followers
 
   sparkline:
     orders: Orders
