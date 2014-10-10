@@ -231,8 +231,8 @@ describe "User pages" do
         visit following_user_path(user)
       end
 
-      it { should have_selector('title', text: full_title('Following')) }
-      it { should have_selector('h3', text: 'Following') }
+      it { should have_selector('title', text: full_title(t2('Following'))) }
+      it { should have_selector('h3', text: t2('Following')) }
       it { should have_link(other_user.name, href: localize_path(user_path(other_user))) }
     end
 

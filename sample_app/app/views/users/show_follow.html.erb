@@ -1,30 +1,30 @@
-<%= provide(:title, @title) %>
+<% provide(:title, @title) %>
+<% provide(:selected_menu_icon, 'icon-user') %>
+
 <div class="row">
-  <aside class="span4">
-    <section>
-      <%= gravatar_for @user %>
-      <h1><%= @user.name %></h1>
-      <span><%= link_to "view my profile", @user %></span>
-      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
-    </section>
-    <section>
-      <%= render 'shared/stats' %>
-      <% if @users.any? %>
-        <div class="user_avatars">
-          <% @users.each do |user| %>
-            <%= link_to gravatar_for(user, size: 30), user %>
-          <% end %>
+  <div class="col-md-10">
+    <div class="box">
+      <div class="box-content">
+        <%= render @user %>
+        <div class="box-section">
+          <%= render 'shared/stats' %>
         </div>
-      <% end %>
-    </section>
-  </aside>
-  <div class="span8">
-    <h3><%= @title %></h3>
-    <% if @users.any? %>
-      <ul class="users">
-        <%= render @users %>
-      </ul>
-      <%= will_paginate %>
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>
+
+<% if @users.any? %>
+<div class="row">
+  <div class="col-md-10">
+    <div class="box">
+      <div class="box-content">
+        <%= render @users %>
+      </div>
+      <div>
+        <%= will_paginate %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
