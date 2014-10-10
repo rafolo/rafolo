@@ -15,10 +15,9 @@
     </div>
   </div>
 </div>
-
+<% if current_user.microposts.any? %>
 <div class="row">
   <div class="col-md-10">
-
     <div class="box">
       <div class="box-content">
         <%= render 'shared/user_microposts' %>
@@ -26,3 +25,4 @@
     </div>
   </div>
 </div>
+<% end %>
