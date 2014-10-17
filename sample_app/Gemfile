@@ -4,7 +4,6 @@ gem 'rails', '3.2.19'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.5'
-#gem 'mysql2', '0.3.11'
 
 gem 'rake' #for travis
 
@@ -12,10 +11,8 @@ gem 'rake' #for travis
 #gem 'ruby-debug-ide'
 
 group :development, :test do
-  #gem "selenium-webdriver", '2.35.1'
   gem 'headless'
   gem 'database_cleaner', '0.7.0'
-  # gem 'capybara-webkit'
   gem 'capybara-screenshot', :group => :test
   gem 'capybara', '1.1.2'
   gem 'connection_pool'
@@ -23,8 +20,6 @@ group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.9.0'
   gem 'guard-rspec', '0.5.5'
-  #gem 'minitest' #minitest for R1.9 and test units for 1.8
-  #gem 'test-unit', '~> 2.5.5'
   gem 'annotate', '~> 2.6.3'
   gem 'autorefresh', '~>1.0.0'
   gem 'watchr', '~> 0.7'
@@ -44,34 +39,26 @@ group(:assets) {
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '2.5.0'
 
-  #gem 'ngannotate-rails'
 }
 
 group :test do  #reconsile with group :development, :test do
 
   gem 'factory_girl_rails', '1.4.0', require: false
   gem 'cucumber-rails', '1.2.1', require: false
-
   gem 'rb-fsevent', '>=0.4.3.1', :require => false
   gem 'growl', '1.0.3'
   gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
-  # gem 'cucumber'
   gem 'launchy', '2.1.0'
 end
 
 group :production do
   gem  'mysql2', '0.3.11'
-  #gem 'sqlite3', '1.3.5'
-  #gem 'pg', '0.12.2'
   gem 'rails_12factor'
-  gem 'autorefresh', '~>1.0.0'
 end
 
 group :beta do
   gem 'sqlite3', '1.3.5'
   gem 'rails_12factor'
-  gem 'autorefresh', '~>1.0.0'
-
   gem 'uglifier', '2.5.0'
 end
