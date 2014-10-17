@@ -19,6 +19,7 @@ before_script:
 before_install:
   - "export DISPLAY=:99.0" #for GUI test
   - "sh -e /etc/init.d/xvfb start"
+  - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
   - sleep 3 # give xvfb some time to start
   - cd sample_app
   - npm install -g protractor
