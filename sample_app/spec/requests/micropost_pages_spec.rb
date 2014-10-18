@@ -38,13 +38,13 @@ describe "Micropost pages" do
     before { FactoryGirl.create(:micropost, user: user) }
 
     #TODO! resolve FactoryGirl error
-    # describe "as correct user" do
-    #   before { visit root_path }
-    #
-    #   it "should delete a micropost" do
-    #     expect { click_button "delete" }.should change(Micropost, :count).by(-1)
-    #   end
-    # end
-    pending "Resolve/Update FactoryGirl"
+    describe "as correct user" do
+      before { visit root_path }
+
+      it "should delete a micropost" do
+        expect { find(".micropost-delete").click }.should change(Micropost, :count).by(-1)
+      end
+    end
+
   end
 end

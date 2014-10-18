@@ -8,7 +8,7 @@
   <td>
   <% if current_user?(micropost.user) %>
         <%= form_for(micropost, :method => :delete) do %>
-            <%= button_tag "", :type => :submit, :class => "btn btn-xs btn-default" do %>
+            <%= button_tag "", :type => :submit, :class => "btn btn-xs btn-default micropost-delete" do %>
                 <i class="icon-remove"></i>
             <% end %>
         <% end %>
