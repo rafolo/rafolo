@@ -6,7 +6,10 @@ describe "Alarms" do
 
   let(:user) { FactoryGirl.create(:user) }
 
-  before { sign_in user }
+  before do
+    sign_in user
+    SampleApp::Application.config.show_examples = true
+  end
 
   describe "GET /alarms" do
     before { visit root_path }
@@ -24,13 +27,11 @@ describe "Alarms" do
 
       should have_link t2('Default'), href: localize_path("/credit_card/index")
 
-
       should have_xpath('//*[@id="breadcrumbs"]/div[2]/span[1]')
       should have_content("Your alarms")
     end
 
     it "has correct UI lab links" do
-      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
       visit alarm_index_path
       should have_xpath('//a[@href="/ui_lab/buttons.html"]')
       should have_xpath('//a[@href="/ui_lab/general.html"]')
@@ -42,19 +43,16 @@ describe "Alarms" do
     end
 
     it "has correct Forms link" do
-      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
       visit alarm_index_path
       should have_xpath('//a[@href="/forms/forms.html"]')
     end
 
     it "has correct Charts link" do
-      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
       visit alarm_index_path
       should have_xpath('//a[@href="/charts/charts.html"]')
     end
 
     it "has correct Others links" do
-      SampleApp::Application.config.show_examples = true  #TODO: possible site effect for other Specs ?
       visit alarm_index_path
       should have_xpath('//a[@href="/other/wizard.html"]')
       should have_xpath('//a[@href="/other/login.html"]')
@@ -62,21 +60,5 @@ describe "Alarms" do
       should have_xpath('//a[@href="/other/full_calendar.html"]')
       should have_xpath('//a[@href="/other/error404.html"]')
     end
-
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

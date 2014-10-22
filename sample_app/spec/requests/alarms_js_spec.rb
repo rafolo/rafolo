@@ -5,7 +5,10 @@ describe "Alarms.js" do
 
   let(:user) { FactoryGirl.create(:user) }
 
-  before { sign_in user }
+  before do
+    sign_in user
+    SampleApp::Application.config.show_examples = true
+  end
 
   describe "GET /alarms" do
     before { visit root_path }
@@ -16,7 +19,6 @@ describe "Alarms.js" do
     end
 
     it "has correct gui elements", js: true do
-      SampleApp::Application.config.show_examples = true
 
       visit alarm_index_path
 
@@ -28,7 +30,6 @@ describe "Alarms.js" do
     end
 
     it "has correct UI lab links" do
-      SampleApp::Application.config.show_examples = true
       visit alarm_index_path
       should have_xpath('//a[@href="/ui_lab/buttons.html"]')
       should have_xpath('//a[@href="/ui_lab/general.html"]')
@@ -40,19 +41,16 @@ describe "Alarms.js" do
     end
 
     it "has correct Forms link" do
-      SampleApp::Application.config.show_examples = true
       visit alarm_index_path
       should have_xpath('//a[@href="/forms/forms.html"]')
     end
 
     it "has correct Charts link" do
-      SampleApp::Application.config.show_examples = true
       visit alarm_index_path
       should have_xpath('//a[@href="/charts/charts.html"]')
     end
 
     it "has correct Others links" do
-      SampleApp::Application.config.show_examples = true
       visit alarm_index_path
       should have_xpath('//a[@href="/other/wizard.html"]')
       should have_xpath('//a[@href="/other/login.html"]')
@@ -63,18 +61,3 @@ describe "Alarms.js" do
 
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
