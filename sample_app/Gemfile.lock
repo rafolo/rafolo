@@ -343,6 +343,8 @@ GEM
     webrick (1.3.1)
     websocket (1.2.1)
     will_paginate (3.0.5)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -384,3 +386,4 @@ DEPENDENCIES
   watchr (~> 0.7)
   webrick (~> 1.3.1)
   will_paginate (= 3.0.5)
+  will_paginate-bootstrap (= 1.0.1)

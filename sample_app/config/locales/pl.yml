@@ -203,3 +203,8 @@ pl:
         one: "ponad rok"
         few: "ponad %{count} lata"
         other: "ponad %{count} lat"
+
+  will_paginate:
+      previous_label: "&#8592; Poprzedni"
+      next_label: "Następny &#8594;"
+      page_gap: "&hellip;"

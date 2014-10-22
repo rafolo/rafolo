@@ -8,8 +8,8 @@ describe "User pages" do
 
     let(:user) { FactoryGirl.create(:user) }
 
-    before(:all) { 30.times { FactoryGirl.create(:user) } }
-    after(:all) { User.delete_all }
+    before() { 30.times { FactoryGirl.create(:user) } }
+    after() { User.delete_all }
 
     before(:each) do
       sign_in user
@@ -20,8 +20,7 @@ describe "User pages" do
     it { should have_selector('h3', text: t2('Users')) }
 
     describe "pagination" do
-      # it { should have_selector('div.pagination') }#TODO! Looks different now?
-      it { pending "Looks different now?" }
+      it { should have_selector('div ul.pagination') }
 
       it "should list each user" do
         User.paginate(page: 1).each do |user|
