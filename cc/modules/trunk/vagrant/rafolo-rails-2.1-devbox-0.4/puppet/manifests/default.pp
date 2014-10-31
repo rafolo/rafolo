@@ -1,7 +1,7 @@
 ##to start from command line:
 # cd /vagrant/puppet
-# sudo puppet apply --verbose --modulepath=modules manifests/default.pp 
-# or use /vagrant/dev/p.sh 
+# sudo puppet apply --verbose --modulepath=modules manifests/default.pp
+# or use /vagrant/dev/p.sh
 #
 
 $ar_databases = ['activerecord_unittest', 'activerecord_unittest2']
@@ -125,11 +125,14 @@ package { ['libxml2', 'libxml2-dev', 'libxslt1-dev']: ensure => installed }
 package { 'nodejs': ensure => installed }
 
 # --- Ruby ---------------------------------------------------------------------
+exec { 'gpg_key':
+  command => "${as_vagrant} 'gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3'"
+}
 
 exec { 'install_rvm':
   command => "${as_vagrant} 'curl -L https://get.rvm.io | bash -s stable'",
   creates => "${home}/.rvm/bin/rvm",
-  require => Package['curl']
+  require => [Package['curl'], Exec['gpg_key']]
 }
 
 exec { 'install_ruby':
@@ -175,7 +178,7 @@ class { 'install_vim':
 class { 'xvfb':
 }
 
-### Init DISPLAY 
+### Init DISPLAY
 #exec { "${as_vagrant} echo 'export DISPLAY=:99' >> .bashrc":
 #}
 
@@ -184,9 +187,7 @@ class { 'firefox':
   version => '17.0.1-0ubuntu1' #no _386 at end!
 }
 
-## Reboot 
+## Reboot
 #exec { "sudo reboot":
 #  require => Exec['xvfb', 'firefox']
 #}
-
-
