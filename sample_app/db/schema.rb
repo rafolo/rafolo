@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140616143331) do
+ActiveRecord::Schema.define(:version => 20141117115718) do
 
   create_table "alarms", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(:version => 20140616143331) do
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+
+  create_table "nodes", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "nodes_users", :id => false, :force => true do |t|
+    t.integer "node_id"
+    t.integer "user_id"
+  end
+
+  add_index "nodes_users", ["node_id", "user_id"], :name => "index_nodes_users_on_node_id_and_user_id", :unique => true
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -51,5 +65,8 @@ ActiveRecord::Schema.define(:version => 20140616143331) do
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end

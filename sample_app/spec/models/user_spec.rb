@@ -26,6 +26,7 @@ describe User do
   it { should respond_to(:following?) }
   it { should respond_to(:follow!) }
   it { should respond_to(:unfollow!) }
+  it { should respond_to(:nodes)}
 
   it { should be_valid }
   it { should_not be_admin }
@@ -203,4 +204,18 @@ describe User do
       its(:followed_users) { should_not include(other_user) }
     end
   end
-end
+
+  describe "nodes associations" do
+    before do
+      @node = @user.nodes.build(name: "Lorem ipsum", description: "Lorem ipsum")
+      @user.save
+    end
+
+    it "should have associated nodes" do
+      found_user = User.find @user.id
+      found_user.should_not be_nil
+      found_user.nodes[0].should eq @node
+    end
+  end
+
+  end
