@@ -97,6 +97,7 @@ Spork.prefork do
       # ActiveRecord::Migrator.up('db/migrate') # use migrations
     }
     silence_stream(STDOUT, &load_schema)
+    require Rails.root.join('db/seeds')
 
     #capybara
     include Capybara::DSL

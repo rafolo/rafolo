@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141117115718) do
+ActiveRecord::Schema.define(:version => 20141118151559) do
 
   create_table "alarms", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,25 @@ ActiveRecord::Schema.define(:version => 20141117115718) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "device_types", :force => true do |t|
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "devices", :force => true do |t|
+    t.string   "gid"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "device_type_id"
+    t.integer  "node_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "devices", ["device_type_id"], :name => "index_devices_on_device_type_id"
+  add_index "devices", ["node_id"], :name => "index_devices_on_node_id"
 
   create_table "microposts", :force => true do |t|
     t.string   "content"

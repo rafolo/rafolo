@@ -13,6 +13,7 @@ class Node < ActiveRecord::Base
   attr_accessible :description, :name
 
   has_and_belongs_to_many :users
+  has_many :devices
 
   validates :name,  presence: true, length: { maximum: 50 }
   validates :description,  presence: true, length: { maximum: 255 }

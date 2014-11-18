@@ -1,4 +1,4 @@
-DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.strategy = :truncation, {:except => %w[device_types]}
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
