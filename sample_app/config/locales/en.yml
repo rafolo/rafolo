@@ -53,6 +53,8 @@ en:
   following: following
   Followers: Followers
   followers: followers
+  Edit: Edit
+  Delete: Delete
 
   sparkline:
     orders: Orders

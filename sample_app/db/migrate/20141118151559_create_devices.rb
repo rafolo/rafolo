@@ -1,8 +1,8 @@
 class CreateDevices < ActiveRecord::Migration
   def change
     create_table :devices do |t|
-      t.string :gid
-      t.string :name
+      t.string :gid, null: false
+      t.string :name, null: false
       t.string :description
       t.references :device_type
       t.references :node

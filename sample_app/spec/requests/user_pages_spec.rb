@@ -40,11 +40,14 @@ describe "User pages" do
           visit users_path
         end
 
-        it { should have_link('delete', href: localize_path(user_path(User.first))) }
+        it { should have_link(t2('Delete'), href: localize_path(user_path(User.first))) }
         it "should be able to delete another user" do
-          expect { click_link('delete') }.to change(User, :count).by(-1)
+          expect { click_link(t2('Delete')) }.to change(User, :count).by(-1)
         end
-        it { should_not have_link('delete', href: user_path(admin)) }
+        it { should_not have_link(t2('Delete'), href: user_path(admin)) }
+
+        it { should have_link(t2('Edit'), href: localize_path(edit_user_path(User.first))) }
+
       end
     end
   end
@@ -232,7 +235,9 @@ describe "User pages" do
 
       it { should have_selector('title', text: full_title(t2('Following'))) }
       it { should have_selector('h3', text: t2('Following')) }
-      it { should have_link(other_user.name, href: localize_path(user_path(other_user))) }
+      it {
+        should have_link(other_user.name, href: localize_path(user_path(other_user)))
+      }
     end
 
     describe "followers" do

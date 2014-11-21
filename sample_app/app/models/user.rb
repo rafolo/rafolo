@@ -15,6 +15,8 @@
 class User < ActiveRecord::Base
   self.per_page = 5
   attr_accessible :name, :email, :password, :password_confirmation
+  attr_protected :admin
+
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy

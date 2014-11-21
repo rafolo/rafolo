@@ -5,7 +5,8 @@
     <div class="news-text">
       <%= user.email %>
       <% if current_user.admin? && !current_user?(user) %>
-          | <%= link_to "delete", user, method: :delete, confirm: "You sure?" %>
+          | <%= link_to t2("Edit"), edit_user_path(user) %>
+          | <%= link_to t2("Delete"), user, method: :delete, confirm: "You sure?" %>
       <% end %>
     </div>
   </div>

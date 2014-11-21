@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(:version => 20141118151559) do
   end
 
   create_table "device_types", :force => true do |t|
-    t.string   "description"
+    t.string   "description", :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "devices", :force => true do |t|
-    t.string   "gid"
-    t.string   "name"
+    t.string   "gid",            :null => false
+    t.string   "name",           :null => false
     t.string   "description"
     t.integer  "device_type_id"
     t.integer  "node_id"
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20141118151559) do
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
 
   create_table "nodes", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
+    t.string   "name",        :null => false
+    t.string   "description", :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

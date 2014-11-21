@@ -4,7 +4,11 @@ puts 'development.rb'
 
 User.delete_all
 user = User.create!("email" => "rafal@pkey.pl", "name" => "Rafal", "password" => "123456", "password_confirmation" => "123456")
-User.create!("email" => "olgierd.falat@gmail.com", "name" => "Olgierd", "password" => "123456", "password_confirmation" => "123456")
+
+user = User.new("email" => "olgierd.falat@gmail.com", "name" => "Olgierd", "password" => "123456", "password_confirmation" => "123456")
+user.admin = true
+user.save()
+
 User.create!("email" => "vasabi-rafolo@rhcloud.com", "name" => "Default User", "password" => "123456", "password_confirmation" => "123456")
 User.create!("email" => "sample-user1@gmail.com", "name" => "Sample User 1", "password" => "123456", "password_confirmation" => "123456")
 User.create!("email" => "sample-user2@gmail.com", "name" => "Sample User 2", "password" => "123456", "password_confirmation" => "123456")

@@ -53,6 +53,8 @@ pl:
   following: obserwuje
   Followers: Obserwujący
   followers: obserwujący
+  Edit: Edytuj
+  Delete: Usuń
 
   sparkline:
     orders: Zamówienia
