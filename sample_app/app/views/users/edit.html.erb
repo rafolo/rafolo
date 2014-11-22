@@ -1,26 +1,50 @@
-<% provide(:title, 'Edit user') %>
-<h1>Update your profile</h1>
+<% provide(:title, t2('user.profile.edit_user')) %>
 
 <div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: @user %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+  <div class="col-md-12">
+      <div class="box">
+        <div class="box-header">
+          <span class="title"><%= t2("user.profile.header") %></span>
+        </div>
+      <div class="box-content">
+        <%= form_for(@user) do |f| %>
+        <div class="padded">
+              <%= render 'shared/error_messages', object: @user %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+              <div class="fields">
+                  <div class="avatar avatar-padded">
+                    <%= gravatar_for @user %>
+                    <a href="http://gravatar.com/emails" target="_blank"><%= t2("user.profile.gravatar_change") %></a>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <%= f.label :name, :class => "control-label col-lg-2" %>
+                  <%= f.text_field :name %>
+              </div>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+              <div class="form-group">
+                  <%= f.label :email, :class => "control-label col-lg-2" %>
+                  <%= f.text_field :email %>
+              </div>
 
-      <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation %>
+              <div class="form-group">
+                  <%= f.label :password, :class => "control-label col-lg-2"  %>
+                  <%= f.password_field :password %>
+              </div>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-    <% end %>
+              <div class="form-group">
+                  <%= f.label :password_confirmation, t2("user.profile.confirm_password"), :class => "control-label col-lg-2"  %>
+                  <%= f.password_field :password_confirmation %>
+              </div>
+          <div class="form-group">
+              <div class="form-actions">
+                <%= f.submit t2("user.profile.save"), class: "btn btn-blue" %>
+              </div>
+            </div>
+        </div>
 
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails" target="_blank">change</a>
-  </div>
+        <% end %>
+      </div>
+      </div>
+    </div>
 </div>

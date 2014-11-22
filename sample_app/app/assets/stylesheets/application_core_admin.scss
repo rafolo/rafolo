@@ -5485,6 +5485,10 @@ h1, h2, h3, h4, h5, h6, th {
   max-width: 32px;
   max-height: 32px; }
 
+.avatar-padded {
+  padding-left: 15px;
+}
+
 /* line 118, /home/andrei/core-admin-release/core-admin/source/stylesheets/base.scss */
 .twitter-color {
   color: #4099ff; }
@@ -8126,7 +8130,7 @@ form.fill-up .radio, form.fill-up .checkbox {
 /* line 38, /home/andrei/core-admin-release/core-admin/source/stylesheets/form_elements.scss */
 .form-actions {
   margin-bottom: 0;
-  padding: 20px; }
+  padding: 15px; }
 
 /* line 43, /home/andrei/core-admin-release/core-admin/source/stylesheets/form_elements.scss */
 .box form {

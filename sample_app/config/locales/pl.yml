@@ -111,6 +111,13 @@ pl:
       text: Tekst
       time: Czas
 
+  user:
+    profile:
+      edit_user: Edytuj użytkownika
+      header: Uaktualnij swój profil
+      save: Zapisz zmiany
+      confirm_password: Potwierdź hasło
+      gravatar_change: zmień
 
   number:
     format:

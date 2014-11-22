@@ -191,13 +191,13 @@ describe "User pages" do
 
     describe "page" do
 
-      it { should have_selector('h1', text: "Update your profile") }
-      it { should have_selector('title', text: "Edit user") }
-      it { should have_link('change', href: 'http://gravatar.com/emails') }
+      it { should have_selector('span.title', text: t2("user.profile.header")) }
+      it { should have_selector('title', text: t2("user.profile.edit_user")) }
+      it { should have_link( t2("user.profile.gravatar_change"), href: 'http://gravatar.com/emails') }
     end
 
     describe "with invalid information" do
-      before { click_button "Save changes" }
+      before { click_button t2("user.profile.save") }
 
       it { should have_content(t2('The form contains the following errors')) }
     end
@@ -209,8 +209,8 @@ describe "User pages" do
         fill_in t2("Name"), with: new_name
         fill_in t2("Email"), with: new_email
         fill_in t2("Password"), with: user.password
-        fill_in t2("Confirm Password"), with: user.password
-        click_button "Save changes"
+        fill_in t2("user.profile.confirm_password"), with: user.password
+        click_button t2("user.profile.save")
       end
 
       it { should have_selector('title', text: new_name) }
