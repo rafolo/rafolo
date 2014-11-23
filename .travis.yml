@@ -45,7 +45,7 @@ script:
   #- bundle exec rake --trace db:migrate RAILS_ENV=test
   #- bundle exec rake --trace db:seed RAILS_ENV=test
   - bundle exec rake vasabi:cis:script
-  - protractor --baseUrl http://vasabi-rafolo.rhcloud.com/
+  #- protractor --baseUrl http://vasabi-rafolo.rhcloud.com/
 after_script:
   - killall firefox  #Force close for karma start --browsers Firefox --single-run
 after_success:
