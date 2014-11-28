@@ -16,8 +16,9 @@ FactoryGirl.define do
   end
 
   factory :node do
-    name "Lorem ipsum"
-    description "Lorem ipsum"
+    sequence(:name)  { |n| "Name #{n}" }
+    sequence(:description)  { |n| "Description #{n}" }
+
     association :users
   end
 end

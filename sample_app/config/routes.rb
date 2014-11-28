@@ -52,6 +52,8 @@ SampleApp::Application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
 
+  resources :node
+
   root to: 'static_pages#home'
 
   match '/signup',   to: 'users#new'
