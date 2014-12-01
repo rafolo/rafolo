@@ -8,7 +8,7 @@ class CreateNodes < ActiveRecord::Migration
     end
 
     create_table :nodes_users, id: false do |t|
-      t.belongs_to :node
+      t.belongs_to :nodes
       t.belongs_to :user
     end
 

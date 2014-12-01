@@ -5,7 +5,7 @@ class CreateDevices < ActiveRecord::Migration
       t.string :name, null: false
       t.string :description
       t.references :device_type
-      t.references :node
+      t.references :nodes
 
       t.timestamps
     end

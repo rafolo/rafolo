@@ -1,5 +1,4 @@
 require 'spec_helper'
 
-describe Device do
-
+describe NodesHelper do
 end

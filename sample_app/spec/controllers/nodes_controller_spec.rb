@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe NodeController do
+describe NodesController do
   let(:user) { FactoryGirl.create(:user) }
   let(:admin) { FactoryGirl.create(:admin) }
   let!(:user_node) { FactoryGirl.create(:node, users: [user]) }
@@ -29,7 +29,7 @@ describe NodeController do
     describe "PUT 'update/:id'" do
       it 'should return not authorized' do
 
-        put :update, id: user_node.id, node: @updated_node
+        put :update, id: user_node.id, nodes: @updated_node
         response.status.should be 401
       end
     end
@@ -65,7 +65,7 @@ describe NodeController do
 
     describe "PUT 'update/:id'" do
       it 'should return OK' do
-        put :update, id: admin_node.id, node: @updated_node
+        put :update, id: admin_node.id, nodes: @updated_node
         response.should redirect_to admin_node
         admin_node.reload
         admin_node.name.should == @updated_node[:name]
@@ -78,7 +78,7 @@ describe NodeController do
         expect {
           delete :destroy, id: admin_node.to_param
         }.should change(Node, :count).by(-1)
-        response.should redirect_to node_path
+        response.should redirect_to nodes_path
       end
     end
   end
