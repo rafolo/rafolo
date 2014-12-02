@@ -89,6 +89,12 @@ en:
       confirm_password: Confirm password
       gravatar_change: change
 
+  node:
+    created_message: Node was successfully created.
+    updated_message: Node was successfully updated.
+    editing: Editing node
+
+
   will_paginate:
       previous_label: "&#8592; Previous"
       next_label: "Next &#8594;"

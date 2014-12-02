@@ -72,6 +72,9 @@ pl:
         password: Hasło
       micropost:
         content: Zawartość
+      node:
+        name: Nazwa
+        description: Opis
 
     errors:
       models:
@@ -94,6 +97,13 @@ pl:
           attributes:
             content:
               too_long: jest za długa (maksymalnie %{count} znaków)
+        node:
+          attributes:
+           name:
+              blank: nie może być pusta
+           description:
+              blank: nie może być pusty
+
 
   sessions:
         new:
@@ -118,6 +128,12 @@ pl:
       save: Zapisz zmiany
       confirm_password: Potwierdź hasło
       gravatar_change: zmień
+
+  node:
+    created_message: Węzeł poprawnie utworzony.
+    updated_message: Węzeł poprawnie uaktualniony.
+    editing: Edycja węzła
+
 
   number:
     format:

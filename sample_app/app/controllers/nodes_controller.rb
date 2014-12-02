@@ -14,7 +14,7 @@ class NodesController < ApplicationController
   # GET /nodes/1
   # GET /nodes/1.json
   def show
-    @node = @node.find(params[:id])
+    @node = Node.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -40,11 +40,11 @@ class NodesController < ApplicationController
   # POST /nodes
   # POST /nodes.json
   def create
-    @node = Node.new(params[:nodes])
+    @node = Node.new(params[:node])
 
     respond_to do |format|
       if @node.save
-        format.html { redirect_to @node, notice: 'Node was successfully created.' }
+        format.html { redirect_to @node, notice: t2('node.created_message') }
         format.json { render json: @node, status: :created, location: @node }
       else
         format.html { render action: 'new' }
@@ -60,7 +60,7 @@ class NodesController < ApplicationController
 
     respond_to do |format|
       if @node.update_attributes(params[:nodes])
-        format.html { redirect_to @node, notice: 'Node was successfully updated.' }
+        format.html { redirect_to @node, notice: t2('node.updated_message') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

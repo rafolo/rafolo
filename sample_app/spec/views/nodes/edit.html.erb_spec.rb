@@ -14,9 +14,16 @@ describe 'nodes/edit' do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
+    assert_select 'h1', :text => t2('node.editing')
     assert_select 'form', :action => alarms_path(@node), :method => 'post' do
+      assert_select 'label[for=node_name]', :text => t2('activerecord.attributes.node.name')
       assert_select 'input#node_name', :name => 'node[name]'
+      assert_select 'label[for=node_description]', :text => t2('activerecord.attributes.node.description')
       assert_select 'input#node_description', :name => 'node[description]'
     end
+
+    assert_select "a[href=#{node_path(@node)}]", :text => 'Show'
+    assert_select "a[href=#{nodes_path}]", :text => 'Back'
+
   end
 end
