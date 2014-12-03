@@ -38,6 +38,7 @@ pl:
   "Sign up now!": Zarejestruj się
   "Sign up": Rejestracja
   Name: Nazwa
+  Description: Opis
   "Confirm password": Potwierdż hasło
   "Create my account": Utwórz konto
   "Already have an account ?": Masz już konto ?
@@ -55,6 +56,10 @@ pl:
   followers: obserwujący
   Edit: Edytuj
   Delete: Usuń
+  Show: Pokaż
+  Back: Wróć
+  Destroy: Usuń
+  "Are you sure?": Czy jesteś pewien
 
   sparkline:
     orders: Zamówienia
@@ -133,6 +138,8 @@ pl:
     created_message: Węzeł poprawnie utworzony.
     updated_message: Węzeł poprawnie uaktualniony.
     editing: Edycja węzła
+    new: Nowy węzeł
+    listing: List węzłów
 
 
   number:

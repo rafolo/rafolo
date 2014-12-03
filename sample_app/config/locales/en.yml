@@ -38,6 +38,7 @@ en:
   "Sign up now!" : Sign up now!
   "Sign up": Sign up
   Name: Name
+  Description: Description
   "Confirm password": Confirm password
   "Create my account": Create my account
   "Already have an account ?": Already have an account ?
@@ -55,6 +56,10 @@ en:
   followers: followers
   Edit: Edit
   Delete: Delete
+  Show: Show
+  Back: Back
+  Destroy: Destroy
+  "Are you sure?": Are you sure?
 
   sparkline:
     orders: Orders
@@ -93,6 +98,8 @@ en:
     created_message: Node was successfully created.
     updated_message: Node was successfully updated.
     editing: Editing node
+    new: New node
+    listing: Listing nodes
 
 
   will_paginate:
