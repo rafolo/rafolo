@@ -20,10 +20,10 @@ describe 'nodes/edit' do
       assert_select 'input#node_name', :name => 'node[name]'
       assert_select 'label[for=node_description]', :text => t2('activerecord.attributes.node.description')
       assert_select 'input#node_description', :name => 'node[description]'
+      assert_select 'input[type=submit]', :value => t2('helpers.submit.node.update')
     end
 
     assert_select "a[href=#{node_path(@node)}]", :text => t2('Show')
     assert_select "a[href=#{nodes_path}]", :text => t2('Back')
-
   end
 end

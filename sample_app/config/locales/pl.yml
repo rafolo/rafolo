@@ -68,6 +68,9 @@ pl:
     new_visits: Nowe wizyty
 
   activerecord:
+    models:
+      node: Węzeł
+      nodes: Węzły
     attributes:
       user:
         email: E-mail
@@ -80,6 +83,7 @@ pl:
       node:
         name: Nazwa
         description: Opis
+
 
     errors:
       models:
@@ -141,6 +145,18 @@ pl:
     new: Nowy węzeł
     listing: List węzłów
 
+  helpers:
+    submit:
+      node:
+        create: Utwórz węzeł
+        submit: Zapisz węzeł
+        update: Uaktualnij węzeł
+
+  errors:
+    messages:
+      not_saved:
+        one: '1 błąd blokuje ten %{resource} przed zapisaniem: '
+        other: '%{count} błędy blokują ten %{resource} przed zapisaniem:'
 
   number:
     format:
