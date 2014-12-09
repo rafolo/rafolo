@@ -30,7 +30,6 @@ group :development, :test do
   gem 'shoulda'
   gem 'memory_test_fix'
   gem 'os'
-  gem 'formtastic', '~> 3.0'
 end
 
 # Gems used only for assets and not required
